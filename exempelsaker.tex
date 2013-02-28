@@ -1,11 +1,10 @@
-\begin{document}
 \chapter{Exempelsaker}
 Lekplats för att visa hur latex funkar.
 Här är ett citat \cite{Torre2008}
 haj haj inte blblblblblbl
 khjjhg
 nu ändrade kalle lite här
-\begin{equation}
+\begin{equation} \label{eq:viktig}
 X \cdot 5 = 10
 \end{equation}
 
@@ -25,7 +24,15 @@ hej heje hejjejejej sami här allt bra eller aa det är bra här länge sen vi s
 
 
 \section{tja}
-Här refererar jag en ekvation \ref{eq:viktig}. Och här är en ekvation $ \frac{a}{b} $ mitt inne i texten.
+Här refererar jag en ekvation \eqref{eq:viktig}. Och här är en ekvation $ \frac{a}{b} $ mitt inne i texten.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{bitcoin}
+\caption{Hej en viktig bild}
+\label{pic:omgbild}
+\end{figure}
 
 
 \section{Hur använder man git shell?}
