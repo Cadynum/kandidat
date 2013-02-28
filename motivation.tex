@@ -5,16 +5,14 @@ Handen kommer att ha två identiska fingrar och en kortare tumme som principiell
 
 Mycket av den mänskliga handens mångsidighet bygger på tummens möjlighet att röra sig runt flera axlar. En mekanisk motsvarighet skulle snabbt bli komplex och kräva en mer utförlig konstruktion för att utföra liknande rörelser. 
 
-
-
 En annan aspekt som togs upp var fingrarnas möjlighet att röra sig i sidled. För att vidare förenkla konstruktionen av handen togs funktionen bort. Fingrarna kan då endast röra sig i en cirkulär rörelse mot handflatan.
 
 Fingrets funktionella princip. För att imitera det mänskliga fingrets rörelse har fingret tre leder, där två är separat styrbara och fingerspetsen följer den mellersta ledens vinkel. Detta imiterar på ett mycket bra sätt hur det mänskliga fingret rör sig. Visst finns det undantagsfall med individer som separat kan kontrollera den yttersta leden, men denna rörelse saknar större praktiskt syfte. Återkoppla till existerande robothänder? Två separat styrbara leder möjliggör ett större förelseomfång och därmed en mer mångsidig hand. Vid endast en styrbar led med resterande tvångsstyrda kommer fingerspetsen följa en bestämd bana vid stängning av fingret. Två separat styrbara leder spänner istället upp ett fält där fingerspetsen har ett stort antal möjliga poistioner. FIGUR
 
 Systemets principiella funktion:
-1.input ges genom att användare böjer finger i handske 2. töjningsresistor på handske ändrar resistans vilket registreras av Arduino micro enhet och omvandlas till signal. 3. signalen överförs trådlöst via bluetooth till Arduino mega vid handen. 4 signalen omvandlas till pwm-signaler som svarar mot önskad vinkel hos aktuatorer. 5. pwmsignaler matas till aktuatorer som ställer sig i önskad vinkel. 6 feedback från trycksensorer avläses och leder till ett stopp av aktueringen om avläst tryck är högre än fördefinerad gräns.
+1.input ges genom att användare böjer finger i styrhandske 2. töjningsresistor på handske ändrar resistans vilket registreras av Arduino micro enhet och omvandlas till signal. 3. signalen överförs trådlöst via bluetooth till Arduino mega vid handen. 4 signalen omvandlas till pwm-signaler som svarar mot önskad vinkel hos aktuatorer. 5. pwmsignaler matas till aktuatorer som ställer sig i önskad vinkel. 6 feedback från trycksensorer avläses och leder till ett stopp av aktueringen om avläst tryck är högre än fördefinerad gräns.
 
-Då projeket både ska designa och bygga en robothand har vi valt att bygga en funktionell prototyp i Meccano. Detta leder till vissa inskränkningar i handens design, men samtidigt sparas mycket tid då inga eller endast ett fåtal av de nödvändiga mekaniska komponeneterna behöver tillverkas av gruppen själv.
+Då projeket både innefattar att designa och att bygga en robothand har vi valt att bygga en funktionell prototyp i Meccano. Detta leder till vissa inskränkningar i handens design, men samtidigt sparas mycket tid då inga eller endast ett fåtal av de nödvändiga mekaniska komponeneterna behöver tillverkas av gruppen själv.
 
 
 För att bygga den mekaniska strukturen kommer Mecano att användas som en grund vilket har flera fördelar jämfört med att bygga alla delar från början. Eftersom konstruktionen kommer innehålla flera delar vars precision kommer att påverka hur väl rörelsen fungerar måste tillverkningen av delarna utföras med stor nogrannhet. Meccanos standardbyggsats innehåller flera olika standardiserade delar som enkelt kan monteras i flera olika kombinationer. Delarna anses även ha tillräckligt nogrannhet för att slutprodukten ska kunna utföra de uppsatta målen. Eftersom konstruktionen av handen går snabbare med färdiga delar kan mer fokus läggas på den mer resurskrävande elektroniken.
