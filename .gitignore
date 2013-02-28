@@ -4,6 +4,8 @@
 *.nav
 *.out
 *.dvi
+*.bbl
+*.blg
 *.snm
 *.synctex.gz*
 *.toc
