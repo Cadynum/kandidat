@@ -1,0 +1,35 @@
+
+\section{Matning av tråd}
+
+
+
+Då det yttersta leden ska styras med en lina och den inre leden ska styras med ett stag blir konsekvensen att linan kommer att töjas och därmed den yttersta leden påverkas när den innersta leden rör sig. Illustrerat med en matris kan sambandet beskrivas
+$\begin{bmatrix} 
+V_1\\
+V_2
+\end{bmatrix}
+\begin{bmatrix} 
+a& b\\
+0& c
+\end{bmatrix}
+\begin{bmatrix} 
+s_1\\
+s_2
+\end{bmatrix}$ där V_1,V_2 = den yttersta resp. den innersta fingervinkeln, a,b,c är konstanter som bestämmer hur mycket servonas vinkel s_1,s_2 påverkar fingervinkeln.
+
+För att frikoppla de olika vinklarna kan två olika alternativa metoder användas.
+Den första metoden bygger på att räkna ut sambanden a,b,c mellan servo och vinkel för att sedan invertera den stora matrisen. Med hjälp av inversmatrisen kan sambandet 
+$\begin{bmatrix} 
+s_1\\
+s_2
+\end{bmatrix}
+\begin{bmatrix} 
+d& e\\
+0& f
+\end{bmatrix}
+\begin{bmatrix} 
+V_1\\
+V_2
+\end{bmatrix}$ beräknas. Med hjälp av sambandet kan sedan de nödvändiga servovinklarna vid de önskade fingervinklarna bestämmas. Med hjälp av regleringen kan en kompensering göras för att fingervinklarna ska styras entydigt. Nackdelen med metoden blir att då ena servot måste kompensera för störningen förlorar den en del av sitt rörelseomfång. Metoden förutsätter även ett linjärt samband mellan servovinkel och fingervinkel vilket hade krävt att sambandet linjäriserades. En fördel med metoden är att designen av mekaniken kan göras utan att behöva ta hänsyn till kompensering.
+
+En enklare metod och även den metod som den nuvarande konstruktionen använder är att låta linan löpa genom den axel som hela fingret vrider sig kring. På så sätt kan de olika vinklarna frikopplas och man får matriserna [V1 ; V2]=[ a 0;0 c]*[s1 ;s2].  Då den nuvarande konstruktionen inte tillåter att linan passerar rakt genom axeln kan inte metoden användas fullständigt, men då axelns diameter är liten (sätt in mått) kan linan löpa direkt på utsidan av axeln med samma effekt. Tester bekräftar detta.

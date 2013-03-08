@@ -1,0 +1,27 @@
+\section{Mekanisk design}
+Robothanden består av fyra huvuddelar, två fingrar, en tumme och en handflata.
+Med utgångspunkten mänsklig motorik designades handens två identiska fingrar för att få ett människolikt rörelsemönster. Fingrarna har tre leder varav Led 1 och Led 2 är separat kontrollerbara. Led 3 är via ett stag tvångsstyrd av Led 2 för att imitera hur ett mänskligt finger beter sig när handen sluts. Jämfört med det mänskliga fingret saknas en frihetsgrad i Led 1 för vridning av fingret i sidled. En fördel med två separat kontrollerbara leder är att fingrarnas rörelseomfång och funktionella förmåga utökas. 
+\begin{figure}[H]
+\includegraphics[width=0.5\textwidth]{fingerbild}
+\caption{Mekanisk ritning över ett figner.}
+%\label{pic:omgbild}
+\end{figure}
+Handens utformning är endast en funktion av hur fingrarna önskas vara positionerade relativt varandra och detta utprovades i CAD-miljö utefter förmågan att utföra de önskade greppen. 
+\begin{figure}[H]
+\includegraphics[width=0.5\textwidth]{???}
+\caption{Hej en viktig bild}
+\label{pic:omgbild}
+\end{figure}
+(skaffa bild)
+
+Led 1 i fingrarna och tummen aktueras via stag medans Led 2 är kopplad till aktuator via en sena.
+\begin{figure}[H]
+\includegraphics[width=0.5\textwidth]{???}
+\caption{Hej en viktig bild}
+\label{pic:omgbild}
+\end{figure}
+(bild senans väg i fingret)
+ 
+För att återföra fingret sitter en spiralfjäder mellan staget och konsol vid Led 1.
+Aktuatorer för samtliga leder är Blue bird servon med ett vridmoment på 1.42Nm, en reaktionstid på 0.17 sekunder och vikt på 52 gram
+Dessa servon har ett rörelseomfång 60^o åt varje håll och är självreglerande, vilket eliminerar behovet av mätning och återkoppling.
