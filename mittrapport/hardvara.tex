@@ -1,0 +1,35 @@
+%!TEX root = main.tex
+\section{Elektronik}
+
+\subsection{Kontrollenhet}
+\subsubsection{Sensorhandske}
+snabbhet
+säkerhet
+prestanda
+
+\subsection{Trådlös överföring}
+För att möjliggöra kommunikation trådlöst mellan kontrollhandsken och robothanden används två prototyp-versioner av \emph{Bluetooth Mate Silver}. Enheten är godkänd för Bluetooth klass 2, vilket bl a innebär låg strömförbrukning (genomsnittligt 2.5mW vid aktiv användning) och överföringar på upp till 10m, vilket anses vara tillräckligt för att klara kravet på 5m i praktiska förhållanden.
+
+Bluetooth-protokollet är ett paketförmedlande nätverk, vilket innebär att information skickas i diskreta paket. Varje paket innehåller metadata
+\footnote{Data som beskriver information, som mottagaradress och felkorrigerande kod}
+och \emph{payload}
+\footnote{Informationen som ska överföras}.
+Bluetooth-enheten har en överföringskapacitet på 115200bps, inkluderat metadata.
+
+\paragraph{Säkerhet}
+Bluetooth definierar ett säkerhetsprotokoll där enheter utbyter symmetriska krypteringsnycklar \footnote{AES blabla} antingen med hjälp av en dynamisk ``parningsprocess'', där användaren kontrollerar pinkoder vid första användningen, eller att nycklarna manuellt. Eftersom varken kontrollhandsken eller robothanden har en display för att godkänna pinkoder används den manuella metoden.
+
+Bluetooth är en industristandard vilket leder till att säkerheten är väl testad och beprövad till den mån att den kan anses vara fullgod för projektet, och om industriella tillämpningar i framtiden skulle var önskvärt \cite{btsec}.
+
+\paragraph{Integritet}
+ I metadatan finns bl a
+
+
+\paragraph{extensibility}
+
+
+
+\begin{figure}[ht]
+\includegraphics[width=0.3\textwidth]{img/bluetooth_mate_silver.jpg}
+\caption{Bluetooth Mate Silver enhet}
+\end{figure}
