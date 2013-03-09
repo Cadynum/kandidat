@@ -2,10 +2,21 @@
 \section{Elektronik}
 
 \subsection{Kontrollenhet}
-\subsubsection{Sensorhandske}
+
+
+%EMIL: Vilka trycksensorer och flexsensorer?
+\subsubsection{Kontrollhandske}
+För att kontrollera robothanden används en handske med
 snabbhet
 säkerhet
 prestanda
+
+\begin{figure}[ht]
+\includegraphics[width=0.3\textwidth]{img/arduino_micro}
+\caption{Ardunio Micro mikrokontroller}
+\end{figure}
+
+
 
 \subsection{Trådlös överföring}
 För att möjliggöra kommunikation trådlöst mellan kontrollhandsken och robothanden används två prototyp-versioner av \emph{Bluetooth Mate Silver}. Enheten är godkänd för Bluetooth klass 2, vilket bl a innebär låg strömförbrukning (genomsnittligt 2.5mW vid aktiv användning) och överföringar på upp till 10m, vilket anses vara tillräckligt för att klara kravet på 5m i praktiska förhållanden.
@@ -13,8 +24,14 @@ För att möjliggöra kommunikation trådlöst mellan kontrollhandsken och robot
 Bluetooth-protokollet är ett paketförmedlande nätverk, vilket innebär att information skickas i diskreta paket. Varje paket innehåller metadata
 \footnote{Data som beskriver information, som mottagaradress och felkorrigerande kod}
 och \emph{payload}
-\footnote{Informationen som ska överföras}.
+\footnote{Datan i sig som ska överföras}.
 Bluetooth-enheten har en överföringskapacitet på 115200bps, inkluderat metadata.
+
+
+\begin{figure}[ht]
+\includegraphics[width=0.3\textwidth]{img/bluetooth_mate_silver.jpg}
+\caption{Bluetooth Mate Silver enhet}
+\end{figure}
 
 \paragraph{Säkerhet}
 Bluetooth definierar ett säkerhetsprotokoll där enheter utbyter symmetriska krypteringsnycklar \footnote{AES blabla} antingen med hjälp av en dynamisk ``parningsprocess'', där användaren kontrollerar pinkoder vid första användningen, eller att nycklarna manuellt. Eftersom varken kontrollhandsken eller robothanden har en display för att godkänna pinkoder används den manuella metoden.
@@ -28,8 +45,3 @@ Bluetooth är en industristandard vilket leder till att säkerheten är väl tes
 \paragraph{extensibility}
 
 
-
-\begin{figure}[ht]
-\includegraphics[width=0.3\textwidth]{img/bluetooth_mate_silver.jpg}
-\caption{Bluetooth Mate Silver enhet}
-\end{figure}
