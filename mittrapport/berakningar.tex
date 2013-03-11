@@ -3,12 +3,11 @@ För att kunna dimensionera servona och få en uppfattning om handens styrka beh
 
 \paragraph{Tröghetsmoment}
 
-En uppskattning av tröghetsmomentet räknas fram för att se om den kommer påverka val av servomotor. För att säkerställa kravet att handen kan gå från öppet till stängt läge på mindre än en sekund beräknades tröghetsmomentet som krävs i led 1 för att röra fingret från läge 1 till läge 2 enligt bild hmm, på en sekund. I beräkningen betraktas fingret som ett stelt rätblock som roterar kring z-axeln. Tröghetsmomentet blir nämligen mindre då led 2 och 3 böjs, genom att bortse från denna böjning fås en säkerhetsmarginal.
+En uppskattning av tröghetsmomentet räknas fram för att se om den kommer påverka val av servomotor. För att säkerställa kravet att handen kan gå från öppet till stängt läge på mindre än en sekund beräknades tröghetsmomentet som krävs i led 1 för att röra fingret från läge 1 till läge 2 enligt figur 4.4, på en sekund. I beräkningen betraktas fingret som ett stelt rätblock som roterar kring z-axeln. Tröghetsmomentet blir nämligen mindre då led 2 och 3 böjs, genom att bortse från denna böjning fås en säkerhetsmarginal.
  
  \begin{figure}[H]
 \includegraphics[width=0.5\textwidth]{img/troghetsmoment}
-\caption{Beräkning av tröghetsmoment}
-\label{pic:omgbild}
+\caption{Beräkning av tröghetsmoment.}
 \end{figure}
 
 $$ a=0.150\unit{m}$$ $$ b=0.013 \unit{m};  m=0.100\unit{kg} $$
@@ -18,13 +17,33 @@ $$ I_x\cdot \dot{\omega}=M_1 $$
 
 Vi ser här att bidraget till momentet från tröghetsmomentet är litet och kommer därför att bortse från dess påverkan härefter. 
 
-Fjäderkraften är oklar just nu (mättes ungefärligt med dynamometer till 10 N. ) Och friktionen i början, för att påbörja rörelsen uppmättes till 
  
-  \paragraph{Vertikal last}
-   Vid vertikal last belastas fingret med en punktkraft motsvarande 1 kg på mitten av den näst yttersta fingerleden. Den yttre fingerleden tas därmed inte med i beräkningarna eftersom den i första hand ska utföra finmotoriska uppgifter där kraven på greppstyrka inte är lika viktiga. 
-Fingret ställs i en position där den näst yttersta fingerleden hamnar i ett horisontellt läge och vinkeln mellan en vertikal linje och leden närmast handen är 30 grader. Eftersom den givna lasten är relativt hög försummas motorernas och strukturens egentyngd tillsammans med friktion och fjädrarnas återförande kraft. Denna försumning kompenseras dock av en säkerhetsfaktor.
+  \paragraph{Krokgrepp}
+   Vid vertikal last belastas fingret med en punktkraft motsvarande 1 kg på mitten av ben 2. Den yttre fingerleden tas därmed inte med i beräkningarna eftersom den i första hand ska utföra finmotoriska uppgifter där kraven på greppstyrka inte är lika viktiga. 
+Figur 4.5 visar ett godtyckligt läge för ben 1 och 2. Eftersom den givna lasten är relativt hög försummas strukturens egentyngd tillsammans med friktion och fjädrarnas återförande kraft. Denna försumning kompenseras dock av en säkerhetsfaktor på 1,7.
+
+\begin{figure}[H]
+\includegraphics[width=0.5\textwidth]{img/teckning}
+\caption{Krokgrepp.}
+\end{figure}
+
+Utifrån nedanstående ekvationer kunde en rörelse simuleras i matlab som visade hur kraften förändras med fingrets position. Då Krokgreppet innebär att två fingrar kommer bära lasten så delas kraften F på 2.
+$$F=\frac{9.82}{2} [N]$$
+$$l_a=l_1*sin(\pi-\alpha_1)$$
+$$\theta=\alpha_2-\frac{3\pi}{2}+\alpha_1$$
+$$l_b=\frac{l_2}{2}cos(\theta)$$
+$$M_2=F*\frac{l_b}{2}$$
+$$M_1=F*(l_b+l_a)$$
+
+\begin{figure}[H]
+\includegraphics[width=0.5\textwidth]{img/momentdiagram}
+\caption{Moment som krävs i led 1 och 2 vid vertikal last.}
+\end{figure}
+
+Diagramemt visar momentet som krävs i lederna vid 30 olika positioner där vinklarna $\alpha_1$ och $\alpha_2$ har förändrats med samma vinkel varje position. Position 1 är då fingret pekar nästan rakt neråt och position 30 är båda vinklarna ca 90 grader. Från diagrammet framgår att högsta momentet uppstår i led 1 och är 0.553 [Nm]. För att vara på säkra sidan gjordes samma beräkning fast $\alpha_2$ hölls på 180 grader. Då uppstod som väntat största momentet i led 1 då fingret hölls rakt i horisontellt läge. Detta moment uppgick till 0.639 [Nm].
+
 \paragraph{Omfattning av objekt}
-Vid omfattning av objekt ska ett objekt i storleksordning av ett mjölkpaket gripas med tillräcklig kraft för att lyfta upp det. Friktionskoefficienten mellan kontaktytor är 0,2 vilket är en vanlig koefficient mellan stål och plast.
+Vid omfattning av objekt ska ett objekt i storleksordning av ett mjölkpaket gripas med tillräcklig kraft för att lyfta upp det. Friktionskoefficienten mellan kontaktytor är 0,65 vilket är en vanlig koefficient mellan stål och plast.
  
     
 För att beskriva fingrets läge i rymden och få en uppfattning om området som fingerspetsen kommer att röra sig i beskrevs fingret med matematiska formler. Då fingerdel nummer ett och tre är sammanlänkade med ett stag kommer fingerspetsens läge endast vara beroende av två vinklar och de olika delarnas mått.
