@@ -1,18 +1,17 @@
-\section{Motivation till handens utseende}
+\section{Mekanisk design}
 
- 
-Handen kommer att ha två identiska fingrar och en kortare tumme som principiellt fungerar som resten av fingrarna. Eftersom antalet lemmar är relativt få jämfört med den mänskliga handen eller liknande robothänder kan större fokus läggas på att få en hand som ska styras så intuitivt som möjligt. Valet gör det även möjligt för framtida vidareutveckling där fler fingrar används.
-
-Mycket av den mänskliga handens mångsidighet bygger på tummens möjlighet att röra sig runt flera axlar. En mekanisk motsvarighet skulle snabbt bli komplex och kräva en mer utförlig konstruktion för att utföra liknande rörelser. 
-
-En annan aspekt som togs upp var fingrarnas möjlighet att röra sig i sidled. För att vidare förenkla konstruktionen av handen togs funktionen bort. Fingrarna kan då endast röra sig i en cirkulär rörelse mot handflatan.
-
-Fingrets funktionella princip. För att imitera det mänskliga fingrets rörelse har fingret tre leder, där två är separat styrbara och fingerspetsen följer den mellersta ledens vinkel. Detta imiterar på ett mycket bra sätt hur det mänskliga fingret rör sig. Visst finns det undantagsfall med individer som separat kan kontrollera den yttersta leden, men denna rörelse saknar större praktiskt syfte. Återkoppla till existerande robothänder? Två separat styrbara leder möjliggör ett större förelseomfång och därmed en mer mångsidig hand. Vid endast en styrbar led med resterande tvångsstyrda kommer fingerspetsen följa en bestämd bana vid stängning av fingret. Två separat styrbara leder spänner istället upp ett fält där fingerspetsen har ett stort antal möjliga poistioner. FIGUR
-
-Systemets principiella funktion:
-1.input ges genom att användare böjer finger i styrhandske 2. töjningsresistor på handske ändrar resistans vilket registreras av Arduino micro enhet och omvandlas till signal. 3. signalen överförs trådlöst via bluetooth till Arduino mega vid handen. 4 signalen omvandlas till pwm-signaler som svarar mot önskad vinkel hos aktuatorer. 5. pwmsignaler matas till aktuatorer som ställer sig i önskad vinkel. 6 feedback från trycksensorer avläses och leder till ett stopp av aktueringen om avläst tryck är högre än fördefinerad gräns.
-
-Då projeket både innefattar att designa och att bygga en robothand har vi valt att bygga en funktionell prototyp i Meccano. Detta leder till vissa inskränkningar i handens design, men samtidigt sparas mycket tid då inga eller endast ett fåtal av de nödvändiga mekaniska komponeneterna behöver tillverkas av gruppen själv.
+ Robothanden består av fyra huvuddelar, två fingrar, en tumme och en handflata. Anledningen är att ett färre antal fingrar medför att mer tid kan läggas på att konstruera välfungerande fingrar. När ett väl fungerande finger konstruerats är det möjligt att i framtida projekt kopiera designen och öka antalet fingrar på handen.
+Med utgångspunkten mänsklig motorik designades handens två identiska fingrar för att få ett människolikt rörelsemönster. Fingrarna har tre leder varav Led 1 och Led 2 är separat kontrollerbara. Led 3 är via ett stag tvångsstyrd av Led 2 för att imitera hur ett mänskligt finger beter sig när handen sluts. Jämfört med det mänskliga fingret saknas en frihetsgrad i Led 1 för vridning av fingret i sidled. En fördel med två separat kontrollerbara leder är att fingrarnas rörelseomfång och funktionella förmåga utökas. 
+Handens utformning är endast en funktion av hur fingrarna önskas vara positionerade relativt varandra och detta utprovades i CAD-miljö utefter förmågan att utföra de önskade greppen. (skaffa bild)
+Led 1 i aktueras via stag medans Led 2 är kopplad till aktuator via en sena. För att återföra fingret sitter en spiralfjäder mellan staget och konsol vid Led 1.
+Aktuatorer för samtliga leder är Blue bird servon med ett vridmoment på 1.42Nm, en reaktionstid på 0.17 sekunder och vikt på 52 gram.
+Dessa servon har ett rörelseomfång på -60 till 60 grader och är självreglerande, vilket eliminerar behovet av mätning och återkoppling.
 
 
-För att bygga den mekaniska strukturen kommer Mecano att användas som en grund vilket har flera fördelar jämfört med att bygga alla delar från början. Eftersom konstruktionen kommer innehålla flera delar vars precision kommer att påverka hur väl rörelsen fungerar måste tillverkningen av delarna utföras med stor nogrannhet. Meccanos standardbyggsats innehåller flera olika standardiserade delar som enkelt kan monteras i flera olika kombinationer. Delarna anses även ha tillräckligt nogrannhet för att slutprodukten ska kunna utföra de uppsatta målen. Eftersom konstruktionen av handen går snabbare med färdiga delar kan mer fokus läggas på den mer resurskrävande elektroniken.
+
+
+
+
+För att bygga den mekaniska strukturen kommer Mecano att användas som en grund vilket har både fördelar och nackdelar jämfört med att bygga alla delar från början. Eftersom konstruktionen innehåller flera delar vars precision påverkar hur väl rörelsen fungerar måste tillverkningen av delarna utföras med stor nogrannhet. Meccanos standardbyggsats innehåller flera olika standardiserade delar som enkelt kan monteras i flera olika kombinationer. Delarna anses även ha tillräckligt nogrannhet för att slutprodukten ska kunna utföra de uppsatta målen. Eftersom konstruktionen av handen går snabbare med färdiga delar kan mer fokus läggas på den mer resurskrävande elektroniken. Nackdelen blir att de olika lösningarna blir begränsade av att endast kunna tillverkas av de tillgängliga delarna, men med mindre modifikation av delarna löses problemet.
+
+Principen till den mekaniska handen anses som färdig och vidare arbete kommer att fokusera på att vidareutveckla handen med  greppvänliga ytor med integrerade trycksensorer samt en stödjande handflata.
