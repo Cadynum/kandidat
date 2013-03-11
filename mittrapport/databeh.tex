@@ -1,33 +1,4 @@
-%!TEX root = main.tex
-\section{Input}
-
-
-
-Robothanden styrs med hjälp av en handske som användaren bär på sin hand. Med hjälp av 6 töjningsresistorer mäts vinklar från användarens tumme, pekfinger och långfinger.
-Via en liten mikrokontroller på handsken (Arduino Micro) skickas resistansförändringar från töjningssensorer vidare via Bluetooth till Robothanden. Robothanden skickar i sin tur tillbaka det uppmätta trycket som återkopplas till användaren via ledlampor på varje finger. Ju högre tryck ju fler lampor kommer att tändas.
-Följande komponenter används för handsken:
-
-\begin{itemize}
-	\item Tunn handske
-	\item Arduino Micro
-	\item Bluetooth Mate Silver
-	\item Töjningsresistorer
-	\item Ledlampor
-	\item Batteri
-\end{itemize}
-
-%	\item Trycksensorer
-%snabbhet
-%säkerhet
-%prestanda
-
-\begin{figure} [H]
-\includegraphics[width=0.3\textwidth]{img/ledbar}
-\caption{En ledlampa av liknande slag kommer sättas på varje finger för återkoppling av tryck till användaren.}
-\end{figure}
-
-
-
+\section{Databehandling och kommunikation}
 \subsection{Mikrokontroller}
 En mikrokontroller valdes som kontrollenhet över andra alternativ som t ex CPLD eller FPGA, på grund av dess snabbare utvecklingstid. 
 Valet föll på att använda en Arduino-baserad mikroprocessorlösning. Arduino erbjuder en väl integrerad och utvecklingsmiljö som ofta används inom hobbyelektronik. Det finns ett stort utbud på färdiga bibliotek, t ex servostyrning.
@@ -68,5 +39,3 @@ Bluetooth är en industristandard vilket leder till att säkerheten är väl tes
 
 
 \paragraph{extensibility}
-
-
