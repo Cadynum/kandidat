@@ -1,0 +1,66 @@
+\documentclass[a4paper, 11pt]{scrreprt}
+\usepackage[swedish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+
+
+\usepackage[table]{xcolor}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{lastpage}
+\usepackage{smartref}
+\usepackage[nice]{units}
+\usepackage{amsmath}
+
+%centrera alltid bilder
+\makeatletter
+\g@addto@macro\@floatboxreset{\centering}
+\makeatother
+
+\hypersetup{
+colorlinks=true
+}
+
+% Fin header
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{\sffamily Design av Robothand - Rapport}
+\rhead{\sffamily Sida \thepage\ av \pageref{LastPage}}
+
+\newcommand\measurepage{\dimexpr\pagegoal-\pagetotal-\baselineskip\relax}
+\definecolor{light-gray}{gray}{0.95}
+
+\let\oldtabularx\tabularx
+\let\endoldtabularx\endtabularx
+\renewenvironment{tabularx}{\rowcolors{2}{white}{light-gray}\oldtabularx}{\endoldtabularx}
+\title{Design av Robothand - Planeringsrapport}
+
+\begin{document}
+%\input{framsida}
+
+\tableofcontents
+\clearpage
+
+%Börja inkludera sidor med \input här
+
+\input{bakgrund}
+
+\input{resurser}
+\input{motivation}
+\input{berakningar}
+\input{andringar}
+\input{exempelsaker}
+
+\input{githelp}
+
+\bibliographystyle{plain}
+\bibliography{referenser}
+
+\end{document}
