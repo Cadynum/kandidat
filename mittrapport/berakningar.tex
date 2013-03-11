@@ -3,7 +3,7 @@ För att kunna dimensionera servona och få en uppfattning om handens styrka och
 
 \paragraph{Tröghetsmoment}
 
-En uppskattning av tröghetsmomentet räknas fram för att se om den kommer påverka val av servomotor. För att säkerställa kravet att handen kan gå från öppet till stängt läge på mindre än en sekund beräknades tröghetsmomentet som krävs i led 1 för att röra fingret från läge 1 till läge 2 enligt figur 4.4, på en sekund. I beräkningen betraktas fingret som ett stelt rätblock som roterar kring z-axeln. Tröghetsmomentet blir nämligen mindre då led 2 och 3 böjs, genom att bortse från denna böjning fås en säkerhetsmarginal.
+En uppskattning av tröghetsmomentet räknas fram för att se om den kommer påverka val av servomotor. För att säkerställa kravet att handen kan gå från öppet till stängt läge på mindre än en sekund beräknades momentet som krävs i led 1 för att röra fingret från läge 1 till läge 2 enligt figur 4.4, på en sekund. I beräkningen betraktas fingret som ett stelt rätblock som roterar kring z-axeln. Tröghetsmomentet blir nämligen mindre då led 2 och 3 böjs, genom att bortse från denna böjning fås en säkerhetsmarginal.
  
  \begin{figure}[H]
 \includegraphics[width=0.5\textwidth]{img/troghetsmoment}
@@ -11,8 +11,8 @@ En uppskattning av tröghetsmomentet räknas fram för att se om den kommer påv
 \end{figure}
 
 $$ a=0.150\unit{m}$$ $$ b=0.013 \unit{m}$$ $$ m=0.100\unit{kg} $$
-$$ I_x=\frac{1}{12}\cdot m\cdot b^2+\frac{1}{3}\cdot m\cdot c^2 $$
-
+$$ I_x=\frac{1}{12}\cdot m\cdot a^2+\frac{1}{3}\cdot m\cdot b^2 =1.9313\cdot 10^{-4}$$
+$$\dot{\omega}=\frac{\pi}{2}/s^2$$
 $$ I_x\cdot \dot{\omega}=M_1 $$
 
 Med insatta värden uppgår momentet $M_1$ till $0,0009 [Nm]$. Bidraget till totala momentet från tröghetsmomentet är alltså litet och kommer därför att bortses från härefter. 
@@ -36,8 +36,8 @@ $$M_2=F \cdot \frac{l_b}{2}$$
 $$M_1=F \cdot (l_b+l_a)$$
 
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{img/fingermoment}
-\caption{Visar hur momentet förändras i varje led efter en bestämd rörelse enligt $\frac{\pi}{2} <\alpha_1<\pi  $ och $\frac{\pi}{2} <\alpha_2<\pi$.}
+\includegraphics[width=0.5\textwidth]{img/momentdiagram}
+\caption{Moment som krävs i led 1 och 2 vid vertikal last.}
 \end{figure}
 
 
