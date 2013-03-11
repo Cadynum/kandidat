@@ -1,0 +1,10 @@
+\section{Appedix}
+\chapter{Val av microprocessor}
+För att möjliggöra kommunikation mellan användare och enhet kommer två microprocessorer vara nödvändiga. Microprocessor 1 har till uppgift att ta in och tolka användarens input för att sedan trådlöst kommunicera styrsignalerna till microprocessor 2 som är placerad på gripdonet. Processor nummer två har sedan till uppgift att distribuera styrsignalerna till aktuatorerna och dessutom läsa av signalerna från trycksensorerna på griparean. Blir trycket för högt ska processorn reglera signalen till aktuatorerna som i sin tur ska generera ett minskat tryck på objektarean. 
+
+
+Vid val av microprocessor finns extremt många alternativ som alla varierar i pris, prestanda och användarvänlighet. För att konkritisera valet så har sökarean begränsats till ett fåtal konventionella processorer. Exempel på dessa är Netmedia, Atmel AVR, BeagleBone, Teensy och Arduino. 
+
+Valet föll på att använda en Arduino baserad microprocessorlösning. Arduino erbjuder en billig plattformslösning som gör att fokus kan flyttas ifrån val av ingående komponenter till utveckling av mjukvara. Mjukvaromässigt är arduino en lättanvänd produkt som eliminerar programering på bit-nivå. 
+
+Arduino erbjuder även ett färdigt bibliotek för PWM-styrning av servon vilket är en attraktiv lösning av styrningsproblemet. Med hjälp av arduinos SSL(Software Servo Library) möjliggörs enkel servostyrning på samtliga kontaktstift utan att externa PWM-chip behöver integreras. Servon kan då individuellt styras genom att ange önskad servovinkel. 
