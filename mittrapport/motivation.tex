@@ -1,21 +1,37 @@
 \section{Mekanisk design}
+I detta avsnitt presenteras den grundläggande mekaniska strukturen till robothanden. 
+För spara tid har Meccano™ använts som grund vilket har både fördelar och nackdelar jämfört med att bygga alla delar från början. Eftersom konstruktionen innehåller flera delar vars inbördes passform påverkar hur väl rörelser fungerar måste tillverkningen av delarna utföras med stor nogrannhet. Meccanos standardbyggsats innehåller flera olika standardiserade delar som enkelt kan monteras i flera olika kombinationer.
 
- Robothanden består av fyra huvuddelar, två fingrar, en tumme och en handflata. Anledningen är att ett färre antal fingrar medför att mer tid kan läggas på att konstruera välfungerande fingrar. När ett väl fungerande finger konstruerats är det möjligt att i framtida projekt kopiera designen och öka antalet fingrar på handen. Med utgångspunkten mänsklig motorik designades handens två identiska fingrar för att få ett människolikt rörelsemönster. 
+Delarna anses även ha tillräcklig nogrannhet för att slutprodukten ska kunna utföra de uppsatta målen. Eftersom konstruktionen av handen går snabbare med färdiga delar kan mer fokus läggas på den mer resurskrävande elektroniken. Nackdelen är att konstruktionen blir begränsad till att endast kunna tillverkas av tillgängliga komponeneter, men detta kringgås med konstruktion av enstaka kritiska komponenter.
+\begin{figure}[H]
+\includegraphics[width=0.8\textwidth]{img/handbild}
+\caption{Översiktsbild handens mekanik}
+\end{figure}
+Robothanden består av fyra huvuddelar, två fingrar, en tumme och en handflata. Tre lemmar är tillräckligt för att uppfylla målen.
+ 
 
-Fingrarna har tre leder varav Led 1 och Led 2 är separat kontrollerbara. Led 3 är via ett stag tvångsstyrd av Led 2 för att imitera hur ett mänskligt finger beter sig när handen sluts. Jämfört med det mänskliga fingret saknas en frihetsgrad i Led 1 för vridning av fingret i sidled. En fördel med två separat kontrollerbara leder är att fingrarnas rörelseomfång och funktionella förmåga utökas. 
-Handens utformning är endast en funktion av hur fingrarna önskas vara positionerade relativt varandra och detta utprovades i CAD-miljö utefter förmågan att utföra de önskade greppen. (skaffa bild)
-
-Led 1 i aktueras via stag medans Led 2 är kopplad till aktuator via en sena. För att återföra fingret sitter en spiralfjäder mellan staget och konsol vid Led 1.
+\begin{figure}[H]
+\includegraphics[width=0.8\textwidth]{img/provagrepp}
+\caption{Utprovning av grepp}
+\end{figure}
+Handens utformning är endast en funktion av hur fingrarna önskas vara positionerade relativt varandra och detta utprovades i CAD-miljö utefter förmågan att utföra de önskade greppen. Handen har även tillräckligt stor yta för att möjliggöra integrering av aktuatorer, kontrollenhet och strömförsörjning i en enda enhet.
+Med utgångspunkten mänsklig motorik designades handens två identiska fingrar för att få ett människolikt rörelsemönster.
+\begin{figure}[H]
+\includegraphics[width=0.6\textwidth]{img/Fingerbild}
+\caption{Översiktsbild Fingerdesign.}
+\end{figure}
+Fingrarna har tre leder varav Led 1 och Led 2 är separat kontrollerbara. Led 3 är via ett stag tvångsstyrd av Led 2 för att imitera hur ett mänskligt finger beter sig när handen sluts. Jämfört med det mänskliga fingret saknas en frihetsgrad i Led 1 för vridning av fingret i sidled. En fördel med två separat kontrollerbara leder är att fingrarnas rörelseomfång och funktionella förmåga utökas.
+Tummen har endast två separata frihetsgrader och sitter fast positionerad i handen för att kunna utföra ett pincettgrepp med finger 1. Detta är tillräckligt för att uppnå målen, men jämfört med den mänskliga tummen som kan möta samtliga fingertoppar är detta ett stelt utförande.
+\subsection{Aktuering}
+\begin{figure}[H]
+\includegraphics[width=0.6\textwidth]{img/fjaderbild}
+\caption{Återförande fjäder}
+\end{figure}
+Totalt har handen åtta frihetsgrader varav sex är separat aktuerbara.
+För Finger 1 och 2 gäller att Led 1 i aktueras via stag medans Led 2 är kopplad till aktuator via en sena. För att återföra fingret sitter en spiralfjäder mellan staget och konsol vid Led 1.
 Aktuatorer för samtliga leder är Blue bird servon med ett vridmoment på 1.42Nm, en reaktionstid på 0.17 sekunder och vikt på 52 gram.
 Dessa servon har ett rörelseomfång på -60 till 60 grader och är självreglerande, vilket eliminerar behovet av mätning och återkoppling.
 
 
-
-
-
-
-För att bygga den mekaniska strukturen kommer Mecano att användas som en grund vilket har både fördelar och nackdelar jämfört med att bygga alla delar från början. Eftersom konstruktionen innehåller flera delar vars precision påverkar hur väl rörelsen fungerar måste tillverkningen av delarna utföras med stor nogrannhet. Meccanos standardbyggsats innehåller flera olika standardiserade delar som enkelt kan monteras i flera olika kombinationer.
-
-Delarna anses även ha tillräckligt nogrannhet för att slutprodukten ska kunna utföra de uppsatta målen. Eftersom konstruktionen av handen går snabbare med färdiga delar kan mer fokus läggas på den mer resurskrävande elektroniken. Nackdelen blir att de olika lösningarna blir begränsade av att endast kunna tillverkas av de tillgängliga delarna, men med mindre modifikation av delarna löses problemet.
 
 Principen till den mekaniska handen anses som färdig och vidare arbete kommer att fokusera på att vidareutveckla handen med  greppvänliga ytor med integrerade trycksensorer samt en stödjande handflata.
