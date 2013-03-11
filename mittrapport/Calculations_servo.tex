@@ -1,0 +1,44 @@
+\documentclass[a4paper, 11pt]{scrreprt}
+\usepackage[swedish]{babel}
+\usepackage[utf8]{inputenc} % ger åäö
+\usepackage[T1]{fontenc} %kopieringmöjligheter
+\usepackage{units}
+\usepackage{fancyhdr} %linje
+\usepackage{hyperref} %referens länk
+\usepackage{graphicx} %inkl. bilder
+\usepackage{amsmath} %mer matte
+\usepackage[table]{xcolor} %tabellinst.
+\usepackage{listings} %programkod
+\usepackage{float} %bildred.
+\usepackage{tabularx} 
+\usepackage{lastpage} %ref. sista sidan
+\usepackage{smartref} %coola referenser
+
+%centrera alltid bilder
+\makeatletter
+\g@addto@macro\@floatboxreset{\centering}
+\makeatother
+
+\begin{document}
+Beräkningarna görs på två leder där det antas att kraften är riktad nedåt hela tiden. Kraften appliceras mitt på fingret istället för längst ut eftersom där anses endast finmotoriska rörelser ske och inte där den maximala kraften ska koncentreras. 
+\begin{figure}[H]
+
+\includegraphics[width=0.8\textwidth]{teckning}
+\caption{beskrivning}
+\label{referens}
+
+\end{figure}
+$$F=\frac{9.82}{2} =\unit[4.91]{N}$$
+$$l_a=l_1\cdot \sin(\pi-\alpha_1)$$
+$$\theta=\alpha_2-\frac{3\pi}{2}+\alpha_1$$
+$$l_b=\frac{l_2}{2}cos(\theta)$$
+$$M_2=F\cdot \frac{l_b}{2}$$
+$$M_1=F\cdot (l_b+l_a)$$
+Maximala momenten är $ M_1=\unit[0.56]{Nm}$ och  $M_2=\unit[0.21]{Nm}$.
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{fingermoment}
+\caption{Visar hur momentet förändras i varje led efter en bestämd rörelse enligt $\frac{\pi}{2} <\alpha_1<\pi  $ och $\frac{\pi}{2} <\alpha_2<\pi$.}
+\end{figure}
+Högsta momentet i led 1 är vid helt raka fingrar och kalkylerades till 0.64Nm.
+\end{document}
+
