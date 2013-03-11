@@ -6,6 +6,9 @@
 \usepackage{tikz}
 \usepackage[nice]{units}
 
+\graphicspath{../mittrapport/img/}
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+
 \usetikzlibrary{calc,shapes.callouts,shapes.arrows}
 \usetheme{Warsaw}
 
@@ -50,6 +53,13 @@
 \end{beamercolorbox}}%
 \vskip0pt%
 }
+
+
+%\addtobeamertemplate{frametitle}{\let\insertframetitle%\insertsubsectionhead}{}
+%\makeatletter
+%  \CheckCommand*\beamer@checkframetitle{\@ifnextchar\bgroup%\beamer@inlineframetitle{}}
+%  \renewcommand*\beamer@checkframetitle{\global\let\beamer@frametitle\relax\@ifnextchar\bgroup\beamer@inlineframetitle{}}
+%\makeatother
 
 \title{Design av Robothand}
 \date{2013-03-13}
