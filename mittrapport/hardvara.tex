@@ -2,6 +2,7 @@
 \section{Elektronik}
 
 \subsection{Robothand}
+Robothanden i 
 
 \subsection{Kontrollhandske}
 Robothanden styrs med hjälp av en handske som användaren bär på sin hand. Med hjälp av 6 töjningsresistorer mäts vinklar från användarens tumme, pekfinger och långfinger.
@@ -14,6 +15,7 @@ Följande komponenter används för handsken:
 	\item Bluetooth Mate Silver
 	\item Töjningsresistorer
 	\item Ledlampor
+	\item Batteri
 \end{itemize}
 
 %	\item Trycksensorer
@@ -29,7 +31,12 @@ Följande komponenter används för handsken:
 
 
 \subsection{Mikrokontroller}
-Arduino valdes som prototypmikrokontroller pga dess enkelhet och stora tillgångar till mjukvarubibliotek.
+En mikrokontroller valdes som kontrollenhet över andra alternativ som t ex CPLD eller FPGA, på grund av dess snabbare utvecklingstid. 
+Valet föll på att använda en Arduino-baserad mikroprocessorlösning. Arduino erbjuder en väl integrerad och utvecklingsmiljö som ofta används inom hobbyelektronik. Det finns ett stort utbud på färdiga bibliotek, t ex servostyrning.
+
+En 32 bitars Arduino Due används för robothanden. Eftersom alla reglerberäkning sker i robothanden i sig, är prestanda viktigt. Arduino Due är en arduinon med kraftigast processor. Eftersom det inte finns hårdvarustöd för flyttal\footnote{Tal som har en varierande decimalposition} i någon arduino, är 32 bitar extra viktigt för att effektivt kunna beräkna använda fixpunkt\footnote{Tal som har en fast decimalposition. Punktens plats måste beräknas manuellt i en separat variabel.} med tillräcklig precision.
+
+För kontrollhandsken används istället en 8 bitars Arduino Micro. Eftersom alla beräkningar kommer att ske i robothanden är mikrokontrollen i handskens enda uppgift att överföra signaler. Storleken och strömförbrukningen är här av större vikt.
 
 \begin{figure}[htb]
 \includegraphics[width=0.3\textwidth]{img/arduino_micro}
