@@ -34,7 +34,7 @@ Följande komponenter används för handsken:
 En mikrokontroller valdes som kontrollenhet över andra alternativ som t ex CPLD eller FPGA, på grund av dess snabbare utvecklingstid. 
 Valet föll på att använda en Arduino-baserad mikroprocessorlösning. Arduino erbjuder en väl integrerad och utvecklingsmiljö som ofta används inom hobbyelektronik. Det finns ett stort utbud på färdiga bibliotek, t ex servostyrning.
 
-En 32 bitars Arduino Due används för robothanden. Eftersom alla reglerberäkning sker i robothanden i sig, är prestanda viktigt. Arduino Due är en arduinon med kraftigast processor. Eftersom det inte finns hårdvarustöd för flyttal\footnote{Tal som har en varierande decimalposition} i någon arduino, är 32 bitar extra viktigt för att effektivt kunna beräkna använda fixpunkt\footnote{Tal som har en fast decimalposition. Punktens plats måste beräknas manuellt i en separat variabel.} med tillräcklig precision.
+En 32 bitars Arduino Due används för robothanden. Eftersom alla reglerberäkning sker i robothanden i sig, är prestanda viktigt. Arduino Due är en arduinon med kraftigast processor. Eftersom det inte finns hårdvarustöd för flyttal\footnote{Tal som har en varierande decimalposition} i någon arduino, är 32 bitar extra viktigt för att effektivt kunna beräkna använda fixpunkttal\footnote{Tal som har en fast decimalposition. Decimalens plats måste skötas manuellt} med tillräcklig precision.
 
 För kontrollhandsken används istället en 8 bitars Arduino Micro. Eftersom alla beräkningar kommer att ske i robothanden är mikrokontrollen i handskens enda uppgift att överföra signaler. Storleken och strömförbrukningen är här av större vikt.
 
@@ -61,7 +61,7 @@ Bluetooth-enheten har en överföringskapacitet på 115200bps, inkluderat metada
 \end{figure}
 
 \paragraph{Säkerhet}
-Bluetooth definierar ett säkerhetsprotokoll där enheter utbyter symmetriska krypteringsnycklar \footnote{AES blabla} antingen med hjälp av en dynamisk ``parningsprocess'', där användaren kontrollerar pinkoder vid första användningen, eller att nycklarna manuellt. Eftersom varken kontrollhandsken eller robothanden har en display för att godkänna pinkoder används den manuella metoden.
+Bluetooth definierar ett säkerhetsprotokoll där enheter utbyter symmetriska krypteringsnycklar \footnote{128 bitars med vår enhet.} antingen med hjälp av en dynamisk ``parningsprocess'', där användaren kontrollerar pinkoder vid första användningen, eller att nycklarna manuellt. Eftersom varken kontrollhandsken eller robothanden har en display för att godkänna pinkoder används den manuella metoden.
 
 Bluetooth är en industristandard vilket leder till att säkerheten är väl testad och beprövad till den mån att den kan anses vara fullgod för projektet, och om industriella tillämpningar i framtiden skulle var önskvärt \cite{btsec}.
 
