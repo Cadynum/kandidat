@@ -1,0 +1,11 @@
+\documentclass{report}
+\begin{document}
+$$F=\frac{9.82}{2} [N]$$
+$$l_a=l_1*sin(\pi-\alpha_1)$$
+$$\theta=\alpha_2-\frac{3\pi}{2}+\alpha_1$$
+$$l_b=\frac{l_2}{2}cos(\theta)$$
+$$M_2=F*\frac{l_b}{2}$$
+$$M_1=F*(l_b+l_a)$$
+
+\end{document}
+
