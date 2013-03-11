@@ -28,45 +28,6 @@ Följande komponenter används för handsken:
 
 
 
-\subsection{Mikrokontroller}
-En mikrokontroller valdes som kontrollenhet över andra alternativ som t ex CPLD eller FPGA, på grund av dess snabbare utvecklingstid. 
-Valet föll på att använda en Arduino-baserad mikroprocessorlösning. Arduino erbjuder en väl integrerad och utvecklingsmiljö som ofta används inom hobbyelektronik. Det finns ett stort utbud på färdiga bibliotek, t ex servostyrning.
 
-En 32 bitars Arduino Due används för robothanden. Eftersom alla reglerberäkning sker i robothanden i sig, är prestanda viktigt. Arduino Due är en arduinon med kraftigast processor. Eftersom det inte finns hårdvarustöd för flyttal\footnote{Tal som har en varierande decimalposition} i någon arduino, är 32 bitar extra viktigt för att effektivt kunna beräkna använda fixpunkttal\footnote{Tal som har en fast decimalposition. Decimalens plats måste skötas manuellt} med tillräcklig precision.
-
-För kontrollhandsken används istället en 8 bitars Arduino Micro. Eftersom alla beräkningar kommer att ske i robothanden är mikrokontrollen i handskens enda uppgift att överföra signaler. Storleken och strömförbrukningen är här av större vikt.
-
-\begin{figure}[htb]
-\includegraphics[width=0.3\textwidth]{img/arduino_micro}
-\caption{Ardunio Micro. Används för kontrollhandsken.}
-\end{figure}
-
-
-
-\subsection{Trådlös överföring}
-För att möjliggöra kommunikation trådlöst mellan kontrollhandsken och robothanden används två prototyp-versioner av \emph{Bluetooth Mate Silver}. Enheten är godkänd för Bluetooth klass 2, vilket bl a innebär låg strömförbrukning (genomsnittligt 2.5mW vid aktiv användning) och överföringar på upp till 10m, vilket anses vara tillräckligt för att klara kravet på 5m i praktiska förhållanden.
-
-Bluetooth-protokollet är ett paketförmedlande nätverk, vilket innebär att information skickas i diskreta paket. Varje paket innehåller metadata
-\footnote{Data som beskriver information, som mottagaradress och felkorrigerande kod}
-och \emph{payload}
-\footnote{Datan i sig som ska överföras}.
-Bluetooth-enheten har en överföringskapacitet på 115200bps, inkluderat metadata.
-
-
-\begin{figure}[ht]
-\includegraphics[width=0.3\textwidth]{img/bluetooth_mate_silver.jpg}
-\caption{Bluetooth Mate Silver enhet.}
-\end{figure}
-
-\paragraph{Säkerhet}
-Bluetooth definierar ett säkerhetsprotokoll där enheter utbyter symmetriska krypteringsnycklar \footnote{128 bitars med vår enhet.} antingen med hjälp av en dynamisk ``parningsprocess'', där användaren kontrollerar pinkoder vid första användningen, eller att nycklarna manuellt. Eftersom varken kontrollhandsken eller robothanden har en display för att godkänna pinkoder används den manuella metoden.
-
-Bluetooth är en industristandard vilket leder till att säkerheten är väl testad och beprövad till den mån att den kan anses vara fullgod för projektet, och om industriella tillämpningar i framtiden skulle var önskvärt \cite{btsec}.
-
-\paragraph{Integritet}
- I metadatan finns bl a
-
-
-\paragraph{extensibility}
 
 
