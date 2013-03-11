@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://openoffice.org/extensions/description/2006" xmlns:d="http://openoffice.org/extensions/description/2006"  xmlns:xlink="http://www.w3.org/1999/xlink">
+    <version value="2.14" />
+    <identifier value="sv.dsso.dicts.ooo" />
+    <display-name>
+    <name lang="en-US">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="af">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="am">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="ar">قاموس التدقيق الإملائي للُّغة السويدية والمترادفات</name>
+        <name lang="as">চুইডিচ বানান শব্দকোষ আৰু সমাৰ্থশব্দকোষ</name>
+        <name lang="ast">Diccionariu ortográficu y sinónimos pal suecu</name>
+        <name lang="be">Шведскі правапісны слоўнік і тэзаўрус</name>
+        <name lang="bg">Шведски речници за правопис и синоними</name>
+        <name lang="bn">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="bn-IN">সুইডিশ বানান অভিধান এবং শব্দকোষ</name>
+        <name lang="bo">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="br">Geriadur ar reizhskrivañ ha geriadur an heñvelsterioù evit ar svedeg</name>
+        <name lang="brx">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="bs">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="ca">Suec: corrector ortogràfic i tesaurus (sinònims i termes relacionats)</name>
+        <name lang="ca-XV">Suec: corrector ortogràfic i tesaurus (sinònims i termes relacionats)</name>
+        <name lang="cs">Švédský slovník pro kontrolu pravopisu a slovník synonym</name>
+        <name lang="cy">Swedeg - geiriadur sillafu a thesawrws</name>
+        <name lang="da">Svensk stavekontrol og synonymordbog</name>
+        <name lang="de">Schwedisches Wörterbuch für Rechtschreibprüfung und Thesaurus</name>
+        <name lang="dgo">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="dz">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="el">Σουηδικό ορθογραφικό λεξικό και θησαυρός</name>
+        <name lang="en-GB">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="en-ZA">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="eo">Sveda ortografia vortaro, kaj tezaŭro</name>
+        <name lang="es">Diccionario ortográfico y de sinónimos para el sueco</name>
+        <name lang="et">Rootsi keele õigekirjakontrolli sõnastik ja tesaurus</name>
+        <name lang="eu">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="fa">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="fi">Ruotsin oikoluku- ja synonyymisanasto</name>
+        <name lang="fr">Dictionnaires orthographique et des synonymes suédois</name>
+        <name lang="ga">Foclóir litrithe agus teasáras don tSualainnis</name>
+        <name lang="gd">Faclair litreachaidh is co-fhaclair airson na Suainise</name>
+        <name lang="gl">Dicionario ortográfico e sinónimos do sueco</name>
+        <name lang="gu">સ્વીડીશ જોડણી ચકાસણી શબ્દકોષ, અને માહિતી ભંડાર</name>
+        <name lang="he">רשימת מילים לבודק איות ואגרון בשבדית</name>
+        <name lang="hi">स्वीडिश वर्तनी शब्दकोश और थिसारस</name>
+        <name lang="hr">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="hu">Svéd helyesírási szótár és szinonimaszótár</name>
+        <name lang="id">Kamus ejaan dan tesaurus bahasa Swedia</name>
+        <name lang="is">Sænskt stafsetningarorðasafn og samheitaorðasafn</name>
+        <name lang="it">Dizionario ortografico svedese e dizionario di sinonimi</name>
+        <name lang="ja">スウェーデン語スペル辞書と類義語辞典</name>
+        <name lang="ka">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="kk">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="km">វចនានុក្រម​អក្ខរាវិរុទ្ធ​ភាសា​ស៊ុយអែដ និង​កម្រង​វេវចនសព្ទ</name>
+        <name lang="kn">ಸ್ವೀಡಿಶ್ ಕಾಗುಣಿತ ಶಬ್ಧಕೋಶ ಹಾಗು ಸಮಾನಾರ್ಥಕ ಪದಕೋಶ</name>
+        <name lang="ko">스웨덴어 맞춤법 사전 및 동의어 사전</name>
+        <name lang="kok">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="ks">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="ku">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="lb">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="lo">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="lt">Švedų kalbos rašybos tikrinimo ir tezauro žodynai</name>
+        <name lang="lv">Zviedru pareizrakstības vārdnīca un tēzaurs</name>
+        <name lang="mai">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="mk">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="ml">സ്വീഡിഷ് സ്പെല്ലിങ് നിഘണ്ടുവും തെസോറസും</name>
+        <name lang="mn">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="mni">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="mr">स्विडिश शुध्दलेखन शब्दकोष, व थिसॉरस्</name>
+        <name lang="my">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="nb">Svensk stavekontroll og synonymordbok</name>
+        <name lang="ne">स्वीडिश हिज्जे शब्दकोश, र पर्यायकोश</name>
+        <name lang="nl">Zweeds spelling woordenboek en woordafbrekingsregels</name>
+        <name lang="nn">Svensk stavekontroll og synonymordbok</name>
+        <name lang="nr">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="nso">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="oc">Diccionari ortografic e dels sinonimes pel suedés</name>
+        <name lang="om">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="or">ସ୍ୱେଦିସ ବନାନ ଅବିଧାନ, ଏବଂ ଶବ୍ଦାକୋଷ</name>
+        <name lang="pa-IN">ਸਵੈਡਿਸ਼ ਸਪੈਲਿੰਗ ਡਿਕਸ਼ਨਰੀ, ਅਤੇ ਕੋਸ਼</name>
+        <name lang="pl">Szwedzki słownik ortograficzny i wyrazów bliskoznacznych</name>
+        <name lang="pt">Dicionário ortográfico e sinónimos em sueco</name>
+        <name lang="pt-BR">Dicionário ortográfico e sinônimos em sueco</name>
+        <name lang="ro">Dicționar ortografic și de sinonime suedeză</name>
+        <name lang="ru">Шведский орфографический словарь и тезаурус</name>
+        <name lang="rw">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="sa-IN">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="sat">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="sd">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="sh">Švedski: provera pisanja i rečnik sinonima</name>
+        <name lang="si">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="sid">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="sk">Švédsky slovník na kontrolu pravopisu a tezaurus</name>
+        <name lang="sl">Švedski jezik - slovar za preverjanje črkovanja in slovar sopomenk</name>
+        <name lang="sq">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="sr">Шведски: провера писања и речник синонима</name>
+        <name lang="ss">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="st">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="sv">Svensk stavningsordbok och synonymordbok</name>
+        <name lang="sw-TZ">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="ta">ஸ்வீடிஷ் எழுத்துக்கூட்டு அகராதி மற்றும் நிகண்டு</name>
+        <name lang="te">స్వీడిష్  వుచ్ఛారణా నిఘంటువు, మరియు పదకోశాలు</name>
+        <name lang="tg">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="th">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="tn">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="tr">İsveççe yazım sözlüğü ve eş anlamlılar</name>
+        <name lang="ts">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="tt">Швед теленең орфография сүзлеге һәм тезаурусы</name>
+        <name lang="ug">شۋېدچە ئىملا ۋە مەنىداش سۆزلەر لۇغىتى</name>
+        <name lang="uk">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="uz">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="ve">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="vi">Từ điển chính tả, từ điển đồng nghĩa tiếng Thụy Điển</name>
+        <name lang="xh">Swedish spelling dictionary, and thesaurus</name>
+        <name lang="zh-CN">瑞典语拼写词典及同义词库</name>
+        <name lang="zh-TW">瑞典文拼寫詞典、同義詞庫</name>
+        <name lang="zu">Swedish spelling dictionary, and thesaurus</name>
+    </display-name>
+    <platform value="all" />
+    <dependencies>
+        <OpenOffice.org-minimal-version value="3.0" d:name="OpenOffice.org 3.0" />
+    </dependencies>
+    <publisher>
+        <name xlink:href="http://www.dsso.se/" lang="sv">Den stora svenska ordlistan</name>
+    </publisher>
+</description>
