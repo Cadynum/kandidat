@@ -1,16 +1,16 @@
 \section{Systemets principiella funktion}
-
+För att få en överskådlig bild över hela systemet har ett flödesschema upprättats från input till output där viktiga delfunktioner representeras i olika block. Funktionerna har tillskrivits tre olika delblock: \emph{Input, Databehandling och kommunikation} samt \emph{Robothand}.
  \begin{figure}[H]
-\includegraphics[width=0.5\textwidth]{img/systemchart}
+\includegraphics[width=0.8\textwidth]{img/systemchart}
 \caption{Systembild.}
 \label{pic:omgbild}
 \end{figure}
-
+Nedan listas en tänkt signals väg genom systemet.
 \begin{enumerate}
 \item Input ges genom att användare böjer finger i styrhandske. 
 \item Töjningsresistor på handske ändrar resistans vilket registreras av Arduino micro enhet och omvandlas till signal. 
 \item Signalen överförs trådlöst via bluetooth till Arduino mega vid handen. 
 \item Signalen omvandlas till pwm-signaler som svarar mot önskad vinkel hos aktuatorer. 
-\item Pwmsignaler matas till aktuatorer som ställer sig i önskad vinkel. 
+\item PWM-signaler matas till aktuatorer som ställer sig i önskad vinkel. 
 \item Feedback från trycksensorer avläses och leder till ett stopp av aktueringen om avläst tryck är högre än fördefinerad gräns.
 \end{enumerate}
