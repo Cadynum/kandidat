@@ -1,19 +1,39 @@
 %!TEX root = main.tex
 \section{Elektronik}
 
-\subsection{Kontrollenhet}
+\subsection{Robothand}
+
+\subsection{Kontrollhandske}
+Robothanden styrs med hjälp av en handske som användaren bär på sin hand. Med hjälp av 6 töjningsresistorer mäts vinklar från användarens tumme, pekfinger och långfinger.
+Via en liten mikrokontroller på handsken (Arduino Micro) skickas resistansförändringar från töjningssensorer vidare via Bluetooth till Robothanden. Robothanden skickar i sin tur tillbaka det uppmätta trycket som återkopplas till användaren via ledlampor på varje finger. Ju högre tryck ju fler lampor kommer att tändas.
+Följande komponenter används för handsken:
+
+\begin{itemize}
+	\item Tunn handske
+	\item Arduino Micro
+	\item Bluetooth Mate Silver
+	\item Töjningsresistorer
+	\item Ledlampor
+\end{itemize}
+
+%	\item Trycksensorer
+%snabbhet
+%säkerhet
+%prestanda
+
+\begin{figure}
+\includegraphics[width=0.3\textwidth]{img/ledbar}
+\caption{En ledlampa av liknande slag kommer sättas på varje finger för återkoppling av tryck till användaren.}
+\end{figure}
 
 
-%EMIL: Vilka trycksensorer och flexsensorer?
-\subsubsection{Kontrollhandske}
-För att kontrollera robothanden används en handske med
-snabbhet
-säkerhet
-prestanda
 
-\begin{figure}[ht]
+\subsection{Mikrokontroller}
+Arduino valdes som prototypmikrokontroller pga dess enkelhet och stora tillgångar till mjukvarubibliotek.
+
+\begin{figure}[htb]
 \includegraphics[width=0.3\textwidth]{img/arduino_micro}
-\caption{Ardunio Micro mikrokontroller}
+\caption{Ardunio Micro. Används för kontrollhandsken.}
 \end{figure}
 
 
@@ -30,7 +50,7 @@ Bluetooth-enheten har en överföringskapacitet på 115200bps, inkluderat metada
 
 \begin{figure}[ht]
 \includegraphics[width=0.3\textwidth]{img/bluetooth_mate_silver.jpg}
-\caption{Bluetooth Mate Silver enhet}
+\caption{Bluetooth Mate Silver enhet.}
 \end{figure}
 
 \paragraph{Säkerhet}
