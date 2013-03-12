@@ -1,14 +1,14 @@
 \section{Robothand}
 \subsection{Mekanisk design}
 I detta avsnitt presenteras den grundläggande mekaniska strukturen till robothanden. 
-För spara tid har Meccano™ använts som grund vilket har både fördelar och nackdelar jämfört med att bygga alla delar från början. Eftersom konstruktionen innehåller flera delar vars inbördes passform påverkar hur väl rörelser fungerar måste tillverkningen av delarna utföras med stor nogrannhet. Meccanos standardbyggsats innehåller flera olika standardiserade delar som enkelt kan monteras i flera olika kombinationer.
+För spara tid har Meccano™ använts som grund vilket har både fördelar och nackdelar jämfört med att bygga alla delar från början. Eftersom konstruktionen innehåller flera delar vars inbördes passform påverkar hur väl rörelser fungerar måste tillverkningen av delarna utföras med god nogrannhet. Meccanos standardbyggsats innehåller flera olika standardiserade delar som enkelt kan monteras i flera olika kombinationer.
 
 Delarna anses även ha tillräcklig nogrannhet för att slutprodukten ska kunna utföra de uppsatta målen. Eftersom konstruktionen av handen går snabbare med färdiga delar kan mer fokus läggas på den mer resurskrävande elektroniken. Nackdelen är att konstruktionen blir begränsad till att endast kunna tillverkas av tillgängliga komponeneter, men detta kringgås med konstruktion av enstaka kritiska komponenter.
 \begin{figure}[H]
 \includegraphics[width=0.8\textwidth]{img/handbild}
 \caption{Översiktsbild handens konstruktion}
 \end{figure}
-Robothanden består av fyra huvuddelar, två fingrar, en tumme och en handflata. Tre lemmar är tillräckligt för att uppfylla målen.
+Robothanden består av fyra huvuddelar, två fingrar, en tumme och en hand. Tre lemmar är tillräckligt för att uppfylla målen.
  
 
 \begin{figure}[H]
@@ -32,7 +32,7 @@ Fingrarna har tre leder varav Led 1 och Led 2 är separat kontrollerbara. Led 3 
 \begin{minipage}[t]{0.5\textwidth}
 \begin{figure}[H]
 \includegraphics[width=0.5\textwidth]{img/rorelseomfang}
-\caption{Två kontrollerbar frihetsgrad.}
+\caption{Två kontrollerbara frihetsgrader.}
 \end{figure}
 \end{minipage}
 \\
@@ -43,7 +43,7 @@ Fingrarna har tre leder varav Led 1 och Led 2 är separat kontrollerbara. Led 3 
 \caption{Senans väg i fingret}
 \end{figure}
 Totalt har handen åtta frihetsgrader varav sex är separat aktuerbara.
-För Finger 1 och 2 gäller att Led 1 i aktueras via stag medans Led 2 är kopplad till aktuator via en sena. Senan utgörs av en fiskelina dimensionerad för en dragkraft på 330 N. För att återföra fingret sitter en spiralfjäder mellan staget och konsol vid Led 1.(Dimensionerande beräkningar för fjäderstyvhet kommer).
+För Finger 1 och 2 gäller att Led 1 i aktueras via stag medans Led 2 är kopplad till aktuator via en sena. Senan utgörs av en fiskelina dimensionerad för en dragkraft på 330 N. För att återföra fingret sitter en spiralfjäder mellan staget och konsol vid Led 1.
 
 
 
@@ -59,12 +59,12 @@ Principen till den mekaniska handen anses som färdig och vidare arbete kommer a
 
 \subsection{Reglering av sena}
 
-Då led 2 ska styras med en sena och led 1  ska styras med ett stag blir konsekvensen att senan kommer att töjas och därmed den yttersta leden (led 2) påverkas när den innersta leden (led 1) rör sig. Illustrerat med en matris kan sambandet beskrivas
+Då Led 2 ska styras med en sena och Led 1 styrs med ett stag blir en konsekvens att avståndet mellan senans angreppspunkt i fingret och dess aktuator kommer variera och därmed kommer den yttersta leden (Led 2) påverkas när den innersta leden (Led 1) rör sig. Illustrerat med en matris kan sambandet beskrivas
 $$\left[ \begin{array}{c} V_1 \\ V_2 \end{array} \right] = \begin{bmatrix} a & b \\ 0 & c \end{bmatrix} \cdot \left[ \begin{array}{c} s_1 \\ s_2 \end{array} \right]$$
-där $V_1,V_2$ är den yttersta resp. den innersta fingervinkeln, a,b,c är konstanter som bestämmer hur mycket servonas vinkel $s_1,s_2$ påverkar fingervinkeln.
+där $V_1,V_2$ är den yttersta resp. den innersta ledvinkeln, a,b,c är konstanter som bestämmer hur mycket servonas vinkel $s_1,s_2$ påverkar fingervinkeln.
 För att frikoppla de olika vinklarna kan två olika alternativa metoder användas.
 Den första metoden bygger på att räkna ut sambanden a,b,c mellan servo och vinkel för att sedan invertera den stora matrisen. Med hjälp av inversmatrisen kan sambandet 
 $$\left[ \begin{array}{c} s_1 \\ s_2 \end{array} \right] = \begin{bmatrix} d & e \\ 0 & f \end{bmatrix} \cdot \left[ \begin{array}{c} V_1 \\ V_2 \end{array} \right]$$
 beräknas. Med hjälp av sambandet kan sedan de nödvändiga servovinklarna vid de önskade fingervinklarna bestämmas. Med hjälp av regleringen kan en kompensering göras för att fingervinklarna ska styras entydigt. Nackdelen med metoden blir att då ena servot måste kompensera för störningen förlorar den en del av sitt rörelseomfång. Metoden förutsätter även ett linjärt samband mellan servovinkel och fingervinkel vilket hade krävt att sambandet linjäriserades. En fördel med metoden är att designen av mekaniken kan göras utan att behöva ta hänsyn till kompensering.
 
-En enklare metod och även den metod som den nuvarande konstruktionen använder är att låta linan löpa genom den axel som hela fingret vrider sig kring. På så sätt kan de olika vinklarna frikopplas och man får matriserna$$\left[ \begin{array}{c} V_1 \\ V_2 \end{array} \right] = \begin{bmatrix} a & 0 \\ 0 & c \end{bmatrix} \cdot \left[ \begin{array}{c} s_1 \\ s_2 \end{array} \right]$$  Då den nuvarande konstruktionen inte tillåter att linan passerar rakt genom axeln kan inte metoden användas fullständigt, men då axelns diameter är liten (sätt in mått) kan linan löpa direkt på utsidan av axeln med samma effekt. Tester bekräftar detta.
+En enklare metod och även den metod som den nuvarande konstruktionen använder är att låta linan löpa genom den axel som hela fingret vrider sig kring. På så sätt kan de olika vinklarna frikopplas och man får matriserna$$\left[ \begin{array}{c} V_1 \\ V_2 \end{array} \right] = \begin{bmatrix} a & 0 \\ 0 & c \end{bmatrix} \cdot \left[ \begin{array}{c} s_1 \\ s_2 \end{array} \right]$$  Då den nuvarande konstruktionen inte tillåter att linan passerar rakt genom axeln kan inte metoden användas fullständigt, men då axelns diameter är liten, 8 mm, kan linan löpa direkt på utsidan av axeln med försumbar effekt. Tester bekräftar detta.
