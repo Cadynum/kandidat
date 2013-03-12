@@ -12,5 +12,6 @@
 *.aux
 *.fdb_latexmk
 main.pdf
+presentation.pdf
 *.DS_Store
 *~
