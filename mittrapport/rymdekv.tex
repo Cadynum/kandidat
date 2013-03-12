@@ -1,17 +1,17 @@
 \section{Rymdekvationer}
 
-Som underlag till övriga beräkningar behövs en mattematisk modell över handens möjliga rörelsemönster. Bland annat behövs dessa beräkningar i ett senare stadie för att koppla önskad handposition till en motsvarande servovinkel.  Handens position bestäms av två inmatningsvariabler i form av vinklarna $\alpha$ och $\beta$. $\alpha$ utgår från y-axeln i ett koordinatsystem med origo i punkt P1 (se figur 6.1), medens $\beta$ utgår ifrån y-axeln i ett koordinatsystem med origo i punkt P3. Med andra ord kommer $\beta$ vinken att vara beroende av $\alpha$ då dess koordinat-system är kopplat till denna invariabel. Initialt behövs de vinklar som bestämmer samtliga punkters position beräknas vilket  görs med hjälp av ekvation \eqref{eq:rymdekv1} -- \eqref{eq:rymdekv10}. Ekvation \eqref{eq:rymdekv3} --\eqref{eq:rymdekv6} har tagits fram med hjäp av applicering av sinussattsen, medens \eqref{eq:rymdekv8} baseras på vinkelsummeringsregeln för en triangel. 
+Som underlag till övriga beräkningar behövs en mattematisk modell över handens möjliga rörelsemönster. Bland annat behövs dessa beräkningar i ett senare stadie för att koppla önskad handposition till en motsvarande servovinkel.  Handens position bestäms av två inmatningsvariabler i form av vinklarna $\alpha$ och $\beta$. $\alpha$ utgår från y-axeln i ett koordinatsystem med origo i punkt P1 (se figur \ref{img:rymdimg1}), medens $\beta$ utgår ifrån y-axeln i ett koordinatsystem med origo i punkt P3. Med andra ord kommer $\beta$ vinken att vara beroende av $\alpha$ då dess koordinat-system är kopplat till denna invariabel. Initialt behövs de vinklar som bestämmer samtliga punkters position beräknas vilket  görs med hjälp av ekvation \eqref{eq:rymdekv1} -- \eqref{eq:rymdekv10}. Ekvation \eqref{eq:rymdekv3} --\eqref{eq:rymdekv6} har tagits fram med hjäp av applicering av sinussattsen, medens \eqref{eq:rymdekv8} baseras på vinkelsummeringsregeln för en triangel. 
 
 \begin{minipage}[t]{0.5\textwidth}
 \begin{figure}[H]
-\label{troll}
+\label{img:rymdimg1}
 \includegraphics[width=1\textwidth]{img/rymdekv_length}
-\caption{Definition av längder.}
+\caption{Definition av länger.}
 \end{figure}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \begin{figure}[H]
-\label{apa}
+\label{img:rymdimg2}
 \includegraphics[width=0.93\textwidth]{img/rymdekv_ang}
 \caption{Definition av vinklar}
 \end{figure}
@@ -59,21 +59,24 @@ L_{12}=\frac{b\sin(\delta)}{\sin(\theta)}
 
 \begin{equation}
 \label{eq:rymdekv8}
-\xi+ \gamma+ \theta=\pi = \lambda+\delta+\theta
+\xi+ \gamma+ \theta=\pi
 \end{equation} 
-
-
-\bigskip{}
 
 \begin{equation}
 \label{eq:rymdekv9}
-\theta = \arcsin\left(\frac{a\sin(\pi-\theta-\gamma)+b\sin(\pi-\theta-\lambda )}{L_{2}}\right)
+\lambda+\delta+\theta=\pi 
 \end{equation} 
 
-\begin{equation}
+Ur den mattematiska modellen erhålls nio okända variabler vilket löses med ekvation \eqref{eq:rymdekv1} -- \eqref{eq:rymdekv9}
+
+
+
+\begin{align}
 \label{eq:rymdekv10}
-\lambda = \arcsin\left(\frac{L_{1}\sin(\theta)-a\sin(\gamma)}{b}\right)
-\end{equation} 
+\theta{} &= \arcsin\left(\frac{a\sin(\pi-\theta-\gamma)+b\sin(\pi-\theta-\lambda )}{L_{2}}\right) \\ 
+\label{eq:rymdekv11}
+\lambda{} &=\arcsin\left(\frac{L_{1}\sin(\theta)-a\sin(\gamma)}{b}\right) 
+\end{align}
 
 
 
