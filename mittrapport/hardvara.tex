@@ -1,7 +1,10 @@
 %!TEX root = main.tex
-\section{Input}
+\section{Kontrollhandske}
 
-
+\begin{figure}
+\includegraphics[height=0.9\textheight]{img/kontrollhandske}
+\caption{Konceptskiss över kontrollhandsken.Flexsensorerna överför önskad vinkel till robothanden, och de röda ledlamporna återkopplar robothandens tryck till användaren. Fler röda ledlampor tända betyder högre tryck.}
+\end{figure}
 
 Robothanden styrs med hjälp av en handske som användaren bär på sin hand. Med hjälp av 6 töjningsresistorer mäts vinklar från användarens tumme, pekfinger och långfinger.
 Via en liten mikrokontroller på handsken (Arduino Micro) skickas resistansförändringar från töjningssensorer vidare via Bluetooth till Robothanden. Robothanden skickar i sin tur tillbaka det uppmätta trycket som återkopplas till användaren via ledlampor på varje finger. Ju högre tryck ju fler lampor kommer att tändas.
@@ -20,11 +23,6 @@ Följande komponenter används för handsken:
 %snabbhet
 %säkerhet
 %prestanda
-
-\begin{figure} [H]
-\includegraphics[width=0.3\textwidth]{img/ledbar}
-\caption{En ledlampa av liknande slag kommer sättas på varje finger för återkoppling av tryck till användaren.}
-\end{figure}
 
 
 

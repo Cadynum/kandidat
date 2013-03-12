@@ -30,10 +30,12 @@ colorlinks=true
 
 % Fin header
 \pagestyle{fancy}
-\fancyhf{}
+%\fancyhf{}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\space#1}{}} 
+\lhead{\sffamily Design av Robothand}
+%\rhead{\sffamily Sida \thepage\ av \pageref{LastPage}}
+\rhead{\sffamily \leftmark}
 
-\lhead{\sffamily Design av Robothand - Rapport}
-\rhead{\sffamily Sida \thepage\ av \pageref{LastPage}}
 
 \newcommand\measurepage{\dimexpr\pagegoal-\pagetotal-\baselineskip\relax}
 \definecolor{light-gray}{gray}{0.95}
@@ -73,14 +75,13 @@ colorlinks=true
 \input{databeh}
 \chapter{Uppföljning av planeringsrapport och planering av framtida arbete}
 \input{andringar}
-\chapter{Appendix}
-\input{berakningar}
-%\input{exempelsaker}
-
-%\input{githelp}
 
 \bibliographystyle{plain}
 \bibliography{referenser}
 
+\appendix
+
+\chapter{Appendix}
+\input{berakningar}
 
 \end{document}
