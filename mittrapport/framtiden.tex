@@ -22,4 +22,9 @@ För att trycksensorerna ska få plats på fingertopparna kan enskilda delar til
 \begin{itemize}
 \item Input från olika användare
 \end{itemize}
-Då styrhandsken ändrar resistans beroende på hur handsken deformeras blir konsekvensen att användare med olika stora händer ger styrsignaler som påverkar handen olika. För att lösa problemet måste det därför finnas ett sätt att kalibrera handsken mellan olika användare.
+Då töjningsresistorerna på styrhandsken ändrar resistans beroende på hur handsken deformeras blir konsekvensen att användare med olika stora händer ger styrsignaler som påverkar handen olika. För att lösa problemet måste det därför finnas ett sätt att kalibrera handsken mellan olika användare.
+
+\begin{itemize}
+\item Översätta önskad fingervinkel till servovinkel
+\end{itemize}
+Då användaren önskar att ställa fingret i en viss vinkel måste detta realiseras genom att servona vrider sig till en vinkel som motsvarar detta. Då servona är nyligen utvalda är kraftöverföringen mellan servo och finger inte fullständigt konstruerad. Det som redan är känt är att sambandet mellan servons vinkel och fingrets vinkel är ickelinjärt. Då kraftöverföringen är fullständigt konstruerad kommer de hittills okända måtten i konstruktionen att kunna sättas in i beräkningar och ett approximativt samband kommer tas fram genom att kurvanpassning med ex.vis minsta kvadrat metoden eller liknande, för att kunna implementera en enklare funktion i Robothandens Arduino enhet.
