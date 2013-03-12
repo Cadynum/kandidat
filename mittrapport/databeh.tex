@@ -36,4 +36,5 @@ Bluetooth definierar ett säkerhetsprotokoll där enheter utbyter symmetriska kr
 Bluetooth är en industristandard vilket leder till att säkerheten är väl testad och beprövad till den mån att den kan anses vara fullgod för projektet, och om industriella tillämpningar i framtiden skulle var önskvärt \cite{btsec}.
 
 \paragraph{Integritet och paketförlust}
+Vissa Bluetooth-paket kan korrumperas av t ex elektromagnetisk strålning. Utan integritetskontroll kan det leda till att felaktiga kommandon utförs, som att t ex ett för hårt tryck mosar en tomat.
 I Bluetooth-paketets metadata finns det en CRC-kod\footnote{Cycle Redundancy Check --- En felkorrigerande kod ofta} för att kontrollera att paketet inte blivit korrumperat. Ett eget protokoll kommer att definieras för att med låg latenstid hantera paketförlust.
