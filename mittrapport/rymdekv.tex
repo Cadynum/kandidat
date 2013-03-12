@@ -1,6 +1,6 @@
 \section{Rymdekvationer}
 
-Som underlag till övriga beräkningar behövs en mattematisk modell över handens möjliga rörelsemönster. Bland annat behövs dessa beräkningar i ett senare stadie för att koppla önskad handposition till en motsvarande servovinkel.  Handens position bestäms av två inmatningsvariabler i form av vinklarna $\alpha$ och $\beta$. $\alpha$ utgår från y-axeln i ett koordinatsystem med origo i punkt P1 (se figur \ref{img:rymdimg1}), medens $\beta$ utgår ifrån y-axeln i ett koordinatsystem med origo i punkt P3. Med andra ord kommer $\beta$ vinken att vara beroende av $\alpha$ då dess koordinat-system är kopplat till denna invariabel. Initialt behövs de vinklar som bestämmer samtliga punkters position beräknas vilket  görs med hjälp av ekvation \eqref{eq:rymdekv1} -- \eqref{eq:rymdekv10}. Ekvation \eqref{eq:rymdekv3} --\eqref{eq:rymdekv6} har tagits fram med hjäp av applicering av sinussattsen, medens \eqref{eq:rymdekv8} baseras på vinkelsummeringsregeln för en triangel. 
+Som underlag till övriga beräkningar behövs en mattematisk modell över handens möjliga rörelsemönster. Bland annat behövs dessa beräkningar i ett senare stadie för att koppla önskad handposition till en motsvarande servovinkel.  Handens position bestäms av två inmatningsvariabler i form av vinklarna $\alpha$ och $\beta$. $\alpha$ utgår från y-axeln i ett koordinatsystem med origo i punkt P1 (se figur A.4.), medens $\beta$ utgår ifrån y-axeln i ett koordinatsystem med origo i punkt P3. Med andra ord kommer $\beta$ vinken att vara beroende av $\alpha$ då dess koordinat-system är kopplat till denna invariabel. Initialt behövs de vinklar som bestämmer samtliga punkters position beräknas vilket  görs med hjälp av ekvation \eqref{eq:rymdekv1} -- \eqref{eq:rymdekv10}. Ekvation \eqref{eq:rymdekv3} --\eqref{eq:rymdekv6} har tagits fram med hjäp av applicering av sinussattsen, medens \eqref{eq:rymdekv8} baseras på vinkelsummeringsregeln för en triangel. 
 
 \begin{minipage}[t]{0.5\textwidth}
 \begin{figure}[H]
@@ -67,16 +67,27 @@ L_{12}=\frac{b\sin(\delta)}{\sin(\theta)}
 \lambda+\delta+\theta=\pi 
 \end{equation} 
 
-Ur den mattematiska modellen erhålls nio okända variabler vilket löses med ekvation \eqref{eq:rymdekv1} -- \eqref{eq:rymdekv9}
+Ur den mattematiska modellen erhålls nio okända variabler, fem okända vinklar och 4 okända längder vilka löses med ekvation \eqref{eq:rymdekv1} -- \eqref{eq:rymdekv9}. Sammanställningen av dessa ekvationer resulterar i ekvation \eqref{eq:rymdekv10} -- \eqref{eq:rymdekv11}. Då vinklarna $\theta$ och $\gamma$ är beroende av varandra går dessa inte att lösa ut. För att beräkna $\theta$ och $\gamma$ applicerades en iterativ lösningsmodell i matlab. Den antagna itterationsmodellen är stabil med snabb konvergens då problemets komplexitet är relativt låg.  
 
 
 
 \begin{align}
 \label{eq:rymdekv10}
-\theta{} &= \arcsin\left(\frac{a\sin(\pi-\theta-\gamma)+b\sin(\pi-\theta-\lambda )}{L_{2}}\right) \\ 
+\theta{} &= \arcsin\left(\frac{a\sin(\pi-\theta-\gamma)+b\sin(\pi-\theta-\lambda )}{L_{2}}\right) \\
+\bigskip{}
 \label{eq:rymdekv11}
 \lambda{} &=\arcsin\left(\frac{L_{1}\sin(\theta)-a\sin(\gamma)}{b}\right) 
 \end{align}
 
+\[
+\begin{cases}
+L_{1}=59 [mm] \\
+L_{2}=49 [mm] \\
+L_{3}=38 [mm] \\
+L_{stag}=49 [mm]\\
+a=12 [mm] \\
+b=12 [mm] \\
+\end{cases}
+\]
 
-
+ 
