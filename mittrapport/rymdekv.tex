@@ -1,44 +1,78 @@
 \section{Rymdekvationer}
 
-%\begin{minipage}[t]{0.5\textwidth}
-%\begin{figure}[H]
-%\includegraphics[width=0.5\textwidth{img/rymdekv_length}
-%\caption{.}
-%\end{figure}
-%\end{minipage}
-%\begin{minipage}[t]{0.5\textwidth}
-%\begin{figure}[H]
-%\includegraphics[width=0.5\textwidth]{img/rymdekv_ang}
-%\caption{}
-%\end{figure}
-%\end{minipage}
+Som underlag till övriga beräkningar behövs en mattematisk modell över handens möjliga rörelsemönster. Bland annat behövs dessa beräkningar i ett senare stadie för att koppla önskad handposition till en motsvarande servovinkel.  Handens position bestäms av två inmatningsvariabler i form av vinklarna $\alpha$ och $\beta$. $\alpha$ utgår från y-axeln i ett koordinatsystem med origo i punkt P1 (se figur \ref{img:rymdekv1}), medens $\beta$ utgår ifrån y-axeln i ett koordinatsystem med origo i punkt P3. Med andra ord kommer $\beta$ vinken att vara beroende av $\alpha$ då dess koordinat-system är kopplat till denna invariabel. Initialt behövs de vinklar som bestämmer samtliga punkters position beräknas vilket  görs med hjälp av ekvation \eqref{eq:rymdekv1} -- \eqref{eq:rymdekv10}. Ekvation \eqref{eq:rymdekv3} --\eqref{eq:rymdekv6} har tagits fram med hjäp av applicering av sinussattsen, medens \eqref{eq:rymdekv8} baseras på vinkelsummeringsregeln för en triangel. 
+
+\begin{minipage}[t]{0.5\textwidth}
+\begin{figure}[H]
+\label{img:rymdekv1}
+\includegraphics[width=1\textwidth]{img/rymdekv_length}
+\caption{Definition av länger.}
+\end{figure}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\begin{figure}[H]
+\label{img:rymdekv2}
+\includegraphics[width=0.93\textwidth]{img/rymdekv_ang}
+\caption{Definition av vinklar}
+\end{figure}
+\end{minipage}
 
 
-$$ L_{1}= L_{11}+L_{12} $$
+\medskip{}
 
-$$ L_{2}= L_{21}+L_{22} $$
+\begin{equation}
+\label{eq:rymdekv1}
+L_{1}= L_{11}+L_{12}
+\end{equation}
 
-$$ L_{11}=\frac{a\sin(\gamma)}{\sin(\theta)} $$
+\begin{equation}
+\label{eq:rymdekv2}
+L_{2}= L_{21}+L_{22}
+\end{equation}
 
-$$ L_{12}=\frac{b\sin(\lambda)}{\sin(\theta)} $$
 
-$$ L_{21}=\frac{a\sin(\xi)}{\sin(\theta)} $$
+\begin{align}
+\label{eq:rymdekv3}
+L_{11}=\frac{a\sin(\gamma)}{\sin(\theta)}  \\
+\label{eq:rymdekv4}
+L_{12}=\frac{b\sin(\lambda)}{\sin(\theta)} 
+\end{align}
 
-$$ L_{12}=\frac{b\sin(\delta)}{\sin(\theta)} $$
+
+\begin{align}
+\label{eq:rymdekv5}
+L_{21}=\frac{a\sin(\xi)}{\sin(\theta)} \\
+\label{eq:rymdekv6}
+L_{12}=\frac{b\sin(\delta)}{\sin(\theta)} 
+\end{align}
 
 \begin{figure}[H]
-\includegraphics[width=0.5\textwidth]{kandidat_figur_b}
-\caption{.}
+\includegraphics[width=0.4\textwidth]{img/kandidat_figur_b}
+\caption{Definition av $\gamma$}
 \end{figure}
 
-$$ \gamma=\alfa+ \pi+\beta $$ 
+\begin{equation}
+\label{eq:rymdekv7}
+\gamma = \alpha + \pi + \beta 
+\end{equation}
 
-$$ \xi+ \gamma+ \theta=\pi $$
+\begin{equation}
+\label{eq:rymdekv8}
+\xi+ \gamma+ \theta=\pi = \lambda+\delta+\theta
+\end{equation} 
 
-$$\theta=\asin{\frac{a\sin(\pi-\theta-\gamma)+b\sin(\pi-\theta-\lambda )}{L_{2}}$$
 
-$$\lambda=asin(frac{L_{1}\sin(\theta)-a\sin(\gama)}{b})
-$$
+\bigskip{}
+
+\begin{equation}
+\label{eq:rymdekv9}
+\theta = \arcsin\left(\frac{a\sin(\pi-\theta-\gamma)+b\sin(\pi-\theta-\lambda )}{L_{2}}\right)
+\end{equation} 
+
+\begin{equation}
+\label{eq:rymdekv10}
+\lambda = \arcsin\left(\frac{L_{1}\sin(\theta)-a\sin(\gamma)}{b}\right)
+\end{equation} 
 
 
 
