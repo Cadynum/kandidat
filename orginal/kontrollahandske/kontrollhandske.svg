@@ -10,8 +10,8 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="293.49524"
-   height="412.51883"
+   width="330.10974"
+   height="411.99081"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
@@ -23,9 +23,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.0000001"
-     inkscape:cx="67.902971"
-     inkscape:cy="328.35103"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="45.081035"
+     inkscape:cy="219.52987"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -439,16 +439,6 @@
     </linearGradient>
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient3800-2-9"
-       id="linearGradient3806-1-7"
-       x1="124.37875"
-       y1="240.93481"
-       x2="131.28479"
-       y2="177.13026"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.14455353,0,0,0.20111951,37.968558,918.30519)" />
-    <linearGradient
-       inkscape:collect="always"
        id="linearGradient3800-2-9">
       <stop
          style="stop-color:#cccccc;stop-opacity:1"
@@ -459,16 +449,6 @@
          offset="1"
          id="stop3804-4-6" />
     </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient3812-8-7"
-       id="linearGradient3824-9-8"
-       gradientUnits="userSpaceOnUse"
-       x1="71.894051"
-       y1="353.2186"
-       x2="221.93381"
-       y2="364.67996"
-       gradientTransform="matrix(0.23978234,0,0,-0.17498253,24.828859,1078.4577)" />
     <linearGradient
        inkscape:collect="always"
        id="linearGradient3812-8-7">
@@ -490,16 +470,6 @@
          stdDeviation="2.4743975"
          id="feGaussianBlur3948-2-8" />
     </filter>
-    <linearGradient
-       gradientTransform="matrix(0.23952654,0,0,0.23952648,26.111259,909.32829)"
-       inkscape:collect="always"
-       xlink:href="#linearGradient3784-9-4"
-       id="linearGradient3790-9-7"
-       x1="42.719654"
-       y1="522.01331"
-       x2="249.02432"
-       y2="522.01331"
-       gradientUnits="userSpaceOnUse" />
     <linearGradient
        inkscape:collect="always"
        id="linearGradient3784-9-4">
@@ -534,16 +504,6 @@
          offset="1"
          id="stop3954-8-5" />
     </linearGradient>
-    <linearGradient
-       y2="138.16585"
-       x2="140.69763"
-       y1="538.80695"
-       x1="149.48808"
-       gradientTransform="matrix(0.23094502,0,0,0.24177987,26.448899,907.84875)"
-       gradientUnits="userSpaceOnUse"
-       id="linearGradient3537"
-       xlink:href="#linearGradient3950-6-8"
-       inkscape:collect="always" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient3800-2-9"
@@ -601,7 +561,7 @@
      id="layer1"
      inkscape:groupmode="layer"
      inkscape:label="Layer 1"
-     transform="translate(-238.28327,-360.15634)"
+     transform="translate(-238.28327,-360.68434)"
      style="display:inline">
     <path
        style="fill:url(#linearGradient25071);fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
@@ -1322,7 +1282,7 @@
            width="145"
            id="rect5810" /></flowRegion><flowPara
          style="font-size:16px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:CMU Sans Serif;-inkscape-font-specification:CMU Sans Serif Medium"
-         id="flowPara5812">Flexsensorer</flowPara></flowRoot>    <path
+         id="flowPara5812">Töjningsresistorer</flowPara></flowRoot>    <path
        sodipodi:nodetypes="ccccc"
        inkscape:connector-curvature="0"
        id="path5824"
@@ -1749,7 +1709,7 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="Layer"
-     transform="translate(-238.28327,-360.15634)"
+     transform="translate(-238.28327,-360.68434)"
      style="display:inline">
     <flowRoot
        xml:space="preserve"
