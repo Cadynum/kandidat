@@ -3,23 +3,44 @@ HÄR SKA VI HA EN BRA ÖVERSIKTSBILD. FLOWCHART TYP
 Robothanden kan delas in i X delsystem som samverkar för att uppfylla handens funktion. Delsystemen består av  BLA BLA VBAL
 
 \section{Robothanden}
-I detta avsnitt presenteras en överblick över de komponenter som utgör den mekaniska handen. Handen består av två fingrar och en tumme. På fingrar och tumme
+I detta avsnitt presenteras en överblick över de komponenter som utgör den mekaniska handen.För spara tid har Meccano™ använts som grund vilket har både fördelar och nackdelar jämfört med att bygga alla delar från början. Eftersom konstruktionen innehåller flera delar vars inbördes passform påverkar hur väl rörelser fungerar måste tillverkningen av delarna utföras med god nogrannhet. Meccanos standardbyggsats innehåller flera olika standardiserade delar som enkelt kan monteras i flera olika kombinationer.Delarna anses även ha tillräcklig nogrannhet för att slutprodukten ska kunna utföra de uppsatta målen. Eftersom konstruktionen av handen går snabbare med färdiga delar kan mer fokus läggas på den mer resurskrävande elektroniken. Nackdelen är att konstruktionen blir begränsad till att endast kunna tillverkas av tillgängliga komponeneter, men detta kringgås med konstruktion av enstaka kritiska komponenter.
+Handen består av två fingrar och en tumme. På fingrar och tumme
 \subsection{Handen}
-För spara tid har Meccano™ använts som grund vilket har både fördelar och nackdelar jämfört med att bygga alla delar från början. Eftersom konstruktionen innehåller flera delar vars inbördes passform påverkar hur väl rörelser fungerar måste tillverkningen av delarna utföras med god nogrannhet. Meccanos standardbyggsats innehåller flera olika standardiserade delar som enkelt kan monteras i flera olika kombinationer.Delarna anses även ha tillräcklig nogrannhet för att slutprodukten ska kunna utföra de uppsatta målen. Eftersom konstruktionen av handen går snabbare med färdiga delar kan mer fokus läggas på den mer resurskrävande elektroniken. Nackdelen är att konstruktionen blir begränsad till att endast kunna tillverkas av tillgängliga komponeneter, men detta kringgås med konstruktion av enstaka kritiska komponenter.
 BILD PÅ UTPROVNING AV GREPP
 Handens utformning är en funktion av hur fingrarna önskas vara positionerade relativt varandra och detta utprovades i CAD-miljö utefter förmågan att utföra de önskade greppen. Handen har även tillräckligt stor yta för att möjliggöra integrering av aktuatorer, kontrollenhet och strömförsörjning i en enda enhet.
 
 
 
-\subsection{Finger}
+\subsection{Fingrar och tumme}
+Med utgångspunkten mänsklig motorik designades handens två identiska fingrar för att få ett människolikt rörelsemönster.
+BILD Översiktsbild fingerdesign
+Fingrarna har tre leder varav Led 1 och Led 2 är separat kontrollerbara. Led 3 är via ett stag tvångsstyrd av Led 2 för att imitera hur ett mänskligt finger beter sig när handen sluts. Jämfört med det mänskliga fingret saknas en frihetsgrad i Led 1 för vridning av fingret i sidled. En fördel med två separat kontrollerbara leder är att fingrarnas rörelseomfång och funktionella förmåga utökas.
 
-\subsection{Tumme}
+%\begin{minipage}[t]{0.5\textwidth}
+%\begin{figure}[H]
+%\includegraphics[width=0.57\textwidth]{img/rorelse1}
+%\caption{En kontrollerbar frihetsgrad.}
+%\end{figure}
+%\end{minipage}
+%\begin{minipage}[t]{0.5\textwidth}
+%\begin{figure}[H]
+%\includegraphics[width=0.5\textwidth]{img/rorelseomfang}
+%\caption{Två kontrollerbara frihetsgrader.}
+%\end{figure}
+%\end{minipage}
+
 \subsection{Fingertoppar och sensorer}
+BILD PÅ SENSORER, FINGERTOPPAR MED GUMMI och sensor PÅ(sprängskiss) 
+Fingertopparna är formgivna för att kunna ge ett bra pincettgrepp där sensorerna registrerar hur hårt objektet greppas. Sensorerna är av modell FSR-400 och kan registrera normaltryck i spannet ca 0.11-110 MPa genom att ändra resistans vid kompression. Värdet på resistansen avläses av handens mikrokontroller och jämförs med kalibrerade värden från tester ( SE APP KALIBRERING AV SENSORER) för att säkerställa att handen griper med rätt tryck. Över sensorn sitter ett !!!X!!! mm tjockt gummi för att skydda sensorns samt ge större friktion vid hantering av objekt. Nedre delen av fingertoppen fungerar som stöd vid grepp där kontakttrycket inte mäts.
 \section{Aktuering}
-Kortfattande förklaring 
+Total har handen åtta frihetsgrader varav sex är separat aktuerbara. I detta avsnitt presenteras aktuatorer och kraftöverföring.
 \subsection{Servon}
-\subsection{Stag}
-\subsection{Snören}
+BILD PÅ SERVO
+Aktuatorer för samtliga leder är Blue Bird BMS-660DMG+HS. Dessa servon valdes för att de uppfyllde kraven på vridmoment med god marginal (se APPENDIX A.HIYTF för dimensionerande beräkningar). Vid spänningen 6 Volt har de ett maximalt vridmoment på 1.42 Nm och en högsta rotationshastighet på 1.05 rad/s obelastade. De har ett totalt rörelseomfång på 120 grader som är standard för hobbyservos. Servona regleras via PWM-signal och har intern positionsreglering. Detta gör att de alltid kommer arbeta för att nå ett önskat läge med och kommer återgå till detta läge efter en eventuell störning.
+
+\subsection{Kraftöverföring}
+BILD PÅ STAG, BILD PÅ SENA MED HJUL
+Led 1 i samtliga fingrar aktueras via stag, vilket gör att de kan föras fram och tillbaka av respektive servo. För att aktuera Led 2 i samtliga fingrar används en sena. Senan utgörs av en fiskelina dimensionerad för en dragkraft på 330 N. Största dragkraften i senan uppstår då servo arbetar vid maximalt vridmoment och uppgår till 118 N med 12 mm servohorn. För att återföra 
 
 \section{Reglerhandsken}
 Kortfattande Text om kommande
