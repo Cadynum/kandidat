@@ -104,6 +104,7 @@ for i=1:I
     
     clf
     axis([-t t -t t])
+    axis equal
     hold on 
       
     %Plottar ut punkterna
