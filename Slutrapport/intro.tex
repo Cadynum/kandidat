@@ -3,37 +3,37 @@
 Robothänder kan användas som ett mycket effektivt hjälpmedel, inte bara för personer i behov av en protes, utan även i industriella tillämpningar. Monotona, fysiskt tunga, och direkt farliga arbeten kan utföras av en robothand istället för en människa.  Det pågår idag mycket forskning och utveckling av robothänder och detta har resulterat i mycket avancerade prototyper. En av de mest avancerade just nu är Shadow Dexterious Hand (TM) som med sina 20 aktuerade frihetsgrader och totalt 129 sensorer kan utföra det mesta som man kan begära av en mänsklig hand (ref längst ner). Stora hinder i utvecklingen generellt har varit de höga kostnaderna, den komplexa fingerfärdigheten samt styrning. Kostnaden för en hand som kan efterlikna den mänskliga handens rörelser överstiger ofta 10 000 dollar (ref längst ner). Kostnaden stiger i regel med ökat antal kontrollerbara frihetsgrader och ökad komplexitet. 
  
 
-Möjligheten att fjärrstyra robothänder innebär att olika arbeten eller uppgifter kan utföras av en expert utan att experten finns på plats. Denna möjlighet kan vara direkt livräddande vid till exempel uppgiften att desarmera en bomb. Ett problem med att fjärrstyra en robothand är att operatören inte själv kan känna föremålet som hanteras vilket lätt kan leda till att ett för hårt eller löst grepp appliceras. Detta kan i sin tur resultera i att föremålet skadas eller i extremfallet, att en bomb detoneras. Vidare är det problematiskt att få styrningen att kännas intuitiv genom till exempel knapptryckningar. 
+Möjligheten att fjärrstyra robothänder innebär att olika arbeten eller uppgifter kan utföras av en expert utan att experten finns på plats. Denna möjlighet kan vara direkt livräddande vid till exempel uppgiften att desarmera en bomb. Ett problem med att fjärrstyra en robothand är att få styrningen att kännas intuitiv genom till exempel knapptryckningar. Vidae är det problematiskt att operatören inte själv kan känna föremålet som hanteras vilket lätt kan leda till att ett för hårt eller löst grepp appliceras. Detta kan i sin tur resultera i att föremålet skadas eller i extremfallet, att en bomb detoneras. 
 
 %Föregående stycke är inte klart /Chris
 
 \subsection{Syfte} %Eller snarare "Contributions".
-I denna rapport redogörs för utvecklingen av en robothand som fjärrstyrs med hjälp av en styrhandske, där alltså robothanden skall röra sig som operatörens hand. Genom att designa robothanden för att likna en mänskliga hand i sina rörelser blir styrningen intuitiv. För att undvika skador på objekt som robothanden hanterar ska ett bibliotek av objekt kunna implementeras i robothandens mikrokontroller som möjliggör objektidentifiering. Varje objekt har ett fördefinierat högsta tryck som robothanden får utsätta den för. Om operatören försöker greppa hårdare än det fördefinierade trycket ska robothanden reglera detta för att undvika skada. 
-Objektidentifieringen är baserad på igenkänning av objektets storlek genom att utifrån servovinklar beräkna avståndet mellan de tryckbelastade punkterna på robotfingrarna vid greppning.
+I denna rapport redogörs för utvecklingen av ett system innehållande en robothand som fjärrstyrs med hjälp av en styrhandske, där alltså robothanden skall röra sig som operatörens hand. Genom att designa robothanden för att likna en mänsklig hand i sina rörelser blir styrningen intuitiv. För att undvika skador på objekt som robothanden hanterar ska ett bibliotek av objekt kunna implementeras i robothandens mikrokontroller som möjliggör objektidentifiering. Varje objekt har ett fördefinierat högsta tryck som robothanden får utsätta den för. Om operatören försöker greppa hårdare än det fördefinierade trycket ska robothanden reglera detta för att undvika skada. 
+Objektidentifieringen är baserad på igenkänning av objektets storlek genom att, utifrån vinklar på de styrande servomotorerna, beräkna avståndet mellan de tryckbelastade punkterna på robotfingrarna vid greppning. Nedan visas ett schema för att representera systemets principiella funktion.
 
-Systemets principiella funktion kanske ska in här? %tycker bengt
+Systemets principiella funktion Bild!
+
 
 
 För att uppnå detta krävs... (redogör för mål) %enligt Bengts råd. Jonas tycker mål passar bättre i planeringsrapport, samtidigt som han tycker att vi borde placera greppbilderna under rubriken mål istället för där vi har dem i mittrapporten... oklart.)
 
 \subsection{Avgränsningar}
-Budgeten för projektet är 5000 kr.
+Budgeten för projektet är 5000 kr vilket begränsar komplexiteten och antal frihetsgrader. Robothanden har därför endast 2 fingrar och en tumme med sammanlagt åtta frihetsgrader varav två är tvångsstyrda. Skelettet till robothanden har byggts i meccano (ref till förklaring av meccano) vilket begränsar designen till standardiserade mått. Robothanden är försedd med tre trycksensorer vilket avsevärt begränsar antal grepp som möjliggör objektidentifiering.
 
 \subsection{Metod}
+Genom litteraturstudier och studering av den egna handen har principen för den mekaniska designen framtagits. Vidareutveckling av detta skedde främst genom prövning, CAD-modellering och kraft och momentberäkningar. Modellering av robothandens rörelse (rymdekvationer) har gjorts i MATLAB för att sedan översättsa till C++ och användas i mikrokontrollern Arduino... Får skriva detta ordentligt när vi närmar oss klarhetens tröskel.
+ 
+"Vidare bör också metod finnas med, men endast i syfte att ange vilken typ av undersökning som gjorts. Metoden utvecklas i andra avsnitt av
+rapporten."
 
 \subsection{Rapportens Upplägg}
 Rapporten är upplagd som följer..
 I kapitel hmm till hmm ges en beskrivning av systemets design och funktion. Först diskuteras den mekatroniska designen av robothanden för att belysa dess rörelseomfång. I nästkommande kapitel behandlas styrhandsken med mikrokontroller och elektriska kretsar i detalj. Slutligen i kapitel hmm redogörs vilka algoritmer som utvecklats för att uppnå styrning och reglering.
 
-I kapitel hmm finns resultat... efter dessa följer disskusion om bla bla och bla slutligen en slutsats där våra mål verifieras.
+I kapitel hmm finns resultat... efter dessa följer disskusion om bla bla och bla slutligen en slutsats där...
 
 
 
-
-
-\subsection{Projektdefiniton} %Ta bort denna rubrik tror jag
-
-\subsection{Avgränsningar}
 
 
 
