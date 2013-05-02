@@ -3,7 +3,7 @@
 Robothänder kan användas som ett mycket effektivt hjälpmedel, inte bara för personer i behov av en protes, utan även i industriella tillämpningar. Monotona, fysiskt tunga, och direkt farliga arbeten kan utföras av en robothand istället för en människa.  Det pågår idag mycket forskning och utveckling av robothänder och detta har resulterat i mycket avancerade prototyper. En av de mest avancerade just nu är Shadow Dexterious Hand (TM) som med sina 20 aktuerade frihetsgrader och totalt 129 sensorer kan utföra det mesta som man kan begära av en mänsklig hand (ref längst ner). Stora hinder i utvecklingen generellt har varit de höga kostnaderna, den komplexa fingerfärdigheten samt styrning. Kostnaden för en hand som kan efterlikna den mänskliga handens rörelser överstiger ofta 10 000 dollar (ref längst ner). Kostnaden stiger i regel med ökat antal kontrollerbara frihetsgrader och ökad komplexitet. 
  
 
-Möjligheten att fjärrstyra robothänder innebär att olika arbeten eller uppgifter kan utföras av en expert utan att experten finns på plats. Denna möjlighet kan vara direkt livräddande vid till exempel uppgiften att desarmera en bomb. Ett problem med att fjärrstyra en robothand är att få styrningen att kännas intuitiv genom till exempel knapptryckningar. Vidare är det problematiskt att operatören inte själv kan känna föremålet som hanteras vilket lätt kan leda till att ett för hårt eller löst grepp appliceras. Detta kan i sin tur resultera i att föremålet skadas eller i extremfallet, att en bomb detoneras. 
+Möjligheten att fjärrstyra robothänder innebär att olika arbeten eller uppgifter kan utföras av en expert utan att denna finns på plats. Denna möjlighet kan vara direkt livräddande vid till exempel uppgiften att desarmera en bomb. Ett problem med att fjärrstyra en robothand är att få styrningen att kännas intuitiv genom till exempel knapptryckningar. Vidare är det problematiskt att operatören inte själv kan känna föremålet som hanteras vilket lätt kan leda till att ett för hårt eller löst grepp appliceras. Detta kan i sin tur resultera i att föremålet skadas eller felhanteras.
 
 %Möjligtvis ska det läggas ill lite om hur reglering gått till i tidigare modeller.
 %Föregående stycke är inte klart /Chris
@@ -16,13 +16,27 @@ Systemets principiella funktion Bild!
 
 
 \section{Kravspec kanske?}
- (Redogör för mål, kravspec.) %enligt Bengts råd. Jonas tycker mål passar bättre i planeringsrapport, samtidigt som han tycker att vi borde placera greppbilderna under rubriken mål istället för där vi har dem i mittrapporten... oklart.)
+
+För att ha något som designen ska utgå från har följande krav tagits fram vad gäller robothandens styrka, fingerfärdighet och styrning.
+ Robothanden:
+\begin{itemize}
+\item Ska kunna gripa och lyfta ett mjölkpaket med en vikt av ett kg. (Grasp 1 i Cutkoskys grepphierarki \ref{cutshand})
+\item Ska kunna gripa och lyfta en mutter av storlek M10 mellan tumme och pekfinger. (Grasp 9 i Cutkoskys grepphierarki \ref{cutshand})
+\item Ska klara att lyfta en last motsvarande ett kg på mitten av två fingrar.
+\item Ska kunna lyfta upp en snusdosa.
+\item En ovan användare skall efter kalibrering kunna utföra ovanstående mål.
+\item Ska kunna reglera hur hårt den greppar tre stycken förbestämda objekt för att unvika skada.
+\item Maximal tid för handen att sluta sig från maximalt öppen hand är en sekund.
+\end{itemize}
+
+ 
+ %enligt Bengts råd. Jonas tycker mål passar bättre i planeringsrapport, samtidigt som han tycker att vi borde placera greppbilderna under rubriken mål istället för där vi har dem i mittrapporten... oklart.)
 
 \section{Avgränsningar}
 Budgeten för projektet är 5000 kr vilket begränsar komplexiteten och antal frihetsgrader. Robothanden har därför endast 2 fingrar och en tumme med sammanlagt åtta frihetsgrader varav två är tvångsstyrda. Skelettet till robothanden har byggts i meccano (ref till förklaring av meccano) vilket begränsar designen till standardiserade mått. Robothanden är försedd med tre trycksensorer vilket avsevärt begränsar antal grepp som möjliggör objektidentifiering.
 
 \section{Metod}
-Genom litteraturstudier och studering av den egna handen har principen för den mekaniska designen framtagits. Vidareutveckling av detta skedde främst genom prövning, CAD-modellering och kraft och momentberäkningar. Modellering av robothandens rörelse (rymdekvationer) har gjorts i MATLAB för att sedan översättsa till C++ och användas i mikrokontrollern Arduino... Får skriva detta ordentligt när vi närmar oss klarhetens tröskel.
+Genom litteraturstudier och studering av den egna handen har principen för den mekaniska designen framtagits. Vidareutveckling av detta skedde främst genom prövning, CAD-modellering och kraft och momentberäkningar. Modellering av robothandens rörelse (rymdekvationer) har gjorts i MATLAB för att sedan översättas till C++ och användas i mikrokontrollern Arduino... Får skriva detta ordentligt när vi närmar oss klarhetens tröskel.
  
 "Vidare bör också metod finnas med, men endast i syfte att ange vilken typ av undersökning som gjorts. Metoden utvecklas i andra avsnitt av
 rapporten."
