@@ -12,14 +12,15 @@ Stora hinder i utvecklingen av robothänder generellt har varit de höga kostnad
 %Föregående stycke är inte klart /Chris
 
 \section{Syfte}% "Contributions" -- Syfte.
-I denna rapport redogörs för utvecklingen av ett system innehållande en robothand som fjärrstyrs med hjälp av en styrhandske. Robothanden har designats liknande en mänsklig hand i sina rörelser för att möjliggöra att styrningen blir intuitiv. Vidare krävs stabila styrsignaler från styrhandsken till robothanden som utnyttjas väl för att åstadkomma god åtföljning. Detta uppnås genom filtrering och programmering (kom på nån bättre mening här...). För att undvika skador på objekt som robothanden hanterar ska ett bibliotek av objekt kunna implementeras i robothandens mikrokontroller som möjliggör objektidentifiering. Varje objekt har ett fördefinierat högsta tryck som robothanden får utsätta den för. Om operatören försöker greppa hårdare än det fördefinierade trycket ska robothanden reglera detta för att undvika skada. Genom att implementera denna reglering i robothandens mjukvara istället för till exempel mer avancerad haptisk återkoppling som kräver mekaniska funktioner i handsken hålls kostnaden nere.
-Objektidentifieringen är baserad på igenkänning av objektets storlek genom att, utifrån vinklar på de styrande servomotorerna, beräkna avståndet mellan de tryckbelastade punkterna på robotfingrarna. Nedan visas ett schema för att representera systemets principiella funktion.
+I denna rapport redogörs för utvecklingen av ett system innehållande en robothand som fjärrstyrs med hjälp av en styrhandske. Varje finger och tumme har även 2 frihetsgrader vilket är mer än vad liknande projekt vanligtvis har. Robothanden konstrueras liknande en mänsklig hand i sina rörelser för att möjliggöra att styrningen är intuitiv. För att undvika skador på objekt som robothanden hanterar ska ett bibliotek av objekt implementeras i robothandens mikrokontroller som möjliggör objektidentifiering. Varje objekt har ett fördefinierat högsta tryck som robothanden får utsätta den för. Om operatören försöker greppa hårdare än det fördefinierade trycket ska robothanden reglera detta för att undvika skada. Genom att implementera denna reglering i robothandens mjukvara istället för till exempel mer avancerad haptisk återkoppling som kräver mekaniska funktioner i handsken hålls kostnaden nere.
+Objektidentifieringen är baserad på igenkänning av objektets storlek genom att, utifrån vinklar på de styrande servomotorerna, beräkna avståndet mellan de tryckbelastade punkterna på robotfingrarna.
+  Nedan visas ett schema för att representera systemets principiella funktion.
 
 Systemets principiella funktion Bild!
 
 
 \section{Prestanda}
-
+Detta ska tydligen läggas i en "projektdel" i rapporten
 Rapporten presenterar design av en robothand som uppfyller följande krav. Robothanden:
 \begin{itemize}
 \item Ska kunna gripa och lyfta ett mjölkpaket med en vikt av ett kg. (Grasp 1 i Cutkoskys grepphierarki \ref{cutshand}) %Glöm inte förklara Cutkosky nånstans!
@@ -33,7 +34,11 @@ Rapporten presenterar design av en robothand som uppfyller följande krav. Robot
 \end{itemize}
 
 
-\section{Avgränsningar} %Va passar i projektdel respektive teknisk rapport?
+\section{Avgränsningar}
+
+ALLA avgränsningar, mål och syften ska INTE vara i den tekniska rapporten
+
+ %Va passar i projektdel respektive teknisk rapport?
 Budgeten för prototypen är 5000 kr vilket begränsar komplexiteten och antal frihetsgrader. Robothanden har därför endast 2 fingrar och en tumme med sammanlagt åtta frihetsgrader varav två är tvångsstyrda. Skelettet till robothanden har byggts i meccano (ref till förklaring av meccano) vilket begränsar designen till standardiserade mått och begränsar stabiliteten i kontruktionen. Robothanden är försedd med tre trycksensorer vilket avsevärt begränsar antal grepp som möjliggör objektidentifiering.
 
 \section{Metod}
