@@ -1,7 +1,8 @@
 \section{Sammanfattning}
 
-Följande är en slutrapport som beskriver metoderna och resultatet av "Design av robothand".
+Följande är en rapport som beskriver  "Design av robothand" som går ut på att konstruera en mekanisk hand som styrs trådlöst med en styrhandske, där användarens rörelser efterliknas av robothanden. Robothanden känner även av hur mycket de greppade föremålet påverkas med hjälp av trycksensorer vilket ger en återkoppling av handens gripkraft.
 
-Med hjälp av beräkningar kan separata fingrar simuleras för att få reda på greppomfång och påverkande krafter.
+Med utgångspunkt i liknande arbeten framtas en grundläggande mekanisk princip  som används för att konstruera de separata fingrarna. För att manipulera fingrarna används sex stycken hobbyservon som kontrollerar fingrarna via senor och stag. För att få en uppfattning (om möjligt, hitta bättre ord än “uppfattning”) om handens utseende, funktionalitet och rörelse används CAD-ritningar och rörelsesimuleringar innan tillverkning. 
 
-Med hjälp av relativt enkla och konsumenttillgänglig utrustning lyckas arduinochippen kontrollera de servon som styr handens fingrar. 
+Kommunikationen mellan styrhandsken och robothanden upprättas med hjälp av mikrokontrollers, så kallade Arduinokort. Signalerna från styrhandsken reglerar robothandens rörelse och fås från flexgivare* som sitter på styrhandsken.
+Mikrokontrollerna styr även de hobbyservon som i sin tur får robothanden att röra sig.
