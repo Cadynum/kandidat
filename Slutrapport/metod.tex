@@ -1,5 +1,17 @@
 \section{Robothandens principiella funktion}
-HÄR SKA VI HA EN BRA ÖVERSIKTSBILD. FLOWCHART TYP
+Robothanden följer användarens fingerrörelser tills dess att den greppar ett av flera fördefinerade, kända objekt, då den istället verkar för att hålla objektet med en önskad kraft, tills dess att användaren visar att den vill släppa objektet igen genom att öppna sin hand. Nedan visas ett flödesschema för överskådligt beskriva hur robothanden principiellt fungerar.
+\begin{figure}[H]
+\includegraphics[width=90\textwidth]{img/flodesschema}
+\caption{Flödesschema över en tänkt signals väg genom robothanden.}
+\end{figure}
+\begin{enumerate}
+\item Önskat fingerläge ges genom att användaren böjer sitt finger i kontrollhandsken. 
+\item Flexresistor på kontrollhandsken ändrar resistans. 
+\item Den ändrade resistansen avläses av en Arduino Micro enhet på kontrollhandsken som skickar den via bluetooth till en Arduino Mega enhet på robothanden.
+\item Värdet på resistansen omvandlas till PWM-signal som kalibrerats av användaren vid uppstart BLÖBLÖBLÖBLBÖLBÖLBÖLBÖLB FORTSÄTT HÄR!!! 
+\item PWM-signaler matas till aktuatorer som ställer sig i önskad vinkel. 
+\item Feedback från trycksensorer avläses och leder till ett stopp av aktueringen om avläst tryck är högre än fördefinerad gräns.
+\end{enumerate}
 Robothanden kan delas in i tre delsystem som samverkar för att uppfylla handens funktion. Delsystemen är styrhandske, styrsystem och robothand. Användaren har på sig styrhandsken och styrsystemet verkar för att robothanden ska imitera användarens fingerrörelser tills dess att robothanden kommer i kontakt med ett objekt. 
 \section{Robothanden}
 FÖRKLARA FRIHETSGRADER?
@@ -45,7 +57,7 @@ BILD PÅ STAG, BILD PÅ SENA MED HJUL
 Led 1 i samtliga fingrar aktueras via stag, vilket gör att de kan föras fram och tillbaka av respektive servo. För att aktuera Led 2 i samtliga fingrar används en sena. Senan utgörs av en fiskelina dimensionerad för en dragkraft på 330 N. Största dragkraften i senan uppstår då servo arbetar vid maximalt vridmoment och uppgår till 118 N med 12 mm servohorn. För att återföra 
 
 \section{Reglerhandsken}
-För att mata in instruktioner från användaren används en styrhandske som gör styrningen intuitiv. För att mäta hur handsken deformeras används flexsensorer som ändrar resistans beroende på hur mycket de böjs. Skillnaden  
+För att mata in instruktioner från användaren används en styrhandske som gör styrningen intuitiv jämfört än att kontrollera handen via spakar eller knapptryckningar. För att mäta hur handsken deformeras används flexsensorer som ändrar resistans beroende på hur mycket de böjs. Skillnaden  
 
 
 Handsken som används är en vanlig arbetshandske av textil.
