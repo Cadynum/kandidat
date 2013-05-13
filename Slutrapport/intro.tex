@@ -19,6 +19,19 @@ I denna rapport redogörs för utvecklingen av ett system innehållande en robot
 
 För att undvika skador på objekt som robothanden hanterar ska ett bibliotek av objekt kunna implementeras i robothandens mikrokontroller som möjliggör objektidentifiering. Varje objekt har ett fördefinierat högsta tryck som robothanden får utsätta den för. Om operatören försöker greppa hårdare än det fördefinierade trycket ska robothanden reglera detta för att undvika skada. Objektidentifieringen är baserad på igenkänning av objektets storlek genom att, utifrån vinklar på de styrande servomotorerna, beräkna avståndet mellan de tryckbelastade punkterna på robotfingrarna. Genom att implementera denna reglering i robothandens mjukvara istället för till exempel mer avancerad haptisk återkoppling som kräver mekaniska funktioner i handsken hålls kostnaden nere. 
 
+\begin{figure}[H]
+\includegraphics[width=.90\textwidth]{img/flodesschema}
+\caption{Flödesschema över en tänkt signals väg genom robothanden.}
+\end{figure}
+\begin{enumerate}
+\item Önskat fingerläge ges genom att användaren böjer sitt finger i kontrollhandsken. 
+\item Flexresistor på kontrollhandsken ändrar resistans. 
+\item Den ändrade resistansen avläses av en Arduino Micro enhet på kontrollhandsken som skickar den via bluetooth till en Arduino Mega enhet på robothanden.
+\item Värdet på resistansen omvandlas till PWM-signal som kalibrerats av användaren vid uppstart. 
+\item PWM-signaler matas till aktuatorer som ställer sig i önskad vinkel. 
+\item Feedback från trycksensorer avläses och leder till ett stopp av aktueringen om avläst tryck är högre än fördefinerad gräns.
+\end{enumerate}
+Robothanden kan delas in i tre delsystem som samverkar för att uppfylla handens funktion. Delsystemen är styrhandske, styrsystem och robothand. Användaren har på sig styrhandsken och styrsystemet verkar för att robothanden ska imitera användarens fingerrörelser tills dess att robothanden kommer i kontakt med ett objekt. 
 
 \section{Prestanda}
 Efter utförda funktionstester har följande uppgifter verifierats:

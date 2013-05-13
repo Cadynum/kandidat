@@ -1,18 +1,6 @@
 \section{Robothandens principiella funktion}
 Robothanden följer användarens fingerrörelser tills dess att den greppar ett av flera fördefinerade, kända objekt, då den istället verkar för att hålla objektet med en önskad kraft, tills dess att användaren visar att den vill släppa objektet igen genom att öppna sin hand. Nedan visas ett flödesschema för överskådligt beskriva hur robothanden principiellt fungerar.
-\begin{figure}[H]
-\includegraphics[width=.90\textwidth]{img/flodesschema}
-\caption{Flödesschema över en tänkt signals väg genom robothanden.}
-\end{figure}
-\begin{enumerate}
-\item Önskat fingerläge ges genom att användaren böjer sitt finger i kontrollhandsken. 
-\item Flexresistor på kontrollhandsken ändrar resistans. 
-\item Den ändrade resistansen avläses av en Arduino Micro enhet på kontrollhandsken som skickar den via bluetooth till en Arduino Mega enhet på robothanden.
-\item Värdet på resistansen omvandlas till PWM-signal som kalibrerats av användaren vid uppstart. 
-\item PWM-signaler matas till aktuatorer som ställer sig i önskad vinkel. 
-\item Feedback från trycksensorer avläses och leder till ett stopp av aktueringen om avläst tryck är högre än fördefinerad gräns.
-\end{enumerate}
-Robothanden kan delas in i tre delsystem som samverkar för att uppfylla handens funktion. Delsystemen är styrhandske, styrsystem och robothand. Användaren har på sig styrhandsken och styrsystemet verkar för att robothanden ska imitera användarens fingerrörelser tills dess att robothanden kommer i kontakt med ett objekt. 
+
 \section{Robothanden}
 FÖRKLARA FRIHETSGRADER? = Frihetsgrader beskriver hur många oberoende variabler som behövs för att entydigt ange läget för ett system.
 I detta avsnitt presenteras en överblick över de komponenter som utgör den mekaniska handen.  %%Meccano™ använts som grund vilket har både fördelar och nackdelar jämfört med att bygga alla delar från början. Eftersom konstruktionen innehåller flera delar vars inbördes passform påverkar hur väl rörelser fungerar måste tillverkningen av delarna utföras med god noggrannhet. Meccanos standardbyggsats innehåller flera olika standardiserade delar som enkelt kan monteras i flera olika kombinationer.Delarna anses även ha tillräcklig noggrannhet för att slutprodukten ska kunna utföra de uppsatta målen. Eftersom konstruktionen av handen går snabbare med färdiga delar kan mer fokus läggas på den mer resurskrävande elektroniken. Nackdelen är att konstruktionen blir begränsad till att endast kunna tillverkas av tillgängliga komponenter, men detta kringgås med konstruktion av enstaka kritiska komponenter.%%
@@ -55,7 +43,7 @@ Aktuatorer för samtliga leder är Blue Bird BMS-660DMG+HS. Dessa servon använd
 
 \subsection{Kraftöverföring}
 BILD PÅ STAG, BILD PÅ SENA MED HJUL
-Led 1 i samtliga fingrar aktueras via stag, vilket gör att de kan föras fram och tillbaka av respektive servo. För att aktuera Led 2 i samtliga fingrar används en sena. Senan utgörs av en fiskelina dimensionerad för en dragkraft på 330 N. Största dragkraften i senan uppstår då servo arbetar vid maximalt vridmoment och uppgår till 118 N med 12 mm servohorn. För att återföra 
+Led 1 i samtliga fingrar aktueras via stag, vilket gör att de kan föras fram och tillbaka av respektive servo. För att aktuera Led 2 i samtliga fingrar används en sena. Senan utgörs av en fiskelina dimensionerad för en dragkraft på 330 N. Största dragkraften i senan uppstår då servo arbetar vid maximalt vridmoment och uppgår till 118 N med 12 mm servohorn. För att återföra fingret till sitt räta läge används en vridfjäder som sitter runt led 2.
 
 \section{Reglerhandsken}
 För att reglera robothanden intuitivt används en reglerhandske. På handsken sitter flexsensorer som följer användarens hand och ändrar resistans beroende på hur mycket de böjs. Denna resistansförändring använder man som insignal till mikrokontrollen (Läs mer i 2.5)    
