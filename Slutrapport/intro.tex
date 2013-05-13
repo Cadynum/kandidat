@@ -19,6 +19,8 @@ I denna rapport redogörs för utvecklingen av ett system innehållande en robot
 
 För att undvika skador på objekt som robothanden hanterar ska ett bibliotek av objekt kunna implementeras i robothandens mikrokontroller som möjliggör objektidentifiering. Varje objekt har ett fördefinierat högsta tryck som robothanden får utsätta den för. Om operatören försöker greppa hårdare än det fördefinierade trycket ska robothanden reglera detta för att undvika skada. Objektidentifieringen är baserad på igenkänning av objektets storlek genom att, utifrån vinklar på de styrande servomotorerna, beräkna avståndet mellan de tryckbelastade punkterna på robotfingrarna. Genom att implementera denna reglering i robothandens mjukvara istället för till exempel mer avancerad haptisk återkoppling som kräver mekaniska funktioner i handsken hålls kostnaden nere. 
 
+Robothanden följer användarens fingerrörelser tills dess att den greppar ett av flera fördefinerade, kända objekt, då den istället verkar för att hålla objektet med en önskad kraft, tills dess att användaren visar att den vill släppa objektet igen genom att öppna sin hand. Nedan visas ett flödesschema för överskådligt beskriva hur robothanden principiellt fungerar.
+
 \begin{figure}[H]
 \includegraphics[width=.90\textwidth]{img/flodesschema}
 \caption{Flödesschema över en tänkt signals väg genom robothanden.}
