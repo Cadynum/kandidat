@@ -17,7 +17,7 @@ Bild \ref{fig:servo2} nedan visar hur servot är kopplat via ett stag till tumme
 
 \begin{figure}[H]
 \label{servo2}
-\includegraphics[width=0.4\textwidth]{img/servo/servo1}
+\includegraphics[width=0.6\textwidth]{img/servo/servo1}
 \caption{Nödvändiga beteckningar för beräkningar till servo 1}
 \end{figure}
 
@@ -47,14 +47,39 @@ c=\unit[58]{mm} \\
 
 Avståndet mellan punkterna $P_{2}$ och $P_{1}$ är  alltid c vilket är längden på staget som sammankopplar de båda punkterna. Detta utnyttjas för att upprätta ett itterations villkor. Ett gissat värde på alfa ($\alpha_{guess}$) ger koordinaterna för punkt $P_{2}$ vilket ger ett avstånd mha avståndsformeln (se itterationsschemat nedan). På så sät kan ett specifikt $\alpha$ fås för varje servo vinkel $\phi$
 
+
+
 \begin{flushleft}
 
  (1)   $\phi,\alpha_{guess}$ $\rightarrow$ \\ 
   (2)  $P_{1}=[r_{1}\cos(\phi),r_{1}\sin(\phi)]$ $\rightarrow$
   \\(3) \thinspace $P_{2}=[P_{3x}-r_{2}\sin(\alpha_{guess}),P_{3y}+r_{2}\cos(\alpha_{guess})]$ $\rightarrow$ \\
-  (4)\ $c_{g}=\sqrt[]{(P_{1x}-P_{2x})^2+(P_{1y}-P_{2y})^2}$ $\rightarrow$\\(5) Kolla om: $|c-c_{g}|>tol$ \\ (6) Om (5) stämmer $\rightarrow$ $\alpha_{guess}=\alpha_{guess}+value$ \ börja om från punkt (2) \\ \medspace annars \medskip $\rightarrow$ det approximativa $\alpha$-värdet har hittats
+  (4)\ $c_{g}=\sqrt[]{(P_{1x}-P_{2x})^2+(P_{1y}-P_{2y})^2}$ $\rightarrow$\\(5) Kolla om: $|c-c_{g}|>tol$ \\ (6) Om (5) stämmer $\rightarrow$ $\alpha_{guess}=\alpha_{guess}+value$ \ , \ börja om från punkt (3) \\ annars $\rightarrow$ det approximativa $\alpha$-värdet har hittats
 \end{flushleft}
 
+Med hjälp av matlab så har ovanstående itterationsshema genererat ett $\alpha$-värde för varje servoläge ($\phi$). Detta utnyttjades sedan med minsta kvadratmetoden för att ta fram ekvation \eqref{eq:servo1} från dessa värden. 
+
+\begin{equation}
+\label{eq:servo1}
+\alpha= A\phi^4+B\phi^3+C\phi^2+D\phi+E
+\end{equation}
+
+\begin{table}[H]
+    \begin{tabular}{|c|l|}
+        \hline
+        A      & 0.000005730076566  \\ \hline
+        B      & -0.000776743538556  \\ \hline
+        C      & 0.050190358704910    \\ \hline
+        D      & -0.929487032616965    \\ \hline
+        E      & 5.269186999542453      \\ \hline
+    \end{tabular}
+\end{table}
 
 
+\begin{figure}[H]
+\label{servo3}
+\includegraphics[width=0.7\textwidth]{img/servo/servo1_alfa}
+\caption{$\alpha$-vinkeln som en funktion av servovinkeln $\phi$}
+\end{figure}
 
+\subsection{Beräkningar för servo 2}
