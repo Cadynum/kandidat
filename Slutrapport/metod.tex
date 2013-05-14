@@ -14,11 +14,7 @@ Handens utformning har utgått från hur fingrarna önskas vara positionerade re
 \includegraphics[width=0.90\textwidth]{img/provagrepp}
 \caption{Verifiering av relativ fingerpositionering utefter greppförmåga.}
 \end{figure}
-I figuren ovan syns de utprovade greppen, som i sin tur kan identifieras i Cutkoskys grepphierarki nedan som; fr.v. Heavy wrap; Small Diameter (2), Large Diameter (1), Prismatic Thumb-Index Finger (9) och Circular Disk (12). (Se Appendix LÖK CUTKOSKY) 
-\begin{figure}[H]
-\includegraphics[width=1\textwidth]{img/cutkoskys_handmodeller}
-\caption{Cutkoskys grepphierarki.}
-\end{figure}
+I figuren ovan syns de utprovade greppen, som i sin tur kan identifieras i Cutkoskys grepphierarki. %%Se \ref{cutkosky} 
 Då handen konstruerats för att kunna hantera både stora och små objekt som kräver  både greppstyrka och finmotorik är den mycket flexibel vilket gör att den säkert kan greppa och hantera objekt av olika storlekar och tyngd.
 
 
@@ -82,16 +78,11 @@ För att reglera robothanden används en reglerhandske som användaren har på s
 
 Handsken är gjord av textil och flexsensorerna är insydda i små påsar som underlättar montering av sensorerna på handsken. (Se figur)
 (Bild på handsken)  
-
+\section{Trådlös kommunikation}
 \section{Signalbehandling}
 \section{Mikrokontroller}
 \label{sec:mikro}
-De använda microkontrollerna är Arduino micro och Arduino Due.
-\section{Trådlös kommunikation}
-För att möjliggöra kommunikation trådlöst mellan kontrollhandsken och robothanden
-används två prototyp-versioner av Bluetooth Mate Silver. Enheten är godkänd för Bluetooth klass 2, vilket bl a innebär låg strömförbrukning (genomsnittligt 2.5mW vid aktiv
-användning) och överföringar på upp till 10m. Bluetoothenheten har en överföringskapacitet på 115200bps, inkluderat metadata.
-
+info om våra microcontroller. Bluetooth moduelerna och hur det programmerats samt hur det fungerar.
 \section{Elektriska kretsar}
 \begin{figure}[H]
 \includegraphics[height=0.5\textheight]{img/schemahandske}
@@ -103,7 +94,7 @@ användning) och överföringar på upp till 10m. Bluetoothenheten har en överf
 \end{figure}
 
 
-
+Figur \ref{} visar hur styrhandsken är kopplad. Komponenterna är lödda på ett experimentkort.
 
 \section{Algoritmer}
 Här presenteras de styralgortimter som bestämmer hur handen beter sig när den följer användarens input samt identifierar och greppar objekt. 

@@ -1,6 +1,6 @@
 \section{Rymdekvationer}
 
-Som underlag till övriga beräkningar behövs en mattematisk modell över handens möjliga rörelsemönster. Bland annat behövs dessa beräkningar i ett senare stadie för att koppla önskad handposition till en motsvarande servovinkel.  Handens position bestäms av två inmatningsvariabler i form av vinklarna $\alpha$ och $\beta$. $\alpha$ utgår från y-axeln i ett koordinatsystem med origo i punkt P1 (se figur A.4.), medens $\beta$ utgår ifrån y-axeln i ett koordinatsystem med origo i punkt P3. Med andra ord kommer $\beta$ vinken att vara beroende av $\alpha$ då dess koordinat-system är kopplat till denna invariabel. Initialt behövs de vinklar som bestämmer samtliga punkters position beräknas vilket  görs med hjälp av ekvation \eqref{eq:rymdekv1} -- \eqref{eq:rymdekv9}. Ekvation \eqref{eq:rymdekv3} --\eqref{eq:rymdekv6} har tagits fram med hjäp av applicering av sinussattsen, medens \eqref{eq:rymdekv8} baseras på vinkelsummeringsregeln för en triangel. 
+Som underlag till övriga beräkningar behövs en mattematisk modell över handens möjliga rörelsemönster. Bland annat behövs dessa beräkningar för att koppla önskad handposition till en motsvarande servovinkel.  Fingrets position bestäms av två inmatningsvariabler i form av vinklarna $\alpha$ och $\beta$. $\alpha$ utgår från y-axeln i ett koordinatsystem med origo i punkt P1 (se figur A.4.), medens $\beta$ utgår ifrån y-axeln i ett koordinatsystem med origo i punkt P3. Med andra ord kommer $\beta$ vinken att vara beroende av $\alpha$ då dess koordinat-system är kopplat till denna invariabel. Initialt behövs de vinklar som bestämmer samtliga punkters position beräknas vilket  görs med hjälp av ekvation \eqref{eq:rymdekv1} -- \eqref{eq:rymdekv9}. Ekvation \eqref{eq:rymdekv3} --\eqref{eq:rymdekv6} har tagits fram med hjäp av applicering av sinussattsen, medens \eqref{eq:rymdekv8} baseras på vinkelsummeringsregeln för en triangel. 
 
 \begin{minipage}[t]{0.5\textwidth}
 \begin{figure}[H]
@@ -99,10 +99,10 @@ När vinkelitterationen genomförts kan koordinaterna för samtliga punkter hitt
     \begin{tabular}{|c|l|l|}
         \hline
         Punkt  & X-Koordinat                          & Y-Koordinat                          \\ \hline
-        1      & 0                                    & 0                                    \\ \hline
-        2      & $(L_{o}-a)\sin(\alpha)$              & $(L_{o}-a)\cos(\alpha)$              \\ \hline
-        3      & $L_{o}\sin(\alpha)$                  & $L_{o}\cos(\alpha)$                  \\ \hline
-        5      & $L_{o}\sin(\alpha)+L_{2}\sin(\beta)$ & $L_{o}\cos(\alpha)+L_{2}\cos(\beta)$ \\
+        $P_{1}$      & 0                                    & 0                                    \\ \hline
+        $P_{2}$      & $(L_{o}-a)\sin(\alpha)$              & $(L_{o}-a)\cos(\alpha)$              \\ \hline
+        $P_{3}$      & $L_{o}\sin(\alpha)$                  & $L_{o}\cos(\alpha)$                  \\ \hline
+        $P_{5}$      & $L_{o}\sin(\alpha)+L_{2}\sin(\beta)$ & $L_{o}\cos(\alpha)+L_{2}\cos(\beta)$ \\
         \hline
     \end{tabular}
 \end{table}
