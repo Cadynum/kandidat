@@ -15,9 +15,9 @@ Stora hinder i utvecklingen av robothänder generellt har varit de höga kostnad
 %Föregående stycke är inte klart /Chris
 
 \section{Tekniskt bidrag}% "Contributions" -- Syfte.
-I denna rapport redogörs för utvecklingen av ett system innehållande en robothand med tre fingrar som fjärrstyrs från en styrhandske. Robothanden designas liknande en mänsklig hand i sina rörelser för att möjliggöra att styrningen blir intuitiv. För att fingrarna ska röra sig flexibelt krävs det att den mekaniska konstruktionen tillåter en rörelse med flera frihetsgrader. För att uppnå detta är handens fingrar konstruerade att aktueras både via genomlöpande senor och stag. Vidare krävs stabila styrsignaler från styrhandsken till robothanden som utnyttjas för att åstadkomma god åtföljning. Detta uppnås genom filtrering (Vilket typ av filter?) och programmering där ändrad fingervinkel hos användaren omvandlas till en motsvarande servovinkel. För att användare med olika handstorlek ska uppnå samma resultat är det nödvändigt att kalibrera handsken för varje ny användare. Kalibreringen sker med hjälp av två kn
+I denna rapport redogörs för utvecklingen av ett system innehållande en robothand med tre fingrar som fjärrstyrs från en styrhandske. Robothanden designas liknande en mänsklig hand i sina rörelser för att möjliggöra att styrningen blir intuitiv. För att fingrarna ska röra sig flexibelt krävs det att den mekaniska konstruktionen tillåter en rörelse med flera frihetsgrader. För att uppnå detta är handens fingrar konstruerade att aktueras både via genomlöpande senor och stag. Vidare krävs stabila styrsignaler från styrhandsken till robothanden som utnyttjas för att åstadkomma god åtföljning. Detta uppnås genom filtrering (Vilket typ av filter?) och programmering där ändrad fingervinkel hos användaren omvandlas till en motsvarande servovinkel. För att användare med olika handstorlek ska uppnå samma resultat är det nödvändigt att kalibrera handsken för varje ny användare. Kalibreringenen sker med hjälp av två knappar som sitter på handskens kretskort.
 
-För att undvika skador på objekt som robothanden hanterar ska ett bibliotek av objekt kunna implementeras i robothandens mikrokontroller som möjliggör objektidentifiering. Varje objekt har ett fördefinierat högsta tryck som robothanden får utsätta den för. Om operatören försöker greppa hårdare än det fördefinierade trycket ska robothanden reglera detta för att undvika skada. Objektidentifieringen är baserad på igenkänning av objektets storlek genom att, utifrån vinklar på de styrande servomotorerna, beräkna avståndet mellan de tryckbelastade punkterna på robotfingrarna. Genom att implementera denna reglering i robothandens mjukvara istället för till exempel mer avancerad haptisk återkoppling som kräver mekaniska funktioner i handsken hålls kostnaden nere. 
+För att undvika skador på objekt som robothanden hanterar ska ett bibliotek av objekt kunna implementeras i robothandens mikrokontroller som möjliggör objektidentifiering. Varje objekt har ett fördefinierat högsta tryck som robothanden får utsätta den för. Om operatören försöker greppa hårdare än det fördefinierade trycket ska robothanden reglera detta för att undvika skada. Objektidentifieringen är baserad på igenkänning av objektets storlek genom att, utifrån vinklar på de styrande servomotorerna, beräkna avståndet mellan de tryckbelastade punkterna på robotfingrarna. 
 
 Robothanden följer användarens fingerrörelser tills dess att den greppar ett av flera fördefinerade, kända objekt, då den istället verkar för att hålla objektet med en önskad kraft, tills dess att användaren visar att den vill släppa objektet igen genom att öppna sin hand. Nedan visas ett flödesschema för överskådligt beskriva hur robothanden principiellt fungerar.
 
@@ -55,7 +55,7 @@ Efter utförda funktionstester har följande uppgifter verifierats:
 \section{Rapportens Upplägg}
 '' "Report outline" describes very short what is presented in each of the following chapters. From this outline it should be clear which chapters give a theoretical backgrond, which chapter describe tools you use, which describe your contribution, and which describes your results.''-Jonas
 
-Rapporten är upplagd som följe
+Rapporten är upplagd som följer
 I kapitel 2 ges en beskrivning av systemets komponenter och teorin bakom valet av just dem. I nästkommande kapitel behandlas styrhandsken med mikrokontroller och elektriska kretsar i detalj. Slutligen i kapitel hmm redogörs vilka algoritmer som utvecklats för att uppnå styrning och reglering.
 
 I kapitel hmm finns resultat... efter dessa följer disskusion om bla bla och bla slutligen en slutsats där...
@@ -68,8 +68,7 @@ Kapitel 4 och framåt är projektinriktat och fokuserar på hur projektet utför
 %\section{Avgränsningar} Detta ska smältas ihop med inledning
 %Budgeten för prototypen är 5000 kr vilket begränsar komplexiteten och antal frihetsgrader. Robothanden har därför endast 2 fingrar och en tumme med sammanlagt åtta frihetsgrader varav två är tvångsstyrda. Skelettet till robothanden har byggts i meccano (ref till förklaring av meccano) vilket begränsar designen till standardiserade mått och begränsar stabiliteten i kontruktionen. Robothanden är försedd med tre trycksensorer vilket avsevärt begränsar antal grepp som möjliggör objektidentifiering.
 
-%\section{Metod} Detta skulle bort enligt Victor..
-%Genom litteraturstudier och studering av den egna handen har principen för den mekaniska designen framtagits. Vidareutveckling av detta skedde främst genom prövning, CAD-modellering och kraft- och momentberäkningar. Modellering av robothandens rörelse (rymdekvationer) har gjorts i MATLAB för att sedan förenklas och översättas till C++ och användas i mikrokontrollern Arduino... 
+ 
  
 
 
