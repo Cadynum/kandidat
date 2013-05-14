@@ -3,42 +3,49 @@
 
 \section{Robothanden}
 FÖRKLARA FRIHETSGRADER? = Frihetsgrader beskriver hur många oberoende variabler som behövs för att entydigt ange läget för ett system.
-I detta avsnitt presenteras en överblick över de komponenter som utgör den mekaniska handen.  %%Meccano™ använts som grund vilket har både fördelar och nackdelar jämfört med att bygga alla delar från början. Eftersom konstruktionen innehåller flera delar vars inbördes passform påverkar hur väl rörelser fungerar måste tillverkningen av delarna utföras med god noggrannhet. Meccanos standardbyggsats innehåller flera olika standardiserade delar som enkelt kan monteras i flera olika kombinationer.Delarna anses även ha tillräcklig noggrannhet för att slutprodukten ska kunna utföra de uppsatta målen. Eftersom konstruktionen av handen går snabbare med färdiga delar kan mer fokus läggas på den mer resurskrävande elektroniken. Nackdelen är att konstruktionen blir begränsad till att endast kunna tillverkas av tillgängliga komponenter, men detta kringgås med konstruktion av enstaka kritiska komponenter.%%
-Handen består av två fingrar och en tumme som beskrivs utförligare i sina respektive avsnitt. På fingrar och tumme sitter det även plastskal som har som uppgift att skapa bättre greppytor. Handen har tillverkats av Meccano för att underlätta tillverkning. 
+I detta avsnitt presenteras en överblick över de komponenter som utgör den mekaniska handen. Handens mekaniska delar utgörs till största delen av standardiserade komponenter från en Meccano™ byggsats. 
+\begin{figure}[H]
 
-
-Handens utformning är en funktion av hur fingrarna önskas vara positionerade relativt varandra och detta utprovades i CAD-miljö utefter förmågan att utföra ett antal önskade grepp. Handen har även tillräckligt stor yta för att möjliggöra integrering av aktuatorer, kontrollenhet och strömförsörjning i en enda enhet. I figuren ovan syns från vänster till höger syns de utprovade greppen.
+\caption{HÄR SKA VARA ETT FOTO PÅ ROBOTHANDEN som visar det texten nedan beskriver}
+\end{figure}
+Handen består av två fingrar och en tumme som beskrivs utförligare i sina respektive avsnitt. På fingrar och tumme sitter det även plastskal som har som uppgift att skapa bättre greppytor. Handen har aktuatorer, microkontroller, bluetooth och strömförsörjning integrerat i en enda enhet.\\
+Handens utformning har utgått från hur fingrarna önskas vara positionerade relativt varandra och detta verifierades i CAD-miljö utefter förmågan att utföra ett antal grepp ur Cutkoskys grepphierarki.
+\begin{figure}[H]
+\includegraphics[width=0.90\textwidth]{img/provagrepp}
+\caption{Verifiering av relativ fingerpositionering utefter greppförmåga.}
+\end{figure}
+I figuren ovan syns de utprovade greppen, som i sin tur kan identifieras i Cutkoskys grepphierarki nedan som; fr.v. Heavy wrap; Small Diameter (2), Large Diameter (1), Prismatic Thumb-Index Finger (9) och Circular Disk (12). (Se Appendix LÖK CUTKOSKY) 
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{img/cutkoskys_handmodeller}
+\caption{Cutkoskys grepphierarki.}
+\end{figure}
+Då handen konstruerats för att kunna hantera både stora och små objekt som kräver  både greppstyrka och finmotorik är den mycket flexibel vilket gör att den säkert kan greppa och hantera objekt av olika storlekar och tyngd.
 
 
 
 \subsection{Fingrar och tumme}
-Med utgångspunkten mänsklig motorik designades handens två identiska fingrar för att få ett människolikt rörelsemönster.
+Med utgångspunkten mänsklig motorik designades handens två identiska fingrar för att få ett människolikt rörelsemönster vilket underlättar för användaren.
 
 
 \begin{figure}[H]
-\includegraphics[height=0.35\textheight]{img/fingerbild}
+\includegraphics[height=0.15\textheight]{img/fingerbild}
 \caption{Översiktsbild fingerdesign.}
 \end{figure}
 
-Fingrarna har tre leder varav Led 1 och Led 2 är separat kontrollerbara. Led 3 är via ett stag tvångsstyrd av Led 2 för att imitera hur ett mänskligt finger beter sig när handen sluts. Jämfört med det mänskliga fingret saknas en frihetsgrad i Led 1 för vridning av fingret i sidled. En fördel med två separat kontrollerbara leder är att fingrarnas rörelseomfång och funktionella förmåga utökas.
+Fingrarna har tre leder varav Led 1 och Led 2 är separat kontrollerbara. Led 3 är via ett stag tvångsstyrd av Led 2 för att imitera hur ett mänskligt finger beter sig när handen sluts. Jämfört med det mänskliga fingret saknas en frihetsgrad i Led 1 för vridning av fingret i sidled.\\En fördel med två separat kontrollerbara leder är att fingrarnas rörelseomfång och funktionella förmåga utökas.
+\begin{figure}[H]
+\includegraphics[width=0.75\textwidth]{img/1vs2frihets}
+\caption{En och två kontrollerbara frihetsgrader.}
+\end{figure}
+
+Med två frihetsgrader finns ett fält av möjliga positioner för fingertoppen att befinna sig i för varje läge handen står i, vilket minskar behovet av att flytta hela handen vid små justeringar av grepp.
 
 \begin{figure}[H]
 Bild tumme
 
 \caption{Beskrivning}
-\end{figure} Tummen har endast två separata frihetsgrader och sitter fast positionerad i handen för att kunna utföra ett pincettgrepp med finger 1. Detta är tillräckligt för att uppnå målen, men jämfört med den mänskliga tummen som kan möta samtliga fingertoppar är detta ett stelt utförande.
-%\begin{minipage}[t]{0.5\textwidth}
-%\begin{figure}[H]
-%\includegraphics[width=0.57\textwidth]{img/rorelse1}
-%\caption{En kontrollerbar frihetsgrad.}
-%\end{figure}
-%\end{minipage}
-%\begin{minipage}[t]{0.5\textwidth}
-%\begin{figure}[H]
-%\includegraphics[width=0.5\textwidth]{img/rorelseomfang}
-%\caption{Två kontrollerbara frihetsgrader.}
-%\end{figure}
-%\end{minipage}
+\end{figure} Tummen har endast två separata frihetsgrader och sitter fast positionerad i handen för att kunna utföra ett pincettgrepp med finger 1. Detta är tillräckligt för möjliggöra ett flertal olika grepp, men jämfört med den mänskliga tummen som kan möta samtliga fingertoppar är detta ett stelt utförande.
+
 
 \subsection{Fingertoppar och sensorer}
 BILD PÅ SENSORER, FINGERTOPPAR MED GUMMI och sensor PÅ(sprängskiss) 
