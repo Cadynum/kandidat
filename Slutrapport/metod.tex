@@ -75,18 +75,23 @@ För att reglera robothanden används en reglerhandske som användaren har på s
 
 Handsken är gjord av textil och flexsensorerna är insydda i små påsar som underlättar montering av sensorerna på handsken. (Se figur)
 (Bild på handsken)  
-\section{Trådlös kommunikation}
+
 \section{Signalbehandling}
 \section{Mikrokontroller}
 \label{sec:mikro}
-info om våra microcontroller. Bluetooth moduelerna och hur det programmerats samt hur det fungerar.
+De använda microkontrollerna är Arduino micro och Arduino Due.
+\section{Trådlös kommunikation}
+För att möjliggöra kommunikation trådlöst mellan kontrollhandsken och robothanden
+används två prototyp-versioner av Bluetooth Mate Silver. Enheten är godkänd för Bluetooth klass 2, vilket bl a innebär låg strömförbrukning (genomsnittligt 2.5mW vid aktiv
+användning) och överföringar på upp till 10m. Bluetoothenheten har en överföringskapacitet på 115200bps, inkluderat metadata.
+
 \section{Elektriska kretsar}
 \begin{figure}[H]
 \includegraphics[height=0.5\textheight]{img/schemahandske}
 \caption{Kopplingsschema för styr/regler-handsken.}
 \end{figure}
 
-Dedssa kretsar har byggts och lötts på kretskort- 
+
 
 \section{Algoritmer}
 Här presenteras de styralgortimter som bestämmer hur handen beter sig när den följer användarens input samt identifierar och greppar objekt. 
