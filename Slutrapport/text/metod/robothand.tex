@@ -1,7 +1,4 @@
-
-
-
-\section{Robothanden}
+\section{Robothand}
 FÖRKLARA FRIHETSGRADER? = Frihetsgrader beskriver hur många oberoende variabler som behövs för att entydigt ange läget för ett system.
 I detta avsnitt presenteras en överblick över de komponenter som utgör den mekaniska handen. Handens mekaniska delar utgörs till största delen av standardiserade komponenter från en Meccano™ byggsats. 
 \begin{figure}[H]
@@ -68,44 +65,3 @@ BILD PÅ STAG, BILD PÅ SENA MED HJUL
 \caption{Beskrivning}
 \end{figure}
 Led 1 i samtliga fingrar aktueras via stag, vilket gör att de kan föras fram och tillbaka av respektive servo. För att aktuera Led 2 i samtliga fingrar används en sena. Senan utgörs av en fiskelina dimensionerad för en dragkraft på 330 N. Största dragkraften i senan uppstår då servo arbetar vid maximalt vridmoment och uppgår till 118 N med 12 mm servohorn. För att återföra fingret till sitt räta läge används en vridfjäder som sitter runt led 2.
-
-\section{Reglerhandsken}
-\begin{figure}[H]
-\includegraphics[height=0.5\textheight]{img/kontrollhandske}
-\caption{Beskrivning}
-\end{figure}
-För att reglera robothanden används en reglerhandske som användaren har på sin hand, detta ger en intuitivt reglering (se figur). På tumme, pekfinger och långfinger på handsken sitter två flexsensorer var som följer användarens hand och ändrar resistans beroende på hur mycket de böjs. Denna resistansförändring använder man som insignal till mikrokontrollen som sitter på reglerhandsken, som i sin tur skickar styrsignaler till mikrokontrollen på robothanden. Se \ref{sec:mikro}. 
-
-Handsken är gjord av textil och flexsensorerna är insydda i små påsar som underlättar montering av sensorerna på handsken. (Se figur)
-(Bild på handsken)  
-\section{Trådlös kommunikation}
-\section{Signalbehandling}
-\section{Mikrokontroller}
-\label{sec:mikro}
-info om våra microcontroller. Bluetooth moduelerna och hur det programmerats samt hur det fungerar.
-\section{Elektriska kretsar}
-\begin{figure}[H]
-\includegraphics[height=0.5\textheight]{img/schemahandske}
-\caption{Kopplingsschema för styr/regler-handsken.}
-\end{figure}
-\begin{figure}[H]
-\includegraphics[height=0.5\textheight]{img/schemahand}
-\caption{Kopplingsschema för robothanden.}
-\end{figure}
-
-
-Figur \ref{} visar hur styrhandsken är kopplad. Komponenterna är lödda på ett experimentkort.
-
-\section{Algoritmer}
-Här presenteras de styralgortimter som bestämmer hur handen beter sig när den följer användarens input samt identifierar och greppar objekt. 
-\subsection{Objektidentifiering}
-\begin{figure}[H]
-EN BILD SOM FÖRKLARAR DETTA, SAMT VILKA OBJEKT VI VALT ATT identifierar och hur vi gör det...
-\caption{Beskrivning}
-\end{figure}
-Antaganden: Servona står i önskat läge, det vill säga tidsfördröjningen som uppstår då servona skall vrida sig från godtycklig position till den önskade antags vara så liten vid normalt användande att den kan försummas. Då ingen mätning av servonas verkliga position görs, är den enda informationen om fingrarnas lägen det önskade servoläget. 
-
-FIXA FLÖDESSSCHEMA OCH ETT ARDUINO PROGRAM Känner av tryck (över visst gränsvärde) på tumme och motstående finger->, lagrar användarens input läge då detta inträffar ( för att när användaren går utanför detta igen (öppnar sin hand) så skall handen återgår till att följa användaren) -> beräknar avståndet mellan sensorerna-> checkar av avståndet mot en lista av fördefinerade objekt som innehåller , storlek och önskat trycksensorvärde med en +/-tolerans för att inte handen ska stå och flippa som en tok för att uppnå EXAKT rätt värde-> TADAA!!-> när användaren öppnar sina fingrar utanför "kontaktläget" följer handen efter igen...
-Mer teksti
-
-

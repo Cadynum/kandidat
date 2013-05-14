@@ -1,4 +1,4 @@
-\documentclass[a4paper, 11pt]{scrreprt}
+\documentclass{scrreprt}
 \include{texpaket}
 
 
@@ -7,32 +7,15 @@
 
 
 \begin{document}
+\maketitle
+\tableofcontents
 
-
-\input{samman}
-\chapter{Inledning}
-
-\input{intro}
-
-\chapter{Metod och material}
-I detta avsnitt kommer den konstruerade robothanden och dess delfunktioner att presenteras. Först presenteras en systemöverblick på funktionell nivå och därefter presenteras ingående komponenter.
-\input{metod}
-
-
-
-\chapter{Projektdel}
-Följande avsnitt beskriver hur projektet  utfördes. Här beskrivs projektets syfte, avgränsningar och mål. 
-\input{projectdel}
+\include{text/sammanfattning}
+\include{text/inledning/inledning}
+\include{text/metod/metod}
+\include{text/projektdel/projektdel}
 
 \appendix
-\chapter{Appendix}
-\input{berakningar}
-\input{cutkoskyshandmodeller}
-\input{rymdekv}
-\input{servoberakningar}
-\input{resurser}
-
-
-
+\include{text/appendix/appendix}
 
 \end{document}
