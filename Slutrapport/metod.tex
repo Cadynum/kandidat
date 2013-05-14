@@ -37,8 +37,7 @@ Fingrarna har tre leder varav Led 1 och Led 2 är separat kontrollerbara. Led 3 
 Med två frihetsgrader finns ett fält av möjliga positioner för fingertoppen att befinna sig i för varje läge handen står i, vilket minskar behovet av att flytta hela handen vid små justeringar av grepp.
 
 \begin{figure}[H]
-Bild tumme
-
+\includegraphics[height=0.5\textheight]{img/tumme}
 \caption{Beskrivning}
 \end{figure} Tummen har endast två separata frihetsgrader och sitter fast positionerad i handen för att kunna utföra ett pincettgrepp med finger 1. Detta är tillräckligt för möjliggöra ett flertal olika grepp, men jämfört med den mänskliga tummen som kan möta samtliga fingertoppar är detta ett stelt utförande.
 
@@ -62,11 +61,14 @@ Total har handen åtta frihetsgrader varav sex är separat aktuerbara. I detta a
 Aktuatorer för samtliga leder är Blue Bird BMS-660DMG+HS. Se figur~\ref{fig:servo}. Dessa servon används för att de uppfyllde kraven på vridmoment med god marginal (se APPENDIX A.HIYTF för dimensionerande beräkningar). Vid en matningsspänningen på 6 Volt har servot ett maximalt vridmoment på 1.42 Nm och en högsta rotationshastighet på 6.16 rad/s vid obelastat läge. Servona har ett totalt rörelseomfång på 120 grader vilket är standard för hobbyservos. Servona regleras via PWM-signaler och har en intern positionsreglering, detta gör att servona alltid arbetar för att nå det önskade läget och återgår till detta läge efter en eventuell störning.
 
 \subsection{Kraftöverföring}
-\begin{figure}[H]
-BILD PÅ STAG, BILD PÅ SENA MED HJUL
 
+\begin{figure}[H]
+\includegraphics[height=0.5\textheight]{img/servosena}
 \caption{Beskrivning}
 \end{figure}
+BILD PÅ STAG, BILD PÅ SENA MED HJUL
+
+
 Led 1 i samtliga fingrar aktueras via stag, vilket gör att de kan föras fram och tillbaka av respektive servo. För att aktuera Led 2 i samtliga fingrar används en sena. Senan utgörs av en fiskelina dimensionerad för en dragkraft på 330 N. Största dragkraften i senan uppstår då servo arbetar vid maximalt vridmoment och uppgår till 118 N med 12 mm servohorn. För att återföra fingret till sitt räta läge används en vridfjäder som sitter runt led 2.
 
 \section{Reglerhandsken}
