@@ -30,7 +30,7 @@ Med utgångspunkten mänsklig motorik designades handens två identiska fingrar 
 
 Fingrarna har tre leder varav Led 1 och Led 2 är separat kontrollerbara. Led 3 är via ett stag tvångsstyrd av Led 2 för att imitera hur ett mänskligt finger beter sig när handen sluts. Jämfört med det mänskliga fingret saknas en frihetsgrad i Led 1 för vridning av fingret i sidled.\\En fördel med två separat kontrollerbara leder är att fingrarnas rörelseomfång och funktionella förmåga utökas.
 \begin{figure}[H]
-\includegraphics[width=0.75\textwidth]{img/1vs2frihets}
+\includegraphics[width=0.50\textwidth]{img/1vs2frihets}
 \caption{En och två kontrollerbara frihetsgrader.}
 \end{figure}
 
@@ -50,7 +50,7 @@ X
 \label{fig:sensor}
 \caption{Beskrivning}
 \end{figure}
-För att reglera hur hårt man trycker sitter det tre trycksensorer längst ut på varje fingertopp. Se \ref{fig:sensor}. Fingertopparna är formade för att ge ett bra pincettgrepp där sensorerna registrerar hur hårt objektet greppas. (Fingertopparna är utskriva i plast med en 3D-skrivare?) Sensorerna är av modell FSR-400 och kan registrera normaltryck i spannet 0.11-110 MPa. Trycksensorn ändrar resistans vid kompression och ett värde avläses i mikrokontrollen för reglering, där jämförs värdet med det kalibrerade värden från tester ( SE APP KALIBRERING AV SENSORER) för att säkerställa att handen griper med rätt tryck(KRAFT??). Över sensorn sitter ett 3 mm tjockt lager av syntetiskt gummi för att skydda sensorns samt ge större friktion vid hantering av objekt. Nedre delen av fingertoppen fungerar som stöd vid grepp men där mäts inte kontakttrycket. 
+För att insamla information om hur hårt handen påverkar objekt som hanteras sitter det trycksensorer längst ut på varje fingertopp. Se \ref{fig:sensor}. Fingertopparna är formade för att ge ett bra pincettgrepp där sensorerna registrerar hur hårt objektet greppas. (Fingertopparna är utskriva i plast med en 3D-skrivare?) Sensorerna är av modell FSR-400 och kan registrera normaltryck i spannet 0.11-110 MPa. Trycksensorn ändrar resistans vid kompression och ett värde avläses i mikrokontrollen för reglering, där jämförs värdet med det kalibrerade värden från tester ( SE APP KALIBRERING AV SENSORER) för att säkerställa att handen griper med rätt tryck(KRAFT??). Över sensorn sitter ett 3 mm tjockt lager av syntetiskt gummi för att skydda sensorns samt ge större friktion vid hantering av objekt. Nedre delen av fingertoppen fungerar som stöd vid grepp men där mäts inte kontakttrycket. 
 \section{Aktuering}
 Total har handen åtta frihetsgrader varav sex är separat aktuerbara. I detta avsnitt presenteras aktuatorer och kraftöverföring.
 \subsection{Servon}
