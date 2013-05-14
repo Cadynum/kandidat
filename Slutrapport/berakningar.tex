@@ -1,0 +1,58 @@
+\section{Dimensioneringsberäkningar}
+För att kunna dimensionera servona och få en uppfattning om handens styrka och snabbhet behövdes de krafter som påverkar handen räknas ut. Två greppfall har undersökts och även huruvida tröghetsmomentet behöver beaktas. 
+
+\paragraph{Tröghetsmoment}
+
+En uppskattning av tröghetsmomentet räknas fram för att se om den kommer påverka val av servomotor. För att säkerställa kravet att handen kan gå från öppet till stängt läge på mindre än en sekund beräknades momentet som krävs i led 1 för att röra fingret från läge 1 till läge 2 enligt figur 4.4, på en sekund. I beräkningen betraktas fingret som ett stelt rätblock som roterar kring z-axeln. Tröghetsmomentet blir nämligen mindre då led 2 och 3 böjs, genom att bortse från denna böjning fås en säkerhetsmarginal.
+ 
+\begin{figure}[H]
+\includegraphics[width=0.5\textwidth]{img/troghetsmoment}
+\caption{Beräkning av tröghetsmoment.}
+\end{figure}
+
+$$ a=0.150\unit{m}$$ $$ b=0.013 \unit{m}$$ $$ m=0.100\unit{kg} $$
+$$ I_x=\frac{1}{12}\cdot m\cdot a^2+\frac{1}{3}\cdot m\cdot b^2 =1.9313\cdot 10^{-4}$$
+$$\dot{\omega}=\frac{\pi}{2}/s^2$$
+$$ I_x\cdot \dot{\omega}=M_1 $$
+
+Med insatta värden uppgår momentet $M_1$ till $0,0009 [Nm]$. Bidraget till totala momentet från tröghetsmomentet är alltså litet och kommer därför att bortses från härefter. 
+
+ 
+  \paragraph{Krokgrepp}
+   Vid vertikal last belastas fingret med en punktkraft motsvarande 1 kg på mitten av ben 2. Den yttre fingerleden tas därmed inte med i beräkningarna eftersom den i första hand ska utföra finmotoriska uppgifter där kraven på greppstyrka inte är lika viktiga. 
+Figur 4.5 visar ett godtyckligt läge för ben 1 och 2. Eftersom den givna lasten är relativt hög försummas strukturens egentyngd tillsammans med friktion och fjädrarnas återförande kraft. Denna försumning kompenseras dock av en säkerhetsfaktor på 1,7.
+
+\begin{figure}[H]
+\includegraphics[width=0.5\textwidth]{img/teckning}
+\caption{Krokgrepp.}
+\end{figure}
+
+Utifrån nedanstående ekvationer kunde en rörelse simuleras i matlab som visade hur kraften förändras med fingrets position. Då krokgreppet innebär att två fingrar kommer bära lasten så delas kraften F på 2.
+$$F=\frac{9.82}{2} \unit{N}$$
+$$l_a=l_1 \cdot sin(\pi-\alpha_1)$$
+$$\theta=\alpha_2-\frac{3\pi}{2}+\alpha_1$$
+$$l_b=\frac{l_2}{2}cos(\theta)$$
+$$M_2=F \cdot \frac{l_b}{2}$$
+$$M_1=F \cdot (l_b+l_a)$$
+
+\begin{figure}[H]
+\includegraphics[width=0.8\textwidth]{img/fingermoment}
+\caption{Moment som krävs i led 1 och 2 vid vertikal last.}
+\end{figure}
+
+
+
+Diagramemt visar momentet som krävs i lederna vid 30 olika positioner där vinklarna $\alpha_1$ och $\alpha_2$ har förändrats med samma vinkel varje position. Från diagrammet framgår att högsta momentet uppstår i led 1 och är 0.553 [Nm]. För att vara på säkra sidan gjordes samma beräkning fast $\alpha_2$ hölls på 180 grader. Då uppstod som väntat största momentet i led 1 då fingret hölls rakt i horisontellt läge. Detta moment uppgick till 0.639 [Nm].
+
+\paragraph{Gripa ett mjölkpaket}
+  Ett mjölkpaket ska kunna gripas med tillräcklig kraft för att lyfta upp det. Friktionskoefficienten mellan kontaktytorna uppskattas till 0,85 ($\mu$) vilket är en vanlig koefficient mellan gummi och plast. Här har kraften beräknats som fingrarna utsätts för då mjölkpaketet antas lyftas av endast 2 fingrar. $F_f$ är friktionskraften och $F_y$ är kraften i y-led. Jämvikt ger:
+
+$$ \sum F_y=2F_f-mg=0$$
+
+
+Om vi antar att vikten precis ska börja glida gäller sambandet:
+
+$$F_f=N \cdot   \mu$$
+
+Där $N$ är normalkraften och vi kan få ut: $N=\frac{mg}{2 \cdot \mu}$. Med insatta värden på $\mu$ och $mg$ fås därefter $N=5.77$. Denna kraft betraktas som en punktkraft mitt i ben 2 vilket ger ett moment i led 1 motsvarande $M_1=0.442$. En säkerhetsmarginal på 1,4 ger $M_1=0.619$. Detta moment är under det som vi räknade fram i fallet krokgreppet. 
+
