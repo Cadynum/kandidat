@@ -5,11 +5,6 @@
 FÖRKLARA FRIHETSGRADER? = Frihetsgrader beskriver hur många oberoende variabler som behövs för att entydigt ange läget för ett system.
 I detta avsnitt presenteras en överblick över de komponenter som utgör den mekaniska handen.  %%Meccano™ använts som grund vilket har både fördelar och nackdelar jämfört med att bygga alla delar från början. Eftersom konstruktionen innehåller flera delar vars inbördes passform påverkar hur väl rörelser fungerar måste tillverkningen av delarna utföras med god noggrannhet. Meccanos standardbyggsats innehåller flera olika standardiserade delar som enkelt kan monteras i flera olika kombinationer.Delarna anses även ha tillräcklig noggrannhet för att slutprodukten ska kunna utföra de uppsatta målen. Eftersom konstruktionen av handen går snabbare med färdiga delar kan mer fokus läggas på den mer resurskrävande elektroniken. Nackdelen är att konstruktionen blir begränsad till att endast kunna tillverkas av tillgängliga komponenter, men detta kringgås med konstruktion av enstaka kritiska komponenter.%%
 Handen består av två fingrar och en tumme som beskrivs utförligare i sina respektive avsnitt. På fingrar och tumme sitter det även plastskal som har som uppgift att skapa bättre greppytor. Handen har tillverkats av Meccano för att underlätta tillverkning. 
-\begin{figure}[H]
-BILD PÅ UTPROVNING AV GREPP
-
-\caption{Beskrivning}
-\end{figure}
 
 
 Handens utformning är en funktion av hur fingrarna önskas vara positionerade relativt varandra och detta utprovades i CAD-miljö utefter förmågan att utföra ett antal önskade grepp. Handen har även tillräckligt stor yta för att möjliggöra integrering av aktuatorer, kontrollenhet och strömförsörjning i en enda enhet. I figuren ovan syns från vänster till höger syns de utprovade greppen.
@@ -20,8 +15,10 @@ Handens utformning är en funktion av hur fingrarna önskas vara positionerade r
 Med utgångspunkten mänsklig motorik designades handens två identiska fingrar för att få ett människolikt rörelsemönster.
 
 \begin{figure}[H]
-Figur 4.3 från mittrapporten
-
+\begin{figure}[H]
+\includegraphics[height=0.15\textheight]{img/fingerbild}
+\caption{Översiktsbild fingerdesign.}
+\end{figure}
 \caption{Beskrivning}
 \end{figure}
 Fingrarna har tre leder varav Led 1 och Led 2 är separat kontrollerbara. Led 3 är via ett stag tvångsstyrd av Led 2 för att imitera hur ett mänskligt finger beter sig när handen sluts. Jämfört med det mänskliga fingret saknas en frihetsgrad i Led 1 för vridning av fingret i sidled. En fördel med två separat kontrollerbara leder är att fingrarnas rörelseomfång och funktionella förmåga utökas.
@@ -56,11 +53,11 @@ För att reglera hur hårt man trycker sitter det tre trycksensorer längst ut p
 Total har handen åtta frihetsgrader varav sex är separat aktuerbara. I detta avsnitt presenteras aktuatorer och kraftöverföring.
 \subsection{Servon}
 \begin{figure}[H]
-BILD PÅ SERVO
-
-\caption{Beskrivning}
+\includegraphics[height=0.2\textheight]{img/servo}
+\caption{Blue Bird BMS-660DMG+HS servo.}
+\label{fig:servo}
 \end{figure}
-Aktuatorer för samtliga leder är Blue Bird BMS-660DMG+HS. Dessa servon används för att de uppfyllde kraven på vridmoment med god marginal (se APPENDIX A.HIYTF för dimensionerande beräkningar). Vid en matningsspänningen på 6 Volt har servot ett maximalt vridmoment på 1.42 Nm och en högsta rotationshastighet på 6.16 rad/s vid obelastat läge. Servona har ett totalt rörelseomfång på 120 grader vilket är standard för hobbyservos. Servona regleras via PWM-signaler och har en intern positionsreglering, detta gör att servona alltid arbetar för att nå det önskade läget och återgår till detta läge efter en eventuell störning.
+Aktuatorer för samtliga leder är Blue Bird BMS-660DMG+HS. Se figur~\ref{fig:servo}. Dessa servon används för att de uppfyllde kraven på vridmoment med god marginal (se APPENDIX A.HIYTF för dimensionerande beräkningar). Vid en matningsspänningen på 6 Volt har servot ett maximalt vridmoment på 1.42 Nm och en högsta rotationshastighet på 6.16 rad/s vid obelastat läge. Servona har ett totalt rörelseomfång på 120 grader vilket är standard för hobbyservos. Servona regleras via PWM-signaler och har en intern positionsreglering, detta gör att servona alltid arbetar för att nå det önskade läget och återgår till detta läge efter en eventuell störning.
 
 \subsection{Kraftöverföring}
 \begin{figure}[H]
@@ -72,7 +69,7 @@ Led 1 i samtliga fingrar aktueras via stag, vilket gör att de kan föras fram o
 
 \section{Reglerhandsken}
 \begin{figure}[H]
-Reglerhandske
+\includegraphics[height=0.5\textheight]{img/kontrollhandske}
 \caption{Beskrivning}
 \end{figure}
 För att reglera robothanden används en reglerhandske som användaren har på sin hand, detta ger en intuitivt reglering (se figur). På tumme, pekfinger och långfinger på handsken sitter två flexsensorer var som följer användarens hand och ändrar resistans beroende på hur mycket de böjs. Denna resistansförändring använder man som insignal till mikrokontrollen som sitter på reglerhandsken, som i sin tur skickar styrsignaler till mikrokontrollen på robothanden. Se \ref{sec:mikro}. 
