@@ -14,7 +14,10 @@
    id="svg3850"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="servo_berakning22.png">
+   sodipodi:docname="servo_berakning22.svg"
+   inkscape:export-filename="C:\Users\Joakim\Documents\GitHub\kandidat\Slutrapport\img\servo\servo_berakning22.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <defs
      id="defs3852" />
   <sodipodi:namedview
@@ -114,12 +117,6 @@
        id="path4410"
        inkscape:connector-curvature="0" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 335.18155,239.51299 c -0.21976,-2.1452 11.46816,-20.00829 29.85423,-12.21309"
-       id="path4412"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
-    <path
        style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
        d="m 290.40021,189.30361 74.63557,321.61145 208.97959,0"
        id="path4414"
@@ -170,5 +167,47 @@
          id="tspan4433-4-8"
          x="295.13974"
          y="244.21217">a</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:45.4394722px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       x="419.28964"
+       y="527.54883"
+       id="text3033"
+       sodipodi:linespacing="125%"
+       transform="scale(0.93801266,1.0660837)"><tspan
+         sodipodi:role="line"
+         id="tspan3035"
+         x="419.28964"
+         y="527.54883">P<tspan
+   style="font-size:29.53607178px;baseline-shift:sub"
+   id="tspan3037">0</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:45.4394722px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       x="421.14398"
+       y="240.02391"
+       id="text3033-1"
+       sodipodi:linespacing="125%"
+       transform="scale(0.93801266,1.0660837)"><tspan
+         sodipodi:role="line"
+         id="tspan3035-7"
+         x="421.14398"
+         y="240.02391">P<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan3076">1</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:45.4394722px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       x="309.74911"
+       y="145.82985"
+       id="text3033-0"
+       sodipodi:linespacing="125%"
+       transform="scale(0.93801266,1.0660837)"><tspan
+         sodipodi:role="line"
+         id="tspan3035-9"
+         x="309.74911"
+         y="145.82985">P<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan3074">2</tspan></tspan></text>
   </g>
 </svg>
