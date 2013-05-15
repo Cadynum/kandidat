@@ -8,7 +8,7 @@ Servo 1 är med hjälp av ett stag kopplat till tummens första led och styr dä
 
 \begin{figure}[H]
 \label{fig:servo1}
-\includegraphics[width=0.4\textwidth]{img/servo/servo_berakning11}
+\includegraphics[width=0.7\textwidth]{img/servo/servo_berakning11}
 \caption{Rörelse i tummens första led till följd av rörelse i servo 1}
 \end{figure}
 
@@ -16,7 +16,7 @@ Bild \ref{fig:servo2} nedan visar hur servot är kopplat via ett stag till tumme
 
 
 \begin{figure}[H]
-\label{servo2}
+\label{fig:servo2}
 \includegraphics[width=0.6\textwidth]{img/servo/servo1}
 \caption{Nödvändiga beteckningar för beräkningar till servo 1}
 \end{figure}
@@ -82,4 +82,41 @@ Med hjälp av matlab så har ovanstående itterationsshema genererat ett $\alpha
 \caption{$\alpha$-vinkeln som en funktion av servovinkeln $\phi$}
 \end{figure}
 
+Genom att anpassa en ekvation till kurvan undviks itterations processen vid styrning av handen vilket underlättar för processon. Med hjälp av ekvation \eqref{eq:servo2} kan koordinaterna för ytterpunkterna på tummens första led beräknas. Tummens origo är placerat i dess första roterande punkt, punkt $P_{3}$ (se \ref{fig:servo2})
+
+\begin{equation}
+\label{eq:servo2}
+P1_{tumme}=[L_{1}\sin(\alpha),L_{1}\cos(\alpha)] 
+\end{equation}
+
+
+\begin{center}
+$(L_{1}=39mm)$
+\end{center}
+
+
+
 \subsection{Beräkningar för servo 2}
+
+Servo 2 styr tummens andra led (se \ref{fig:servo4}) genom att applicera en kraft på en sena kopplat till ledens mittpunkt(punkt $P_{2}$ se\ref{fig:servo5}).
+
+\begin{figure}[H]
+\label{fig:servo4}
+\includegraphics[width=0.7\textwidth]{img/servo/servo_berakning2}
+\caption{Rörelse i tummens andra led till följd av rörelse i servo 2}
+\end{figure}
+
+\begin{minipage}[t]{0.5\textwidth}
+\begin{figure}[H]
+\label{fig:servo5}
+\includegraphics[width=0.8\textwidth]{img/servo/servo_berakning22}
+\caption{}
+\end{figure}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\begin{figure}[H]
+\label{fig:servo6}
+\includegraphics[width=1\textwidth]{img/servo/servo_berakning23}
+\caption{}
+\end{figure}
+\end{minipage}
