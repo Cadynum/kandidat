@@ -21,7 +21,7 @@ Handens design verifieras i CAD-miljö innan konstruktion för att på ett effek
 
 
 \subsection{Fingrar och tumme}
-För att efterlikna mänsklig motorik designades handens två identiska fingrar för att få ett människolikt rörelsemönster vilket underlättar för användaren då rörelsemönstret hos robothanden imiterar det mänskliga.
+Handens två identiska fingrar är designade för  att efterlikna ett människolikt rörelsemönster vilket underlättar för användaren då rörelsemönstret hos robothanden imiterar det mänskliga.
 
 
 \begin{figure}[H]
@@ -30,18 +30,22 @@ För att efterlikna mänsklig motorik designades handens två identiska fingrar 
 \label{fig:finger}
 \end{figure}
 
-Fingrarna har tre leder varav Led 1 och Led 2 (se figur~\ref{fig:finger}) är separat kontrollerbara. Led 3 är via ett stag tvångsstyrd av Led 2 för att imitera hur ett mänskligt finger beter sig när handen sluts. Jämfört med det mänskliga fingret saknas en frihetsgrad i Led 1 för vridning av fingret i sidled.\\En fördel med två separat kontrollerbara leder är att fingrarnas rörelseomfång och funktionella förmåga utökas.
+Fingrarna har tre leder varav Led 1 och Led 2 (se figur~\ref{fig:finger}) är separat kontrollerbara. Led 3 är via ett stag tvångsstyrd av Led 2 för att imitera hur ett mänskligt finger beter sig när handen sluts. Jämfört med det mänskliga fingret saknas förmågan att vid Led 1 vrida fingret i sidled.\\En fördel med två separat styrbara leder är att fingrarnas rörelseomfång och funktionella förmåga utökas.
 \begin{figure}[H]
 \includegraphics[width=0.50\textwidth]{img/1vs2frihets}
-\caption{En och två kontrollerbara frihetsgrader.}
+\caption{En vs. två styrbara leder.}
+\label{fig:tvaleder}
 \end{figure}
 
-Med två frihetsgrader finns ett fält av möjliga positioner för fingertoppen att befinna sig i för varje läge handen står i, vilket minskar behovet av att flytta hela handen vid små justeringar av grepp.
+I figur~\ref{fig:tvaleder} demonstreras hur två styrbara leder spänner upp ett fält av möjliga positioner för fingertoppen att befinna sig i för varje läge handen står i, vilket minskar behovet av att flytta hela handen vid små justeringar av grepp.\\
+\\Tummen (se fig~\ref{fig:tumme} nedan) har endast två leder varav båda är separat styrda och sitter fast positionerad i handen för att kunna utföra ett pincettgrepp med finger 1. Detta är tillräckligt för möjliggöra ett flertal olika grepp, men jämfört med den mänskliga tummen som kan möta samtliga fingertoppar är detta ett stelt utförande.
+
 
 \begin{figure}[H]
 \includegraphics[height=0.5\textheight]{img/tumme}
 \caption{Beskrivning}
-\end{figure} Tummen har endast två separata frihetsgrader och sitter fast positionerad i handen för att kunna utföra ett pincettgrepp med finger 1. Detta är tillräckligt för möjliggöra ett flertal olika grepp, men jämfört med den mänskliga tummen som kan möta samtliga fingertoppar är detta ett stelt utförande.
+\label{fig:tumme}
+\end{figure} 
 
 
 \subsubsection{Fingertoppar och sensorer}
@@ -68,11 +72,7 @@ Aktuatorer för samtliga leder är Blue Bird BMS-660DMG+HS. Se figur~\ref{fig:se
 \includegraphics[height=0.5\textheight]{img/servosena}
 \caption{Beskrivning}
 \end{figure}
-\begin{figure}[H]
-\includegraphics[width=0.90\textwidth]{img/servostag2}
-\caption{Stag.}
-\end{figure}
-
+BILD PÅ STAG, BILD PÅ SENA MED HJUL
 
 
 Led 1 i samtliga fingrar aktueras via stag, vilket gör att de kan föras fram och tillbaka av respektive servo. För att aktuera Led 2 i samtliga fingrar används en sena. Senan utgörs av en fiskelina dimensionerad för en dragkraft på 330 N. Största dragkraften i senan uppstår då servo arbetar vid maximalt vridmoment och uppgår till 118 N med 12 mm servohorn. För att återföra fingret till sitt räta läge används en vridfjäder som sitter runt led 2.
