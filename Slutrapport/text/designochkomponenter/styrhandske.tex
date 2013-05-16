@@ -10,12 +10,11 @@ Bilden måste bytas ut om vi inte får på led. För att intuitivt reglera robot
 
 \subsection{Mikrokontroller }
 \label{sec:mikro}
-En mikrokontroller valdes som kontrollenhet över andra alternativ som t ex CPLD eller FPGA, på grund av dess kortare utvecklingstid. 
-Valet föll på att använda en Arduino-baserad mikroprocessorlösning. Arduino erbjuder en väl integrerad utvecklingsmiljö som ofta används inom hobbyelektronik. Det finns ett stort utbud på färdiga bibliotek, t ex servostyrning.
+För kontrollhandsken används en 8 bitars Arduino Micro. Eftersom alla beräkningar kommer att ske i robothanden är mikrokontrollen i handskens enda uppgift att överföra signaler. Storleken och strömförbrukningen är här av större vikt.
 
-En 32 bitars Arduino Due används för robothanden. Eftersom alla reglerberäkning sker i robothanden i sig, är prestanda viktigt. Arduino Due är den arduinon med kraftigast processor. Eftersom det inte finns hårdvarustöd för flyttal\footnote{Tal som har en varierande decimalposition} i någon arduino, är 32 bitar extra viktigt för att effektivt kunna använda fixpunkttal\footnote{Tal som har en fast decimalposition. Decimalens plats måste skötas manuellt} med tillräcklig precision.
+En 32 bitars Arduino Due används för robothanden. Eftersom alla reglerberäkning sker i robothanden i sig, är prestanda viktigt. 32 bitar är viktigt för att effektivt kunna använda fixpunkttal\footnote{Tal som har en fast decimalposition. Decimalens plats måste skötas manuellt} med tillräcklig precision.
 
-För kontrollhandsken används istället en 8 bitars Arduino Micro. Eftersom alla beräkningar kommer att ske i robothanden är mikrokontrollen i handskens enda uppgift att överföra signaler. Storleken och strömförbrukningen är här av större vikt.
+
 
 \subsection{Bluetooth}
 För att möjliggöra kommunikation trådlöst mellan kontrollhandsken och robothanden används två prototyp-versioner av \emph{Bluetooth Mate Silver}. Enheten är godkänd för Bluetooth klass 2, vilket bl a innebär låg strömförbrukning (genomsnittligt 2.5mW vid aktiv användning) och överföringar på upp till 10m, vilket anses vara tillräckligt för att klara kravet på 5m i praktiska förhållanden.
@@ -36,11 +35,6 @@ Bluetooth-enheten har en överföringskapacitet på 115200bps, inkluderat metada
 \includegraphics[width=0.3\textwidth]{img/arduino_micro}
 \caption{Ardunio Micro. Används för kontrollhandsken.}
 \end{figure}
-
-
-% För att reglera robothanden används en styrhandske som användaren har på sin hand, detta ger en intuitivt reglering (se figur). På tumme, pekfinger och långfinger på handsken sitter två flexsensorer var som följer användarens hand och ändrar resistans beroende på hur mycket de böjs. Denna resistansförändring använder man som insignal till mikrokontrollen som sitter på reglerhandsken, som i sin tur skickar styrsignaler till mikrokontrollen på robothanden. Se \ref{sec:mikro}. 
-
-
 
 \subsection{Trådlös kommunikation}
 
