@@ -5,11 +5,8 @@
 \caption{Konceptskiss över styrhandsken}
 \end{figure}
 
-För att intuitivt reglera robothanden används en vanlig handske som användaren bär på sin hand. På tumme, långfinger och pekfinger finns det två flexsensorer vardera. Flexsensorerna ändrar resistans beroende på hur böjda de är, vilket leder till  
+För att intuitivt reglera robothanden används en vanlig handske som användaren bär på sin hand. På tumme, långfinger och pekfinger finns det två flexsensorer vardera. Flexsensorerna är av modellen SEN-10264 och ändrar resistans beroende på hur böjda de är vilket motiverar att de placeras över led 1 och led 2. Styrhandsken sköter det som händer i punkt 1-3 enligt Figur ~\ref{flodesschema} via en mikrokontroller som kommunicerar med robothandens miikrokontroller via bluetooth.
 
- vilket används för att översätta de tre fingrarnas läge till önskvärda vinklar för robothandens fingrar. När resistansen ändras, 
-
- ändrad resistans $\to$ ändrad spänning $\to$ spänningen normaliseras mot fingrarnas referens $\to$ önskvärd vinkel skickas till robothanden
 
 
 % För att reglera robothanden används en reglerhandske som användaren har på sin hand, detta ger en intuitivt reglering (se figur). På tumme, pekfinger och långfinger på handsken sitter två flexsensorer var som följer användarens hand och ändrar resistans beroende på hur mycket de böjs. Denna resistansförändring använder man som insignal till mikrokontrollen som sitter på reglerhandsken, som i sin tur skickar styrsignaler till mikrokontrollen på robothanden. Se \ref{sec:mikro}. 
