@@ -1,52 +1,67 @@
 \section{Styrhandske}
-
+Styrhandsken innefattar en handske med flexsensorer, ledlampor??, en mikrokontroller, kalibreringsknappar och en bluetoothmodul.
 \begin{figure}[H]
 \includegraphics[height=0.5\textheight]{img/kontrollhandske}
 \caption{Konceptskiss över styrhandsken}
+\label{handske}
 \end{figure}
 
-För att intuitivt reglera robothanden används en vanlig handske som användaren bär på sin hand. På tumme, långfinger och pekfinger finns det två flexsensorer vardera. Flexsensorerna ändrar resistans beroende på hur böjda de är, vilket leder till  
+Bilden måste bytas ut om vi inte får på led. För att intuitivt reglera robothanden används en arbetshandske som användaren bär på sin hand. Handsken är gjord av textil och på tummen, långfingret och pekfingret är det två flexsensorer enligt Figur \ref{handske}. Flexsensorerna är av modellen SEN-10264 och ändrar resistans beroende på hur böjda de är. Styrhandsken sköter det som händer i punkt 1-3 enligt Figur ~\ref{flodesschema} via handskens mikrokontroller som kommunicerar med robothandens mikrokontroller via bluetooth.
 
- vilket används för att översätta de tre fingrarnas läge till önskvärda vinklar för robothandens fingrar. När resistansen ändras, 
+\subsection{Mikrokontroller }
+\label{sec:mikro}
+För kontrollhandsken används en 8 bitars Arduino Micro. Eftersom alla beräkningar kommer att ske i robothanden är mikrokontrollen i handskens enda uppgift att överföra signaler. Storleken och strömförbrukningen är här av större vikt.
 
- ändrad resistans $\to$ ändrad spänning $\to$ spänningen normaliseras mot fingrarnas referens $\to$ önskvärd vinkel skickas till robothanden
+En 32 bitars Arduino Due används för robothanden. Eftersom alla reglerberäkning sker i robothanden i sig, är prestanda viktigt. 32 bitar är viktigt för att effektivt kunna använda fixpunkttal\footnote{Tal som har en fast decimalposition. Decimalens plats måste skötas manuellt} med tillräcklig precision.
 
 
-% För att reglera robothanden används en reglerhandske som användaren har på sin hand, detta ger en intuitivt reglering (se figur). På tumme, pekfinger och långfinger på handsken sitter två flexsensorer var som följer användarens hand och ändrar resistans beroende på hur mycket de böjs. Denna resistansförändring använder man som insignal till mikrokontrollen som sitter på reglerhandsken, som i sin tur skickar styrsignaler till mikrokontrollen på robothanden. Se \ref{sec:mikro}. 
 
-% Handsken är gjord av textil och flexsensorerna är insydda i små påsar som underlättar montering av sensorerna på handsken. (Se figur)
-% (Bild på handsken)  
+\subsection{Bluetooth}
+För att möjliggöra kommunikation trådlöst mellan kontrollhandsken och robothanden används två prototyp-versioner av \emph{Bluetooth Mate Silver}. Enheten är godkänd för Bluetooth klass 2, vilket bl a innebär låg strömförbrukning (genomsnittligt 2.5mW vid aktiv användning) och överföringar på upp till 10m, vilket anses vara tillräckligt för att klara kravet på 5m i praktiska förhållanden.
+
+Bluetooth-protokollet är ett paketförmedlande nätverk, vilket innebär att information skickas i diskreta paket. Varje paket innehåller metadata
+\footnote{Data som beskriver information, som mottagaradress och felkorrigerande kod}
+och \emph{payload}
+\footnote{Datan i sig som ska överföras}.
+Bluetooth-enheten har en överföringskapacitet på 115200bps, inkluderat metadata.
+
+
+\begin{figure}[ht]
+\includegraphics[width=0.3\textwidth]{img/bluetooth_mate_silver.jpg}
+\caption{Bluetooth Mate Silver enhet.}
+\end{figure}
+
+\begin{figure}[htb]
+\includegraphics[width=0.3\textwidth]{img/arduino_micro}
+\caption{Ardunio Micro. Används för kontrollhandsken.}
+\end{figure}
+
 \subsection{Trådlös kommunikation}
 
 \subsection{Signalbehandling}
-Från flexsensorerna samplas en varierande analog spänning med en frekvens på 100 Hz. Signalen diskretireras sidan till upplösning av 10 bitar. I uppmätta mätvärdet finns det diverse störningar. Det är inte önskvärt att störningarna överförs till robothanden, eftersom servomotorerna i robothanden då konstant skulle ändra läge, vilket leder till en hackig upplevelse för användaren, slitage på servomotorerna, och extra strömförbrukning.
+Från flexsensorerna samplas en varierande analog spänning med en frekvens på 100 Hz. Signalen diskretireras sedan till upplösning av 10 bitar. I uppmätta mätvärdet finns det diverse störningar. Det är inte önskvärt att störningarna överförs till robothanden, eftersom servomotorerna i robothanden då konstant skulle ändra läge, vilket leder till en hackig upplevelse för användaren, slitage på servomotorerna, och extra strömförbrukning.
 
-\begin{figure}[H]
-FIG
-\caption{De sex flexsensorerna uppmätta under xs med en samplingsfrekvens på 100Hz.}
+\begin{figure}[htb]
+\includegraphics{img/filter/flex_raw.pdf}
+\caption{De sex flexsensorerna uppmätta under 8.0s med en samplingsfrekvens på 100Hz när handen greppar ett objekt.}
+\label{fig:rawflex}
+\end{figure}
+
+\begin{figure}[htb]
+\includegraphics{img/filter/flex_fourier.pdf}
+\caption{Diskret fouriertransform av signalerna från figur~\ref{fig:rawflex}.}
+\end{figure}
+
+
+\begin{figure}[htb]
+\includegraphics{img/filter/flex_filtered.pdf}
+\caption{Signalerna från figur~\ref{fig:rawflex} filtrerade med ett Butterworth-filter av första ordningen med en brytningsfrekvens på $f=\unit[15]{Hz}$.}
 \end{figure}
 
 
 
 För att filtera signalen används ett \emph{Butterworth-filter} av första ordningen. Butterworth filter filterar
 
-\subsection{Mikrokontroller}
-\label{sec:mikro}
-info om våra microcontroller. Bluetooth moduelerna och hur det programmerats samt hur det fungerar.
-
-
-\section{Elektriska kretsar}
-\begin{figure}[H]
-\includegraphics[height=0.5\textheight]{img/schemahandske}
-\caption{Kopplingsschema för styr/regler-handsken.}
-\end{figure}
-\begin{figure}[H]
-\includegraphics[height=0.5\textheight]{img/schemahand}
-\caption{Kopplingsschema för robothanden.}
-\end{figure}
-
-
-Figur \ref{?} visar hur styrhandsken är kopplad. Komponenterna för styrhandsken är lödda på ett experimentkort medan robothanden är direktkopplad.
 
 \section{Algoritmer}
 Här presenteras de styralgortimter som bestämmer hur handen beter sig när den följer användarens input samt identifierar och greppar objekt. 
