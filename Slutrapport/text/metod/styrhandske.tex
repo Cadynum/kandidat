@@ -16,9 +16,21 @@ För att intuitivt reglera robothanden används en vanlig handske som användare
 
 % Handsken är gjord av textil och flexsensorerna är insydda i små påsar som underlättar montering av sensorerna på handsken. (Se figur)
 % (Bild på handsken)  
-\section{Trådlös kommunikation}
-\section{Signalbehandling}
-\section{Mikrokontroller}
+\subsection{Trådlös kommunikation}
+
+\subsection{Signalbehandling}
+Från flexsensorerna samplas en varierande analog spänning med en frekvens på 100 Hz. Signalen diskretireras sidan till upplösning av 10 bitar. I uppmätta mätvärdet finns det diverse störningar. Det är inte önskvärt att störningarna överförs till robothanden, eftersom servomotorerna i robothanden då konstant skulle ändra läge, vilket leder till en hackig upplevelse för användaren, slitage på servomotorerna, och extra strömförbrukning.
+
+\begin{figure}[H]
+FIG
+\caption{De sex flexsensorerna uppmätta under xs med en samplingsfrekvens på 100Hz.}
+\end{figure}
+
+
+
+För att filtera signalen används ett \emph{Butterworth-filter} av första ordningen. Butterworth filter filterar
+
+\subsection{Mikrokontroller}
 \label{sec:mikro}
 info om våra microcontroller. Bluetooth moduelerna och hur det programmerats samt hur det fungerar.
 \section{Elektriska kretsar}
