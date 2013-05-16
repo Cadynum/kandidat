@@ -1,51 +1,65 @@
 \section{Robothand}
-FÖRKLARA FRIHETSGRADER? = Frihetsgrader beskriver hur många oberoende variabler som behövs för att entydigt ange läget för ett system.
+
 I detta avsnitt presenteras en överblick över de komponenter som utgör den mekaniska handen. Handens mekaniska delar utgörs till största delen av standardiserade komponenter från en Meccano™ byggsats. 
 \begin{figure}[H]
 \includegraphics[width=0.90\textwidth]{img/hand}
-\caption{Handen.}
+\caption{Handen och dess delkomponenter.}
 \end{figure}
-Handen består av två fingrar och en tumme som beskrivs utförligare i sina respektive avsnitt. På fingrar och tumme sitter det även plastskal som har som uppgift att skapa bättre greppytor. Handen har aktuatorer, microkontroller, bluetooth och strömförsörjning integrerat i en enda enhet.\\
-Handens utformning har utgått från hur fingrarna önskas vara positionerade relativt varandra och detta verifierades i CAD-miljö utefter förmågan att utföra ett antal grepp ur Cutkoskys grepphierarki.
+Handen består av två fingrar och en tumme som beskrivs utförligare i sina respektive avsnitt nedan. På fingrar och tumme sitter det även plastskal som har som uppgift att skapa bättre greppytor. På samtliga fingertoppar finns trycksensorer som kan mäta relativa normalkrafter. En Arduino Due mikrokontroller styr de sex stycken servomotorer som aktuerar fingrarna, samt kommunicerar via bluetooth med styrhandsken för att ta emot styrsignaler samt skicka uppmätta trycksensorvärden.   
+ Handen har aktuatorer, mikrokontroller, bluetooth och strömförsörjning integrerat i en enda enhet.\\
+Fingrarnas rörelseomfång och relativa position tillåter ett stort antal olika grepp, med olika krav på styrka, omfång, finkänslighet och fingerfärdighet. 
 \begin{figure}[H]
 \includegraphics[width=0.90\textwidth]{img/provagrepp}
 \caption{Verifiering av relativ fingerpositionering utefter greppförmåga.}
+\label{fig:cad}
 \end{figure}
-I figuren ovan syns de utprovade greppen, som i sin tur kan identifieras i Cutkoskys grepphierarki. %%Se \ref{cutkosky} 
-Då handen konstruerats för att kunna hantera både stora och små objekt som kräver  både greppstyrka och finmotorik är den mycket flexibel vilket gör att den säkert kan greppa och hantera objekt av olika storlekar och tyngd.
+Handens design verifieras i CAD-miljö innan konstruktion för att på ett effektivt sätt säkerhetsställa att ett flertal olika objekt kan gripas. Figur~\ref{fig:cad} illustrerar hur handen griper olika objekt.
+
+%I figuren ovan syns de utprovade greppen, som i sin tur kan identifieras i Cutkoskys grepphierarki. %%Se \ref{cutkosky} 
+%Då handen konstruerats för att kunna hantera både stora och små objekt som kräver  både greppstyrka och finmotorik är den mycket flexibel vilket gör att den säkert kan greppa och hantera objekt av olika storlekar och tyngd.
 
 
 
 \subsection{Fingrar och tumme}
-Med utgångspunkten mänsklig motorik designades handens två identiska fingrar för att få ett människolikt rörelsemönster vilket underlättar för användaren.
+Handens två identiska fingrar är designade för  att efterlikna ett människolikt rörelsemönster vilket underlättar för användaren då rörelsemönstret hos robothanden imiterar det mänskliga.
 
 
 \begin{figure}[H]
 \includegraphics[height=0.3\textheight]{img/fingerbild}
 \label{oversiktsbild}
 \caption{Översiktsbild fingerdesign.}
+\label{fig:finger}
 \end{figure}
 
-Fingrarna har tre leder varav Led 1 och Led 2 är separat kontrollerbara. Led 3 är via ett stag tvångsstyrd av Led 2 för att imitera hur ett mänskligt finger beter sig när handen sluts. Jämfört med det mänskliga fingret saknas en frihetsgrad i Led 1 för vridning av fingret i sidled.\\En fördel med två separat kontrollerbara leder är att fingrarnas rörelseomfång och funktionella förmåga utökas.
+Fingrarna har tre leder varav Led 1 och Led 2 (se figur~\ref{fig:finger}) är separat kontrollerbara. Led 3 är via ett stag tvångsstyrd av Led 2 för att imitera hur ett mänskligt finger beter sig när handen sluts. Jämfört med det mänskliga fingret saknas förmågan att vid Led 1 vrida fingret i sidled.\\En fördel med två separat styrbara leder är att fingrarnas rörelseomfång och funktionella förmåga utökas.
 \begin{figure}[H]
 \includegraphics[width=0.50\textwidth]{img/1vs2frihets}
-\caption{En och två kontrollerbara frihetsgrader.}
+\caption{En vs. två styrbara leder.}
+\label{fig:tvaleder}
 \end{figure}
 
-Med två frihetsgrader finns ett fält av möjliga positioner för fingertoppen att befinna sig i för varje läge handen står i, vilket minskar behovet av att flytta hela handen vid små justeringar av grepp.
+I figur~\ref{fig:tvaleder} demonstreras hur två styrbara leder spänner upp ett fält av möjliga positioner för fingertoppen att befinna sig i för varje läge handen står i, vilket minskar behovet av att flytta hela handen vid små justeringar av grepp.\\
+\\Tummen (se fig~\ref{fig:tumme} nedan) har endast två leder varav båda är separat styrda och sitter fast positionerad i handen för att kunna utföra ett pincettgrepp med finger 1. Detta är tillräckligt för möjliggöra ett flertal olika grepp, men jämfört med den mänskliga tummen som kan möta samtliga fingertoppar är detta ett stelt utförande.
+
 
 \begin{figure}[H]
 \includegraphics[height=0.5\textheight]{img/tumme}
 \caption{Beskrivning}
-\end{figure} Tummen har endast två separata frihetsgrader och sitter fast positionerad i handen för att kunna utföra ett pincettgrepp med finger 1. Detta är tillräckligt för möjliggöra ett flertal olika grepp, men jämfört med den mänskliga tummen som kan möta samtliga fingertoppar är detta ett stelt utförande.
+\label{fig:tumme}
+\end{figure} 
 
 
 \subsubsection{Fingertoppar och sensorer}
 BILD PÅ SENSORER, FINGERTOPPAR MED GUMMI och sensor PÅ(sprängskiss) 
 \begin{figure}[H]
-X
+\includegraphics[height=0.5\textheight]{img/sensor}
 \label{fig:sensor}
 \caption{Beskrivning}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[height=0.5\textheight]{img/trycksensor}
+\label{fig:trycksensor}
+\caption{Trycksensor}
 \end{figure}
 För att insamla information om hur hårt handen påverkar objekt som hanteras sitter det trycksensorer längst ut på varje fingertopp. Se \ref{fig:sensor}. Fingertopparna är formade för att ge ett bra pincettgrepp där sensorerna registrerar hur hårt objektet greppas. (Fingertopparna är utskriva i plast med en 3D-skrivare?) Sensorerna är av modell FSR-400 och kan registrera normaltryck i spannet 0.11-110 MPa. Trycksensorn ändrar resistans vid kompression och ett värde avläses i mikrokontrollen för reglering, där jämförs värdet med det kalibrerade värden från tester ( SE APP KALIBRERING AV SENSORER) för att säkerställa att handen griper med rätt tryck(KRAFT??). Över sensorn sitter ett 3 mm tjockt lager av syntetiskt gummi för att skydda sensorns samt ge större friktion vid hantering av objekt. Nedre delen av fingertoppen fungerar som stöd vid grepp men där mäts inte kontakttrycket. 
 \section{Aktuering}
@@ -64,11 +78,11 @@ Aktuatorer för samtliga leder är Blue Bird BMS-660DMG+HS. Se figur~\ref{fig:se
 \includegraphics[height=0.5\textheight]{img/servosena}
 \caption{Beskrivning}
 \end{figure}
+BILD PÅ STAG, BILD PÅ SENA MED HJUL
+
+
+Led 1 i samtliga fingrar aktueras via stag, vilket gör att de kan föras fram och tillbaka av respektive servo. För att aktuera Led 2 i samtliga fingrar används en sena. Senan utgörs av en fiskelina dimensionerad för en dragkraft på 330 N. Största dragkraften i senan uppstår då servo arbetar vid maximalt vridmoment och uppgår till 118 N med 12 mm servohorn. För att återföra fingret till sitt räta läge används en vridfjäder som sitter runt led 2. 
 \begin{figure}[H]
-\includegraphics[width=0.90\textwidth]{img/servostag2}
-\caption{Stag.}
+\includegraphics[height=0.5\textheight]{img/fjader}
+\caption{Vridfjäder.}
 \end{figure}
-
-
-
-Led 1 i samtliga fingrar aktueras via stag, vilket gör att de kan föras fram och tillbaka av respektive servo. För att aktuera Led 2 i samtliga fingrar används en sena. Senan utgörs av en fiskelina dimensionerad för en dragkraft på 330 N. Största dragkraften i senan uppstår då servo arbetar vid maximalt vridmoment och uppgår till 118 N med 12 mm servohorn. För att återföra fingret till sitt räta läge används en vridfjäder som sitter runt led 2.
