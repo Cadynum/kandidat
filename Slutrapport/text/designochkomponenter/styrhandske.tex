@@ -1,22 +1,25 @@
 \section{Styrhandske}
-
+Styrhandsken innefattar en handske med flexsensorer, ledlampor??, en mikrokontroller, kalibreringsknappar och en bluetoothmodul.
 \begin{figure}[H]
 \includegraphics[height=0.5\textheight]{img/kontrollhandske}
 \caption{Konceptskiss över styrhandsken}
 \end{figure}
 
-För att intuitivt reglera robothanden används en vanlig handske som användaren bär på sin hand. På tumme, långfinger och pekfinger finns det två flexsensorer vardera. Flexsensorerna är av modellen SEN-10264 och ändrar resistans beroende på hur böjda de är vilket motiverar att de placeras över led 1 och led 2. Styrhandsken sköter det som händer i punkt 1-3 enligt Figur ~\ref{flodesschema} via en mikrokontroller som kommunicerar med robothandens miikrokontroller via bluetooth.
+Bilden måste bytas ut om vi inte får på led. För att intuitivt reglera robothanden används en arbetshandske som användaren bär på sin hand.  Handsken är gjord av textil och flexsensorerna är insydda i små tygpåsar som underlättar montering av sensorerna på handsken. (Se figur)
+ (Bild på handsken)   På tumme, långfinger och pekfinger är det två flexsensorer påsydda på vardera. Flexsensorerna är av modellen SEN-10264 och ändrar resistans beroende på hur böjda de är. Styrhandsken sköter det som händer i punkt 1-3 enligt Figur ~\ref{flodesschema} via handskens mikrokontroller som kommunicerar med robothandens mikrokontroller via bluetooth.
+
+\subsection{Mikrokontroller}
+\label{sec:mikro}
+info om våra microcontroller. Bluetooth moduelerna och hur det programmerats samt hur det fungerar.
+
+% För att reglera robothanden används en styrhandske som användaren har på sin hand, detta ger en intuitivt reglering (se figur). På tumme, pekfinger och långfinger på handsken sitter två flexsensorer var som följer användarens hand och ändrar resistans beroende på hur mycket de böjs. Denna resistansförändring använder man som insignal till mikrokontrollen som sitter på reglerhandsken, som i sin tur skickar styrsignaler till mikrokontrollen på robothanden. Se \ref{sec:mikro}. 
 
 
 
-% För att reglera robothanden används en reglerhandske som användaren har på sin hand, detta ger en intuitivt reglering (se figur). På tumme, pekfinger och långfinger på handsken sitter två flexsensorer var som följer användarens hand och ändrar resistans beroende på hur mycket de böjs. Denna resistansförändring använder man som insignal till mikrokontrollen som sitter på reglerhandsken, som i sin tur skickar styrsignaler till mikrokontrollen på robothanden. Se \ref{sec:mikro}. 
-
-% Handsken är gjord av textil och flexsensorerna är insydda i små påsar som underlättar montering av sensorerna på handsken. (Se figur)
-% (Bild på handsken)  
 \subsection{Trådlös kommunikation}
 
 \subsection{Signalbehandling}
-Från flexsensorerna samplas en varierande analog spänning med en frekvens på 100 Hz. Signalen diskretireras sidan till upplösning av 10 bitar. I uppmätta mätvärdet finns det diverse störningar. Det är inte önskvärt att störningarna överförs till robothanden, eftersom servomotorerna i robothanden då konstant skulle ändra läge, vilket leder till en hackig upplevelse för användaren, slitage på servomotorerna, och extra strömförbrukning.
+Från flexsensorerna samplas en varierande analog spänning med en frekvens på 100 Hz. Signalen diskretireras sedan till upplösning av 10 bitar. I uppmätta mätvärdet finns det diverse störningar. Det är inte önskvärt att störningarna överförs till robothanden, eftersom servomotorerna i robothanden då konstant skulle ändra läge, vilket leder till en hackig upplevelse för användaren, slitage på servomotorerna, och extra strömförbrukning.
 
 \begin{figure}[H]
 FIG
@@ -27,9 +30,7 @@ FIG
 
 För att filtera signalen används ett \emph{Butterworth-filter} av första ordningen. Butterworth filter filterar
 
-\subsection{Mikrokontroller}
-\label{sec:mikro}
-info om våra microcontroller. Bluetooth moduelerna och hur det programmerats samt hur det fungerar.
+
 \section{Elektriska kretsar}
 \begin{figure}[H]
 \includegraphics[height=0.5\textheight]{img/schemahandske}
