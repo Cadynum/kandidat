@@ -56,22 +56,26 @@ För att insamla information om hur hårt handen påverkar objekt som hanteras s
 \label{fig:trycksensor}
 \caption{Beskrivning}
 \end{figure}
-I figur~\ref{fig:trycksensor} ovan syns trycksensorns position på fingertoppen. Trycksensorerna är av modell Interlink 0.5
+I figur~\ref{fig:trycksensor} ovan syns trycksensorns position på fingertoppen. Trycksensorerna är av modell Interlink 0.5 FSR 100N, och kan mäta kontakttryck på den cirkulära ytan i spannet 0.11-110 MPa. Mätningen sker genom att ytan komprimeras, vilket resulterar i en minskad resistans hos trycksensorn, vilket registreras av handens mikrokontroller. Sensorerna kan dock endast uppskatta ett tryck i normalriktningen, ingen information om vart på sensorytan, eller hur stort område som belastas kan inte återges, vilket resulterar i att endast relativa krafter kan mätas.
 \begin{figure}[H]
 \includegraphics[height=0.5\textheight]{img/sensor}
 \label{fig:monteradtopp}
-\caption{Monterad finger topp med trycksensor under gummi}
+\caption{Monterad fingertopp med trycksensor under gummi}
+\label{monterad}
 \end{figure}
-För att insamla information om hur hårt handen påverkar objekt som hanteras sitter det trycksensorer längst ut på varje fingertopp. Se \ref{fig:sensor}. Fingertopparna är formade för att ge ett bra pincettgrepp där sensorerna registrerar hur hårt objektet greppas. (Fingertopparna är utskriva i plast med en 3D-skrivare?) Sensorerna är av modell FSR-400 och kan registrera normaltryck i spannet 0.11-110 MPa. Trycksensorn ändrar resistans vid kompression och ett värde avläses i mikrokontrollen för reglering, där jämförs värdet med det kalibrerade värden från tester ( SE APP KALIBRERING AV SENSORER) för att säkerställa att handen griper med rätt tryck(KRAFT??). Över sensorn sitter ett 3 mm tjockt lager av syntetiskt gummi för att skydda sensorns samt ge större friktion vid hantering av objekt. Nedre delen av fingertoppen fungerar som stöd vid grepp men där mäts inte kontakttrycket. 
+Över sensorerna sitter ett 3 mm tjockt lager av syntetiskt gummi (se figur~\ref{fig:monteradtopp}) för att skydda samt ge större friktion vid hantering av objekt.\\
+
+Fingertopparna är utformade för att kunna skapa ett pincettgrepp vid hantering av små känsliga objekt där kontatktrycket mäts.
+Nedre delen av fingertoppen fungerar som stöd vid grepp men där mäts inte kontakttrycket. Fingertopparna skapas i CAD och skrivs ut i en 3d-printer.
 \section{Aktuering}
-Total har handen åtta frihetsgrader varav sex är separat aktuerbara. I detta avsnitt presenteras aktuatorer och kraftöverföring.
+Total har handen åtta leder varav sex är separat styrbara. I detta avsnitt presenteras aktuatorer och kraftöverföring.
 \subsection{Servon}
 \begin{figure}[H]
 \includegraphics[height=0.2\textheight]{img/servo}
 \caption{Blue Bird BMS-660DMG+HS servo.}
 \label{fig:servo}
 \end{figure}
-Aktuatorer för samtliga leder är Blue Bird BMS-660DMG+HS. Se figur~\ref{fig:servo}. Dessa servon används för att de uppfyllde kraven på vridmoment med god marginal (se APPENDIX A.HIYTF för dimensionerande beräkningar). Vid en matningsspänningen på 6 Volt har servot ett maximalt vridmoment på 1.42 Nm och en högsta rotationshastighet på 6.16 rad/s utan belastning. Servona har ett totalt rörelseomfång på 120 grader vilket är standard för hobbyservos. Servona regleras via PWM-signaler och har en intern positionsreglering, detta gör att servona alltid arbetar för att nå det önskade läget och återgår till detta läge efter en eventuell störning.
+Aktuatorer för samtliga leder är Blue Bird BMS-660DMG+HS (se figur~\ref{fig:servo}) och är så kallade hobbyservon. Dessa servon används för att de uppfyller kraven på vridmoment med god marginal (se APPENDIX A.HIYTF för dimensionerande beräkningar). Vid en matningsspänning på 6 Volt har servot ett maximalt vridmoment på 1.42 Nm och en högsta rotationshastighet på 6.16 rad/s utan belastning. Servona har ett totalt rörelseomfång på 120 grader vilket är standard för hobbyservos. Servona regleras via PWM-signaler och har en intern positionsreglering, detta gör att servona alltid arbetar för att nå det önskade läget och återgår till detta läge efter en eventuell störning.
 
 \subsection{Kraftöverföring}
 
