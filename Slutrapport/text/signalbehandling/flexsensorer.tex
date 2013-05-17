@@ -1,5 +1,5 @@
 \section{Flexsensorer på styrhandsken}
-Från flexsensorerna samplas en varierande analog spänning med en frekvens på 100 Hz. Signalen diskretireras sedan till heltal med en 10 bitars upplösning. 
+Från flexsensorerna samplas en varierande analog spänning med en frekvens på 100 Hz. Signalen diskretireras sedan till heltal med en 10 bitars upplösning.
 I det uppmätta mätvärdet finns det diverse störningar. Det är inte önskvärt att störningarna överförs till robothanden, eftersom servomotorerna i robothanden då konstant skulle ändra läge, vilket leder till en hackig upplevelse för användaren, slitage på servomotorerna, och extra strömförbrukning.
 
 \begin{figure}[htb]
@@ -7,6 +7,8 @@ I det uppmätta mätvärdet finns det diverse störningar. Det är inte önskvä
 \caption{De sex flexsensorerna uppmätta under 8.0s med en samplingsfrekvens på 100Hz när handen greppar ett objekt.}
 \label{fig:rawflex}
 \end{figure}
+
+Genom att studera de sex signalerna i frekvensplanet kan 
 
 \begin{figure}[htb]
 \includegraphics{img/filter/flex_fourier.pdf}
@@ -20,4 +22,28 @@ I det uppmätta mätvärdet finns det diverse störningar. Det är inte önskvä
 \end{figure}
 
 
-För att filtera signalen används ett \emph{Butterworth-filter} av första ordningen. Butterworth filter filterar
+För att filtera signalen används ett \emph{Butterworth-filter} av första ordningen. Butterworth-filteret är ett lågpassfilter med små ripplar i passbandet. 
+
+\begin{equation}
+\label{eq:butter_s}
+G(s) = \frac{\omega_0}{\omega_0 + s}
+\end{equation}
+Överföringsfunktionen överförs till Z-domän för att kunna implementera filtret digitalt.
+\begin{equation}
+\label{eq:butter_z}
+G(z) = \frac{\omega_0 (z+1)}{2 f_s z-2 f_s + \omega_0 z + \omega_0}
+\end{equation}
+Genom att sätta $\omega_0 = f_0 \cdot 2\pi$ och inverstransformera får vi följande differensekvation:
+\begin{equation}
+    y[n] = \frac{f_0(x[n]+x[n-1]) - y[n-1](f_0 - 2f_s)}
+                {f_0 + 2f_s}
+\end{equation}
+
+\begin{equation}
+    y[n](f_0 + 2f_s) = f_0(x[n]+x[n-1]) - y[n-1](f_0 - 2f_s)
+                
+\end{equation}
+
+
+% breakfreq*((xp + x) - s->yp*(breakfreq - 2*hz))
+% /(breakfreq+2*hz)
