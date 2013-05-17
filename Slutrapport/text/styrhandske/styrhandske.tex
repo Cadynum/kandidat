@@ -1,29 +1,57 @@
 \chapter{Styrhandske}
-Styrhandsken innefattar en handske med flexsensorer, ledlampor??, en mikrokontroller, kalibreringsknappar och en bluetoothmodul.
-\begin{figure}[H]
+\begin{figure}[htb]
 \includegraphics[height=0.5\textheight]{img/kontrollhandske}
-\caption{Konceptskiss över styrhandsken}
-\label{handske}
+\caption{Konceptskiss över styrhandsken. Röda ledlampor indikerar hur högt }
+\end{figure}
+%Detta är intro. Det ska inte vara några detaljer här, bara översiktligt!
+% Konvention: styrhandske, inte reglerhandske eller kontrollhanske
+
+För att intuitivt reglera robothanden används en tunn handske som användaren bär på sin hand. På handskens tumme, långfinger och pekfinger finns det två flexsensorer vardera som följer användarens hand och ändrar resistans beroende på hur mycket de böjs. Resistansen samplas av en mikrokontroller, som efter filtrering trådlöst sänder styrsignaler till robothanden.
+Robothanden sänder i sin tur trycket från dess fingrar till styrhandsken. Trycket återkopplas till användaren genom att fler ledlampor på handen tänds ju större trycket är.
+
+
+\section{Konstruktion}
+\comment{Emil: Skriv om handens fysiska konstruktion}
+
+\section{Elektronik}
+\comment{Kanske något enkelet schema för hur det är uppkopplat}
+
+
+\section{Mikrokontroller}
+För styrhandsken används en \emph{Arduino Micro}, en 16 bitars AVR mikroprocessor.
+Mikrokontrollen
+
+\begin{figure}[htb]
+\includegraphics[width=0.3\textwidth]{img/arduino_micro}
+\caption{Ardunio Micro. Används för kontrollhandsken.}
 \end{figure}
 
-Bilden måste bytas ut om vi inte får på led. För att intuitivt reglera robothanden används en arbetshandske som användaren bär på sin hand. Handsken är gjord av textil och på tummen, långfingret och pekfingret är det två flexsensorer enligt Figur \ref{handske}. Flexsensorerna är av modellen SEN-10264 och ändrar resistans beroende på hur böjda de är. Styrhandsken sköter det som händer i punkt 1-3 enligt Figur \ref{flodesschema} via handskens mikrokontroller som kommunicerar med robothandens mikrokontroller via bluetooth.
 
-\section{Mikrokontroller }
-\label{sec:mikro}
-För kontrollhandsken används en 8 bitars Arduino Micro. Eftersom alla beräkningar kommer att ske i robothanden är mikrokontrollen i handskens enda uppgift att överföra signaler. Storleken och strömförbrukningen är här av större vikt.
-
-En 32 bitars Arduino Due används för robothanden. Eftersom alla reglerberäkning sker i robothanden i sig, är prestanda viktigt. 32 bitar är viktigt för att effektivt kunna använda fixpunkttal\footnote{Tal som har en fast decimalposition. Decimalens plats måste skötas manuellt} med tillräcklig precision.
-
-
-
-\section{Bluetooth}
-För att möjliggöra kommunikation trådlöst mellan kontrollhandsken och robothanden används två prototyp-versioner av \emph{Bluetooth Mate Silver}. Enheten är godkänd för Bluetooth klass 2, vilket bl a innebär låg strömförbrukning (genomsnittligt 2.5mW vid aktiv användning) och överföringar på upp till 10m, vilket anses vara tillräckligt för att klara kravet på 5m i praktiska förhållanden.
+\section{Trådlös kommunikation}
+För att möjliggöra kommunikation trådlöst mellan styrhandsken och robothanden används två prototyp-versioner av \emph{Bluetooth Mate Silver}. Enheten är godkänd för Bluetooth klass 2, vilket bl a innebär låg strömförbrukning (genomsnittligt 2.5mW vid aktiv användning) och överföringar på upp till 20m, vilket anses vara tillräckligt för att klara kravet på 5m i praktiska förhållanden.
 
 Bluetooth-protokollet är ett paketförmedlande nätverk, vilket innebär att information skickas i diskreta paket. Varje paket innehåller metadata
 \footnote{Data som beskriver information, som mottagaradress och felkorrigerande kod}
 och \emph{payload}
 \footnote{Datan i sig som ska överföras}.
-Bluetooth-enheten har en överföringskapacitet på 115200bps, inkluderat metadata.
+Bluetooth-enheten har en överföringskapacitet på 115200bps\footnote{bits per second}, inkluderat metadata.
+
+
+De två bluetoothmodulerna är programmerade att automatiskt ansluta till varandra när de är inom räckhåll, och återuppta en eventuellt förlorad anslutning.
+
+
+\subsection{Säkerhet}
+För att skydda mot otillåten kontroll och avlyssning av styrsignalerna mellan kontrollhandsken används kryptering.
+Bluetooth definierar ett säkerhetsprotokoll där enheter utbyter symmetriska krypteringsnycklar \footnote{128 bitars med vår enhet.} antingen med hjälp av en dynamisk ``parningsprocess'', där användaren kontrollerar pinkoder vid första användningen, eller att nycklarna manuellt. 
+
+Bluetooth är en industristandard vilket leder till att säkerheten är väl testad och beprövad till den mån att den kan anses vara fullgod för projektet, och om industriella tillämpningar i framtiden skulle var önskvärt \cite{btsec}.
+
+\subsection{Integritet och paketförlust}
+Data som överförs trådlöst kan korrumperas av t ex elektromagnetisk strålning. Utan integritetskontroll kan det leda till att felaktiga kommandon utförs, som att t ex ett för hårt tryck mosar en tomat.
+Sändarmodulen räknar ut en CRC-kod\footnote{Cycle Redundancy Check --- En felkorrigerande kod som framställs genom binär polynomdivision} baserat på datan som ska skickas, och inkluderar den i slutat av bluetooth-paketet. 
+Mottagarmodulen i sin tur upprepar uträkningen på datan som tas emot, och jämför det med CRC-koden. Om de inte är ekvivalenta ignoreras paketet eftersom datan då är felaktig.
+
+
 
 
 \begin{figure}[ht]
@@ -31,12 +59,6 @@ Bluetooth-enheten har en överföringskapacitet på 115200bps, inkluderat metada
 \caption{Bluetooth Mate Silver enhet.}
 \end{figure}
 
-\begin{figure}[htb]
-\includegraphics[width=0.3\textwidth]{img/arduino_micro}
-\caption{Ardunio Micro. Används för kontrollhandsken.}
-\end{figure}
-
-\section{Trådlös kommunikation}
 
 \section{Signalbehandling}
 Från flexsensorerna samplas en varierande analog spänning med en frekvens på 100 Hz. Signalen diskretireras sedan till upplösning av 10 bitar. I uppmätta mätvärdet finns det diverse störningar. Det är inte önskvärt att störningarna överförs till robothanden, eftersom servomotorerna i robothanden då konstant skulle ändra läge, vilket leder till en hackig upplevelse för användaren, slitage på servomotorerna, och extra strömförbrukning.
