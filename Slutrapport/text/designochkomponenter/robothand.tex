@@ -1,0 +1,99 @@
+\section{Robothand}
+
+I detta avsnitt presenteras en överblick över de komponenter som utgör den mekaniska handen. Handens mekaniska delar utgörs till största delen av standardiserade komponenter från en Meccano™ byggsats. 
+\begin{figure}[H]
+\includegraphics[width=0.90\textwidth]{img/hand}
+\caption{Handen och dess delkomponenter.}
+\end{figure}
+Handen består av två fingrar och en tumme som beskrivs utförligare i sina respektive avsnitt nedan. På fingrar och tumme sitter det även plastskal som har som uppgift att skapa bättre greppytor. På samtliga fingertoppar finns trycksensorer som kan mäta relativa normalkrafter. En Arduino Due mikrokontroller styr de sex stycken servomotorer som aktuerar fingrarna och sköter även kommunikationen via bluetooth med styrhandsken för att ta emot styrsignaler samt skicka uppmätta trycksensorvärden.   
+ Handen har aktuatorer, mikrokontroller, bluetooth och strömförsörjning integrerat i en enda enhet.\\
+Fingrarnas rörelseomfång och relativa position tillåter ett stort antal olika grepp, med olika krav på styrka, omfång, finkänslighet och fingerfärdighet. 
+\begin{figure}[H]
+\includegraphics[width=0.90\textwidth]{img/provagrepp}
+\caption{Verifiering av relativ fingerpositionering utefter greppförmåga.}
+\label{fig:cad}
+\end{figure}
+Handens design verifieras i CAD-miljö innan konstruktion för att på ett effektivt sätt säkerhetsställa att ett flertal olika objekt kan gripas. Figur~\ref{fig:cad} illustrerar hur handen griper olika objekt av varierande storlek och form.
+
+%I figuren ovan syns de utprovade greppen, som i sin tur kan identifieras i Cutkoskys grepphierarki. %%Se \ref{cutkosky} 
+%Då handen konstruerats för att kunna hantera både stora och små objekt som kräver  både greppstyrka och finmotorik är den mycket flexibel vilket gör att den säkert kan greppa och hantera objekt av olika storlekar och tyngd.
+
+
+
+\subsection{Fingrar och tumme}
+Handens två identiska fingrar är designade för  att efterlikna ett människolikt rörelsemönster vilket underlättar för användaren då rörelsemönstret hos robothanden imiterar det mänskliga.
+
+
+\begin{figure}[H]
+\includegraphics[height=0.3\textheight]{img/fingerbild}
+\label{oversiktsbild}
+\caption{Översiktsbild fingerdesign.}
+\label{fig:finger}
+\end{figure}
+
+Fingrarna har tre leder varav Led 1 och Led 2 (se figur~\ref{fig:finger}) är separat styrbara. Led 3 är via ett stag tvångsstyrd av Led 2 för att imitera hur ett mänskligt finger beter sig när handen sluts. Jämfört med det mänskliga fingret saknas förmågan att vid Led 1 vrida fingret i sidled. Beskrivning av hur fingrar och tumme aktueras finns i avsnitt~\ref{Kraftovf} Kraftöverföring\\En fördel med två separat styrbara leder är att fingrarnas rörelseomfång och funktionella förmåga utökas.
+\begin{figure}[H]
+\includegraphics[width=0.50\textwidth]{img/1vs2frihets}
+\caption{En vs. två styrbara leder.}
+\label{fig:tvaleder}
+\end{figure}
+
+I figur~\ref{fig:tvaleder} demonstreras hur två styrbara leder spänner upp ett fält av möjliga positioner för fingertoppen att befinna sig i för varje läge handen står i, vilket minskar behovet av att flytta hela handen vid små justeringar av grepp, medans ett finger med endast en styrbar led tvingas följa en unik bana.\\
+\\
+\begin{figure}[H]
+\includegraphics[height=0.35\textheight]{img/tummecad}
+\caption{Tummen}
+\label{fig:tumme}
+\end{figure} 
+Tummen (figur~\ref{fig:tumme}) skiljer sig från de två fingrarna och har endast två leder varav båda är separat styrda. I likhet med fingrarna sitter den fast positionerad i handen för att utgöra ett mothåll för finger 1 och 2 vid normalt användande och kan även göra ett pincettgrepp med finger 1 vid precisionsgrepp. Detta är tillräckligt för möjliggöra ett flertal olika grepp, men jämfört med den mänskliga tummen som kan möta samtliga fingertoppar är detta ett stelt utförande.
+
+
+
+
+
+\subsubsection{Fingertoppar och sensorer}
+För att insamla information om hur hårt handen påverkar objekt som hanteras sitter det trycksensorer längst ut på varje fingertopp.
+\begin{figure}[H]
+\includegraphics[height=0.3\textheight]{img/trycksensor}
+
+\caption{Beskrivning}
+\label{fig:trycksensor}
+\end{figure}
+I figur~\ref{fig:trycksensor} ovan syns trycksensorns position på fingertoppen. Trycksensorerna är av modell Interlink 0.5 FSR 100N, och kan mäta kontakttryck på den cirkulära ytan i spannet 0.11-110 MPa. Mätningen sker genom att ytan komprimeras, vilket resulterar i en minskad resistans hos trycksensorn, som registreras av handens mikrokontroller. Sensorerna kan dock endast uppskatta ett tryck i normalriktningen, ingen information om vart på sensorytan, eller hur stort område som belastas kan återges, vilket resulterar i att endast relativa krafter kan mätas, då ett flertal olika tryckbelastningar med varierande utbredning över sensorytan kan resultera i samma resistansminskning.
+\begin{figure}[H]
+\includegraphics[height=0.25\textheight]{img/sensor}
+\caption{Monterad fingertopp med trycksensor under gummi}
+\label{fig:monteradtopp}
+\end{figure}
+Över sensorerna sitter ett 3 mm tjockt lager av syntetiskt gummi (se figur~\ref{fig:monteradtopp}) för att skydda samt ge större friktion vid hantering av objekt.\\
+\begin{figure}[H]
+\includegraphics[height=0.30\textheight]{img/pincett}
+\caption{Tumme och finger 1 håller en nyckel i pincettgrepp.}
+\label{fig:pincett}
+\end{figure}
+Fingertopparna är utformade för att kunna skapa ett pincettgrepp vid hantering av små känsliga objekt där kontatktrycket mäts, se figur~\ref{fig:pincett}.
+Nedre delen av fingertoppen fungerar som stöd vid övrig grepp men där mäts inte kontakttrycket. Fingertopparna skapas i CAD och skrivs ut i en 3d-printer.
+\section{Aktuering}
+Totalt har handen åtta leder varav sex är separat styrbara. I detta avsnitt presenteras servomotorer och kraftöverföring.
+\subsection{Servon}
+\begin{figure}[H]
+\includegraphics[height=0.2\textheight]{img/servo}
+\caption{Blue Bird BMS-660DMG+HS servo.}
+\label{fig:servo}
+\end{figure}
+Aktuatorer för samtliga leder är Blue Bird BMS-660DMG+HS (se figur~\ref{fig:servo}) och är så kallade hobbyservon. Dessa servon används för att de uppfyller kraven på vridmoment med god marginal (se APPENDIX A.HIYTF för dimensionerande beräkningar). Vid en matningsspänning på 6 Volt har servot ett maximalt vridmoment på 1.42 Nm och en högsta rotationshastighet på 6.16 rad/s utan belastning. Servona har ett totalt rörelseomfång på 120 grader vilket är standard för hobbyservos. Servona regleras via PWM-signaler och har en intern positionsreglering, detta gör att servona alltid arbetar för att nå det önskade läget och återgår till detta läge efter en eventuell störning.
+
+\subsection{Kraftöverföring}
+\label{Kraftovf}
+\begin{figure}[H]
+\includegraphics[height=0.5\textheight]{img/servosena}
+\caption{Beskrivning}
+\end{figure}
+BILD PÅ STAG, BILD PÅ SENA MED HJUL
+
+
+Led 1 i samtliga fingrar aktueras via stag, vilket gör att de kan föras fram och tillbaka av respektive servo. För att aktuera Led 2 i samtliga fingrar används en sena. Senan utgörs av en fiskelina dimensionerad för en dragkraft på 330 N. Största dragkraften i senan uppstår då servo arbetar vid maximalt vridmoment och uppgår till 118 N med 12 mm servohorn. För att återföra fingret till sitt räta läge används en vridfjäder som sitter runt led 2. 
+\begin{figure}[H]
+\includegraphics[height=0.5\textheight]{img/fjader}
+\caption{Vridfjäder.}
+\end{figure}
