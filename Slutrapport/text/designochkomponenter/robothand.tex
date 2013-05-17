@@ -41,7 +41,7 @@ Fingrarna har tre leder varav Led 1 och Led 2 (se figur~\ref{fig:finger}) är se
 I figur~\ref{fig:tvaleder} demonstreras hur två styrbara leder spänner upp ett fält av möjliga positioner för fingertoppen att befinna sig i för varje läge handen står i, vilket minskar behovet av att flytta hela handen vid små justeringar av grepp, medans ett finger med endast en styrbar led tvingas följa en unik bana.\\
 \\
 \begin{figure}[H]
-\includegraphics[height=0.35\textheight]{img/tummecad}
+\includegraphics[height=0.15\textheight]{img/tummecad}
 \caption{Tummen}
 \label{fig:tumme}
 \end{figure} 
@@ -74,26 +74,31 @@ I figur~\ref{fig:trycksensor} ovan syns trycksensorns position på fingertoppen.
 Fingertopparna är utformade för att kunna skapa ett pincettgrepp vid hantering av små känsliga objekt där kontatktrycket mäts, se figur~\ref{fig:pincett}.
 Nedre delen av fingertoppen fungerar som stöd vid övrig grepp men där mäts inte kontakttrycket. Fingertopparna skapas i CAD och skrivs ut i en 3d-printer.
 \section{Aktuering}
-Totalt har handen åtta leder varav sex är separat styrbara. I detta avsnitt presenteras servomotorer och kraftöverföring.
+I detta avsnitt presenteras servomotorer och kraftöverföring.\\
+Totalt har handen åtta leder varav sex är separat styrbara. Varje styrbar led aktueras av en servomotor. Kraftöverföringen mellan servomotor och finger sker med stag och genomlöpande senor. 
 \subsection{Servon}
+Aktuatorer för samtliga leder är sex stycken Blue Bird BMS-660DMG+HS (se figur~\ref{fig:servo}) och är så kallade hobbyservon.
 \begin{figure}[H]
 \includegraphics[height=0.2\textheight]{img/servo}
 \caption{Blue Bird BMS-660DMG+HS servo.}
 \label{fig:servo}
 \end{figure}
-Aktuatorer för samtliga leder är Blue Bird BMS-660DMG+HS (se figur~\ref{fig:servo}) och är så kallade hobbyservon. Dessa servon används för att de uppfyller kraven på vridmoment med god marginal (se APPENDIX A.HIYTF för dimensionerande beräkningar). Vid en matningsspänning på 6 Volt har servot ett maximalt vridmoment på 1.42 Nm och en högsta rotationshastighet på 6.16 rad/s utan belastning. Servona har ett totalt rörelseomfång på 120 grader vilket är standard för hobbyservos. Servona regleras via PWM-signaler och har en intern positionsreglering, detta gör att servona alltid arbetar för att nå det önskade läget och återgår till detta läge efter en eventuell störning.
+ Dessa servomotorer används för att de uppfyller kraven på vridmoment med god marginal (se APPENDIX A.HIYTF för dimensionerande beräkningar). Vid en matningsspänning på 6 Volt har servot ett maximalt vridmoment på 1.42 Nm och en högsta rotationshastighet på 6.16 rad/s utan belastning. Servona har ett totalt rörelseomfång på 120 grader vilket är standard för hobbyservos. Servona regleras via PWM-signaler och har en intern positionsreglering, detta gör att servomotorerna alltid arbetar för att nå det önskade läget och återgår till detta läge efter en eventuell störning.
 
 \subsection{Kraftöverföring}
 \label{Kraftovf}
-\begin{figure}[H]
-\includegraphics[height=0.5\textheight]{img/servosena}
-\caption{Beskrivning}
-\end{figure}
-BILD PÅ STAG, BILD PÅ SENA MED HJUL
+Led 1 i samtliga fingrar och tumme aktueras via stag, vilket gör att de kan föras fram och tillbaka av respektive servo.
 
-
-Led 1 i samtliga fingrar aktueras via stag, vilket gör att de kan föras fram och tillbaka av respektive servo. För att aktuera Led 2 i samtliga fingrar används en sena. Senan utgörs av en fiskelina dimensionerad för en dragkraft på 330 N. Största dragkraften i senan uppstår då servo arbetar vid maximalt vridmoment och uppgår till 118 N med 12 mm servohorn. För att återföra fingret till sitt räta läge används en vridfjäder som sitter runt led 2. 
 \begin{figure}[H]
-\includegraphics[height=0.5\textheight]{img/fjader}
-\caption{Vridfjäder.}
+\includegraphics[width=0.9\textwidth]{img/stagsenor}
+\caption{Översiktsbild kraftöverföring mellan servomotorer och leder.}
+\label{stagsenor}
 \end{figure}
+För att aktuera Led 2 används en sena som löper igenom fingret se ~\ref{fig:finsen} . Senan utgörs av en fiskelina dimensionerad för en dragkraft på 330 N. Största dragkraften i senan uppstår då servomotorn arbetar vid maximalt vridmoment och uppgår till 118 N med 12 mm servohorn. För att återföra fingret till sitt räta läge används en vridfjäder som sitter runt led 2. 
+
+\begin{figure}[H]
+\includegraphics[height=0.30\textheight]{img/fingersena}
+\caption{Senans väg genom fingret.}
+\label{fig:finsen}
+\end{figure}
+
