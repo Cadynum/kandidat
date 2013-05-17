@@ -1,0 +1,23 @@
+\section{Flexsensorer på styrhandsken}
+Från flexsensorerna samplas en varierande analog spänning med en frekvens på 100 Hz. Signalen diskretireras sedan till heltal med en 10 bitars upplösning. 
+I det uppmätta mätvärdet finns det diverse störningar. Det är inte önskvärt att störningarna överförs till robothanden, eftersom servomotorerna i robothanden då konstant skulle ändra läge, vilket leder till en hackig upplevelse för användaren, slitage på servomotorerna, och extra strömförbrukning.
+
+\begin{figure}[htb]
+\includegraphics{img/filter/flex_raw.pdf}
+\caption{De sex flexsensorerna uppmätta under 8.0s med en samplingsfrekvens på 100Hz när handen greppar ett objekt.}
+\label{fig:rawflex}
+\end{figure}
+
+\begin{figure}[htb]
+\includegraphics{img/filter/flex_fourier.pdf}
+\caption{Diskret fouriertransform av signalerna från figur~\ref{fig:rawflex}.}
+\end{figure}
+
+
+\begin{figure}[htb]
+\includegraphics{img/filter/flex_filtered.pdf}
+\caption{Signalerna från figur~\ref{fig:rawflex} filtrerade med ett Butterworth-filter av första ordningen med en brytningsfrekvens på $f=\unit[15]{Hz}$.}
+\end{figure}
+
+
+För att filtera signalen används ett \emph{Butterworth-filter} av första ordningen. Butterworth filter filterar

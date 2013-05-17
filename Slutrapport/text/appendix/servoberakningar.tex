@@ -2,6 +2,7 @@
 
 Servoberäkningarna tillkommer som underlag för objektidentifieringsdelen. Nedan behandlas samtliga beräkningar för de fyra servon som styr tummen och pekfingret. 
 
+
 \subsection{Beräkningar för servo 1}
 
 Servo 1 är med hjälp av ett stag kopplat till tummens första led och styr därmed dess $\alpha$ vinkel (se \ref{fig:servo1})
@@ -82,7 +83,7 @@ Med hjälp av matlab så har ovanstående itterationsshema genererat ett $\alpha
 \caption{$\alpha$-vinkeln som en funktion av servovinkeln $\phi$}
 \end{figure}
 
-Genom att anpassa en ekvation till kurvan undviks itterations processen vid styrning av handen vilket underlättar för processon. Med hjälp av ekvation \eqref{eq:servo2} kan koordinaterna för ytterpunkterna på tummens första led beräknas. Tummens origo är placerat i dess första roterande punkt, punkt $P_{3}$ (se \ref{fig:servo2})
+Genom att anpassa en ekvation till kurvan undviks itterations processen vid styrning av handen vilket underlättar för processon. Med hjälp av ekvation \eqref{eq:servo2} kan koordinaterna för ytterpunkterna på tummens första led beräknas. Tummens origo är placerat i dess första roterande punkt, punkt $P_{3}$ (se ~\ref{fig:servo2})
 
 \begin{equation}
 \label{eq:servo2}
@@ -110,13 +111,127 @@ Servo 2 styr tummens andra led (se \ref{fig:servo4}) genom att applicera en kraf
 \begin{figure}[H]
 \label{fig:servo5}
 \includegraphics[width=0.8\textwidth]{img/servo/servo_berakning22}
-\caption{}
+\caption{Definition av längder}
 \end{figure}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \begin{figure}[H]
 \label{fig:servo6}
 \includegraphics[width=1\textwidth]{img/servo/servo_berakning23}
-\caption{}
+\caption{Definition av vinklar}
 \end{figure}
 \end{minipage}
+
+\[
+\begin{cases}
+a=\unit[24]{mm} \\
+b=\unit[39]{mm}\\
+\theta=\frac{\pi}{4}\\
+\end{cases}
+\]
+
+Servot minskar avståndet c linjärt genom att linda senan runt servohjulet. Därav blir avståndsminskningen (s) proportionellt med servo läget($\phi$) och servohjulets radie ($r_{s}$)enligt ekvation \eqref{eq:servo3}
+
+\begin{equation}
+\label{eq:servo3}
+s=r_{s}\phi 
+\end{equation}
+
+Senans ursprungslängd betecknas $c_{0}$ och fås när servot står i sitt minsta läge ($\phi_{0}$). Vid detta servoläge gäller att:
+
+\begin{center}
+$\beta=0$ $\rightarrow$ $\gamma_0=\pi-\theta=\frac{3\pi}{4}$
+\end{center}
+
+Med hjälp av cosinus-satsen fås sedan $c_0$ genom ekvation \eqref{eq:servo4}
+
+\begin{equation}
+\label{eq:servo4}
+c_0=\sqrt[]{a^2+b^2-2ab\cos(\gamma_0)}=61.8mm
+\end{equation}
+
+\newpage
+
+När $c_0$ är bestämmd kan $\beta$ fås för varje servo läge genom ekvationer \eqref{eq:servo5}-\eqref{eq:servo6}
+
+
+\begin{equation}
+\label{eq:servo5}
+\gamma=\arccos(\frac{a^2+b^2-(c_0-s)^2}{2ab})
+\end{equation}
+
+\begin{equation}
+\label{eq:servo6}
+\beta=\pi-\theta-\gamma
+\end{equation}
+
+\begin{figure}[H]
+\label{fig:servo7}
+\includegraphics[width=0.7\textwidth]{img/servo/servo_beta}
+\caption{$\beta$-vinkel som funktion av servovinkel ($\phi$)}
+\end{figure}
+
+\begin{figure}[H]
+\label{fig:servo8}
+\includegraphics[width=0.7\textwidth]{img/servo/servo_berakning24}
+\caption{Definition av tummens punkter}
+\end{figure}
+
+
+När $\beta$ är bestämd kan övrig punkter bestämmas med hjälp av ekvationer \eqref{eq:servo7}-\eqref{eq:servo9}
+
+\begin{equation}
+\label{eq:servo7}
+\mu=\alpha+\beta-\frac{\pi}{4}
+\end{equation}
+
+\begin{equation}
+\label{eq:servo8}
+P_2=[P_{1x}+L_2\cos(\frac{\pi}{2}-\alpha-beta),P_{1y}+L_2\sin(\frac{\pi}{2}-\alpha-beta)]
+\end{equation}
+
+\begin{equation}
+\label{eq:servo9}
+P_3=[P_{2x}+L_3\cos(\mu),P_{1y}-L_3\sin(\mu)]
+\end{equation}
+
+\begin{table}[H]
+    \begin{tabular}{|c|l|}
+        \hline
+        $L_2$      & 13[mm] \\ \hline
+        $L_3$      & 39[mm]  \\ \hline
+       
+    \end{tabular}
+\end{table}
+
+\subsection{Beräknar för servo 3}
+
+Servo 3 är precis som servo 1 kopplat med ett stag och kontrollerar därmed fingrets $\alpha$-vinkel (se ~\ref{fig:servo8})
+
+\begin{figure}[H]
+\label{fig:servo8}
+\includegraphics[width=0.7\textwidth]{img/servo/servo_berakning3}
+\caption{Rörelse i pekfingrets första led till följd av rörelse i servo 3}
+\end{figure}
+
+
+
+\begin{figure}[H]
+       
+        \begin{subfigure}[b]{0.5\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{img/servo/servo_berakning31}
+                \caption{Stagkonstruktion i sitt ursprungsläge}
+                \label{fig:servo5}
+        \end{subfigure}%
+        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{0.5\textwidth}
+                
+                \includegraphics[width=\textwidth]{img/servo/servo_berakning32}
+                \caption{Stagkonstruktion efter servorörelse}
+                \label{fig:servo6}
+        \end{subfigure}
+\end{figure}
+
+som 
