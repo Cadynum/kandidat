@@ -1,6 +1,27 @@
-\section{Flexsensorer på styrhandsken}
-Från flexsensorerna samplas en varierande analog spänning med en frekvens på 100 Hz. Signalen diskretireras sedan till heltal med en 10 bitars upplösning\footnote{Ett tal mellan 0--1023}.
-I det uppmätta mätvärdet finns det diverse elektromagnetiska störningar. Det är inte önskvärt att störningarna överförs till robothanden, eftersom servomotorerna i robothanden då konstant skulle ändra läge, vilket leder till en hackig upplevelse för användaren, slitage på servomotorerna, och extra strömförbrukning.
+\section{Styrhandsken}
+\tikzstyle{block} = [rectangle, draw, fill=red!20,
+    text width=7em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+
+\begin{figure}[H]
+\begin{tikzpicture}[node distance = 3.5cm, auto]
+    \node [block] (sampling) {flexsensorernas spänning samplas};
+    \node [block, right of=sampling] (filter) {störningar filtreras};
+    \node [block, right of=filter] (norm1) {normalisering mot användarens hand};
+    \node [block, right of=norm1] (norm2) {normalisering mot robothandens vinklar};
+
+    \path [line] (sampling) -- (filter);
+    \path [line] (filter) -- (norm1);
+    \path [line] (norm1) -- (norm2);
+\end{tikzpicture}
+\caption{Signalens väg genom styrhandsken}
+\end{figure}
+
+\subsection{Filtrering}
+Från flexsensorerna samplas en varierande spänningen med en frekvens på 100 Hz. Signalen diskretireras sedan till ett heltal med en 10 bitars upplösning\footnote{Ett tal mellan 0--1023}.
+I det uppmätta mätvärdet finns det diverse elektromagnetiska störningar. Det är inte önskvärt att störningarna överförs till robothanden, eftersom servomotorerna i robothanden då konstant skulle ändra läge, vilket dels leder till en hackig upplevelse för användaren, slitage på servomotorerna, och extra strömförbrukning.
 
 \begin{figure}[htb]
 \includegraphics{img/filter/flex_raw.pdf}
@@ -8,8 +29,8 @@ I det uppmätta mätvärdet finns det diverse elektromagnetiska störningar. Det
 \label{fig:rawflex}
 \end{figure}
 
-Genom att studera de sex flexsensorernas signaler i frekvensplanet (se figure~\ref{fig:dftflex}) ser vi att det finns en konstant störning, och att de önskvärda signalerna \emph{ungefär} är under 10--20Hz.
-För att filtrera bort störningarna används ett \emph{butterworth-filter} (se \ref{sec:butter}). Brytfrekvensen valdes till $f_0=\unit[15]{Hz}$ efter flera tester där den upplevda fördröjningen av handens rörelser balanserades mot hur ``hackigt'' handen upplevdes röra dig. De filtrerade signalerna finns i figur~\ref{fig:filterflex}.
+Genom att studera de sex flexsensorernas signaler i frekvensplanet (se figur~\ref{fig:dftflex}) observeras en konstant störning, med de önskvärda frekvenserna \emph{ungefär} mellan 0--20Hz.
+För att filtrera bort störningarna används ett \emph{butterworth-filter} (se \ref{sec:butter}). Brytfrekvensen sätts till $f_0=\unit[15]{Hz}$ efter flera tester där den upplevda fördröjningen av robothandens rörelser balanserades mot hur ``hackigt'' handen upplevdes röra dig. De filtrerade signalerna finns i figur~\ref{fig:filterflex}.
 
 
 \begin{figure}[htb]
@@ -18,13 +39,17 @@ För att filtrera bort störningarna används ett \emph{butterworth-filter} (se 
 \label{fig:dftflex}
 \end{figure}
 
-
 \begin{figure}[htb]
 \includegraphics{img/filter/flex_filtered.pdf}
-\caption{Signalerna från figur~\ref{fig:rawflex} filtrerade med ett Butterworth-filter av första ordningen med en brytfrekvens på $f=\unit[15]{Hz}$.}
+\caption{Signalerna från figur~\ref{fig:rawflex} filtrerade med ett butterworth-filter av första ordningen med en brytfrekvens på $f=\unit[15]{Hz}$.}
 \label{fig:filterflex}
 \end{figure}
 
+
+
+\subsection{Kalibrering och normalisering}
+De filtrerade signalerna från flexsensorerna normaliseras mot de två referensvärden som är kalibrerade för en öppen respektive stängd styrhandske.
+Värderna normaliseras i sin tur igen mot robothandens uppmäta minsta och högsta värde för servomotorernas vinklar. Ett linjärt samband mellan flexsensorernas uppmätta spänning och önskvärd vinkel antas. Användartester visar att styrningen upplevs som intuitiv.
 
 
 
