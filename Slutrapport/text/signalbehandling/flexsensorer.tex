@@ -1,10 +1,4 @@
 \section{Styrhandsken}
-\tikzstyle{block} = [rectangle, draw, fill=red!20,
-    text width=7em, text centered, rounded corners, minimum height=4em]
-\tikzstyle{line} = [draw, -latex']
-\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
-    minimum height=2em]
-
 \begin{figure}[H]
 \begin{tikzpicture}[node distance = 3.5cm, auto]
     \node [block] (sampling) {flexsensorernas spänning samplas};
@@ -19,13 +13,14 @@
 \caption{Signalens väg genom styrhandsken}
 \end{figure}
 
-\subsection{Filtrering}
+\subsection{Sampling och filtrering}
+\label{sec:flexsampling}
 Från flexsensorerna samplas en varierande spänningen med en frekvens på 100 Hz. Signalen diskretireras sedan till ett heltal med en 10 bitars upplösning\footnote{Ett tal mellan 0--1023}.
 I det uppmätta mätvärdet finns det diverse elektromagnetiska störningar. Det är inte önskvärt att störningarna överförs till robothanden, eftersom servomotorerna i robothanden då konstant skulle ändra läge, vilket dels leder till en hackig upplevelse för användaren, slitage på servomotorerna, och extra strömförbrukning.
 
 \begin{figure}[htb]
 \includegraphics{img/filter/flex_raw.pdf}
-\caption{De sex flexsensorerna uppmätta under 8.0s med en samplingsfrekvens på 100Hz när en användare öppnar och stänger styrhandsken 4 gånger.}
+\caption{De sex flexsensorerna uppmätta under 8.0s med en samplingsfrekvens på 100Hz när en användare öppnar och stänger styrhandsken 4 gånger. Signalerna kan anta värden mellan $\unit[0-5]{V}$}
 \label{fig:rawflex}
 \end{figure}
 
@@ -35,13 +30,13 @@ För att filtrera bort störningarna används ett \emph{butterworth-filter} (se 
 
 \begin{figure}[htb]
 \includegraphics{img/filter/flex_fourier.pdf}
-\caption{Diskret fouriertransform av signalerna från figur~\ref{fig:rawflex}.}
+\caption{Diskret fouriertransform av en signal från figur~\ref{fig:rawflex}.}
 \label{fig:dftflex}
 \end{figure}
 
 \begin{figure}[htb]
 \includegraphics{img/filter/flex_filtered.pdf}
-\caption{Signalerna från figur~\ref{fig:rawflex} filtrerade med ett butterworth-filter av första ordningen med en brytfrekvens på $f=\unit[15]{Hz}$.}
+\caption{Signalerna från figur~\ref{fig:rawflex} filtrerade med ett butterworth-filter av första ordningen med en brytfrekvens på $f_0=\unit[15]{Hz}$. Signalerna kan anta värden mellan $\unit[0-5]{V}$.}
 \label{fig:filterflex}
 \end{figure}
 

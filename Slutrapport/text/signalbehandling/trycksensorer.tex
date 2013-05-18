@@ -1,1 +1,52 @@
 \section{Trycksensorer på robothanden}
+
+\begin{figure}[H]
+\begin{tikzpicture}[node distance = 3.5cm, auto]
+    \node [block] (sampling) {trycksensorernas spänning samplas};
+    \node [block, right of=sampling] (filter) {störningar filtreras};
+    \node [block, right of=filter] (norm1) {spänningen räknas om till tryck i Newton};
+
+    \path [line] (sampling) -- (filter);
+    \path [line] (filter) -- (norm1);
+ \end{tikzpicture}
+ \caption{Signalens från spänning till tryck i robothanden.}
+ \end{figure}
+
+\subsection{Sampling och filtrering}
+\begin{figure}[h]
+\includegraphics{img/filter/tryck_fourier.pdf}
+\caption{Diskret fouriertransform av en trycksensors signal.}
+\label{fig:tryck_dft}
+\end{figure}
+Från trycksensorerna samplas en varierande spänningen med en frekvens på 100 Hz.
+Likt signalerna från flexsensorerna (se \ref{sec:flexsampling}) finns det diverse elektromagnetiska störningar i mätdatan som inte är önskvärda. Från figur~\ref{fig:tryck_dft} ser vi att majoriteten av de önskvärda frekvenserna är under 15Hz.
+Filtreringen sker med ett första ordningens butterworth-filter (se \ref{sec:butter}) med $f_0=\unit[15]{Hz}$ som brytfrekvens.
+\comment{todo: tidsfördröjning. autoreglering}
+
+
+
+\begin{figure}[h]
+\includegraphics{img/filter/tryck_dubbel.pdf}
+\caption{Signal från en trycksensor före respektive efter filtrering. Den filtrerade signalen är förskjuten $+\unit[0.05]{V}$ i y-led för att belysa skillnaden. Signalen kan anta värden mellan $\unit[0-3.3]{V}$}
+\end{figure}
+
+
+
+\subsection{Omvandling till Newton}
+Det spänningsvärde som samplas för varje trycksensor har inte ett linjärt samband mellan tryck och spänning och behöver därmed omvandlas.
+Genom att mäta trycksensorns diskretirerade spänningsvärde vid flera punkter med känt applicerat tryck söker vi efter en funktion som beskriver mätdatan.
+Funktionen observeras bete sig initialt avtagande exponentiellt ($1-e^{-x}$), för att sedan övergå i en $x^d$ kurva där $0<d<1$. Kombinerat ger de två funktionerna det oss ekvation~\eqref{eq:tryck}, där $a>0$ är en skalningskonstant.
+
+\begin{equation}
+\label{eq:tryck}
+    f(x) = a\left(1-e^{-x/b}\right) x^d
+\end{equation}
+
+\begin{figure}[H]
+\begin{subfigure}[b]{0.49\textwidth}
+\includegraphics{img/tryck/before.pdf}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth}
+\includegraphics{img/tryck/after.pdf}
+\end{subfigure}
+\end{figure}
