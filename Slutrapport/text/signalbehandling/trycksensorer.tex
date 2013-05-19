@@ -33,9 +33,9 @@ Filtreringen sker med ett första ordningens butterworth-filter (se \ref{sec:but
 
 
 \subsection{Omvandling till Newton}
-Det spänningsvärde som samplas för varje trycksensor har inte ett linjärt samband mellan tryck och spänning och behöver därmed omvandlas.
+Samplad spänning relaterar inte linjärt till kraft.
 Genom att mäta trycksensorns diskretirerade spänningsvärde vid flera punkter med känt applicerat tryck söker vi efter en funktion som beskriver mätdatan.
-Funktionen observeras bete sig initialt avtagande exponentiellt ($1-e^{-x}$), för att sedan övergå i en $x^d$ kurva där $0<d<1$. Kombinerat ger de två funktionerna det oss ekvation~\eqref{eq:tryck}, där $a>0$ är en skalningskonstant.
+Funktionen observeras bete sig initialt avtagande exponentiellt ($1-e^{-x/b}$), för att sedan övergå i en $x^d$ kurva där $0<d<1$. Kombinerat ger de två funktionerna det oss ekvation~\eqref{eq:tryck}, där $b<0$ är den avtagande exponentiella kurvans lutning, $0<d<1$ potensfunktionens lutning och $a>0$ en skalningskonstant.
 \comment{skilj på tryck och kraft, tryck har enheten Pa = N/m\^2 och kraft har N}
 
 \begin{equation}
