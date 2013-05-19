@@ -35,15 +35,13 @@ c=\unit[58]{mm} \\
 \begin{table}[H]
     \begin{tabular}{|c|l|l|}
         \hline
-        Punkt  & X-Koordinat                          & Y-Koordinat                          \\ \hline
-        $P_{0}$      & 0                                    & 0                                   \\ \hline
-        $P_{1}$      & $r_{1}\cos(\phi)$              & $r_{1}\sin(\phi)$              \\ \hline
-        $P_{2}$      & $P_{3x}-r_{2}\sin(\alpha)$                  & $P_{3y}+r_{2}\cos(\alpha)$                  \\ \hline
-        $P_{3}$      & $b$ & $-a$ \\
-        \hline
+        Punkt  & X-Koordinat & Y-Koordinat                       \\ \hline
+  $P_{0}$      & 0   & 0                                   \\ \hline
+  $P_{1}$      & $r_{1}\cos(\phi)$ & $r_{1}\sin(\phi)$              \\ \hline
+  $P_{2}$      & $P_{3x}-r_{2}\sin(\alpha)$  & $P_{3y}+r_{2}\cos(\alpha)$                  \\ \hline
+  $P_{3}$      & $b$ & $-a$ \\ \hline
     \end{tabular}
 \end{table}
-
 
 
 Avståndet mellan punkterna $P_{2}$ och $P_{1}$ är  alltid c vilket är längden på staget som sammankopplar de båda punkterna. Detta utnyttjas för att upprätta ett itterations villkor. Ett gissat värde på alfa ($\alpha_{guess}$) ger koordinaterna för punkt $P_{2}$ vilket ger ett avstånd mha avståndsformeln (se itterationsschemat nedan). På så sät kan ett specifikt $\alpha$ fås för varje servo vinkel $\phi$
