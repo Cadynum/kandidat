@@ -1,0 +1,66 @@
+{
+	"folders":
+	[
+		{
+			"path": "Slutrapport",
+            "file_exclude_patterns": [
+                "*.acn",
+                "*.acr",
+                "*.alg",
+                "*.aux",
+                "*.bbl",
+                "*.blg",
+                "*.dvi",
+                "*.fdb_latexmk",
+                "*.glg",
+                "*.glo",
+                "*.gls",
+                "*.idx",
+                "*.ilg",
+                "*.ind",
+                "*.ist",
+                "*.lof",
+                "*.log",
+                "*.lot",
+                "*.maf",
+                "*.mtc",
+                "*.mtc0",
+                "*.nav",
+                "*.nlo",
+                "*.out",
+                "*.pdfsync",
+                "*.ps",
+                "*.snm",
+                "*.synctex.gz",
+                "*.synctex.gz(busy)",
+                "*.toc",
+                "*.vrb",
+                "*.xdy",
+                "*.tdo",
+                "*.fls"
+            ]
+		}
+	],
+    "settings":
+    {
+        "TEXroot" : "main.tex",
+        "spell_check": true,
+        "dictionary": "Packages/Dictionaries/Swedish.dic"
+    },
+
+    "build_systems":
+    [
+        {
+            "name": "Latex Slutrapport",
+            "target": "make_pdf",
+            // "selector": "text.tex.latex",
+            "cmd": ["latexmk", "-cd",
+            "-e", "\\$pdflatex = 'pdflatex main.tex -interaction=nonstopmode main.pdf'",
+            "-f", "-pdf"],
+
+            // DO NOT MESS WITH THE FOLLOWING!!!
+            "file_regex": "^(...*?):([0-9]+): ([0-9]*)([^\\.]+)"
+        }
+    ]
+
+}

@@ -1,6 +1,6 @@
 \section{Servoberäkningar}
 
-Servoberäkningarna tillkommer som underlag för objektidentifieringsdelen. Nedan behandlas samtliga beräkningar för de fyra servon som styr tummen och pekfingret. 
+Servoberäkningarna tillkommer som underlag för objektidentifieringsdelen. Nedan behandlas samtliga beräkningar för de fyra servon som styr tummen och pekfingret.
 
 
 \subsection{Beräkningar för servo 1}
@@ -50,13 +50,13 @@ Avståndet mellan punkterna $P_{2}$ och $P_{1}$ är  alltid c vilket är längde
 
 \begin{flushleft}
 
- (1)   $\phi,\alpha_{guess}$ $\rightarrow$ \\ 
+ (1)   $\phi,\alpha_{guess}$ $\rightarrow$ \\
   (2)  $P_{1}=[r_{1}\cos(\phi),r_{1}\sin(\phi)]$ $\rightarrow$
   \\(3) \thinspace $P_{2}=[P_{3x}-r_{2}\sin(\alpha_{guess}),P_{3y}+r_{2}\cos(\alpha_{guess})]$ $\rightarrow$ \\
   (4)\ $c_{g}=\sqrt[]{(P_{1x}-P_{2x})^2+(P_{1y}-P_{2y})^2}$ $\rightarrow$\\(5) Kolla om: $|c-c_{g}|>tol$ \\ (6) Om (5) stämmer $\rightarrow$ $\alpha_{guess}=\alpha_{guess}+value$ \ , \ börja om från punkt (3) \\ annars $\rightarrow$ det approximativa $\alpha$-värdet har hittats
 \end{flushleft}
 
-Med hjälp av matlab så har ovanstående itterationsshema genererat ett $\alpha$-värde för varje servoläge ($\phi$). Detta utnyttjades sedan med minsta kvadratmetoden för att ta fram ekvation \eqref{eq:servo1} från dessa värden. 
+Med hjälp av matlab så har ovanstående itterationsshema genererat ett $\alpha$-värde för varje servoläge ($\phi$). Detta utnyttjades sedan med minsta kvadratmetoden för att ta fram ekvation \eqref{eq:servo1} från dessa värden.
 
 \begin{equation}
 \label{eq:servo1}
@@ -85,7 +85,7 @@ Genom att anpassa en ekvation till kurvan undviks itterations processen vid styr
 
 \begin{equation}
 \label{eq:servo2}
-P1_{tumme}=[L_{1}\sin(\alpha),L_{1}\cos(\alpha)] 
+P1_{tumme}=[L_{1}\sin(\alpha),L_{1}\cos(\alpha)]
 \end{equation}
 
 
@@ -133,7 +133,7 @@ Servot minskar avståndet c linjärt genom att linda senan runt servohjulet. Dä
 
 \begin{equation}
 \label{eq:servo3}
-s=r_{s}\phi 
+s=r_{s}\phi
 \end{equation}
 
 Senans ursprungslängd betecknas $c_{0}$ och fås när servot står i sitt minsta läge ($\phi_{0}$). Vid detta servoläge gäller att:
@@ -218,7 +218,7 @@ P_3=[P_{2x}+L_3\cos(\mu),P_{1y}-L_3\sin(\mu)]
         \hline
         $L_2$      & 13[mm] \\ \hline
         $L_3$      & 39[mm]  \\ \hline
-       
+
     \end{tabular}
 \end{table}
 
@@ -236,7 +236,7 @@ Servo 3 är precis som servo 1 kopplat med ett stag och kontrollerar därmed fin
 
 
 \begin{figure}[H]
-       
+
         \begin{subfigure}[b]{0.5\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{img/servo/servo_berakning31}
@@ -246,33 +246,37 @@ Servo 3 är precis som servo 1 kopplat med ett stag och kontrollerar därmed fin
         ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
           %(or a blank line to force the subfigure onto a new line)
         \begin{subfigure}[b]{0.5\textwidth}
-                
+
                 \includegraphics[width=\textwidth]{img/servo/servo_berakning32}
                 \caption{Stagkonstruktion efter servorörelse}
                 \label{fig:servo10}
         \end{subfigure}
 \end{figure}
 
-Servo 3 påverkar precis som servo 1 ledens $\alpha$-vinkel med hjälp av ett stag. Konstruktionen har två fasta punkter, $P_0$ samt $P_3$ med koordinaterna som listas nedan. Servot har sin axel i punkt $P_0$ som därifrån är kopplat med hjälp av ett servokors till fingerstaget. Genom att applicera avståndsformeln mellan punkt $P_1$ och $P_2$ kan ett $\alpha$ ittereras fram med villkoret att: $\sqrt[]{(P_{1x}-P_{2x})^2+(P_{1y}-P_{2y})^2}=c$ 
+Servo 3 påverkar precis som servo 1 ledens $\alpha$-vinkel med hjälp av ett stag. Konstruktionen har två fasta punkter, $P_0$ samt $P_3$ med koordinaterna som listas nedan. Servot har sin axel i punkt $P_0$ som därifrån är kopplat med hjälp av ett servokors till fingerstaget. Genom att applicera avståndsformeln mellan punkt $P_1$ och $P_2$ kan ett $\alpha$ ittereras fram med villkoret att: $\sqrt[]{(P_{1x}-P_{2x})^2+(P_{1y}-P_{2y})^2}=c$
 
-\vspace{5 mm}
-\centering{$P_0=[0,0]$ \\ $P_3=[-b,a]$ \\
+
 \begin{table}[H]
     \begin{tabular}{|c|l|}
         \hline
-        $a$      & 8[mm] \\ \hline
-        $b$      & 122[mm]  \\ \hline
-        $r_1$    & 16[mm]  \\ \hline
-        $r_2$    & 26[mm]  \\ \hline
+        $a$      & $\unit[8]{mm}$ \\ \hline
+        $b$      & $\unit[122]{mm}$  \\ \hline
+        $r_1$    & $\unit[16]{mm}$  \\ \hline
+        $r_2$    & $\unit[26]{mm}$  \\ \hline
         $\phi_0$ & $\frac{\pi}{12}$  \\ \hline
     \end{tabular}
 \end{table}
-$c=\sqrt[]{(b+r_1\cos(\varphi_0))^2+r_2^2}=132[mm]$\\
-$P_1=[r_1\cos(\varphi),r_1\cos(\varphi)]$\\
-$P_2=[-b-r_2sin(\alpha),a+r_2\cos(\alpha)]$
-}
+\begin{equation}
+\begin{split}
+P_0 &= [0,0] \\
+P_3 & =[-b,a] \\
+c &= \sqrt[]{(b+r_1\cos(\varphi_0))^2+r_2^2}=132[mm]\\
+P_1 &= [r_1\cos(\varphi),r_1\cos(\varphi)]\\
+P_2 &= [-b-r_2sin(\alpha),a+r_2\cos(\alpha)]
+\end{split}
+\end{equation}
 
-Resultatet av itterationen visas i figur \ref{fig:servo11}och är approximerat i ekvation \eqref{eq:servo10} med hjälp av minsta kvadratmetoden. 
+Resultatet av iterationen visas i figur \ref{fig:servo11} och är approximerat i ekvation \eqref{eq:servo10} med hjälp av minsta kvadratmetoden.
 
 \begin{figure}[H]
 \label{fig:servo11}
@@ -299,7 +303,7 @@ Resultatet av itterationen visas i figur \ref{fig:servo11}och är approximerat i
 \newpage
 
 \subsection{Beräknar för servo 4}
-Beräkningar för pekfingrets $\beta$-vinkeln följer exakt samma struktur som beräkningar för tummens $\beta$-vinkeln(se \ref{servo2}). Undantaget är olika parametervärden. Nedan listas det parametervärden som är essentiella i följande beräkning.  
+Beräkningar för pekfingrets $\beta$-vinkeln följer exakt samma struktur som beräkningar för tummens $\beta$-vinkeln(se \ref{servo2}). Undantaget är olika parametervärden. Nedan listas det parametervärden som är essentiella i följande beräkning.
 
 \begin{figure}[H]
 \label{fig:servo12}
