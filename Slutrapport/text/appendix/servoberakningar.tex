@@ -98,6 +98,7 @@ $(L_{1}=39mm)$
 
 
 \subsection{Beräkningar för servo 2}
+\label{servo2}
 
 Servo 2 styr tummens andra led (se \ref{fig:servo4}) genom att applicera en kraft på en sena kopplat till ledens mittpunkt(punkt $P_{2}$ se\ref{fig:servo5}).
 
@@ -160,6 +161,7 @@ När $c_0$ är bestämmd kan $\beta$ fås för varje servo läge genom ekvatione
 \gamma=\arccos(\frac{a^2+b^2-(c_0-s)^2}{2ab})
 \end{equation}
 
+
 \begin{equation}
 \label{eq:servo6}
 \beta=\pi-\theta-\gamma
@@ -168,8 +170,26 @@ När $c_0$ är bestämmd kan $\beta$ fås för varje servo läge genom ekvatione
 \begin{figure}[H]
 \label{fig:servo7}
 \includegraphics[width=0.7\textwidth]{img/servo/servo_beta}
-\caption{$\beta$-vinkel som funktion av servovinkel ($\phi$)}
+\caption{$\beta$-vinkel som funktion av servovinkel ($\varphi$)}
 \end{figure}
+
+\begin{equation}
+\label{eq:servo10}
+\beta= A\varphi^4+B\varphi^3+C\varphi^2+D\varphi+E
+\end{equation}
+
+\begin{table}[H]
+    \begin{tabular}{|c|l|}
+        \hline
+        A      & -0.000001953004447 \\ \hline
+        B      & 0.000371410356959   \\ \hline
+        C      & -0.028504560185942   \\ \hline
+        D      & 1.756616442878862     \\ \hline
+        E      &  0.451424425453001     \\ \hline
+    \end{tabular}
+\end{table}
+
+\newpage
 
 \begin{figure}[H]
 \label{fig:servo8}
@@ -204,6 +224,7 @@ P_3=[P_{2x}+L_3\cos(\mu),P_{1y}-L_3\sin(\mu)]
     \end{tabular}
 \end{table}
 
+\newpage
 \subsection{Beräknar för servo 3}
 
 Servo 3 är precis som servo 1 kopplat med ett stag och kontrollerar därmed fingrets $\alpha$-vinkel (se ~\ref{fig:servo8})
@@ -222,7 +243,7 @@ Servo 3 är precis som servo 1 kopplat med ett stag och kontrollerar därmed fin
                 \centering
                 \includegraphics[width=\textwidth]{img/servo/servo_berakning31}
                 \caption{Stagkonstruktion i sitt ursprungsläge}
-                \label{fig:servo5}
+                \label{fig:servo9}
         \end{subfigure}%
         ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
           %(or a blank line to force the subfigure onto a new line)
@@ -230,8 +251,92 @@ Servo 3 är precis som servo 1 kopplat med ett stag och kontrollerar därmed fin
                 
                 \includegraphics[width=\textwidth]{img/servo/servo_berakning32}
                 \caption{Stagkonstruktion efter servorörelse}
-                \label{fig:servo6}
+                \label{fig:servo10}
         \end{subfigure}
 \end{figure}
 
-som 
+Servo 3 påverkar precis som servo 1 ledens $\alpha$-vinkel med hjälp av ett stag. Konstruktionen har två fasta punkter, $P_0$ samt $P_3$ med koordinaterna som listas nedan. Servot har sin axel i punkt $P_0$ som därifrån är kopplat med hjälp av ett servokors till fingerstaget. Genom att applicera avståndsformeln mellan punkt $P_1$ och $P_2$ kan ett $\alpha$ ittereras fram med villkoret att: $\sqrt[]{(P_{1x}-P_{2x})^2+(P_{1y}-P_{2y})^2}=c$ 
+
+\vspace{5 mm}
+\centering{$P_0=[0,0]$ \\ $P_3=[-b,a]$ \\
+\begin{table}[H]
+    \begin{tabular}{|c|l|}
+        \hline
+        $a$      & 8[mm] \\ \hline
+        $b$      & 122[mm]  \\ \hline
+        $r_1$    & 16[mm]  \\ \hline
+        $r_2$    & 26[mm]  \\ \hline
+        $\phi_0$ & $\frac{\pi}{12}$  \\ \hline
+    \end{tabular}
+\end{table}
+$c=\sqrt[]{(b+r_1\cos(\varphi_0))^2+r_2^2}=132[mm]$\\
+$P_1=[r_1\cos(\varphi),r_1\cos(\varphi)]$\\
+$P_2=[-b-r_2sin(\alpha),a+r_2\cos(\alpha)]$
+}
+
+Resultatet av itterationen visas i figur \ref{fig:servo11}och är approximerat i ekvation \eqref{eq:servo10} med hjälp av minsta kvadratmetoden. 
+
+\begin{figure}[H]
+\label{fig:servo11}
+\includegraphics[width=0.7\textwidth]{img/servo/alfa-servo3}
+\caption{$\alpha$-vinkel som funktion av servoläge}
+\end{figure}
+
+\begin{equation}
+\label{eq:servo11}
+\alpha= A\varphi^4+B\varphi^3+C\varphi^2+D\varphi+E
+\end{equation}
+
+\begin{table}[H]
+    \begin{tabular}{|c|l|}
+        \hline
+        A      & 0.000001356501825  \\ \hline
+        B      & -0.000304772265970  \\ \hline
+        C      & 0.027512021238403    \\ \hline
+        D      & -0.540303738165201    \\ \hline
+        E      & 3.396572953164549      \\ \hline
+    \end{tabular}
+\end{table}
+
+\newpage
+
+\subsection{Beräknar för servo 4}
+Beräkningar för pekfingrets $\beta$-vinkeln följer exakt samma struktur som beräkningar för tummens $\beta$-vinkeln(se \ref{servo2}). Undantaget är olika parametervärden. Nedan listas det parametervärden som är essentiella i följande beräkning.  
+
+\begin{figure}[H]
+\label{fig:servo12}
+\includegraphics[width=0.7\textwidth]{img/servo/servo_berakning4}
+\caption{Rörelse i pekfingrets andra led till följd av rörelse i servo 4}
+\end{figure}
+
+\[
+\begin{cases}
+a=\unit[26]{mm} \\
+b=\unit[52]{mm}\\
+r_s=12[mm]\\
+c_o=77[mm]\\
+\end{cases}
+\]
+
+\begin{figure}[H]
+\label{fig:servo13}
+\includegraphics[width=0.7\textwidth]{img/servo/beta-servo4}
+\caption{$\beta$-vinkel som funktion av servoläge}
+\end{figure}
+
+\begin{equation}
+\label{eq:servo12}
+\beta= A\varphi^4+B\varphi^3+C\varphi^2+D\varphi+E
+\end{equation}
+
+\begin{table}[H]
+    \begin{tabular}{|c|l|}
+        \hline
+        A      & -0.0000006147645\\ \hline
+        B      & 0.0002814025560  \\ \hline
+        C      & -0.0490932574478  \\ \hline
+        D      & 4.4394812352849    \\ \hline
+        E      & -102.5084186285169  \\ \hline
+    \end{tabular}
+\end{table}
+

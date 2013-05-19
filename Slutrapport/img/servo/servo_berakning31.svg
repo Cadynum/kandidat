@@ -14,7 +14,10 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="New document 1">
+   sodipodi:docname="servo_berakning31.svg"
+   inkscape:export-filename="C:\Users\Joakim\Documents\GitHub\kandidat\Slutrapport\img\servo\servo_berakning31.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -24,9 +27,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.73691406"
-     inkscape:cx="163.30639"
-     inkscape:cy="791.40207"
+     inkscape:zoom="0.64"
+     inkscape:cx="457.95524"
+     inkscape:cy="756.5651"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -227,6 +230,34 @@
          y="251.31134">P<tspan
    style="font-size:65%;baseline-shift:sub"
    id="tspan3981">3</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:51.69073105px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       x="536.09235"
+       y="423.02649"
+       id="text3207"
+       sodipodi:linespacing="125%"
+       transform="scale(1.1351692,0.88092595)"><tspan
+         sodipodi:role="line"
+         id="tspan3209"
+         x="536.09235"
+         y="423.02649">r<tspan
+   style="font-size:33.59944916px;baseline-shift:sub"
+   id="tspan3211">1</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:51.69073105px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       x="180.26262"
+       y="293.23611"
+       id="text3207-1"
+       sodipodi:linespacing="125%"
+       transform="scale(1.1351692,0.88092595)"><tspan
+         sodipodi:role="line"
+         id="tspan3209-7"
+         x="180.26262"
+         y="293.23611">r<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan3237">2</tspan></tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
