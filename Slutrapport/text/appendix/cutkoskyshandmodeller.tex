@@ -1,8 +1,19 @@
-\section{Cutkoskys handmodeller}
+\section{Cutkoskys grepphierarki}
 \label{cutshand}
+Cutkoskys grepphierarki, se figur~\ref{cutkosky}, beskriver systematiskt de vanligaste handgreppen som används vid manuellt handarbete~\citep{Cutkosky}. Den är allmänt accepterad som måttstock då Robothänders flexibilitet och praktiska funktionalitet skall verifieras.
+Bland de bästa i dagsläget är Nasa's Robonaut 2 Hand som framgångsrikt kan utföra 90\% av greppen~\citep{Nasa}.
+
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{../mittrapport/img/cutkoskys_handmodeller.png}
-\caption{Cutkoskys handmodeller}
+\caption{Cutkoskys grepphierarki ur~\citep{Cutkosky}}
 \label{cutkosky}
 \end{figure}
-Följande bild kommer från Cutkoskys rapport om robothänder och hur de ska efterlikna människohandens rörelse. Cutkosky kategoriserar grepp efter ändamål såsom hur vissa cirkulära grepp ökar i styrka och storlek eller fingerfärdighet och finkänslighet.\ref{Cutkosky}
+
+Grepphierarkin användes som hjälpmedel vid designen för att säkerställa att robothanden uppnår flexibilitet och förmåga att hantera olika objekt med olika krav på styrka och finmotorik.
+
+\begin{figure}[H]
+\includegraphics[width=0.90\textwidth]{img/provagreppcut}
+\caption{Verifiering av utvalda dimensionerande grepp i CAD- miljö.}
+\label{fig:testcut}
+\end{figure}
+I figur~\ref{fig:testcut} ses de fyra greppen som valdes som vägledande för designen och hur de verifieras i CAD innan montrering av den fysiska handen. Greppen går i sin tur att identifiera i figur~\ref{cutkosky} som: fr.v. Heavy wrap 2, 1, Prismatic 9 och Circular 12. Genom att välja grepp som ställer krav på styrka och omfång samt precision och fingerfärdighet säkerställs att robothanden kan utföra ett stort antal grepp.
