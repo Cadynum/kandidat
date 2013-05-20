@@ -35,7 +35,7 @@ Filtreringen sker med ett första ordningens butterworth-filter (se \ref{sec:but
 \subsection{Omvandling till Newton}
 Samplad spänning relaterar inte linjärt till kraft.
 Genom att mäta trycksensorns diskretirerade spänningsvärde vid flera punkter med känt applicerad kraft söker vi efter en funktion som beskriver mätdatan.
-Funktionen observeras bete sig initialt avtagande exponentiellt ($1-e^{-x/b}$), för att sedan övergå i en $x^d$ kurva där $0<d<1$. Kombinerat ger de två funktionerna det oss ekvation~\eqref{eq:tryck}, där $b<0$ är den avtagande exponentiella kurvans lutning, $0<d<1$ potensfunktionens lutning och $a>0$ en skalningskonstant.
+Funktionen observeras bete sig initialt avtagande exponentiellt ($1-e^{-x/b}$), för att sedan övergå i en $x^d$ kurva där $0<d<1$. Multiplicerat ger de två funktionerna ekvation~\eqref{eq:tryck}, där $b<0$ är den avtagande exponentiella kurvans lutning, $0<d<1$ potensfunktionens lutning och $a>0$ en skalningskonstant.
 \begin{equation}
 \label{eq:tryck}
     f(x) = a\left(1-e^{-x/b}\right) x^d
