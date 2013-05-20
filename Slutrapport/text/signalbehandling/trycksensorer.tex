@@ -34,20 +34,22 @@ Filtreringen sker med ett första ordningens butterworth-filter (se \ref{sec:but
 
 \subsection{Omvandling till Newton}
 Samplad spänning relaterar inte linjärt till kraft.
-Genom att mäta trycksensorns diskretirerade spänningsvärde vid flera punkter med känt applicerat tryck söker vi efter en funktion som beskriver mätdatan.
+Genom att mäta trycksensorns diskretirerade spänningsvärde vid flera punkter med känt applicerad kraft söker vi efter en funktion som beskriver mätdatan.
 Funktionen observeras bete sig initialt avtagande exponentiellt ($1-e^{-x/b}$), för att sedan övergå i en $x^d$ kurva där $0<d<1$. Kombinerat ger de två funktionerna det oss ekvation~\eqref{eq:tryck}, där $b<0$ är den avtagande exponentiella kurvans lutning, $0<d<1$ potensfunktionens lutning och $a>0$ en skalningskonstant.
-\comment{skilj på tryck och kraft, tryck har enheten Pa = N/m\^2 och kraft har N}
-
 \begin{equation}
 \label{eq:tryck}
     f(x) = a\left(1-e^{-x/b}\right) x^d
 \end{equation}
+\begin{figure}[H]
+\includegraphics{img/tryck/before.pdf}
+\end{figure}
+
+Genom att invertera funktionen kan vi istället ge spänningen som insignal och få tryck. Funktionen $f^{-1}(x)$ har emellertid ingen sluten lösning, och går inte att implementera effektivt i mikrokontrollen.
+En tabell med i förväg numeriskt uträknade värden används, för varje diskret spänningsvärde mellan 0--1023 ger en kraft. 
+\begin{equation}
+    f^{-1}[n] = y: n = f(y)
+\end{equation}
 
 \begin{figure}[H]
-\begin{subfigure}[b]{0.49\textwidth}
-\includegraphics{img/tryck/before.pdf}
-\end{subfigure}
-\begin{subfigure}[b]{0.49\textwidth}
 \includegraphics{img/tryck/after.pdf}
-\end{subfigure}
 \end{figure}
