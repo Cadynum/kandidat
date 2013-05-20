@@ -31,7 +31,7 @@ Handens två identiska fingrar är designade för  att efterlikna ett människol
 \label{fig:finger}
 \end{figure}
 
-Fingrarna har tre leder varav Led 1 och Led 2 (se figur~\ref{fig:finger}) är separat styrbara. Led 3 är via ett stag tvångsstyrd av Led 2 för att imitera hur ett mänskligt finger beter sig när handen sluts. Jämfört med det mänskliga fingret saknas förmågan att vid Led 1 vrida fingret i sidled. Beskrivning av hur fingrar och tumme aktueras finns i avsnitt~\ref{Kraftovf} Kraftöverföring\\En fördel med två separat styrbara leder är att fingrarnas rörelseomfång och funktionella förmåga utökas.
+Fingrarna har tre leder varav Led 1 och Led 2 (se figur~\ref{fig:finger}) är separat styrbara. Led 3 är via ett stag tvångsstyrd av Led 2 för att imitera hur ett mänskligt finger beter sig när handen sluts. Jämfört med det mänskliga fingret saknas förmågan att vid Led 1 vrida fingret i sidled. Beskrivning av hur fingrar och tumme aktueras finns i avsnitt~\ref{Kraftovf} ~Kraftöverföring\\En fördel med två separat styrbara leder är att fingrarnas rörelseomfång och funktionella förmåga utökas.
 \begin{figure}[H]
 \includegraphics[width=0.50\textwidth]{img/1vs2frihets}
 \caption{En vs. två styrbara leder.}
@@ -45,7 +45,7 @@ I figur~\ref{fig:tvaleder} demonstreras hur två styrbara leder spänner upp ett
 \caption{Tummen}
 \label{fig:tumme}
 \end{figure} 
-Tummen (figur~\ref{fig:tumme}) skiljer sig från de två fingrarna och har endast två leder varav båda är separat styrda. I likhet med fingrarna sitter den fast positionerad i handen för att utgöra ett mothåll för finger 1 och 2 vid normalt användande och kan även göra ett pincettgrepp med finger 1 vid precisionsgrepp. Detta är tillräckligt för möjliggöra ett flertal olika grepp, men jämfört med den mänskliga tummen som kan möta samtliga fingertoppar är detta ett stelt utförande.
+Tummen i figur~\ref{fig:tumme} skiljer sig från de två fingrarna och har endast två leder varav båda är separat styrda. I likhet med fingrarna sitter den fast positionerad i handen för att utgöra ett mothåll för finger 1 och 2 vid normalt användande och kan även göra ett pincettgrepp med finger 1 vid precisionsgrepp. Detta är tillräckligt för möjliggöra ett flertal olika grepp, men jämfört med den mänskliga tummen som kan möta samtliga fingertoppar är detta ett stelt utförande.
 
 
 
@@ -56,7 +56,7 @@ För att insamla information om hur hårt handen påverkar objekt som hanteras s
 \begin{figure}[H]
 \includegraphics[height=0.3\textheight]{img/trycksensor}
 
-\caption{Beskrivning}
+\caption{Trycksensor monterad på fingertopp.}
 \label{fig:trycksensor}
 \end{figure}
 I figur~\ref{fig:trycksensor} ovan syns trycksensorns position på fingertoppen. Trycksensorerna är av modell Interlink 0.5 FSR 100N, och kan mäta kontakttryck på den cirkulära ytan i spannet 0.11-110 MPa. Mätningen sker genom att ytan komprimeras, vilket resulterar i en minskad resistans hos trycksensorn, som registreras av handens mikrokontroller. Sensorerna kan dock endast uppskatta ett tryck i normalriktningen, ingen information om vart på sensorytan, eller hur stort område som belastas kan återges, vilket resulterar i att endast relativa krafter kan mätas, då ett flertal olika tryckbelastningar med varierande utbredning över sensorytan kan resultera i samma resistansminskning.
@@ -65,7 +65,7 @@ I figur~\ref{fig:trycksensor} ovan syns trycksensorns position på fingertoppen.
 \caption{Monterad fingertopp med trycksensor under gummi}
 \label{fig:monteradtopp}
 \end{figure}
-Över sensorerna sitter ett 3 mm tjockt lager av syntetiskt gummi (se figur~\ref{fig:monteradtopp}) för att skydda samt ge större friktion vid hantering av objekt.\\
+Figur~\ref{fig:monteradtopp} visar hur det sitter ett 3 mm tjockt lager av syntetiskt gummi över sensorerna för att skydda samt ge större friktion vid hantering av objekt.\\
 \begin{figure}[H]
 \includegraphics[height=0.30\textheight]{img/pincett}
 \caption{Tumme och finger 1 håller en nyckel i pincettgrepp.}
@@ -74,10 +74,10 @@ I figur~\ref{fig:trycksensor} ovan syns trycksensorns position på fingertoppen.
 Fingertopparna är utformade för att kunna skapa ett pincettgrepp vid hantering av små känsliga objekt där kontatktrycket mäts, se figur~\ref{fig:pincett}.
 Nedre delen av fingertoppen fungerar som stöd vid övrig grepp men där mäts inte kontakttrycket. Fingertopparna skapas i CAD och skrivs ut i en 3d-printer.
 \section{Aktuering}
-I detta avsnitt presenteras servomotorer och kraftöverföring.\\
+I detta avsnitt presenteras servomotorer och kraftöverföring.
 Totalt har handen åtta leder varav sex är separat styrbara. Varje styrbar led aktueras av en servomotor. Kraftöverföringen mellan servomotor och finger sker med stag och genomlöpande senor. 
 \subsection{Servon}
-Aktuatorer för samtliga leder är sex stycken Blue Bird BMS-660DMG+HS (se figur~\ref{fig:servo}) och är så kallade hobbyservon.
+Aktuatorer för samtliga leder är sex stycken Blue Bird BMS-660DMG+HS  och är så kallade hobbyservon, se figur~\ref{fig:servo}.
 \begin{figure}[H]
 \includegraphics[height=0.2\textheight]{img/servo}
 \caption{Blue Bird BMS-660DMG+HS servo.}
