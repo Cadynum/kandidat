@@ -44,13 +44,27 @@ Funktionen observeras bete sig initialt avtagande exponentiellt ($1-e^{-x/b}$), 
 \begin{figure}[H]
 \includegraphics{img/tryck/before.pdf}
 \caption{Uppmätta värden för kraftens relation till spänningen för pekfingrets trycksensor, och $f(x)$ med uppskattade $a,b,d$ konstanter för ekvation~\eqref{eq:tryck}.}
+\label{fig:tryckbefore}
 \end{figure}
 
 Genom att invertera funktionen kan vi istället ge spänningen som insignal och få ut tryck. Funktionen $f^{-1}(x)$ har emellertid ingen sluten lösning. För att implementera funktionen effektivt används en tabell per trycksensor med i förväg numeriskt uträknade värden, där varje diskret spänningsvärde mellan 0--1023 ger en kraft.
 \begin{equation}
+\label{eq:tryckinv}
     f^{-1}[n] = y,\;\text{så att } n = f(y)
 \end{equation}
+Relationen mellan spänning och tryck är uppmätt upp till 10 N. Från sensorns datablad (se \ref{chp:komponentlista}) finns det referensgrafer. Mätdatan kan därför extrapoleras med relativt stor säkerhet upp till sensorns maxspecifikation, 20 N.
 
 \begin{figure}[H]
 \includegraphics{img/tryck/after.pdf}
+\caption{Inverterad mätdata från figur~\ref{fig:tryckbefore} och $f^{-1}[n]$ (se ekvation~\ref{eq:tryckinv}) passad till pekfingrets trycksensor.}
 \end{figure}
+
+\begin{table}
+\begin{tabularx}{350pt}{X r r r}
+            & $a$ & $b$ & $d$ \\
+Tumme       & 381 & 1.7 & 0.22 \\
+Pekfinger   & 480 & 0.01 & 0.188 \\
+Långfinger  & 285 & 1.42 & 0.305
+\end{tabularx}
+\caption{Passade värden för trycksensorerna.}
+\end{table}
