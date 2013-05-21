@@ -31,15 +31,15 @@ Handens två identiska fingrar är designade för  att efterlikna ett människol
 \label{fig:finger}
 \end{figure}
 
-Fingrarna har tre leder varav Led 1 och Led 2 (se figur~\ref{fig:finger}) är separat styrbara. Led 3 är via ett stag tvångsstyrd av Led 2 för att imitera hur ett mänskligt finger beter sig när handen sluts. Jämfört med det mänskliga fingret saknas förmågan att vid Led 1 vrida fingret i sidled. Beskrivning av hur fingrar och tumme aktueras finns i avsnitt~\ref{Kraftovf} ~Kraftöverföring\\En fördel med två separat styrbara leder är att fingrarnas rörelseomfång och funktionella förmåga utökas.
+Fingrarna har tre leder varav Led 1 och Led 2 är separat styrbara, se figur~\ref{fig:finger}. Led 3 är via ett stag tvångsstyrd av Led 2 för att imitera hur ett mänskligt finger beter sig när handen sluts. Jämfört med det mänskliga fingret saknas förmågan att vid Led 1 vrida fingret i sidled. En fördel med två separat styrbara leder är att fingrarnas rörelseomfång och funktionella förmåga utökas.
 \begin{figure}[H]
 \includegraphics[width=0.50\textwidth]{img/1vs2frihets}
 \caption{En vs. två styrbara leder.}
 \label{fig:tvaleder}
 \end{figure}
 
-I figur~\ref{fig:tvaleder} demonstreras hur två styrbara leder spänner upp ett fält av möjliga positioner för fingertoppen att befinna sig i för varje läge handen står i, vilket minskar behovet av att flytta hela handen vid små justeringar av grepp, medans ett finger med endast en styrbar led tvingas följa en unik bana.\\
-\\
+I figur~\ref{fig:tvaleder} demonstreras hur två styrbara leder spänner upp ett fält av möjliga positioner för fingertoppen att befinna sig i för varje läge handen står i, vilket minskar behovet av att flytta hela handen vid små justeringar av grepp, medans ett finger med endast en styrbar led tvingas följa en unik bana.
+
 \begin{figure}[H]
 \includegraphics[height=0.15\textheight]{img/tummecad}
 \caption{Tummen}
@@ -59,10 +59,10 @@ För att insamla information om hur hårt handen påverkar objekt som hanteras s
 \caption{Trycksensor monterad på fingertopp.}
 \label{fig:trycksensor}
 \end{figure}
-I figur~\ref{fig:trycksensor} ovan syns trycksensorns position på fingertoppen. Trycksensorerna är av modell Interlink 0.5 FSR 100N, och kan mäta kontakttryck på den cirkulära ytan i spannet \unit[0.11-110]{MPa}. Mätningen sker genom att ytan komprimeras, vilket resulterar i en minskad resistans hos trycksensorn, som registreras av handens mikrokontroller. Sensorerna kan dock endast uppskatta ett tryck i normalriktningen, ingen information om vart på sensorytan, eller hur stort område som belastas kan återges, vilket resulterar i att endast relativa krafter kan mätas, då ett flertal olika tryckbelastningar med varierande utbredning över sensorytan kan resultera i samma resistansminskning.
+I figur~\ref{fig:trycksensor} ovan syns trycksensorns position på fingertoppen. Trycksensorerna, se \ref{chp:komponentlista}, kan mäta kontakttryck på den cirkulära ytan i spannet \unit[0.11-110]{MPa}. Mätningen sker genom att ytan komprimeras, vilket resulterar i en minskad resistans hos trycksensorn, som registreras av handens mikrokontroller. Sensorerna kan dock endast uppskatta ett tryck i normalriktningen, ingen information om vart på sensorytan, eller hur stort område som belastas kan återges, vilket resulterar i att endast relativa krafter kan mätas, då ett flertal olika tryckbelastningar med varierande utbredning över sensorytan kan resultera i samma resistansminskning.
 \begin{figure}[H]
 \includegraphics[height=0.25\textheight]{img/sensor}
-\caption{Monterad fingertopp med trycksensor under gummi}
+\caption{Monterad fingertopp med trycksensor under gummi.}
 \label{fig:monteradtopp}
 \end{figure}
 Figur~\ref{fig:monteradtopp} visar hur det sitter ett 3 mm tjockt lager av syntetiskt gummi över sensorerna för att skydda samt ge större friktion vid hantering av objekt.\\
@@ -77,13 +77,13 @@ Nedre delen av fingertoppen fungerar som stöd vid övrig grepp men där mäts i
 I detta avsnitt presenteras servomotorer och kraftöverföring.
 Totalt har handen åtta leder varav sex är separat styrbara. Varje styrbar led aktueras av en servomotor. Kraftöverföringen mellan servomotor och finger sker med stag och genomlöpande senor. 
 \subsection{Servon}
-Aktuatorer för samtliga leder är sex stycken Blue Bird BMS-660DMG+HS  och är så kallade hobbyservon, se figur~\ref{fig:servo}.
+Aktuatorer för samtliga leder är sex stycken Blue Bird hobbyservon, se figur~\ref{fig:servo}.
 \begin{figure}[H]
 \includegraphics[height=0.2\textheight]{img/servo}
 \caption{Blue Bird BMS-660DMG+HS servo.}
 \label{fig:servo}
 \end{figure}
- Dessa servomotorer används för att de uppfyller kraven på vridmoment med god marginal (se APPENDIX A.HIYTF för dimensionerande beräkningar). Vid en matningsspänning på 6 Volt har servot ett maximalt vridmoment på \unit[1.42]{N} och en högsta rotationshastighet på \unit[6.16]{rad/s} utan belastning. Servona har ett totalt rörelseomfång på 120 grader vilket är standard för hobbyservos. Servona regleras via PWM-signaler och har en intern positionsreglering, detta gör att servomotorerna alltid arbetar för att nå det önskade läget och återgår till detta läge efter en eventuell störning.
+Dessa servomotorer, se \ref{chp:komponentlista}, används för att de uppfyller kraven på vridmoment med god marginal, se \ref{servodim} för dimensionsberäkningar. Vid en matningsspänning på 6 Volt har servot ett maximalt vridmoment på \unit[1.42]{N} och en högsta rotationshastighet på \unit[6.16]{rad/s} utan belastning. Servona har ett totalt rörelseomfång på 120 grader vilket är standard för hobbyservos. Servona regleras via PWM-signaler och har en intern positionsreglering, detta gör att servomotorerna alltid arbetar för att nå det önskade läget och återgår till detta läge efter en eventuell störning.
 
 \subsection{Kraftöverföring}
 \label{Kraftovf}
@@ -94,7 +94,7 @@ Led 1 i samtliga fingrar och tumme aktueras via stag, vilket gör att de kan fö
 \caption{Översiktsbild kraftöverföring mellan servomotorer och leder.}
 \label{stagsenor}
 \end{figure}
-För att aktuera Led 2 används en sena som löper igenom fingret se ~\ref{fig:finsen} . Senan utgörs av en fiskelina dimensionerad för en dragkraft på \unit[330]{N}. Största dragkraften i senan uppstår då servomotorn arbetar vid maximalt vridmoment och uppgår till \unit[118]{N} med \unit[12]{mm} servohorn. För att återföra fingret till sitt räta läge används en vridfjäder som sitter runt led 2. 
+För att aktuera Led 2 används en sena som löper igenom fingret, se ~\ref{fig:finsen} . Senan utgörs av en fiskelina dimensionerad för en dragkraft på \unit[330]{N}. Största dragkraften i senan uppstår då servomotorn arbetar vid maximalt vridmoment och uppgår till \unit[118]{N} med \unit[12]{mm} servohorn. För att återföra fingret till sitt räta läge används en vridfjäder som sitter runt led 2. 
 
 \begin{figure}[H]
 \includegraphics[height=0.30\textheight]{img/fingersena}

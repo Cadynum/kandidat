@@ -1,7 +1,7 @@
 \section{Dimensioneringsberäkningar}
 För att kunna dimensionera servona och få en uppfattning om handens styrka och snabbhet behövdes de krafter som påverkar handen räknas ut. Två greppfall har undersökts och även huruvida tröghetsmomentet behöver beaktas. 
 
-\paragraph{Tröghetsmoment}
+\subsection{Tröghetsmoment}
 
 En uppskattning av tröghetsmomentet räknas fram för att se om den kommer påverka val av servomotor. För att säkerställa kravet att handen kan gå från öppet till stängt läge på mindre än en sekund beräknades momentet som krävs i led 1 för att röra fingret från läge 1 till läge 2 enligt figur 4.4, på en sekund. I beräkningen betraktas fingret som ett stelt rätblock som roterar kring z-axeln. Tröghetsmomentet blir nämligen mindre då led 2 och 3 böjs, genom att bortse från denna böjning fås en säkerhetsmarginal.
  
@@ -18,8 +18,9 @@ $$ I_x\cdot \dot{\omega}=M_1 $$
 Med insatta värden uppgår momentet $M_1$ till $0,0009 [Nm]$. Bidraget till totala momentet från tröghetsmomentet är alltså litet och kommer därför att bortses från härefter. 
 
  
-  \paragraph{Krokgrepp}
-   Vid vertikal last belastas fingret med en punktkraft motsvarande 1 kg på mitten av ben 2. Den yttre fingerleden tas därmed inte med i beräkningarna eftersom den i första hand ska utföra finmotoriska uppgifter där kraven på greppstyrka inte är lika viktiga. 
+\subsection{Krokgrepp}
+\label{servodim}
+Vid vertikal last belastas fingret med en punktkraft motsvarande 1 kg på mitten av ben 2. Den yttre fingerleden tas därmed inte med i beräkningarna eftersom den i första hand ska utföra finmotoriska uppgifter där kraven på greppstyrka inte är lika viktiga. 
 Figur 4.5 visar ett godtyckligt läge för ben 1 och 2. Eftersom den givna lasten är relativt hög försummas strukturens egentyngd tillsammans med friktion och fjädrarnas återförande kraft. Denna försumning kompenseras dock av en säkerhetsfaktor på 1,7.
 
 \begin{figure}[H]
