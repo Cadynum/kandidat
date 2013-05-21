@@ -2,7 +2,7 @@
 
 I detta avsnitt presenteras en överblick över de komponenter som utgör den mekaniska handen. Handens mekaniska delar utgörs till största delen av standardiserade komponenter från en Meccano™ byggsats. 
 \begin{figure}[H]
-\includegraphics[width=0.90\textwidth]{img/hand}
+\includegraphics{img/hand}
 \caption{Handen och dess delkomponenter.}
 \end{figure}
 Handen består av två fingrar och en tumme som beskrivs utförligare i sina respektive avsnitt nedan. På fingrar och tumme sitter det även plastskal som har som uppgift att skapa bättre greppytor. På samtliga fingertoppar finns trycksensorer som kan mäta relativa normalkrafter. En Arduino Due mikrokontroller styr de sex stycken servomotorer som aktuerar fingrarna och sköter även kommunikationen via bluetooth med styrhandsken för att ta emot styrsignaler samt skicka uppmätta trycksensorvärden.   
@@ -54,20 +54,20 @@ Tummen i figur~\ref{fig:tumme} skiljer sig från de två fingrarna och har endas
 \subsubsection{Fingertoppar och sensorer}
 För att insamla information om hur hårt handen påverkar objekt som hanteras sitter det trycksensorer längst ut på varje fingertopp.
 \begin{figure}[H]
-\includegraphics[height=0.3\textheight]{img/trycksensor}
+\includegraphics{img/trycksensor}
 
 \caption{Trycksensor monterad på fingertopp.}
 \label{fig:trycksensor}
 \end{figure}
 I figur~\ref{fig:trycksensor} ovan syns trycksensorns position på fingertoppen. Trycksensorerna, se \ref{chp:komponentlista}, kan mäta kontakttryck på den cirkulära ytan i spannet \unit[0.11-110]{MPa}. Mätningen sker genom att ytan komprimeras, vilket resulterar i en minskad resistans hos trycksensorn, som registreras av handens mikrokontroller. Sensorerna kan dock endast uppskatta ett tryck i normalriktningen, ingen information om vart på sensorytan, eller hur stort område som belastas kan återges, vilket resulterar i att endast relativa krafter kan mätas, då ett flertal olika tryckbelastningar med varierande utbredning över sensorytan kan resultera i samma resistansminskning.
 \begin{figure}[H]
-\includegraphics[height=0.25\textheight]{img/sensor}
+\includegraphics{img/sensor}
 \caption{Monterad fingertopp med trycksensor under gummi.}
 \label{fig:monteradtopp}
 \end{figure}
 Figur~\ref{fig:monteradtopp} visar hur det sitter ett 3 mm tjockt lager av syntetiskt gummi över sensorerna för att skydda samt ge större friktion vid hantering av objekt.\\
 \begin{figure}[H]
-\includegraphics[height=0.30\textheight]{img/pincett}
+\includegraphics{img/pincett}
 \caption{Tumme och finger 1 håller en nyckel i pincettgrepp.}
 \label{fig:pincett}
 \end{figure}
@@ -90,7 +90,7 @@ Dessa servomotorer, se \ref{chp:komponentlista}, används för att de uppfyller 
 Led 1 i samtliga fingrar och tumme aktueras via stag, vilket gör att de kan föras fram och tillbaka av respektive servo.
 
 \begin{figure}[H]
-\includegraphics[width=0.9\textwidth]{img/stagsenor}
+\includegraphics{img/stagsenor}
 \caption{Översiktsbild kraftöverföring mellan servomotorer och leder.}
 \label{stagsenor}
 \end{figure}
