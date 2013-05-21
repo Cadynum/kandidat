@@ -20,7 +20,7 @@ I det uppmätta mätvärdet finns det diverse elektromagnetiska störningar. Det
 
 
 Genom att studera de sex flexsensorernas signaler i frekvensplanet (se figur~\ref{fig:dftflex}) observeras en konstant störning, med de önskvärda frekvenserna \emph{ungefär} mellan 0--20Hz.
-För att filtrera bort störningarna används ett \emph{butterworth-filter} (se \ref{sec:butter}). Brytfrekvensen sätts till $f_0=\unit[15]{Hz}$ efter flera tester där den upplevda fördröjningen av robothandens rörelser balanserades mot hur ``hackigt'' handen upplevdes röra dig. De filtrerade signalerna finns i figur~\ref{fig:filterflex}.
+För att filtrera bort störningarna används ett \emph{butterworthfilter} (se \ref{sec:butter}). Brytfrekvensen sätts till $f_0=\unit[15]{Hz}$ efter flera tester där den upplevda fördröjningen av robothandens rörelser balanserades mot hur ``hackigt'' handen upplevdes röra dig. De filtrerade signalerna finns i figur~\ref{fig:filterflex}.
 
 
 \begin{figure}[htb]
@@ -36,7 +36,7 @@ För att filtrera bort störningarna används ett \emph{butterworth-filter} (se 
 \label{fig:rawflex}
 \vspace*{\fill}
 \includegraphics{img/filter/flex_filtered.pdf}
-\caption{Signalerna från figur~\ref{fig:rawflex} filtrerade med ett butterworth-filter av första ordningen med en brytfrekvens på $f_0=\unit[15]{Hz}$.}
+\caption{Signalerna från figur~\ref{fig:rawflex} filtrerade med ett butterworthfilter av första ordningen med en brytfrekvens på $f_0=\unit[15]{Hz}$.}
 \label{fig:filterflex}
 \end{figure}
 

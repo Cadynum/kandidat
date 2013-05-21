@@ -6,18 +6,18 @@ Flera moment i signalbehandlingen och digitaltekniken introducerar diverse laten
 
     \item[Bluetooth-enhet] Pingtiden \footnote{Tid för en signal att färdas fram och tillbaka} för bluetoothenheten är uppmätt till 31 ms (se figur~\ref{fig:bt_latency}) med en försumbar standardavvikelse så länge ingen paketförlust sker, en risk tester visar kan försummas vid användning inom 15 m oblockerad yta. Tiden för signalen att propagera enkel väg blir såldes 15 ms.
 
-    \item[Butterworth-filtrering]{Den förväntade fördröjningen beror på frekvensen. Både flex- och trycksensorerna är dock endast intresserade av fördröjningen frekvensbandet 0--15 Hz. Enligt ekvation~\eqref{eq:butterdelay} resulterar det i 9.71 ms fördröjning med 0.7 ms standardavvikelse.}
+    \item[Butterworthfiltrering]{Den förväntade fördröjningen beror på frekvensen. Både flex- och trycksensorerna är dock endast intresserade av fördröjningen frekvensbandet 0--15 Hz. Enligt ekvation~\eqref{eq:butterdelay} resulterar det i 9.71 ms fördröjning med 0.7 ms standardavvikelse.}
 
     \item[Servomotorer] Servomotorernas tid från ett ändrat börvärde till önskad position varierar beroende på eventuellt motstånd, tröghet i konstruktionen och nuvarande position. Servomotorn har stor inverkan på systemets totala latenstid, men eftersom det saknas återkoppling av vinklar avgränsas analysen till mätbara värden.
 \end{description}
 
-För både flexsensor$\to$servovinkel och trycksensor$\to$diodramp görs samma typ av beräkningar, med samma brytfrekvens för butterworth-filtret, vilket leder till samma latenstider. Servomotorns rörelse är inte inkluderad, men för trycksensorn analyseras alla latenstider.
+För både flexsensor$\to$servovinkel och trycksensor$\to$diodramp görs samma typ av beräkningar, med samma brytfrekvens för butterworthfiltret, vilket leder till samma latenstider. Servomotorns rörelse är inte inkluderad, men för trycksensorn analyseras alla latenstider.
 \begin{table}[H]
 \begin{tabularx}{350pt}{X r r}
     \textbf{Komponent} & \textbf{$\mu$ (ms)} & \textbf{$\sigma$ (ms)}\\
 
     Sampling av spänning        & 5.0 & 1.4 \\
-    Butterworth-filter          & 9.7 & 0.71 \\
+    Butterworthfilter          & 9.7 & 0.71 \\
     Trådlös överföring          & 31 & 0.54 \\
     Mottagande mikrokontroller  & 5.0 & 1.4 \\
     \hline
