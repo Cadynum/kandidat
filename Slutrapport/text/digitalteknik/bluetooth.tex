@@ -4,8 +4,9 @@ För att möjliggöra kommunikation trådlöst mellan styrhandsken och robothand
 Bluetooth-protokollet är ett paketförmedlande nätverk, vilket innebär att information skickas i diskreta paket. Varje paket innehåller metadata
 \footnote{Data som beskriver information, som mottagaradress och felkorrigerande kod}
 och \emph{payload}
-\footnote{Datan i sig som ska överföras}.
-Bluetooth-enheten har en överföringskapacitet på 115200bps\footnote{bits per second}, inkluderat metadata.
+\footnote{Datan i sig som ska överföras}. Modulerna exponerar ett seriellt interface till mikrokontrollen, där inte kontroll ges över individuella paket.
+
+Bluetooth-enheten har en överföringskapacitet på 115200bps\footnote{bits per second}.
 \comment{Går det att ta reda på hur många bps vi använder? hade vart cool. finns det plats över kan man ju säga att systemet är utbyggbart. :)}
 
 De två bluetoothmodulerna är programmerade att automatiskt ansluta till varandra när de är inom räckhåll, och återuppta en eventuellt förlorad anslutning.
@@ -14,6 +15,9 @@ De två bluetoothmodulerna är programmerade att automatiskt ansluta till varand
 \includegraphics[width=0.3\textwidth]{img/bluetooth_mate_silver.jpg}
 \caption{Bluetooth Mate Silver enhet.}
 \end{figure}
+
+\subsection{Sändning och synkronisering}
+Varje tillstånd för tryck- och flexsensorerna skickas 100 gånger per sekund. Eftersom bluetoothmodulen abstraherar bort bluetooth-paket implementeras ett enkelt synkroniseringsprotokoll. Varje paket med data börjar med tre godtyckligt valda synkroniseringsbytes, \texttt{\{0xFF, 0x53, 0x59\}}. Genom att den mottagande mikrokontrollen väntar på bytesekvensen kan den avgöra när ett paket startar.
 
 \subsection{Säkerhet}
 För att skydda mot otillåten kontroll och avlyssning av styrsignalerna mellan kontrollhandsken används kryptering.
