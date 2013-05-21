@@ -11,7 +11,7 @@ Flera moment i signalbehandlingen och digitaltekniken introducerar diverse laten
     \item[Servomotorer] Servomotorernas tid från ett ändrat börvärde till önskad position varierar beroende på eventuellt motstånd, tröghet i konstruktionen och nuvarande position. Servomotorn har stor inverkan på systemets totala latenstid, men eftersom det saknas återkoppling av vinklar avgränsas analysen till mätbara värden.
 \end{description}
 
-För både flexsensor$\to$servovinkel och trycksensor$\to$ledbar görs samma typ av beräkningar, med samma brytfrekvens för butterworth-filtret, vilket leder till samma latenstider. Servomotorns rörelse är inte inkluderad, men för trycksensorn analyseras alla latenstider.
+För både flexsensor$\to$servovinkel och trycksensor$\to$diodramp görs samma typ av beräkningar, med samma brytfrekvens för butterworth-filtret, vilket leder till samma latenstider. Servomotorns rörelse är inte inkluderad, men för trycksensorn analyseras alla latenstider.
 \begin{table}[H]
 \begin{tabularx}{350pt}{X r r}
     \textbf{Komponent} & \textbf{$\mu$} & \textbf{$\sigma$}\\
