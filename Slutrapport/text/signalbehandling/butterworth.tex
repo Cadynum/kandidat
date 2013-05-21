@@ -1,22 +1,61 @@
-\section{Butterworth filter}
+\section{Butterworthfilter}
 \label{sec:butter}
-För att filtera signaler används ett \emph{Butterworth-filter} av första ordningen. Filtret är ett lågpassfilter med minimal fasförskjutning för kausala lågpassfilter.
-\begin{figure}[htb]
-fig: bodeplot
-\end{figure}
-
+För att filtera signaler används ett \emph{Butterworthfilter} av första ordningen. Filtret är ett lågpassfilter med minimal fasförskjutning för kausala lågpassfilter. Låt $\omega_0$ vara brytfrekvensen i $\unit{rad/s}$ och $G(s)$ överföringsfunktionen i laplace-domän:
 \begin{equation}
 \label{eq:butter_s}
 G(s) = \frac{\omega_0}{\omega_0 + s}
 \end{equation}
-Överföringsfunktionen i laplace-domän överförs till Z-domän med en samplingsfrekvens på $f_s$ för att kunna implementera filtret på diskreta mätvärden:
+Överföringsfunktionen i laplace-domän diskretiseras till Z-domän med en samplingsfrekvens på $f_s$ för att kunna implementera filtret på diskreta mätvärden:
 \begin{equation}
 \label{eq:butter_z}
 G(z) = \frac{\omega_0 (z+1)}{2 f_s z-2 f_s + \omega_0 z + \omega_0}
 \end{equation}
-Genom att sätta $\omega_0 = 2\pi f_0$ och inverstransformera får vi följande differensekvation som kan användas för att i realtid implementera den filtrerade signalen digitalt:
+Genom att sätta $\omega_0 = 2\pi f_0$, där $f_0$ är brytfrekvensen i $\unit{Hz}$, och inverstransformera får vi följande differensekvation som kan användas för att i realtid implementera filtret digitalt:
 \begin{equation}
 \label{eq:butterdiff}
     y[n] = \frac{f_0(x[n]+x[n-1]) - y[n-1](f_0 - 2f_s)}
                 {f_0 + 2f_s}
 \end{equation}
+
+
+\begin{figure}[ht]
+
+\begin{subfigure}[t]{200pt}
+\includegraphics{img/filter/butter_abs.pdf}
+\caption{Förstärkning.}
+\label{fig:butter_freq}
+\end{subfigure}
+~
+\begin{subfigure}[t]{200pt}
+\includegraphics{img/filter/butter_phase.pdf}
+\caption{Fasförskjutning}
+\label{fig:butter_phase}
+\end{subfigure}
+
+\caption{Frekvenssvar för ett första ordningens butterworthfilter med brytfrekvensen $f_0=15$. X-axeln är frekvens i Hz.}
+\end{figure}
+
+
+\subsection{Latenstid}
+Butterworthfiltret fasförskjutning för olika frekvenser varierar (se figur~\ref{fig:butter_phase}).
+För att mäta hur lång fördröjning filtret introducerar för en viss frekvens kan vi normalisera fasförskjutningen i fourier-domänen mot dess frekvens $f$. \\
+Låt
+\begin{itemize}
+    \item $G(s)$ filtrets överföringsfunktion i laplace-domänse, där vi studerar funktionens komplexa frekvens genom att sätta $s=2\i f$. Se ekvation~\eqref{eq:butter_s}.
+    \item $T_d(f)$ vara tidsfördröjningen i sekunder för frekvensen $\unit[f]{Hz}$
+\end{itemize}
+
+\begin{align}
+    T_d(f) &= \frac{\arg\left(G(2\pi i f)\right)}{2\pi f}
+\end{align}
+
+Om vi vet de relevanta frekvenserna är i intervallet $\unit[0-f_0]{Hz}$ kan vi få fördröjningens medelvärde $\mu$ och standardavvikelse $\sigma$ genom att integrera $T_d(f)$:
+\begin{align}
+\label{eq:butterdelay}
+\begin{split}
+    \mu &= \frac{1}{f}\int_0^{f_0}{T_d(f) \, df} \\
+    \sigma &= \sqrt{\frac{1}{f}\int_0^{f_0}{{\left(T_d(f)-\mu\right)^2 \, df}}}
+\end{split}
+\end{align}
+
+Eftersom insignalerna inte har en uniform distribution av frekvenskomponenter i bandet 0--15 Hz ger ekvation~\eqref{eq:butterdelay} endast en approximering. Signaler med relativt många lågfrekventa komponenter, som \ref{fig:tryck_dft} och \ref{fig:dftflex}, kan ha en marginellt annorlunda fördröjning. För brytfrekvensen 15 Hz är dock det inbyggda felet så litet att det kan försummas.
