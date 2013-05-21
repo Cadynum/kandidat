@@ -28,7 +28,7 @@ Här presenteras de styralgortimter som bestämmer hur handen beter sig när den
 För att få en mer användarvänlig robothand har möjligheten till objektidentfiering behandlats. Genom att handen identifierar objekten den greppar kan den själv justera det maximalt tillåtna trycket från förinställda värden och förhindra risken att objekten utsätts för ett övertryck. Efterssom objektidentifieringen automatisera denna del slipper användaren reglera trycket vilket ger ett mycket mer intuitivt och lättanvändligt system. Bild \ref{fig:objektidentifiering1} illustrerar hur objektidentifieringen är upplagd.
 
 \begin{figure}[H]
-\includegraphics[width=0.3\textwidth]{img/obj_dist}
+\includegraphics{img/obj_dist}
 \caption{Identifiering av objekt}
 \label{fig:objektid}
 \end{figure}
@@ -66,14 +66,14 @@ Objektidentifieringen inehåller främst två felkällor som bidrar till en mins
 
         \begin{subfigure}[b]{0.5\textwidth}
                 \centering
-                \includegraphics[width=\textwidth]{img/grepp}
+                \includegraphics{img/grepp}
                 \caption{Faktiskt servoläge}
                 \label{fig:objident1}
         \end{subfigure}%
        ~
         \begin{subfigure}[b]{0.5\textwidth}
 
-                \includegraphics[width=\textwidth]{img/grepp_verk}
+                \includegraphics{img/grepp_verk}
                 \caption{Önskat servoläge}
                 \label{fig:objident2}
         \end{subfigure}
