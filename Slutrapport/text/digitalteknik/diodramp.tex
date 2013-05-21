@@ -1,0 +1,17 @@
+\section{Diodramp}
+För återkoppling av trycket används en \emph{diodramp} med 8 led-lampor per finger på styrhandsken. För tre fingrar blir det totalt 24 dioder som ska kontrolleras individuellt.
+Arduino Micro har inte 24 lediga utportar med sensorer och moduler inkopplade. Det skulle dessutom vara otympligt att dra 24 kablar mellan dioderna och mikrokontrollen.
+
+Ett 8-bitars skiftregister (se \ref{chp:komponentlista}) används därför per diodramp. Ett skiftregistret har tre digitala inportar; data, klockpuls och asynkron reset, och 8 vippor \footnote{En enhet som sparar insignalen när klockan går från låg till hög.} som är kopplade till 8 utportar.
+Data klockas in seriellt via dataporten och skiftar då varje bit ett steg. 
+
+Antag att ett tillstånd $S_n$ med databitar $Q$ är
+\[
+    S_n = \{Q0, \dots, Q7\}
+\]
+Efter en positiv klockflank med det binära talet $IN$ på data-inporten kommer tillståndet vara
+\[
+    S_{n+1} = \{IN, Q0,\dots,Q6\}
+\]
+
+Från mikrokontrollen går en datapin till varje skiftregister, med en delad klocka och reset. Totalt behövs det 5 utportar med skiftregisterna.

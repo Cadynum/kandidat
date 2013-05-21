@@ -1,6 +1,12 @@
 \section{Mikrokontroller}
-För styrhandsken används en \emph{Arduino Micro}, en 16 bitars AVR mikroprocessor.
-Mikrokontrollen
+För styrhandsken och kontrollhanden används mikrokontrollen Arduino. Arduino programmeras i en förminskad version av C++ anpassad för begränsad hårdvara.
+Vissa beräkningar angående kraftutslag från trycksensorerna och att beräkna avstånd mellan fingrar kräver matematik med flyttal. Arduino dock har inte hårdvarustöd för flyttal, och det emuleras med mjukvara. Strömförbrukningen blir då något högre än om det skulle finnas inbyggt stöd. 
+
+För robothanden används \emph{Arduino Due}, en 32-bitars Atmel ARM-processor. De flesta beräkning ser med denna processor eftersom den är markant snabbare än styrhandskens mikrokontroller. 
+För styrhandsken används \emph{Arduino Micro}, en 8 bitars Atmel AVR-processor. En mindre mindre mikrokontroller, både i storlek och i beräkningskapacitet. 
+
+Programkoden är strukturerad att sampla all data, räkna ut filtreringens differensekvationer (se ekvation~\eqref{eq:butterdiff}) och slutligen sända informationen trådlöst till den andra mikrokontrollen 100 gånger per sekund.
+
 
 \begin{figure}[htb]        
     \begin{subfigure}[b]{0.4\textwidth}
