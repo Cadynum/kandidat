@@ -1,6 +1,7 @@
 \section{Butterworthfilter}
 \label{sec:butter}
-För att filtera signaler används ett \emph{Butterworthfilter} av första ordningen. Filtret är ett lågpassfilter med minimal fasförskjutning för kausala lågpassfilter. Låt $\omega_0$ vara brytfrekvensen i $\unit{rad/s}$ och $G(s)$ överföringsfunktionen i laplace-domän:
+För att filtera signaler används ett \emph{Butterworthfilter} av första ordningen. Filtret är ett lågpassfilter med minimal fasförskjutning för kausala lågpassfilter. Första ordningen används för att minimera fördröjningen, och för att undvika översläng.
+Låt $\omega_0$ vara brytfrekvensen i $\unit{rad/s}$ och $G(s)$ överföringsfunktionen i laplace-domän:
 \begin{equation}
 \label{eq:butter_s}
 G(s) = \frac{\omega_0}{\omega_0 + s}
@@ -36,9 +37,9 @@ Genom att sätta $\omega_0 = 2\pi f_0$, där $f_0$ är brytfrekvensen i $\unit{H
 \end{figure}
 
 
-\subsection{Latenstid}
+\subsection{Tidsfördröjning}
 Butterworthfiltret fasförskjutning för olika frekvenser varierar (se figur~\ref{fig:butter_phase}).
-För att mäta hur lång fördröjning filtret introducerar för en viss frekvens kan vi normalisera fasförskjutningen i fourier-domänen mot dess frekvens $f$. \\
+För att mäta hur lång tidsfördröjning filtret introducerar för en viss frekvens $f$ kan vi normalisera fasförskjutningen i fourier-domänen mot dess periodtid ,$\frac{1}{f}$. \\
 Låt
 \begin{itemize}
     \item $G(s)$ filtrets överföringsfunktion i laplace-domänse, där vi studerar funktionens komplexa frekvens genom att sätta $s=2\i f$. Se ekvation~\eqref{eq:butter_s}.
