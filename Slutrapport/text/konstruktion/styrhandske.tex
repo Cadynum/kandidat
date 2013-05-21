@@ -38,15 +38,15 @@ För att få en mer användarvänlig robothand har möjligheten till objektident
 Objektidentifieringen bygger på att handen beräknar distansen mellan fingertopparna där trycksensorerna sitter och därigenom får information om vilka objekt som greppas för att sedan ta beslut om hur hårt tryck som är tillåtet. För att möjliggöra detta har en mattematiskmodell över handens rörelse tagits fram, se \ref{servoberakningar}. Modellen baseras på servovinklarna ($\varphi_1$,$\varphi_2$,$\varphi_3$,$\varphi_4$) som är de servolägen som styr de fyra lederna i tummen och pekfingret. Modellen kopplar de önskade servolägerna till koordinater för ändpunkter på fingrarna och därigenom avståndet mellan punkterna. Modellen är 2-dimensionell och baseras på att tumme och pekfinger rör sig i samma plan. \
 
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{img/objektidentifiering}
+\includegraphics[width=\textwidth]{img/servo/objektidentifiering}
 \caption{Schematisk bild över objektidentifiering}
 \label{fig:objektidentifiering1}
 \end{figure}
 
-Objektidentifieringen har ett genomsnittligt fel på 15\%. Felet varierar beroende på i vilket område fingrarns befinner sig i. Figur \ref{fig:verk_berak} jämför 30 uppmätta värden med 30 värden framtagna med hjälp av den mattematiska modellen. För att få en ökad precision rekomenderas att de felkällor som tas upp i \ref{felkallor}. Figur \ref{fig:objektidentifiering2} visualiserar handens rörelse med hjälp av den mattematiska modellen.
+Objektidentifieringen har ett genomsnittligt fel på 20\%. Felet varierar beroende på i vilket område fingrarns befinner sig i. Arbetsområdet rekonmenderas att ligga mellan 40-100 mm där en upplösning på 15 mm erhålles. Figur \ref{fig:verk_berak} jämför 30 uppmätta värden med 30 värden framtagna med hjälp av den mattematiska modellen. För att få en ökad precision rekomenderas att de felkällor som tas upp i \ref{felkallor}. Figur \ref{fig:objektidentifiering2} visualiserar handens rörelse med hjälp av den mattematiska modellen.
 
 \begin{figure}[H]
-\includegraphics[width=0.8\textwidth]{img/verk_berak}
+\includegraphics[width=0.8\textwidth]{img/obj_id_matlab2}
 \caption{plot över det uppmätta avstånden jämfört med det uträknade}
 \label{fig:verk_berak}
 \end{figure}

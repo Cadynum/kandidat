@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="New document 1">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lstart"
+       style="overflow:visible">
+      <path
+         id="path4031"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;">
+      <path
+         id="path4034"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.36845703"
+     inkscape:cx="694.86547"
+     inkscape:cy="673.52819"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1366"
+     inkscape:window-height="706"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="streck">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
+       d="m -285.91274,445.74908 104.14515,-4.44373"
+       id="path4007"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
+       d="M 433.86773,328.71249 544.72192,227.86059"
+       id="path4011"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#rect2985-1-8"
+       inkscape:connection-start-point="d4"
+       inkscape:connection-end="#rect2985-1-8-7"
+       inkscape:connection-end-point="d4" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
+       d="m 790.57625,115.24208 134.77073,-0.85842"
+       id="path4013"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#rect2985-1-8-7"
+       inkscape:connection-start-point="d4"
+       inkscape:connection-end="#rect2985-1-8-7-1"
+       inkscape:connection-end-point="d4" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
+       d="m 1262.1537,112.2996 135.1537,-0.81174"
+       id="path4015"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#rect2985-1-8-7-1"
+       inkscape:connection-start-point="d4"
+       inkscape:connection-end="#rect2985-1-8-7-15"
+       inkscape:connection-end-point="d4" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:4.9729929;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline"
+       d="m 1543.859,223.95761 -2.329,125.34232"
+       id="path4017"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#Arrow1Lstart);marker-end:none"
+       d="m 1092.435,226.42621 -1.3987,120.2906"
+       id="path4019"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#rect2985-1-8-7-1"
+       inkscape:connection-start-point="d4" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 1091.0363,346.71681 450.5274,0"
+       id="path4025"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:5.00749636;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:none;marker-end:url(#Arrow1Lend)"
+       d="m 462.20673,518.83886 100.08653,0 0,145.86088 -1010.4891,0 0,-103.638"
+       id="path4655"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
+       d="m 64.975189,442.29944 94.607891,-0.082"
+       id="path5579"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#rect2985-1"
+       inkscape:connection-start-point="d4"
+       inkscape:connection-end="#rect2985-1-8"
+       inkscape:connection-end-point="d4" />
+  </g>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#000000;fill-opacity:0.64021164;stroke:#000000;stroke-width:7.92821217;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect2985"
+       width="245.85432"
+       height="227.55466"
+       x="-532.65552"
+       y="330.51044" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3755"
+       style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       transform="translate(-265.96032,21.150074)"><flowRegion
+         id="flowRegion3757"><rect
+           id="rect3759"
+           width="215.76465"
+           height="196.76649"
+           x="-251.04691"
+           y="353.50186" /></flowRegion><flowPara
+         id="flowPara3761"
+         style="font-size:36px">Användare </flowPara><flowPara
+         id="flowPara3763"
+         style="font-size:36px">anger önskat servoläge</flowPara></flowRoot>    <rect
+       style="fill:#000000;fill-opacity:0.64021164;stroke:#000000;stroke-width:7.92821217;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect2985-1"
+       width="245.85432"
+       height="227.55466"
+       x="-180.87914"
+       y="328.62869" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3755-4"
+       style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       transform="translate(106.65491,22.682749)"><flowRegion
+         id="flowRegion3757-0"><rect
+           id="rect3759-9"
+           width="215.76465"
+           height="196.76649"
+           x="-251.04691"
+           y="353.50186" /></flowRegion><flowPara
+         id="flowPara3763-8"
+         style="font-size:36px">Servoläge</flowPara><flowPara
+         style="font-size:36px"
+         id="flowPara3822">omvandlas till avstånd</flowPara></flowRoot>    <rect
+       style="fill:#000000;fill-opacity:0.64021164;stroke:#000000;stroke-width:8.732584;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect2985-1-8"
+       width="299.33035"
+       height="226.75029"
+       x="159.58308"
+       y="328.71249" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3755-4-2"
+       style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       transform="translate(418.86953,18.724112)"><flowRegion
+         id="flowRegion3757-0-4"><rect
+           id="rect3759-9-5"
+           width="305.32733"
+           height="183.1964"
+           x="-251.04691"
+           y="353.50186" /></flowRegion><flowPara
+         style="font-size:36px"
+         id="flowPara3822-1">Ger </flowPara><flowPara
+         style="font-size:36px"
+         id="flowPara3874">trycksensorerna utslag?</flowPara></flowRoot>    <rect
+       style="fill:#000000;fill-opacity:0.64021164;stroke:#000000;stroke-width:7.92821217;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect2985-1-8-7"
+       width="245.85432"
+       height="227.55466"
+       x="544.72192"
+       y="2.2477233" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3894"
+       style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       transform="translate(18.998145,16.284124)"><flowRegion
+         id="flowRegion3896"><rect
+           id="rect3898"
+           width="236.1198"
+           height="211.69362"
+           x="545.51813"
+           y="7.4642239" /></flowRegion><flowPara
+         id="flowPara3900"
+         style="font-size:36px">Matcha avstånd med ett objekt och ett maxtryck</flowPara></flowRoot>    <rect
+       style="fill:#000000;fill-opacity:0.64021164;stroke:#000000;stroke-width:9.25250435;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect2985-1-8-7-1"
+       width="336.80673"
+       height="226.23036"
+       x="925.34698"
+       y="0.19584793" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3920"
+       style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       transform="translate(24.426186,13.570104)"><flowRegion
+         id="flowRegion3922"><rect
+           id="rect3924"
+           width="320.25443"
+           height="206.26556"
+           x="933.62311"
+           y="7.4642239" /></flowRegion><flowPara
+         id="flowPara3926"
+         style="font-size:36px">Begränsa servoläge med avseende på maxtryck</flowPara></flowRoot>    <rect
+       style="fill:#000000;fill-opacity:0.64021164;stroke:#000000;stroke-width:8.69420338;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect2985-1-8-7-15"
+       width="296.65472"
+       height="226.78867"
+       x="1397.3074"
+       y="-2.7973304" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3755-4-2-2"
+       style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       transform="translate(1664.1653,-314.09527)"><flowRegion
+         id="flowRegion3757-0-4-3"><rect
+           id="rect3759-9-5-2"
+           width="305.32733"
+           height="183.1964"
+           x="-251.04691"
+           y="353.50186" /></flowRegion><flowPara
+         style="font-size:36px"
+         id="flowPara3822-1-2">Ger </flowPara><flowPara
+         style="font-size:36px"
+         id="flowPara3874-1">trycksensorerna utslag?</flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:4.95437098000000020;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:none;marker-end:url(#Arrow1Lend)"
+       d="m 1547.0141,-2.7741293 0,-111.9153907 -1994.84985,0 0,437.00296"
+       id="path6869"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:72px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       x="1560.5619"
+       y="338.57474"
+       id="text7607"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7609"
+         x="1560.5619"
+         y="338.57474">Ja</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:72px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       x="394.07028"
+       y="249.91595"
+       id="text7607-6"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7609-8"
+         x="394.07028"
+         y="249.91595">Ja</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:72px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       x="589.4798"
+       y="608.16669"
+       id="text7607-5"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7609-7"
+         x="589.4798"
+         y="608.16669">Nej</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:72px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       x="1565.954"
+       y="-39.478901"
+       id="text7607-5-6"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7609-7-1"
+         x="1565.954"
+         y="-39.478901">Nej</tspan></text>
+  </g>
+</svg>

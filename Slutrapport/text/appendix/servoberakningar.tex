@@ -15,7 +15,7 @@ Servomotor 1 är med hjälp av ett stag kopplat till tummens första led och sty
 \label{fig:servo1}
 \end{figure}
 
-Bild \ref{fig:servo2} nedan visar hur servot är kopplat via ett stag till tummens första led. Servot har sin roterande axel i punkt $P_{0}$ vilken sedan är förskjutet till punkt $P_{1}$ med hjälp av ett servokors med radie $R_{1}$. Servokorset drar i sin tur i ett stag med längden c som påverkar tummens första led. Leden kan rotera kring punkt $P_{3}$ vilket ger upphov till en vinkel $\alpha$.
+Bild \ref{fig:servo2} nedan visar hur servomotorn är kopplat via ett stag till tummens första led. Servot har sin roterande axel i punkt $P_{0}$ vilken sedan är förskjutet till punkt $P_{1}$ med hjälp av ett servokors med radie $R_{1}$. Servokorset drar i sin tur i ett stag med längden c som påverkar tummens första led. Leden kan rotera kring punkt $P_{3}$ vilket ger upphov till en vinkel $\alpha$.
 
 
 \begin{figure}[H]
@@ -84,7 +84,7 @@ Med hjälp av matlab så har ovanstående itterationsshema genererat ett $\alpha
 \caption{$\alpha$-vinkeln som en funktion av servovinkeln $\varphi$}
 \end{figure}
 
-Genom att anpassa en ekvation till kurvan undviks itterations processen vid styrning av handen vilket underlättar för processorn. Med hjälp av ekvation \eqref{eq:servo2} kan koordinaterna för ytterpunkterna på tummens första led beräknas. Tummens origo är placerat i dess första roterande punkt, punkt $P_{3}$ i figur  \ref{fig:servo2}. 
+Genom att anpassa en ekvation till kurvan undviks itterationsprocessen vid styrning av handen vilket underlättar för processorn. Med hjälp av ekvation \eqref{eq:servo2} kan koordinaterna för ytterpunkterna på tummens första led beräknas. Tummens origo är placerat i dess första roterande punkt, punkt $P_{3}$ i figur  \ref{fig:servo2}. 
 
 \begin{equation}
 \label{eq:servo2}
@@ -228,7 +228,7 @@ P_3=[P_{2x}+L_3\cos(\mu),P_{1y}-L_3\sin(\mu)]
 \newpage
 \subsection{Beräknar för servomotor 3}
 
-Servomotor 3 är precis som servomotor 1 kopplat med ett stag och kontrollerar därmed fingrets $\alpha$-vinkel vilket illustreras i figur \ref{fig:servo8}
+Servomotor 3 är, precis som servomotor 1 kopplat med ett stag och kontrollerar därmed fingrets $\alpha$-vinkel vilket illustreras i figur \ref{fig:servo8}
 
 \begin{figure}[H]
 \includegraphics[width=0.5\textwidth]{img/servo/servo_berakning3}
@@ -256,7 +256,7 @@ Servomotor 3 är precis som servomotor 1 kopplat med ett stag och kontrollerar d
         \end{subfigure}
 \end{figure}
 
-Servomotor 3 påverkar så som servomotor 1 påverkar ledens $\alpha$-vinkel med hjälp av ett stag. Konstruktionen har två fasta punkter, $P_0$ samt $P_3$ med koordinaterna som listas nedan. Servomotorn har sin axel i punkt $P_0$ som därifrån är kopplat med hjälp av ett servokors till fingerstaget. Genom att applicera avståndsformeln mellan punkt $P_1$ och $P_2$ kan ett $\alpha$ ittereras fram med villkoret att: $\sqrt[]{(P_{1x}-P_{2x})^2+(P_{1y}-P_{2y})^2}=c$
+Servomotor 3 påverkar så som servomotor 1, ledens $\alpha$-vinkel med hjälp av ett stag. Konstruktionen har två fasta punkter, $P_0$ samt $P_3$ med koordinaterna som listas nedan. Servomotorn har sin axel i punkt $P_0$ som därifrån är kopplat med hjälp av ett servokors till fingerstaget. Genom att applicera avståndsformeln mellan punkt $P_1$ och $P_2$ kan ett $\alpha$ ittereras fram med villkoret att: $\sqrt[]{(P_{1x}-P_{2x})^2+(P_{1y}-P_{2y})^2}=c$
 
 
 \begin{table}[H]
