@@ -20,7 +20,7 @@ Bild \ref{fig:servo2} nedan visar hur servomotorn är kopplat via ett stag till 
 
 \begin{figure}[H]
 
-\includegraphics[width=0.55\textwidth]{img/servo/servo1}
+\includegraphics[width=0.5\textwidth]{img/servo/servo1}
 \caption{Nödvändiga beteckningar för beräkningar till servomotor 1.}
 \label{fig:servo2}
 \end{figure}
@@ -93,7 +93,7 @@ P1_{tumme}=[L_{1}\sin(\alpha),L_{1}\cos(\alpha)]
 
 
 \begin{center}
-$L_{1}=39mm$
+$L_{1}=\unit{39}{mm}$
 \end{center}
 
 \newpage
@@ -117,7 +117,7 @@ Servomotor 2 styr tummens andra led genom att applicera en kraft på en sena kop
 \label{fig:servo5}
 \end{figure}
 \end{minipage}
-\begin{minipage}[t]{0.5\textwidth}
+\begin{minipage}[t]{0.53\textwidth}
 \begin{figure}[H]
 \includegraphics[width=1\textwidth]{img/servo/servo_berakning23}
 \caption{Definition av vinklar.}
@@ -150,7 +150,7 @@ Med hjälp av cosinus-satsen fås sedan $c_0$ genom ekvation \eqref{eq:servo4}
 
 \begin{equation}
 \label{eq:servo4}
-c_0=\sqrt[]{a^2+b^2-2ab\cos(\gamma_0)}=61.8mm
+c_0=\sqrt[]{a^2+b^2-2ab\cos(\gamma_0)}=\unit{61.8}{mm}
 \end{equation}
 
 
@@ -219,8 +219,8 @@ P_3=[P_{2x}+L_3\cos(\mu),P_{1y}-L_3\sin(\mu)]
 \begin{table}[H]
     \begin{tabular}{|c|l|}
         \hline
-        $L_2$      & 13[mm] \\ \hline
-        $L_3$      & 39[mm]  \\ \hline
+        $L_2$      & \unit{13}{mm} \\ \hline
+        $L_3$      & \unit{39}{mm}  \\ \hline
 
     \end{tabular}
 \end{table}
@@ -274,7 +274,7 @@ Servomotor 3 påverkar så som servomotor 1, ledens $\alpha$-vinkel med hjälp a
 \begin{split}
 P_0 &= [0,0] \\
 P_3 & =[-b,a] \\
-c &= \sqrt[]{(b+r_1\cos(\varphi_0))^2+r_2^2}=132[mm]\\
+c &= \sqrt[]{(b+r_1\cos(\varphi_0))^2+r_2^2}=\unit{132}{mm}\\
 P_1 &= [r_1\cos(\varphi),r_1\cos(\varphi)]\\
 P_2 &= [-b-r_2sin(\alpha),a+r_2\cos(\alpha)]
 \end{split}
@@ -319,8 +319,8 @@ Beräkningar för pekfingrets $\beta$-vinkeln följer exakt samma struktur som b
 \begin{cases}
 a=\unit[26]{mm} \\
 b=\unit[52]{mm}\\
-r_s=12[mm]\\
-c_o=77[mm]\\
+r_s=\unit{12}{mm}\\
+c_o=\unit{77}{mm}\\
 \end{cases}
 \]
 
@@ -346,4 +346,4 @@ c_o=77[mm]\\
     \end{tabular}
 \end{table}
 
-Pekfingrets rörelse som funktion av $\alpha$ och $\beta$ fås med hjälp av det rymdekvationer som är specade i avsnitt \ref{rymdekv}. 
+Pekfingrets rörelse som funktion av $\alpha$ och $\beta$ fås med hjälp av det rymdekvationer som är specificerade i avsnitt \ref{rymdekv}. 
