@@ -19,13 +19,13 @@
 \label{fig:tryck_dft}
 \end{figure}
 Från trycksensorerna samplas en varierande spänningen med en frekvens på 100 Hz.
-Likt signalerna från flexsensorerna (se \ref{sec:flexsampling}) finns det diverse elektromagnetiska störningar i mätdatan som inte är önskvärda. Från figur~\ref{fig:tryck_dft} ser vi att majoriteten av de önskvärda frekvenserna är under 15Hz.
-Filtreringen sker med ett första ordningens butterworthfilter (se \ref{sec:butter}) med $f_0=\unit[15]{Hz}$ som brytfrekvens.
+Likt signalerna från flexsensorerna, se \ref{sec:flexsampling}, finns det diverse elektromagnetiska störningar i mätdatan som inte är önskvärda. Från figur~\ref{fig:tryck_dft} ser vi att majoriteten av de önskvärda frekvenserna är under 15Hz.
+Filtreringen sker med ett första ordningens butterworthfilter, se \ref{sec:butter}, med $f_0=\unit[15]{Hz}$ som brytfrekvens.
 
 
 \begin{figure}[ht]
 \includegraphics{img/filter/tryck_dubbel.pdf}
-\caption{Signal från en trycksensor före respektive efter filtrering. Den filtrerade signalen är förskjuten $+\unit[0.05]{V}$ i y-led för att belysa skillnaden. Signalen kan anta värden mellan $\unit[0-3.3]{V}$}
+\caption{Signal från en trycksensor före respektive efter filtrering. Den filtrerade signalen är förskjuten $+\unit[0.05]{V}$ i y-led för att belysa skillnaden. Signalen kan anta värden mellan $\unit[0-3.3]{V}$.}
 \end{figure}
 
 
@@ -50,7 +50,7 @@ Genom att invertera funktionen kan vi istället ge spänningen som insignal och 
 \label{eq:tryckinv}
     f^{-1}[n] = y,\;\text{så att } n = f(y)
 \end{equation}
-Relationen mellan spänning och tryck är uppmätt upp till 10 N. Från sensorns datablad (se \ref{chp:komponentlista}) finns det referensgrafer. Mätdatan kan därför extrapoleras med relativt stor säkerhet upp till sensorns maxspecifikation, 20 N.
+Relationen mellan spänning och tryck är uppmätt upp till 10 N. Från sensorns datablad (se Appendix \ref{chp:komponentlista}) finns det referensgrafer. Mätdatan kan därför extrapoleras med relativt stor säkerhet upp till sensorns maxspecifikation, 20 N.
 
 \begin{figure}[H]
 \includegraphics{img/tryck/after.pdf}

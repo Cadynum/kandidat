@@ -10,17 +10,17 @@
     \path [line] (filter) -- (norm1);
     \path [line] (norm1) -- (norm2);
 \end{tikzpicture}
-\caption{Signalens väg genom styrhandsken}
+\caption{Signalens väg genom styrhandsken.}
 \end{figure}
 
 \subsection{Sampling och filtrering}
 \label{sec:flexsampling}
-Från flexsensorerna samplas en varierande spänningen med en frekvens på 100 Hz. Signalen diskretireras sedan till ett heltal med en 10 bitars upplösning\footnote{Ett tal mellan 0--1023}.
-I det uppmätta mätvärdet finns det diverse elektromagnetiska störningar. Det är inte önskvärt att störningarna överförs till robothanden, eftersom servomotorerna i robothanden då konstant skulle ändra läge, vilket leder till en hackig upplevelse för användaren, slitage på servomotorerna, och extra strömförbrukning.
+Från flexsensorerna samplas den varierande spänningen med en frekvens på 100 Hz. Signalen diskretireras sedan till ett heltal med en 10 bitars upplösning\footnote{Ett tal mellan 0--1023}.
+I det uppmätta mätvärdet finns det diverse elektromagnetiska störningar. Det är inte önskvärt att störningarna överförs till robothanden, eftersom servomotorerna i robothanden då konstant skulle ändra läge, vilket dels leder till en hackig upplevelse för användaren, slitage på servomotorerna, och extra strömförbrukning.
 
 
-Genom att studera de sex flexsensorernas signaler i frekvensplanet (se figur~\ref{fig:dftflex}) observeras en konstant störning, med de önskvärda frekvenserna \emph{ungefär} mellan 0--20Hz.
-För att filtrera bort störningarna används ett \emph{butterworthfilter} (se \ref{sec:butter}). Brytfrekvensen sätts till $f_0=\unit[15]{Hz}$ efter flera tester där den upplevda fördröjningen av robothandens rörelser balanserades mot hur ``hackigt'' handen upplevdes röra dig. De filtrerade signalerna finns i figur~\ref{fig:filterflex}.
+Genom att studera de sex flexsensorernas signaler i frekvensplanet, se figur~\ref{fig:dftflex}, observeras en konstant störning, med de önskvärda frekvenserna \emph{ungefär} mellan 0--20Hz.
+För att filtrera bort störningarna används ett \emph{butterworthfilter}, se figur \ref{sec:butter}. Brytfrekvensen sätts till $f_0=\unit[15]{Hz}$ efter flera tester där den upplevda fördröjningen av robothandens rörelser balanserades mot hur ``hackigt'' handen upplevdes röra dig. De filtrerade signalerna finns i figur~\ref{fig:filterflex}.
 
 
 \begin{figure}[htb]
@@ -32,7 +32,7 @@ För att filtrera bort störningarna används ett \emph{butterworthfilter} (se \
 
 \begin{figure}[p]
 \includegraphics{img/filter/flex_raw.pdf}
-\caption{De sex flexsensorerna uppmätta under 8.0s med en samplingsfrekvens på 100Hz när en användare öppnar och stänger styrhandsken 4 gånger. Signalerna kan anta värden mellan $\unit[0-5]{V}$}
+\caption{De sex flexsensorerna uppmätta under 8.0s med en samplingsfrekvens på 100Hz när en användare öppnar och stänger styrhandsken 4 gånger. Signalerna kan anta värden mellan $\unit[0-5]{V}$}.
 \label{fig:rawflex}
 \vspace*{\fill}
 \includegraphics{img/filter/flex_filtered.pdf}
@@ -44,7 +44,7 @@ För att filtrera bort störningarna används ett \emph{butterworthfilter} (se \
 
 \subsection{Kalibrering och normalisering}
 De filtrerade signalerna från flexsensorerna normaliseras mot de två referensvärden som är kalibrerade för en öppen respektive stängd styrhandske.
-Värderna normaliseras i sin tur igen mot robothandens uppmäta minsta och högsta värde för servomotorernas vinklar. Ett linjärt samband mellan flexsensorernas uppmätta spänning och önskvärd vinkel antas. Användartester visar att styrningen upplevs som intuitiv.
+Värderna normaliseras i sin tur igen mot robothandens uppmätta minsta och högsta värde för servomotorernas vinklar. Ett linjärt samband mellan flexsensorernas uppmätta spänning och önskvärd vinkel antas. Användartester visar att styrningen upplevs som intuitiv.
 
 
 
