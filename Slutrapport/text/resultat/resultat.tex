@@ -1,5 +1,8 @@
 \chapter{Resultat}
-Det största resultatet är hela konstruktionen av robothanden och programmeringen av den. Efter utförda funktionstester har följande resultat uppnåtts. Robothanden kan:
+Neadn följer de resultat som robothanden kan utföra.
+
+\section{Prestanda}
+Efter utförda funktionstester har följande resultat uppnåtts. Robothanden kan:
 \begin{itemize}
 \item Gripa och lyfta ett mjölkpaket med en vikt av ett kg. 
 \item Gripa och lyfta en mutter av storlek M10 mellan tumme och pekfinger. 
@@ -8,9 +11,13 @@ Det största resultatet är hela konstruktionen av robothanden och programmering
 \item Sluta sig till knuten näve från öppen hand på under en sekund.
 \end{itemize}
 
+
+\section{Objektidentifiering}
+
 För att verifiera robothandens funktion kontrolleras objektidentifieringen, samt om robothanden kan begränsa trycket mellan robothandens fingrar och objektet då identifiering gjorts. Detta test ställer krav på den mekaniska konstruktionen, trådlösa överföringen, sensorerna i styrhandsken och robothanden samt att den matematiska modellen fungerar. Med andra ord behöver hela systemet fungera och samverka väl för att uppnå ett bra resultat.
 
-\subsection{Objektidentifiering}
+
+
 För att kunna identifiera objekt behöver den matematiska modellen som beskriver hur robothandens fingrar är positionerade överensstämma med den faktiska konstruktionen av robothanden. 
 \begin{figure}[H]
 \includegraphics{img/obj_id_matlab2}
@@ -18,6 +25,35 @@ För att kunna identifiera objekt behöver den matematiska modellen som beskrive
 \label{avstand}
 \end{figure}
 
-Figur~\ref{avstand} visar hur den matematiska modellen avviker från ett perfekt mätresultat för 18 olika mätningar. Det genomsnittliga felet är 20 procent och inom handens typiska arbetsområde, som är \unit{40-200}{mm}, är felet endast i genomsnitt 11 procent med ett största fel på \unit{15}{mm}. Utgående från detta som största felmarginal kan robothanden med säkerhet särskilja objekt som har \unit{15}{mm} differens på det klassificerande måttet.
+Figur~\ref{avstand} visar hur den matematiska modellen avviker från ett perfekt mätresultat för 18 olika mätningar. Det genomsnittliga felet är 20 procent och inom handens typiska arbetsområde, som är \unit{40-100}{mm}, är felet endast i genomsnitt 11 procent med ett största fel på \unit{15}{mm}. Utgående från detta som största felmarginal kan robothanden med säkerhet särskilja objekt som har \unit{15}{mm} differens på det klassificerande måttet.
 
-Med denna väljas två olika testobjekt ut för att kontrollera om robothanden kan särskilja dem. det kan den och alla blir glada och dricker sprit och knullar. THE END
+Utifrån detta väljs två objekt med måtten \unit{40}{mm} respektive \unit{100}{mm} för funktionstest som bekräftar att objektidentifieringen funkar.
+
+
+
+
+%\subsubsection{Felkällor}
+%\label{felkallor}
+%Objektidentifieringen inehåller främst två felkällor som bidrar till en minskad precision. En av felkällorna är att modellen är baserat på önskade servolägen, dvs de lägen som specificerats av användaren. Om servomotorerna möter på motstånd som förhindrar rörelse till önskat läge kommer det faktiska avståndet och det avstånd beräknat genom modellen att skillja vilket bidrar till ett fel. Bild \ref{fig:objident1}-\ref{fig:objident2} illutrerar en situation då detta fel inträffar.
+%
+%\begin{figure}[H]
+%
+%        \begin{subfigure}[b]{0.5\textwidth}
+%                \centering
+%                \includegraphics{img/grepp}
+%                \caption{Faktiskt servoläge}
+%                \label{fig:objident1}
+%        \end{subfigure}%
+%       ~
+%        \begin{subfigure}[b]{0.5\textwidth}
+%
+%                \includegraphics{img/grepp_verk}
+%                \caption{Önskat servoläge}
+%                \label{fig:objident2}
+%        \end{subfigure}
+%
+%\end{figure}
+%
+%För att lösa detta problem behöver systemet få information om handens faktiska läge. Detta kan åstadkommas genom att ansluta vinkelgivare till fingrets leder alternativt till servomotorerna. \
+%
+%En annan stor felkälla är att handens konstruktion bidrar med låg precision, pga det mekaniska glappet. Mekanots låga toleranser gör att ett givet servoläge kan innebära många olika positioner. Felkällans magnitud ökar fort med ett ökat antal leder. För att öka precisionen behövs konstruktionen ändras för att exkludera det mekaniska glappet.
