@@ -1,9 +1,6 @@
+\thispagestyle{plain}
+\vspace*{\fill}
 \section*{Sammanfattning}
-\begin{abstract}
-%Denna rapport redogör för utvecklingen av en robothand med tre fingrar som styrs trådlöst med en handske. Robothanden är byggd av Meccano och har totalt åtta rörliga leder varav sex är separat styrbara och aktueras av servomotorer. Handen har även trycksensorer på fingertopparna för att ge användaren feedback med diodramper om hur hårt objektet påverkas. Kommunikationen mellan styrhandsken och robothanden upprättas med hjälp av bluetooth och Arduinomikrokontrollers. Signalerna från styrhandsken reglerar robothandens rörelse och fås från flexgivare som sitter på styrhandsken. För att beräkna avståndet mellan fingertopparna och därmed möjliggöra objektidentifiering används en matematisk modell av handen. Genom att beräkna avståndet kan ett antal fördefinerande objekt identifieras. Objektidentifieringen används sedan för att begränsa kontakttrycket som objektet påverkas av.
-
-%Funktionstester där olika objekt greppas demonstreras tillsammans med objektidentifieringen och tryckbegränsning. Resultaten utvärderas och möjliga förbättringar ges i ett avslutande diskussionsavsnitt.
-
 Denna rapport redogör utveckling och konstruktion av en robothand med tre fingrar, vilken styrs trådlöst via en handske som användaren bär. Handsken kalibreras mot olika användares händer och mäter kontinuerligt fingrarnas läge. Robothanden är försedd med trycksensorer som visuellt återkopplar aktuellt tryck till användaren via dioder på handsken. Med matematisk modellering av robothanden tillsammans med styrsignaler till aktuatorerna uppnås en enkel objektidentifiering baserat på objektets storlek.
 Om ett objekt identifierats och användaren överskrider ett fördefinierat tryck begränsas handen från att greppa hårdare, och på så vis skyddas objektet från skada.
 För att inte små mätstörningar ska påverka tryckbegränsningen och för att styrningen inte ska upplevas hackig filtreras signalerna. Robothandens design är framtagen dels för att uppnå intuitiv styrning, och även för att utvalda grepp ska kunna utföras.
@@ -24,15 +21,4 @@ and Arduino microcontrollers. Signals from the glove controls the robothands mot
 To compute the distance between the fingertips and thus enable object identification, a mathematical model is used of the robothand. By calculating the distance a number of defined items can be identified. Object identification is then used to
 limit contact pressure that the object is affected by.
 Functional tests in which different objects were grasped is demonstrated with object identification and pressure limit. The results are evaluated and possible improvements are given in a concluding discussion section.
-
-
-
-
-
-
-
-
-
-
-
-\end{abstract}
+\vspace*{\fill}
