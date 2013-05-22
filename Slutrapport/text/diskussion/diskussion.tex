@@ -3,9 +3,9 @@
 Ett problemen med styrning av robothanden och dess precision vid identifiering av objekt är stabiliteten i konstruktionen. Att bygga i meccano resulterade i glapp mellan olika delar och töjningar av materialet som inte räknades med i den matematiska modellen. Detta gör att en korrekt bedömning av avståndet mellan fingertopparna för att identifiera objekt får låg precision varför antalet objekt som kan implementeras i programmet kraftigt begränsas. Problem med skruvar som lossnar och delar som blir sneda gjorde dessutom att styrningsresultat kunde skilja sig från en gång till en annan. Detta innebär att en kalibrering av servomotorernas läge för greppning av ett bestämt objekt behövdes oftare än tänkt.
 För vidareutveckling rekommenderas en stabilare konstruktion där återkoppling av servovinklar utvecklas där man sedan kan återanvända den nuvarande mjukvaran.
 
-Ett annat problem är avläsning av användarens rörelse i styrhandsken. Den nuvarande s
+Ett annat problem är avläsning av användarens rörelse i styrhandsken. Den nuvarande styrhandsken använder flexsensorer som reagerar på en böjning av själva handsken. Problemet är att handsken följer inte handen rörelse exakt eftersom det blir glapp mellan hand och handske. Detta medför att avläsningen inte blir kontinuerlig och exakt. För att lösa detta rekommenderas att utveckla en handske som följer handens exakta rörelse likt Festo's Exohand som nämns i inledningen. De använder en styrhandske som ser likadan ut som robothanden vilket ger mer exakt och intuitiv styrning.
 
-\subsection{Möjliga förbättringar}
+\subsection{Möjliga förbättringar av latenstid}
 Den största möjligheten till förbättring är, bortsett från snabbare servomotorer, en annan typ av trådlös kommunikation. 30 ms är lång tid för att en trådlös signal att propagera 10 m i ett öppet rum. Ett möjligt alternativ kan vara att specificera ett eget protokoll med en lågnivå\footnote{I bemärkelsen att man kontrollerar hårdvaran direkt.} radio-transceiver\footnote{Transmitter/receiver --- sändare och mottagare}. Pingtider runt 1 ms borde då vara realistiskt att uppnå.
 
 Bättre kvalité på flexsensorer och trycksensorer kan tänkas leda till mindre störningar, vilket gör att filtrets brytfrekvens kan ökas och därmed minska dess latenstid. Mikrokontrollens frekvens kan även ökas, men till en kostnad av högre strömförbrukning.
