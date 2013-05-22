@@ -11,7 +11,7 @@ Objektidentifieringen bygger på att robothanden beräknar avståndet mellan fin
 \label{fig:objektid}
 \end{figure}
 
-För att beräkna avståndet mellan fingertopparna har en matematisk modell av handen tagits fram. Den utgår från servomotorernas önskade vridningsvinklar för att bestämma hur fingrarna är ställda. Då ingen mätning av servomotorernas faktiska läge görs finns endast information om den önskade vinkeln, men då servomotorerna reglerar sig själva kommer de efter en viss tidsfördröjning nå dit, förutsatt att de inte blir behindrade. Denna tidsfördröjning försummas då den är liten vid de små manipulationer av robothanden som görs då användaren försöker gripa ett objekt. Totalt är det fyra servomotorer som inverkar på avståndet mellan fingertopparna.
+För att beräkna avståndet mellan fingertopparna har en matematisk modell av handen tagits fram. Den utgår från servomotorernas önskade vridningsvinklar för att bestämma hur fingrarna är ställda. Då ingen mätning av servomotorernas faktiska läge görs finns endast information om den önskade vinkeln, men då servomotorerna reglerar sig själva kommer de efter en viss tidsfördröjning nå dit, förutsatt att de inte blir förhindrade. Denna tidsfördröjning försummas då den är liten vid de små manipulationer av robothanden som görs då användaren försöker gripa ett objekt. Totalt är det fyra servomotorer som inverkar på avståndet mellan fingertopparna.
 \begin{figure}[H]
 \includegraphics[width=0.5\textwidth]{img/servo/servo_vinklar}
 \caption{Samtliga servovinklar för finger 1 och tumme.}
@@ -28,4 +28,4 @@ En fullständig matematisk modell av finger 1 och tummen tas fram och demonstrer
 
 
 \section{Begränsning av tryckkraft}
-Då robothanden identifierat ett objekt erhålles ett maximalt tillåtet kontakttryck för detta objekt. Om sensorerna registrerar att detta tryck uppnås kommer servomotorerna för det aktuella fingret stoppas, så att högre trycknivå inte uppnås. Så länge användaren håller sin hand sluten kommer robothanden hålla kvar vid det stoppade läget, för att sedan när användaren öppnar sin hand återgår till att följa användarens rörelser igen.
+Då robothanden identifierat ett objekt erhålles ett maximalt tillåtet kontakttryck för detta objekt. Om sensorerna registrerar att detta tryck uppnås kommer servomotorerna för det aktuella fingret stoppas, så att högre trycknivå inte uppnås. Så länge användaren håller sin hand mer sluten än det läget den var då trycket uppnådes, kommer robothanden hålla kvar vid det stoppade läget. När användaren öppnar sin förbi det nämnda läget, återgår servomotorerna till att följa användarens rörelser igen.
