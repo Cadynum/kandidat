@@ -2,77 +2,17 @@
 För återkoppling av trycket används en \emph{diodramp} med 8 led-lampor per finger på styrhandsken. För tre fingrar blir det totalt 24 dioder som ska kontrolleras individuellt.
 Arduino Micro har inte 24 lediga utportar med sensorer och moduler inkopplade. Det skulle dessutom vara otympligt att dra 24 kablar mellan dioderna och mikrokontrollen.
 
-Ett 8-bitars skiftregister (se \ref{chp:komponentlista}) används därför per diodramp. Ett skiftregistret har tre digitala inportar; data, klockpuls och asynkron reset, och 8 vippor \footnote{En enhet som sparar insignalen när klockan går från låg till hög.} som är kopplade till 8 dioder. När en vippa har värdet 1 lyser dess diod.
-Data klockas in seriellt via dataporten och skiftar då övriga bitar ett steg.
+Ett 8-bitars skiftregister, se Appendix~\ref{chp:komponentlista}, används därför per diodramp. Ett skiftregister har tre digitala inportar; data, klockpuls och asynkron reset, och 8 vippor \footnote{En enhet som sparar insignalen när klockan går från låg till hög.} som är kopplade till 8 utportar.
+Data klockas in seriellt via dataporten och skiftar då varje bit ett steg. 
 
 Antag att ett tillstånd $S_n$ med databitar $Q$ är
 \[
     S_n = \{Q0, \dots, Q7\}
 \]
 Efter en positiv klockflank med det binära talet $IN$ på data-inporten kommer tillståndet vara
+\comment{förklaringen slutar tvärt här. det säger mig ingenting att tillståndet försjuts eller vad som nu händer. vad händer sen, lyser det då eller?}
 \[
     S_{n+1} = \{IN, Q0,\dots,Q6\}
 \]
 
-Från styrhandskens mikrokontroller går en datapin till varje skiftregister, med en delad klocka och reset. Totalt behövs det 5 utportar med skiftregisterna. Se kopplingsschema i appendix~\ref{apx:diodramp}.
-
-Processbeskrivning från uppmätt kraft till rätt värde i skiftregistret:
-\begin{enumerate}
-    \item Robothanden omvandlar varje fingers uppmätta kraft till ett 8-bitars tal, där varje bit korresponderar till 1 N. Se figur~\ref{fig:diodramp} och tabell~\ref{tbl:diodramp}.
-    \item De tre 8-bitars talen överförs trådlöst till styrhandsken.
-    \item Styrhandsken tar emot de tre 8-bitars talen och kör följande rutin 8 gånger om något tal har ändrats:
-    \begin{enumerate}
-        \item Asynkron reset aktiveras och alla dioder släcks för varje skiftregister. Detta för att undvika flimmer när värden skiftas igenom senare.
-        \item Varje skiftregisters datapin sätts till den minst signifikanta biten för korresponderande 8-bitars tal.
-        \item En klockpuls ges till varje skiftregister.
-        \item Alla 8-bitars tal skiftas 1 steg åt höger i mikrokontrollen.
-    \end{enumerate}
-\end{enumerate}
-
-\begin{table}[ht]
-\centering
-\begin{tabularx}{5cm}{r X}
-\textbf{Tryck ($N$)}         & \textbf{Binärt tal} \\
-$0 $        & \texttt{00000000} \\
-$1 $        & \texttt{10000000} \\
-$2 $        & \texttt{11000000} \\
-$3 $        & \texttt{11100000} \\
-$4 $        & \texttt{11110000} \\
-$5 $        & \texttt{11111000} \\
-$6 $        & \texttt{11111100} \\
-$7 $        & \texttt{11111110} \\
-$8 $        & \texttt{11111111} \\
-$9 $        & \texttt{01111111} \\
-$10$        & \texttt{00111111} \\
-$11$        & \texttt{00011111} \\
-$12$        & \texttt{00001111} \\
-$13$        & \texttt{00000111} \\
-$14$        & \texttt{00000011} \\
-$15$        & \texttt{00000001} \\
-$\ge 16$    & \texttt{01010101}
-\end{tabularx}
-\caption{Tryck relaterat till vilka lampor i diodrampen som ska vara tända.}
-\label{tbl:diodramp}
-\end{table}
-
-\begin{figure}[ht]
-\begin{subfigure}{0.1\textwidth}
-\centering
-\includegraphics{img/diod_3.pdf}
-\caption{$\unit[3]{N}$}
-\end{subfigure}
-~
-\begin{subfigure}{0.1\textwidth}
-\centering
-\includegraphics{img/diod_6.pdf}
-\caption{$\unit[6]{N}$}
-\end{subfigure}
-~
-\begin{subfigure}{0.1\textwidth}
-\centering
-\includegraphics{img/diod_10.pdf}
-\caption{$\unit[10]{N}$}
-\end{subfigure}
-\caption{Kraft återkopplas till användaren genom att tända fler dioder för högre kraft. När kraften överstiger 8 N släcks lampor från motsatt håll. Totalt kan upp till 16 N visas, där 16 N och högre visas genom att varannan diod lyser. Se tabell~\ref{tbl:diodramp}}
-\label{fig:diodramp}
-\end{figure}
+Från mikrokontrollen går en datapin till varje skiftregister, med en delad klocka och reset. Totalt behövs det 5 utportar med skiftregisterna.

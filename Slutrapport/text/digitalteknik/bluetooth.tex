@@ -1,13 +1,12 @@
 \section{Trådlös kommunikation}
-För att möjliggöra kommunikation trådlöst mellan styrhandsken och robothanden används två prototyp-versioner av \emph{Bluetooth Mate Silver}. Enheten är godkänd för Bluetooth klass 2, vilket bl a innebär låg strömförbrukning (genomsnittligt 2.5mW vid aktiv användning) och överföringar på upp till 20m, vilket anses vara tillräckligt för att klara kravet på 5m i praktiska förhållanden.
+För att möjliggöra kommunikation trådlöst mellan styrhandsken och robothanden används två prototyp-versioner av \emph{Bluetooth Mate Silver}. Enheten är godkänd för Bluetooth klass 2, vilket bl a innebär låg strömförbrukning (genomsnittligt 2.5mW vid aktiv användning) och överföringar på upp till 20m.
 
 Bluetooth-protokollet är ett paketförmedlande nätverk, vilket innebär att information skickas i diskreta paket. Varje paket innehåller metadata
 \footnote{Data som beskriver information, som mottagaradress och felkorrigerande kod}
 och \emph{payload}
-\footnote{Datan i sig som ska överföras}. Modulerna exponerar ett seriellt interface till mikrokontrollen, där inte kontroll ges över individuella paket.
+\footnote{Datan i sig som ska överföras}. Modulerna exponerar ett seriellt interface till mikrokontrollen, där kontroll inte ges över individuella paket.
 
 Bluetooth-enheten har en överföringskapacitet på 115200bps\footnote{bits per second}.
-\comment{Går det att ta reda på hur många bps vi använder? hade vart cool. finns det plats över kan man ju säga att systemet är utbyggbart. :)}
 
 De två bluetoothmodulerna är programmerade att automatiskt ansluta till varandra när de är inom räckhåll, och återuppta en eventuellt förlorad anslutning.
 
@@ -26,7 +25,6 @@ Bluetooth definierar ett säkerhetsprotokoll där enheter utbyter symmetriska kr
 Bluetooth är en industristandard vilket leder till att säkerheten är väl testad och beprövad till den mån att den kan anses vara fullgod för projektet, och om industriella tillämpningar i framtiden skulle var önskvärt \cite{btsec}.
 
 \subsection{Integritet och paketförlust}
-\comment{enligt jonas är korrumperat ett dåligt ord. men det är det man säger i datasammanhang.}
-Data som överförs trådlöst kan korrumperas av t ex elektromagnetisk strålning. Utan integritetskontroll kan det leda till att felaktiga kommandon utförs, som att t ex ett för hårt tryck mosar en tomat.
-Sändarmodulen räknar ut en CRC-kod\footnote{Cycle Redundancy Check --- En felkorrigerande kod som framställs genom binär polynomdivision} baserat på datan som ska skickas, och inkluderar den i slutat av bluetooth-paketet. 
+Data som överförs trådlöst kan korrumperas av t ex elektromagnetisk strålning. Utan integritetskontroll kan det leda till att felaktiga kommandon utförs, som att t ex ett för hårt tryck uppstår i systemet.
+Sändarmodulen räknar ut en CRC-kod\footnote{Cycle Redundancy Check --- En felkorrigerande kod som framställs genom binär polynomdivision} baserat på datan som ska skickas, och inkluderar den i slutet av bluetooth-paketet. 
 Mottagarmodulen i sin tur upprepar uträkningen på datan som tas emot, och jämför det med CRC-koden. Om de inte är ekvivalenta ignoreras paketet eftersom datan då är felaktig.
