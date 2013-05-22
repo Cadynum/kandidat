@@ -10,14 +10,25 @@ Antag att ett tillstånd $S_n$ med databitar $Q$ är
     S_n = \{Q0, \dots, Q7\}
 \]
 Efter en positiv klockflank med det binära talet $IN$ på data-inporten kommer tillståndet vara
-\comment{förklaringen slutar tvärt här. det säger mig ingenting att tillståndet försjuts eller vad som nu händer. vad händer sen, lyser det då eller?}
 \[
     S_{n+1} = \{IN, Q0,\dots,Q6\}
 \]
 
-Styrhandsken har tagit emot en ändring av
+Från styrhandskens mikrokontroller går en datapin till varje skiftregister, med en delad klocka och reset. Totalt behövs det 5 utportar med skiftregisterna. Se kopplingsschema i appendix~\ref{diodramp}.
 
-Från mikrokontrollen går en datapin till varje skiftregister, med en delad klocka och reset. Totalt behövs det 5 utportar med skiftregisterna. Se kopplingsschema i appendix~\ref{diodramp}.
+Processbeskrivning från trycksensor till att lampor lyser:
+\begin{enumerate}
+    \item Robothanden omvandlar varje fingers uppmätta kraft till ett 8-bitars tal, där varje bit korresponderar till 1 N. Se figur~\ref{fig:diodramp}.
+    \item De tre 8-bitars talen överförs trådlöst till styrhandsken.
+    \item Styrhandsken tar emot de tre 8-bitars talen och kör följande rutin 8 gånger om något tal har ändrats:
+    \begin{enumerate}
+        \item Asynkron reset aktiveras och alla dioder släcks för varje skiftregister. Detta för att undvika \emph{flicker} när värden skiftas igenom senare.
+        \item Varje skiftregisters datapin sätts till den minst signifikanta biten för korresponderande 8-bitars tal.
+        \item En klockpuls ges till varje skiftregister.
+        \item Alla 8-bitars tal skiftas 1 steg åt höger i mikrokontrollen.
+    \end{enumerate}
+\end{enumerate}
+
 
 
 \begin{figure}[ht]
@@ -39,4 +50,5 @@ Från mikrokontrollen går en datapin till varje skiftregister, med en delad klo
 \caption{$\unit[10]{N}$}
 \end{subfigure}
 \caption{Kraft återkopplas till användaren genom att tända fler dioder för högre kraft. När kraften överstiger 8 N släcks lampor från motsatt håll. Totalt kan upp 16 N visas, där 16 N och högre visas genom att varannan diod lyser.}
+\label{fig:diodramp}
 \end{figure}
