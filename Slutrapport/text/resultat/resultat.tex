@@ -55,9 +55,14 @@ Figur~\ref{avstand} visar hur den matematiska modellen avviker från ett perfekt
 
 Utifrån detta väljs två objekt med måtten \unit{40}{mm} respektive \unit{100}{mm} för funktionstest som bekräftar att objektidentifieringen funkar.
 
+\newpage
 \section{Begränsning av tryckkraft}
 
-För att verifiera att den tryckbegränsande funktionen fungerar utfördes ett test som genererade datan till figur \ref{masterplot}. Figuren visar ett händelseförlopp på 15 sekunder
+För att verifiera att den tryckbegränsande funktionen fungerar utfördes ett test som genererade datan till figur \ref{masterplot}. 
+
+Figuren visar ett händelseförlopp på 15 sekunder då trycket begränsas pga överträdelse av det maximalt tillåtna värdet.
+Ett objekt med bredd på 70mm har identifierats av systemet vilket har genererat en maximalt tillåten kraft på 2N.
+Under de första 6 sekunderna tillåts användaren fritt styra handens servovinklar då trycksensorn registrerar ett värde under det maximalt tillåtna värdet 2 N. Vid 6 sekunder greppar handen ett objekt vilket genererar ett ökat kontakttryck som till slut överstiger gränsen. Systemet begränsar då trycket genom att hindra vidare rörelse i handen (orange linje). Användaren (röd linje) begär ett mindre avstånd mellan fingrarna vilket begränsas av systemet då detta skulle generera ett ökat kontakttryck. 
 
 
 \begin{figure}[H]
