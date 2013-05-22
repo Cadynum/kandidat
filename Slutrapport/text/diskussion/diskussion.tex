@@ -5,7 +5,7 @@ För vidareutveckling rekommenderas en stabilare konstruktion där återkoppling
 
 Ett annat problem är avläsning av användarens rörelse i styrhandsken. Den nuvarande styrhandsken använder flexsensorer som reagerar på en böjning av själva handsken. Problemet är att handsken följer inte handen rörelse exakt eftersom det blir glapp mellan hand och handske. Detta medför att avläsningen inte blir kontinuerlig och exakt. För att lösa detta rekommenderas att utveckla en handske som följer handens exakta rörelse likt Festo's Exohand som nämns i inledningen. De använder en styrhandske som ser likadan ut som robothanden vilket ger mer exakt och intuitiv styrning.
 
-\subsection{Möjliga förbättringar av latenstid}
+\section{Möjliga förbättringar av systemets latenstid}
 Den största möjligheten till förbättring är, bortsett från snabbare servomotorer, en annan typ av trådlös kommunikation. 30 ms är lång tid för att en trådlös signal att propagera 10 m i ett öppet rum. Ett möjligt alternativ kan vara att specificera ett eget protokoll med en lågnivå\footnote{I bemärkelsen att man kontrollerar hårdvaran direkt.} radio-transceiver\footnote{Transmitter/receiver --- sändare och mottagare}. Pingtider runt 1 ms borde då vara realistiskt att uppnå.
 
 Bättre kvalité på flexsensorer och trycksensorer kan tänkas leda till mindre störningar, vilket gör att filtrets brytfrekvens kan ökas och därmed minska dess latenstid. Mikrokontrollens frekvens kan även ökas, men till en kostnad av högre strömförbrukning.
