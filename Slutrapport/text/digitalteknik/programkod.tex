@@ -1,0 +1,22 @@
+\section{Programkod}
+Programkoden är strukturerad med flera filer som delas mellan robothandens och
+
+
+\begin{description}
+    \item[angletodistance] Omvandlar servomotorernas vinklar till avstånd i mm.
+    \item[butterworth] Butterworthfiltrering av första ordningen effektivt implementerat med heltal.
+    \item[com] Hanterar kommunikation mellan bluetooth-enheter. Implementerad asynkront för att inte blockera resten av programmet när data väntas från bluetooth-enheten.
+    \item[state] Datastrukturer för tillstånd för tryck och flex-sensorer. Optimerar för att kunna serialiseras över bluetooth-enheten.
+\end{description}
+
+\begin{description}
+    \item[robothand] Kombinerar de andra till ett färdigt program för styrning av robothanden. Begränsar programmets frekvens till 100 Hz.
+    \item[constants] Konstanter för programmet, som brytfrekvens för butterworthfiltert, och vilken periodtid mellan beräkningar.
+    \item[kraft] \emph{Lookup table} för att relatera en spänning mot ett tryck för varje finger.
+    \item[object] Räknar ut om handen ska begränsa trycket baserat på servovinklarnas börvärde.
+\end{description}
+
+\begin{description}
+    \item[styrhandske] Kombinerar de andra till ett färdigt program för styrning av robothanden. Begränsar programmets frekvens till 100 Hz.
+    \item[constants] Som för robothanden, men andra värden
+\end{description}
