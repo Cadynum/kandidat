@@ -1,6 +1,7 @@
 \section{Programkod}
 Programkoden är strukturerad med flera filer som delas mellan robothanden och styrhandskens mikrokontroller.
 Det finns även kod som inte direkt används i slutprodukten, men som är till för att testa enskilda funktioner på robothanden, som att mäta latenstiden för bluetooth-enheten.
+Utöver kod till mikrokontrollen finns det även Mathematica program för dimensionering av filter och generering av spänning$\to$kraft tabeller.
 
 All programkod finns på \emph{github}, genom \url{https://github.com/Cadynum/kandikod}. Använd följande kommando för att ladda ner en kopia av all programkod:
 \begin{lstlisting}[basicstyle=\ttfamily]
@@ -21,7 +22,13 @@ git clone https://github.com/Cadynum/kandikod.git
 \begin{table}[H]
 \begin{tabularx}{\textwidth}{p{3cm} X}
 \textbf{robothand}       &
-    Huvudprogrammet för robothanden. Samplar, filtrerar och omvandlar , återkopplar tryck och kommunicerar med robothanden. \\
+    Huvudprogrammet för robothanden.
+    \begin{itemize}
+        \item Samplar, filtrerar och omvandlar trycksensorernas spänning till kraft.
+        \item Kommunicerar med styrhandsken.
+        \item Begränsar eventuellt trycket baserat på avstånd.
+        \item Begränsar koden till att köras 100 gånger per sekund.
+    \end{itemize} \\
 \textbf{constants}       &
     Konstanter för programmet, som brytfrekvens för butterworthfiltret, och vilken periodtid mellan beräkningar. \\
 \textbf{kraft}      &
@@ -38,12 +45,12 @@ git clone https://github.com/Cadynum/kandikod.git
 \textbf{styrhandske} &
     Huvudprogrammet för styrhandsken.
     \begin{itemize}
-        \item Samplar, filtrerar och normaliserar flexsensorer till servovinklar.
+        \item Samplar, filtrerar och normaliserar flexsensorernas spänning till servovinklar.
         \item Återkopplar tryck till användaren via diodramper.
         \item Kommunicerar med robothanden.
+        \item Begränsar koden till att köras 100 gånger per sekund.
+        \item Sköter kalibrering till användarens hand
     \end{itemize} \\
 \textbf{constants} & Som för robothanden, med andra värden.
 \end{tabularx}
 \end{table}
-
-\subsection*{Hjälpprogram}

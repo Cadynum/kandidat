@@ -553,7 +553,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1282,7 +1282,7 @@
            width="145"
            id="rect5810" /></flowRegion><flowPara
          style="font-size:16px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:CMU Sans Serif;-inkscape-font-specification:CMU Sans Serif Medium"
-         id="flowPara5812">Töjningsresistorer</flowPara></flowRoot>    <path
+         id="flowPara5812">Flexsensorer</flowPara></flowRoot>    <path
        sodipodi:nodetypes="ccccc"
        inkscape:connector-curvature="0"
        id="path5824"
@@ -1657,7 +1657,7 @@
            width="166"
            id="rect3211" /></flowRegion><flowPara
          style="font-size:16px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:CMU Sans Serif;-inkscape-font-specification:CMU Sans Serif Medium"
-         id="flowPara3213">Ledlampor</flowPara></flowRoot>    <g
+         id="flowPara3213">Diodramp</flowPara></flowRoot>    <g
        transform="matrix(0.99424435,0.10713623,-0.10713623,0.99424435,369.49561,40.321887)"
        id="g3985-1-6" />
     <flowRoot

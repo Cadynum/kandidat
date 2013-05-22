@@ -3,7 +3,7 @@ För återkoppling av trycket används en \emph{diodramp} med 8 led-lampor per f
 Arduino Micro har inte 24 lediga utportar med sensorer och moduler inkopplade. Det skulle dessutom vara otympligt att dra 24 kablar mellan dioderna och mikrokontrollen.
 
 Ett 8-bitars skiftregister (se \ref{chp:komponentlista}) används därför per diodramp. Ett skiftregistret har tre digitala inportar; data, klockpuls och asynkron reset, och 8 vippor \footnote{En enhet som sparar insignalen när klockan går från låg till hög.} som är kopplade till 8 utportar.
-Data klockas in seriellt via dataporten och skiftar då varje bit ett steg. 
+Data klockas in seriellt via dataporten och skiftar då varje bit ett steg.
 
 Antag att ett tillstånd $S_n$ med databitar $Q$ är
 \[
@@ -16,3 +16,25 @@ Efter en positiv klockflank med det binära talet $IN$ på data-inporten kommer 
 \]
 
 Från mikrokontrollen går en datapin till varje skiftregister, med en delad klocka och reset. Totalt behövs det 5 utportar med skiftregisterna.
+
+
+\begin{figure}[ht]
+\begin{subfigure}{0.1\textwidth}
+\centering
+\includegraphics{img/diod_3.pdf}
+\caption{$\unit[3]{N}$}
+\end{subfigure}
+~
+\begin{subfigure}{0.1\textwidth}
+\centering
+\includegraphics{img/diod_6.pdf}
+\caption{$\unit[6]{N}$}
+\end{subfigure}
+~
+\begin{subfigure}{0.1\textwidth}
+\centering
+\includegraphics{img/diod_10.pdf}
+\caption{$\unit[10]{N}$}
+\end{subfigure}
+\caption{Kraft återkopplas till användaren genom att tända fler dioder för högre kraft. När kraften överstiger 8 N släcks lampor från motsatt håll. Totalt kan upp 16 N visas.}
+\end{figure}
