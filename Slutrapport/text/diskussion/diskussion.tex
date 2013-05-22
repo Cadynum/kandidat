@@ -1,6 +1,9 @@
 \chapter{Diskussion och rekommendationer}
 
 Ett problemen med styrning av robothanden och dess precision vid identifiering av objekt är stabiliteten i konstruktionen. Att bygga i meccano resulterade i glapp mellan olika delar och töjningar av materialet som inte räknades med i den matematiska modellen. Detta gör att en korrekt bedömning av avståndet mellan fingertopparna för att identifiera objekt får låg precision varför antalet objekt som kan implementeras i programmet kraftigt begränsas. Problem med skruvar som lossnar och delar som blir sneda gjorde dessutom att styrningsresultat kunde skilja sig från en gång till en annan. Detta innebär att en kalibrering av servomotorernas läge för greppning av ett bestämt objekt behövdes oftare än tänkt.
+För vidareutveckling rekommenderas en stabilare konstruktion där återkoppling av servovinklar utvecklas där man sedan kan återanvända den nuvarande mjukvaran.
+
+Ett annat problem är avläsning av användarens rörelse i styrhandsken. Den nuvarande s
 
 \subsection{Möjliga förbättringar}
 Den största möjligheten till förbättring är, bortsett från snabbare servomotorer, en annan typ av trådlös kommunikation. 30 ms är lång tid för att en trådlös signal att propagera 10 m i ett öppet rum. Ett möjligt alternativ kan vara att specificera ett eget protokoll med en lågnivå\footnote{I bemärkelsen att man kontrollerar hårdvaran direkt.} radio-transceiver\footnote{Transmitter/receiver --- sändare och mottagare}. Pingtider runt 1 ms borde då vara realistiskt att uppnå.
