@@ -4,12 +4,12 @@ För att möjliggöra kommunikation trådlöst mellan styrhandsken och robothand
 Bluetooth-protokollet är ett paketförmedlande nätverk, vilket innebär att information skickas i diskreta paket. Varje paket innehåller metadata
 \footnote{Data som beskriver information, som mottagaradress och felkorrigerande kod}
 och \emph{payload}
-\footnote{Datan i sig som ska överföras}. Modulerna exponerar ett seriellt interface till mikrokontrollen, där inte kontroll ges över individuella paket.
+\footnote{Datan i sig som ska överföras}. Enheterna exponerar ett seriellt interface till mikrokontrollen, där inte kontroll ges över individuella paket.
 
 Bluetooth-enheten har en överföringskapacitet på 115200bps\footnote{bits per second}.
 \comment{Går det att ta reda på hur många bps vi använder? hade vart cool. finns det plats över kan man ju säga att systemet är utbyggbart. :)}
 
-De två bluetoothmodulerna är programmerade att automatiskt ansluta till varandra när de är inom räckhåll, och återuppta en eventuellt förlorad anslutning.
+De två bluetooth-enheterna är programmerade att automatiskt ansluta till varandra när de är inom räckhåll, och återuppta en eventuellt förlorad anslutning.
 
 \begin{figure}[htb]
 \includegraphics[width=0.3\textwidth]{img/bluetooth_mate_silver.jpg}
@@ -17,16 +17,16 @@ De två bluetoothmodulerna är programmerade att automatiskt ansluta till varand
 \end{figure}
 
 \subsection{Sändning och synkronisering}
-Varje tillstånd för tryck- och flexsensorerna skickas 100 gånger per sekund. Eftersom bluetoothmodulen abstraherar bort bluetooth-paket implementeras ett enkelt synkroniseringsprotokoll. Varje paket med data börjar med tre godtyckligt valda synkroniseringsbytes, \texttt{\{0xFF, 0x53, 0x59\}}. Genom att den mottagande mikrokontrollen väntar på bytesekvensen kan den avgöra när ett paket startar.
+Varje tillstånd för tryck- och flexsensorerna skickas 100 gånger per sekund. Eftersom bluetooth-enheten abstraherar bort bluetooth-paket implementeras ett enkelt synkroniseringsprotokoll. Varje paket med data börjar med tre godtyckligt valda synkroniseringsbytes, \texttt{\{0xFF, 0x53, 0x59\}}. Genom att den mottagande mikrokontrollen väntar på byte-sekvensen kan den avgöra när ett paket startar.
 
 \subsection{Säkerhet}
 För att skydda mot otillåten kontroll och avlyssning av styrsignalerna mellan kontrollhandsken används kryptering.
-Bluetooth definierar ett säkerhetsprotokoll där enheter utbyter symmetriska krypteringsnycklar \footnote{128 bitars för Bluetooth Mate Silver} antingen med hjälp av en dynamisk ``parningsprocess'', där användaren kontrollerar pinkoder vid första användningen, eller att nycklarna manuellt. 
+Bluetooth definierar ett säkerhetsprotokoll där enheter utbyter symmetriska krypteringsnycklar \footnote{128 bitars för Bluetooth Mate Silver} antingen med hjälp av en dynamisk ``parningsprocess'', där användaren kontrollerar pinkoder vid första användningen, eller att nycklarna manuellt.
 
-Bluetooth är en industristandard vilket leder till att säkerheten är väl testad och beprövad till den mån att den kan anses vara fullgod för projektet, och om industriella tillämpningar i framtiden skulle var önskvärt \cite{btsec}.
+Bluetooth är en industristandard vilket leder till att säkerheten är väl testad och beprövad till den mån att den kan anses vara fullgod för projektet, och om industriella tillämpningar i framtiden skulle var önskvärt \citep{btsec}.
 
 \subsection{Integritet och paketförlust}
 \comment{enligt jonas är korrumperat ett dåligt ord. men det är det man säger i datasammanhang.}
 Data som överförs trådlöst kan korrumperas av t ex elektromagnetisk strålning. Utan integritetskontroll kan det leda till att felaktiga kommandon utförs, som att t ex ett för hårt tryck mosar en tomat.
-Sändarmodulen räknar ut en CRC-kod\footnote{Cycle Redundancy Check --- En felkorrigerande kod som framställs genom binär polynomdivision} baserat på datan som ska skickas, och inkluderar den i slutat av bluetooth-paketet. 
-Mottagarmodulen i sin tur upprepar uträkningen på datan som tas emot, och jämför det med CRC-koden. Om de inte är ekvivalenta ignoreras paketet eftersom datan då är felaktig.
+Sändarenheten räknar ut en CRC-kod\footnote{Cycle Redundancy Check --- En felkorrigerande kod som framställs genom binär polynomdivision} baserat på datan som ska skickas, och inkluderar den i slutat av bluetooth-paketet.
+Mottagarenheten i sin tur upprepar uträkningen på datan som tas emot, och jämför det med CRC-koden. Om de inte är ekvivalenta ignoreras paketet eftersom datan då är felaktig. \citep{crc}
