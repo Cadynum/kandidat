@@ -1,8 +1,14 @@
 \usepackage[swedish]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{euler}
+\usepackage{ifluatex}
+\ifluatex
+    \usepackage{euler}
+    \usepackage{fontspec}
+\else
+    \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc}
+    \usepackage{lmodern}
+    \usepackage{euler}
+\fi
 
 \usepackage{amsfonts}
 \usepackage{amsmath}
@@ -27,6 +33,7 @@
 \usepackage{tikz}
 \usepackage[section]{placeins}
 \usepackage{epstopdf}
+\usepackage{eso-pic}
 \usetikzlibrary{shapes,arrows}
 
 \usepackage{hyperref}
@@ -34,11 +41,11 @@
 \makeatletter
 \g@addto@macro\@floatboxreset{\centering}
 \makeatother
-
+\addtokomafont{disposition}{\rmfamily}
 \hypersetup{
 colorlinks=true
 }
-
+\newcommand{\email}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
 % Fin header
 \pagestyle{fancy}
 %\fancyhf{}

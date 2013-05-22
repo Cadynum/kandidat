@@ -1,27 +1,71 @@
 \thispagestyle{empty}
 
+% \begin{titlepage}
+% \setlength{\parskip}{0pt}
+% \begin{center}
+
+
+% \includegraphics[width=\textwidth]{../mittpresentation/framsida.png}\\[1cm]
+% \vspace{1cm}
+
+% \textsc{\LARGE Chalmers Tekniska Högskola}\\[0.3cm]
+% \textsc{\Large Kandidatarbete, SSYX02-13-21B}\\[0.5cm]
+% \hrule\vspace{2mm}
+% \textsf{
+% 	\textbf{\Huge Design av Robothand} \\[2mm]
+% 	\LARGE Slutrapport \\[2mm]
+% }
+% \hrule\vspace{5mm}
+% \begin{minipage}{0.8\textwidth}
+% \large
+% Christopher Håkansson\hfill Emil Kvist \\
+% Karl-Johan Larsson\hfill Sami Masoumzadeh Soureh \\
+% Joakim Olsson\hfill Christoffer Öjeling \\
+% \end{minipage}
+% \end{center}
+% \end{titlepage}
+
+
+\newcommand{\backgroundpic}[3]{%
+    \put(#1,#2){
+        \parbox[b][\paperheight]{\paperwidth}{%
+            \centering
+            \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{#3}
+            \vfill
+}}}
+
 \begin{titlepage}
 \setlength{\parskip}{0pt}
-\begin{center}
+\AddToShipoutPicture{\backgroundpic{-4}{56.7}{img/frontpage}}
+\mbox{}
+\vfill
+% \addtolength{\voffset}{2cm}
+% \begin{flushleft}
+%     {\noindent {\Huge Chalmers Thesis Template for \LaTeX} \\[0.5cm]
+%     \emph{\Large Master's Thesis in Complex Adaptive Systems} \\[.8cm]
 
+%     {\huge JONAS EINARSSON}\\[.8cm]
 
-\includegraphics[width=\textwidth]{../mittpresentation/framsida.png}\\[1cm]
-\vspace{1cm}
+%     {\Large Department of Physics \& Engineering Physics \\
+%     Non-linear Dynamics \& Statistical Physics \\
+%     \textsc{Chalmers University of Technology} \\
+%     Gothenburg, Sweden 2011 \\
+%     Master's Thesis 2011:1\\
+%     }
+%     }
+% \end{flushleft}
+{\Huge Design av Robothand} \\[3mm]
+{\Large Kandidatarbete, SSYX02-13-21B}\\[2mm]
+{\Large \emph{Institutionen för Signaler och system}}\\[0.5cm]
 
-\textsc{\LARGE Chalmers Tekniska Högskola}\\[0.3cm]
-\textsc{\Large Kandidatarbete, SSYX02-13-21B}\\[0.5cm]
-\hrule\vspace{2mm}
-\textsf{
-	\textbf{\Huge Design av Robothand} \\[2mm]
-	\LARGE Slutrapport \\[2mm]
-}
-\hrule\vspace{5mm}
-\begin{minipage}{0.8\textwidth}
-\large
-Christopher Håkansson\hfill Emil Kvist \\
-Karl-Johan Larsson\hfill Sami Masoumzadeh Soureh \\
-Joakim Olsson\hfill Christoffer Öjeling \\
+\begin{minipage}{\textwidth}
+Christopher Håkansson \hfill \email{hakansson.chris@gmail.com}\\
+Emil Kvist \hfill \email{emil.kvist1@gmail.com}\\
+Karl-Johan Larsson \hfill \email{karl-johan.larsson@live.se}\\
+Sami Masoumzadeh Soureh \hfill \email{sami.soureh@gmail.com}\\
+Joakim Olsson \hfill \email{joakim.olsson.778@gmail.com} \\
+Christoffer Öjeling \hfill \email{christoffer@ojeling.net}
 \end{minipage}
-\end{center}
-\end{titlepage}
 
+\end{titlepage}
+\ClearShipoutPicture
