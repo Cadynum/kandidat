@@ -1,5 +1,9 @@
 \chapter{Objektidentifiering}
-För att få en mer användarvänlig robothand har möjligheten till objektidentfiering behandlats. Genom att handen identifierar objekten den greppar kan den själv justera det maximalt tillåtna trycket från förinställda värden och förhindra risken att objekten utsätts för ett övertryck. Efterssom objektidentifieringen automatisera denna del slipper användaren reglera trycket vilket ger ett mycket mer intuitivt och lättanvändligt system. Bild \ref{fig:objektidentifiering1} illustrerar hur objektidentifieringen är upplagd.
+\label{objektidentifiering}
+Vid fjärrarbete kan det vara svårt för användaren att veta med vilka krafter robothanden påverkar objekt. För att underlätta detta implementeras en objektidentifieringsfunktion i robothanden som kan särskilja förinställda objekt. Dessa objekt kan lagras i robothandens dataminne tillsammans med största tillåtna tryck robothanden får lov att applicera på objektet. Denna information används för att begränsa kontakttrycket för respektive objekt och därmed riskerar användaren inte att skada objektet eller arbeta med onödigt höga krafter. 
+\section{Identifieringsprincip}
+Objektidentifieringen bygger på att robothanden beräknar avståndet mellan finger 1 och tummen vid trycksensorerna,se~\ref{fig:objektid} nedan. Varje objekt har ett identifierande mått. Detta betyder att objekt som skall särskiljas inte kan ha detta mått gemensamt.
+
 
 \begin{figure}[H]
 \includegraphics{img/obj_dist}
@@ -7,15 +11,15 @@ För att få en mer användarvänlig robothand har möjligheten till objektident
 \label{fig:objektid}
 \end{figure}
 
-
-
-Objektidentifieringen bygger på att handen beräknar distansen mellan fingertopparna där trycksensorerna sitter och därigenom får information om vilka objekt som greppas för att sedan ta beslut om hur hårt tryck som är tillåtet. För att möjliggöra detta har en mattematiskmodell över handens rörelse tagits fram, se \ref{servoberakningar}. Modellen baseras på servovinklarna ($\varphi_1$,$\varphi_2$,$\varphi_3$,$\varphi_4$) som är de servolägen som styr de fyra lederna i tummen och pekfingret. Modellen kopplar de önskade servolägerna till koordinater för ändpunkter på fingrarna och därigenom avståndet mellan punkterna. Modellen är 2-dimensionell och baseras på att tumme och pekfinger rör sig i samma plan. \
+För att beräkna avståndet mellan fingertopparna har en matematisk modell av handen tagits fram. Den utgår från servomotorernas önskade vridningsvinklar för att bestämma hur fingrarna är ställda. Då ingen mätning av servomotorernas faktiska läge görs finns endast information om den önskade vinkeln, men då servomotorerna reglerar sig själva kommer de efter en viss tidsfördröjning nå dit, förutsatt att de inte blir behindrade. Denna tidsfördröjning försummas då den är liten vid de små manipulationer av robothanden som görs då användaren försöker gripa ett objekt. Totalt är det fyra servomotorer som inverkar på avståndet mellan fingertopparna. Modellen baseras på vridningsvinklarna ($\varphi_1$,$\varphi_2$,$\varphi_3$,$\varphi_4$) som är de servolägen som entydigt bestämmer avståndet mellan fingertopparna. 
 
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{img/servo/objektidentifiering}
-\caption{Schematisk bild över objektidentifiering}
-\label{fig:objektidentifiering1}
+\includegraphics[width=\textwidth]{img/obj_id_matlab}
+\caption{plot över fingrets rörelse från den matematiska modellen}
+\label{fig:objektidentifiering2}
 \end{figure}
+En fullständig matematisk modell av finger 1 och tummen tas fram och demonstreras med hjälp av matlab i figur~\ref{fig:objektidentifiering2} ovan. För fullständig beräkningsgång för att Appendix~\ref{servoberakningar}.
+
 
 Objektidentifieringen har ett genomsnittligt fel på 20\%. Felet varierar beroende på i vilket område fingrarns befinner sig i. Arbetsområdet rekonmenderas att ligga mellan 40-100 mm där en upplösning på 15 mm erhålles. Figur \ref{fig:verk_berak} jämför uppmätta värden med de värden framtagna med hjälp av den mattematiska modellen. För att få en ökad precision rekomenderas att de felkällor som tas upp i \ref{felkallor} åtgärdas. Figur \ref{fig:objektidentifiering2} visualiserar handens rörelse med hjälp av den mattematiska modellen.
 
@@ -25,11 +29,7 @@ Objektidentifieringen har ett genomsnittligt fel på 20\%. Felet varierar beroen
 \label{fig:verk_berak}
 \end{figure}
 
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{img/obj_id_matlab}
-\caption{plot över fingrets rörelse från den matematiska modellen}
-\label{fig:objektidentifiering2}
-\end{figure}
+
 
 
 \subsubsection{Felkällor}
