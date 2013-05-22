@@ -14,16 +14,11 @@ Användartester visar att robothandens styrning och tryckåterkoppling upplevs i
 %Funktionstester där olika objekt greppas demonstreras tillsammans med objektidentifieringen och tryckbegränsning. Resultaten utvärderas och möjliga förbättringar ges i ett avslutande diskussionsavsnitt.
 
 \section*{Abstract}
-This report describes a robothand with three fingers that are controlled wirelessly with a glove.
-The robothand is built with Meccano and has a total of eight movable joints of which six are
-separately controllable and actuated by servomotors. The hand also has pressure sensors on the fingertips
-to give the user feedback with diodbars of how hard the object is affected.
-The communication between the glove and the robothand is established by using bluetooth
-and Arduino microcontrollers. Signals from the glove controls the robothands motion and are obtained from the flex sensors on the glove.
-To compute the distance between the fingertips and thus enable object identification, a mathematical model is used of the robothand. By calculating the distance a number of defined items can be identified. Object identification is then used to
-limit contact pressure that the object is affected by.
-Functional tests in which different objects were grasped is demonstrated with object identification and pressure limit. The results are evaluated and possible improvements are given in a concluding discussion section.
+This report describes the development and construction of a robot hand with three fingers, which is controlled wirelessly with a glove that the user wears. The glove is calibrated for different users hands and the fingers positions are continuously measured. The robot hand is equipped with pressure sensors that give visual feedback of the current pressure to the user via LEDs on the glove. The mathematical modeling of the robot hand together with control signals to actuators achieve a simple object identification based on the object's size.
+If an object is detected and the user exceeds a predefined pressure further actuation is prohibited by the robothand and thus the item is protected from damage.
+In order to prohibit that small measurement disturbances will affect the pressure limit and the users input signals, the signals are filtered. The design of the Robot hand is chosen to achieve intuitive control, and also to enable a wide variety of grips.
 
+User testing shows that the robot hand control and pressure feedback via LEDs is percieved as intuitive. The robot hand identifies and limits the grip force correctly, but the differences between the idealized model and the actual movement limits the number and size of objects that can be identified. Sources of error are mainly in the mechanical construction due to high tolerances.
 
 
 
