@@ -60,43 +60,29 @@ Utifrån detta väljs två objekt med måtten \unit{40}{mm} respektive \unit{100
 \newpage
 \section{Begränsning av tryckkraft}
 
-För att verifiera att den tryckbegränsande funktionen fungerar utförs ett test som genererar datan till figur \ref{masterplot}.
-
-Figuren visar ett händelseförlopp på 15 sekunder då trycket begränsas pga överträdelse av det maximalt tillåtna värdet.
-Ett objekt med bredd på \unit{70}{mm} har identifierats av systemet vilket har genererat en maximalt tillåten kraft på \unit{2}{N}. För förklaring av figur \ref{masterplot} se tabell \ref{tryckbegransning}.
-
-
-
-%Under de första 6 sekunderna tillåts användaren fritt styra avståndet mellan fingerspetsarna efterssom trycksensorn registrerar ett värde under det maximalt tillåtna värdet \unit{2}{N}. Vid 6 sekunder greppar handen ett objekt vilket genererar ett ökat kontakttryck som tillslut överstiger gränsen. Systemet begränsar då trycket genom att hindra vidare rörelse i handen (orange linje). Användaren (röd linje) begär ett mindre avstånd mellan fingrarna vilket begränsas av systemet då detta skulle generera ett ökat kontakttryck. Vid 11 sekunder hoppar objektet till vilket gör att trycket understiger \unit{2}{N}. Detta tillåter momentant en rörelse vilket sedan sänker börvärdet. Vid 13.5 sekunder släpper användaren objektet och trycket går då ner till \unit{0}{N}.
-\begin{table}[H]
-\centering
-\begin{tabular}{l l}
-\textbf{\textcolor{red}{\line(1,0){25}}}
- & Önskat avstånd mellan fingerspetsarna\\
-
-\textbf{\textcolor{orange}{\line(1,0){25}}}    & Faktiskt avstånd mellan fingerspetsarna\\
-
-\textbf{\textcolor{blue}{\line(1,0){25}}}    & Kraft på fingerspets
-\end{tabular}
-\end{table}
-
-
+För att verifiera att den tryckbegränsande funktionen utförs ett test där ett objekt identifieras och trycket begränsas.
 
 \begin{figure}[H]
 \includegraphics{img/masterplot}
-\caption{Visualisering av tryckbegränsning.}
+\begin{tabular}{l l}
+\textbf{\textcolor{red}{\line(1,0){25}}}
+ & Önskat avstånd mellan fingerspetsarna\\
+\textbf{\textcolor{orange}{\line(1,0){25}}}    & Faktiskt avstånd mellan fingerspetsarna\\
+\textbf{\textcolor{blue}{\line(1,0){25}}}    & Kraft på fingerspets
+\end{tabular}
+
+\caption{Figuren visar ett händelseförlopp på 15 sekunder då rörelsen begränsas pga överträdelse av det maximalt tillåtna kraftvärdet för fri kontroll.}
 \label{masterplot}
 \end{figure}
 
 
-
+Beskrivning av händelseförloppet:
 \begin{table}[H]
 \begin{tabularx}{\textwidth}{l X}
-
-\textbf{0.0--6.0 s}    & Fri styrning av avstånd mellan fingerspetsarna efterssom trycksensorns värde är lägre än  \unit{2}{N}.\\
-\textbf{6.0--11.0 s} & Handen greppar objektet och kontakttrycket ökar tills gränsen överskrids. Systemet begränsar då det faktiska avståndet mellan fingerspetsarna.\\
-\textbf{11.0--13.5 s} & Objektet glider ur sitt grepp vilket resulterar i ett kontakttryck under gränsvärdet. Handen tillåts då rörelse fram tills trycket återfås.  \\
-\textbf{13.5--15.0 s}  & Användaren släpper objektet och trycket sjunker.
+\textbf{0.0--6.0 s}    & Fri styrning av avstånd mellan fingerspetsarna eftersom trycksensorns värde är lägre än \unit{2}{N}.\\
+\textbf{6.0--11.0 s} & Robothanden greppar objektet och kontakttrycket ökar tills gränsen överskrids. Maximal greppkraft för objektet identifieras via ett förutbestämt distansvärde mellan tummen och pekfingret. Robothanden låser servomotorernas vinklar för att förhindra ett starkare grepp.\\
+\textbf{11.0--13.5 s} & Objektet glider ur greppet vilket resulterar i ett kontakttryck under gränsvärdet. Handen tillåts då rörelse fram tills trycket återfås och föregående procedur återupprepas.\\
+\textbf{13.5--15.0 s}  & Användaren släpper objektet helt och kraften minskar momentant.
 \label{tryckbegransning}
 \end{tabularx}
 \end{table}
