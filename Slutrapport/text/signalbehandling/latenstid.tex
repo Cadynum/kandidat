@@ -26,12 +26,3 @@ För både flexsensor$\to$servovinkel och trycksensor$\to$diodramp görs samma t
 \end{table}
 Den totala fördröjningen från att användaren rör på ett finger tills dess att trycket återkopplas via ledlamporna blir såldes 102 ms med en standardavvikelse på 3.1 ms.
 
-\subsection{Möjliga förbättringar}
-Den största möjligheten till förbättring är, bortsett från snabbare servomotorer, en annan typ av trådlös kommunikation. 30 ms är lång tid för att en trådlös signal att propagera 10 m i ett öppet rum. Ett möjligt alternativ kan vara att specificera ett eget protokoll med en lågnivå\footnote{I bemärkelsen att man kontrollerar hårdvaran direkt.} radio-transceiver\footnote{Transmitter/receiver --- sändare och mottagare}. Pingtider runt 1 ms borde då vara realistiskt att uppnå.
-
-Bättre kvalité på flexsensorer och trycksensorer kan tänkas leda till mindre störningar, vilket gör att filtrets brytfrekvens kan ökas och därmed minska dess latenstid. Mikrokontrollens frekvens kan även ökas, men till en kostnad av högre strömförbrukning.
-\begin{figure}[hb]
-\includegraphics{img/bluetooth_latency.pdf}
-\caption{20 mätningar av bluetooth-modulens pingtid. Medelvärdet är 31.1 ms, med en standardavvikelse på 0.541 ms. Paketet som skickades var 7 byte, exklusive metadata från bluethoothpaketet.}
-\label{fig:bt_latency}
-\end{figure}
