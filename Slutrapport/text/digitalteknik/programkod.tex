@@ -1,21 +1,49 @@
 \section{Programkod}
-Programkoden är strukturerad med flera filer som delas mellan robothandens och
+Programkoden är strukturerad med flera filer som delas mellan robothanden och styrhandskens mikrokontroller.
+Det finns även kod som inte direkt används i slutprodukten, men som är till för att testa enskilda funktioner på robothanden, som att mäta latenstiden för bluetooth-enheten.
 
-\begin{tabularx}{\textwidth}{l X}
+All programkod finns på \emph{github}, genom \url{https://github.com/Cadynum/kandikod}. Använd följande kommando för att ladda ner en kopia av all programkod:
+\begin{lstlisting}[basicstyle=\ttfamily]
+git clone https://github.com/Cadynum/kandikod.git
+\end{lstlisting}
+
+\subsection*{Delad kod}
+\begin{table}[H]
+\begin{tabularx}{\textwidth}{p{3cm} X}
 \textbf{angletodistance }    & Omvandlar servomotorernas vinklar till avstånd i mm. \\
 \textbf{butterworth}         & Butterworthfiltrering av första ordningen effektivt implementerat med heltal. \\
 \textbf{com }                & Hanterar kommunikation mellan bluetooth-enheter. Implementerad asynkront för att inte blockera resten av programmet när data väntas från bluetooth-enheten. \\
 \textbf{state}               & Datastrukturer för tillstånd för tryck och flex-sensorer. Optimerar för att kunna serialiseras över bluetooth-enheten.
 \end{tabularx}
+\end{table}
 
-\begin{description}
-    \item[robothand] Kombinerar de andra till ett färdigt program för styrning av robothanden. Begränsar programmets frekvens till 100 Hz.
-    \item[constants] Konstanter för programmet, som brytfrekvens för butterworthfiltert, och vilken periodtid mellan beräkningar.
-    \item[kraft] \emph{Lookup table} för att relatera en spänning mot ett tryck för varje finger.
-    \item[object] Räknar ut om handen ska begränsa trycket baserat på servovinklarnas börvärde.
-\end{description}
+\subsection*{Robothanden}
+\begin{table}[H]
+\begin{tabularx}{\textwidth}{p{3cm} X}
+\textbf{robothand}       &
+    Huvudprogrammet för robothanden. Samplar, filtrerar och omvandlar , återkopplar tryck och kommunicerar med robothanden. \\
+\textbf{constants}       &
+    Konstanter för programmet, som brytfrekvens för butterworthfiltret, och vilken periodtid mellan beräkningar. \\
+\textbf{kraft}      &
+    \emph{Lookup table} för att relatera en spänning mot ett tryck för varje finger. \\
+\textbf{object}     &
+    Räknar ut om handen ska begränsa trycket baserat på servovinklarnas börvärde.
+\end{tabularx}
+\end{table}
 
-\begin{description}
-    \item[styrhandske] Kombinerar de andra till ett färdigt program för styrning av robothanden. Begränsar programmets frekvens till 100 Hz.
-    \item[constants] Som för robothanden, men andra värden
-\end{description}
+
+\subsection*{Styrhandsken}
+\begin{table}[H]
+\begin{tabularx}{\textwidth}{p{3cm} X}
+\textbf{styrhandske} &
+    Huvudprogrammet för styrhandsken.
+    \begin{itemize}
+        \item Samplar, filtrerar och normaliserar flexsensorer till servovinklar.
+        \item Återkopplar tryck till användaren via diodramper.
+        \item Kommunicerar med robothanden.
+    \end{itemize} \\
+\textbf{constants} & Som för robothanden, med andra värden.
+\end{tabularx}
+\end{table}
+
+\subsection*{Hjälpprogram}
