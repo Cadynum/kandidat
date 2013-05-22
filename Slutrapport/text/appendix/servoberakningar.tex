@@ -47,7 +47,7 @@ c=\unit[58]{mm} \\
 \end{table}
 
 
-Avståndet mellan punkterna $P_{2}$ och $P_{1}$ är  alltid c vilket är längden på staget som sammankopplar de båda punkterna. Detta utnyttjas för att upprätta ett itterations villkor. Ett gissat värde på alfa ($\alpha_{guess}$) ger koordinaterna för punkt $P_{2}$ vilket i sin tur ger ett avstånd mha avståndsformeln, se itterationsschemat \ref{itteration} nedan. På så sätt kan ett specifikt $\alpha$ fås för varje servovinkel $\varphi$.
+Avståndet mellan punkterna $P_{2}$ och $P_{1}$ är  alltid c vilket är längden på staget som sammankopplar de båda punkterna. Detta utnyttjas för att upprätta ett iterations villkor. Ett gissat värde på alfa ($\alpha_{guess}$) ger koordinaterna för punkt $P_{2}$ vilket i sin tur ger ett avstånd mha avståndsformeln, se iterationsschemat \ref{itteration} nedan. På så sätt kan ett specifikt $\alpha$ fås för varje servovinkel $\varphi$.
 
 
 
@@ -59,7 +59,7 @@ Avståndet mellan punkterna $P_{2}$ och $P_{1}$ är  alltid c vilket är längde
   (4)\ $c_{g}=\sqrt[]{(P_{1x}-P_{2x})^2+(P_{1y}-P_{2y})^2}$ $\rightarrow$\\(5) Kolla om: $|c-c_{g}|>tol$ \\ (6) Om (5) stämmer $\rightarrow$ $\alpha_{guess}=\alpha_{guess}+value$ \ , \ börja om från punkt (3) \\ annars $\rightarrow$ det approximativa $\alpha$-värdet har hittats
 \end{flushleft}
 
-Med hjälp av matlab så har ovanstående itterationsshema genererat ett $\alpha$-värde för varje servoläge ($\varphi$). Detta utnyttjades sedan med minsta kvadratmetoden för att ta fram ekvation \eqref{eq:servo1} utifrån dessa värden.
+Med hjälp av matlab så har ovanstående iterationsshema genererat ett $\alpha$-värde för varje servoläge ($\varphi$). Detta utnyttjades sedan med minsta kvadratmetoden för att ta fram ekvation \eqref{eq:servo1} utifrån dessa värden.
 
 \begin{equation}
 \label{eq:servo1}
@@ -84,7 +84,7 @@ Med hjälp av matlab så har ovanstående itterationsshema genererat ett $\alpha
 \caption{$\alpha$-vinkeln som en funktion av servovinkeln $\varphi$}
 \end{figure}
 
-Genom att anpassa en ekvation till kurvan undviks itterationsprocessen vid styrning av handen vilket underlättar för processorn. Med hjälp av ekvation \eqref{eq:servo2} kan koordinaterna för ytterpunkterna på tummens första led beräknas. Tummens origo är placerat i dess första roterande punkt, punkt $P_{3}$ i figur  \ref{fig:servo2}. 
+Genom att anpassa en ekvation till kurvan undviks iterationsprocessen vid styrning av handen vilket underlättar för processorn. Med hjälp av ekvation \eqref{eq:servo2} kan koordinaterna för ytterpunkterna på tummens första led beräknas. Tummens origo är placerat i dess första roterande punkt, punkt $P_{3}$ i figur  \ref{fig:servo2}. 
 
 \begin{equation}
 \label{eq:servo2}
@@ -256,7 +256,7 @@ Servomotor 3 är, precis som servomotor 1 kopplat med ett stag och kontrollerar 
         \end{subfigure}
 \end{figure}
 
-Servomotor 3 påverkar så som servomotor 1, ledens $\alpha$-vinkel med hjälp av ett stag. Konstruktionen har två fasta punkter, $P_0$ samt $P_3$ med koordinaterna som listas nedan. Servomotorn har sin axel i punkt $P_0$ som därifrån är kopplat med hjälp av ett servokors till fingerstaget. Genom att applicera avståndsformeln mellan punkt $P_1$ och $P_2$ kan ett $\alpha$ ittereras fram med villkoret att: $\sqrt[]{(P_{1x}-P_{2x})^2+(P_{1y}-P_{2y})^2}=c$
+Servomotor 3 påverkar så som servomotor 1, ledens $\alpha$-vinkel med hjälp av ett stag. Konstruktionen har två fasta punkter, $P_0$ samt $P_3$ med koordinaterna som listas nedan. Servomotorn har sin axel i punkt $P_0$ som därifrån är kopplat med hjälp av ett servokors till fingerstaget. Genom att applicera avståndsformeln mellan punkt $P_1$ och $P_2$ kan ett $\alpha$ itereras fram med villkoret att: $\sqrt[]{(P_{1x}-P_{2x})^2+(P_{1y}-P_{2y})^2}=c$
 
 
 \begin{table}[H]
