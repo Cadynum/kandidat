@@ -2,36 +2,27 @@
 Flera moment i signalbehandlingen och digitaltekniken introducerar diverse latenstider. Nedan följer en analys av latenstider olika delar av systemet introducerar.
 
 \begin{description}
-    \item[Mikrokontroller] Varje mikrokontroller utför beräkningar och trådlösa överföringar 100 gånger per sekund, dels för att spara ström, men även för att garantera en konstant samplingsfrekvens för filtreringen. Med en periodtid på 10 ms är det i genomsnitt 5 ms från att en signal ändras till den är behandlad och skickad. Standardavvikelsen är 1.87 ms.
+    \item[Mikrokontroller] Varje mikrokontroller utför beräkningar och trådlösa överföringar 100 gånger per sekund, dels för att spara ström, men även för att garantera en konstant samplingsfrekvens för filtreringen. Med en periodtid på 10 ms är det i genomsnitt 5 ms från att en signal ändras till den är behandlad och skickad. Standardavvikelsen är 1.4 ms.
 
     \item[Bluetooth-enhet] Pingtiden \footnote{Tid för en signal att färdas fram och tillbaka} för bluetoothenheten är uppmätt till 31 ms (se figur~\ref{fig:bt_latency}) med en försumbar standardavvikelse så länge ingen paketförlust sker, en risk tester visar kan försummas vid användning inom 15 m oblockerad yta. Tiden för signalen att propagera enkel väg blir såldes 15 ms.
 
-    \item[Butterworth-filtrering]{Den förväntade fördröjningen beror på frekvensen. Både flex- och trycksensorerna är dock endast intresserade av fördröjningen frekvensbandet 0--15 Hz. Enligt ekvation~\eqref{eq:butterdelay} resulterar det i ? ms fördröjning med ? ms standardavvikelse.}
+    \item[Butterworthfiltrering]{Den förväntade fördröjningen beror på frekvensen. Både flex- och trycksensorerna är dock endast intresserade av fördröjningen frekvensbandet 0--15 Hz. Enligt ekvation~\eqref{eq:butterdelay} resulterar det i 9.71 ms fördröjning med 0.7 ms standardavvikelse.}
 
     \item[Servomotorer] Servomotorernas tid från ett ändrat börvärde till önskad position varierar beroende på eventuellt motstånd, tröghet i konstruktionen och nuvarande position. Servomotorn har stor inverkan på systemets totala latenstid, men eftersom det saknas återkoppling av vinklar avgränsas analysen till mätbara värden.
 \end{description}
 
-För både flexsensor$\to$servovinkel och trycksensor$\to$diodramp görs samma typ av beräkningar, med samma brytfrekvens för butterworth-filtret, vilket leder till samma latenstider. Servomotorns rörelse är inte inkluderad, men för trycksensorn analyseras alla latenstider.
+För både flexsensor$\to$servovinkel och trycksensor$\to$diodramp görs samma typ av beräkningar, med samma brytfrekvens för butterworthfiltret, vilket leder till samma latenstider. Servomotorns rörelse är inte inkluderad, men för trycksensorn analyseras alla latenstider.
 \begin{table}[H]
 \begin{tabularx}{350pt}{X r r}
-    \textbf{Komponent} & \textbf{$\mu$} & \textbf{$\sigma$}\\
+    \textbf{Komponent} & \textbf{$\mu$ (ms)} & \textbf{$\sigma$ (ms)}\\
 
-    Sampling av spänning    & 5 & 1.87 \\
-    Butterworth-filter      & ? & ? \\
-    Trådlös överföring      & 31.1 & 0.541 \\
-    Mottagande mikrokontroller   & 5 & 1.87 \\
+    Sampling av spänning        & 5.0 & 1.4 \\
+    Butterworthfilter          & 9.7 & 0.71 \\
+    Trådlös överföring          & 31 & 0.54 \\
+    Mottagande mikrokontroller  & 5.0 & 1.4 \\
     \hline
-    & \textbf{50} & \textbf{?}
+    & \textbf{51} & \textbf{2.2}
 \end{tabularx}
 \end{table}
-Den totala fördröjningen från att användaren rör på ett finger tills dess att trycket återkopplas via ledlamporna blir såldes 100 ms med en standardavvikelse på ? ms.
+Den totala fördröjningen från att användaren rör på ett finger tills dess att trycket återkopplas via ledlamporna blir såldes 102 ms med en standardavvikelse på 3.1 ms.
 
-\subsection{Möjliga förbättringar}
-Den största möjligheten till förbättring är, bortsett från snabbare servomotorer, en annan typ av trådlös kommunikation. 30 ms är lång tid för att en trådlös signal att propagera 10 m i ett öppet rum. Ett möjligt alternativ kan vara att specificera ett eget protokoll med en lågnivå radio-transceiver\footnote{Transmitter/receiver --- sändare och mottagare}. Pingtider runt 1 ms borde då vara realistiskt att uppnå.
-
-Bättre kvalité på flexsensorer och trycksensorer kan tänkas leda till mindre störningar, vilket gör att filtrets brytfrekvens kan ökas och därmed minska dess latenstid. Mikrokontrollens frekvens kan även ökas, men till en kostnad av högre strömförbrukning.
-\begin{figure}[hb]
-\includegraphics{img/bluetooth_latency.pdf}
-\caption{20 mätningar av bluetooth-modulens pingtid. Medelvärdet är 31.1 ms, med en standardavvikelse på 0.541 ms. Paketet som skickades var 4 byte, exklusive metadata.}
-\label{fig:bt_latency}
-\end{figure}

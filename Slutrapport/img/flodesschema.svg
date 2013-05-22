@@ -133,7 +133,7 @@
        x2="548.32928"
        y2="100.47031"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(3.5556157,0)" />
+       gradientTransform="translate(-3.2376509e-8,7.822355)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient3157"
@@ -299,14 +299,18 @@
          sodipodi:role="line"
          x="544.74597"
          y="114.99857"
-         id="tspan3036">4. Servo rör sig</tspan><tspan
+         id="tspan3036">4. Servomotor</tspan><tspan
          sodipodi:role="line"
          x="544.74597"
          y="134.99857"
-         id="tspan3102">till önskat</tspan><tspan
+         id="tspan3199"> rör sig</tspan><tspan
          sodipodi:role="line"
          x="544.74597"
          y="154.99857"
+         id="tspan3102">till önskat</tspan><tspan
+         sodipodi:role="line"
+         x="544.74597"
+         y="174.99857"
          id="tspan3104">läge.</tspan></text>
     <text
        xml:space="preserve"
@@ -422,8 +426,8 @@
        id="rect3134"
        width="130.84526"
        height="83.363884"
-       x="482.68372"
-       y="88.835602" />
+       x="479.12811"
+       y="96.657959" />
     <rect
        style="fill:none;stroke:#000000"
        id="rect3153"
@@ -460,7 +464,7 @@
        inkscape:connection-end-point="d4" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
-       d="m 431.29389,130.74932 51.38983,0"
+       d="m 431.29389,130.74932 47.83422,0"
        id="path3183"
        inkscape:connector-type="orthogonal"
        inkscape:connector-curvature="3"
@@ -485,18 +489,25 @@
     <text
        xml:space="preserve"
        style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="673.48694"
+       x="731.06116"
        y="80.558853"
        id="text3121"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3123"
          x="673.48694"
-         y="80.558853">7. Reglera trycket </tspan><tspan
+         y="80.558853"
+         style="text-anchor:middle;text-align:center">7. Begränsa</tspan><tspan
          sodipodi:role="line"
          x="673.48694"
          y="100.55885"
-         id="tspan3127">till referenstryck.</tspan></text>
+         id="tspan3197"
+         style="text-anchor:middle;text-align:center"> trycket </tspan><tspan
+         sodipodi:role="line"
+         x="673.48694"
+         y="120.55885"
+         id="tspan3127"
+         style="text-anchor:middle;text-align:center">till referenstryck.</tspan></text>
     <flowRoot
        xml:space="preserve"
        id="flowRoot3129"
@@ -510,7 +521,7 @@
            y="473.15656" /></flowRegion><flowPara
          id="flowPara3135" /></flowRoot>    <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#Arrow2Lstart);marker-end:none"
-       d="m 466.97873,292.8765 -0.46153,79.04383"
+       d="m 465.95664,292.8765 -2.18836,86.86619"
        id="path3194"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="3"
