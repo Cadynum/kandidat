@@ -14,16 +14,16 @@ Objektidentifieringen bygger på att robothanden beräknar avståndet mellan fin
 För att beräkna avståndet mellan fingertopparna har en matematisk modell av handen tagits fram. Den utgår från servomotorernas önskade vridningsvinklar för att bestämma hur fingrarna är ställda. Då ingen mätning av servomotorernas faktiska läge görs finns endast information om den önskade vinkeln, men då servomotorerna reglerar sig själva kommer de efter en viss tidsfördröjning nå dit, förutsatt att de inte blir behindrade. Denna tidsfördröjning försummas då den är liten vid de små manipulationer av robothanden som görs då användaren försöker gripa ett objekt. Totalt är det fyra servomotorer som inverkar på avståndet mellan fingertopparna.
 \begin{figure}[H]
 \includegraphics[width=0.5\textwidth]{img/servo/servo_vinklar}
-\caption{Samtliga servovinklar för finger 1 och tumme}
+\caption{Samtliga servovinklar för finger 1 och tumme.}
 \label{fig:vinklar}
 \end{figure}
 Modellen baseras på vridningsvinklarna ($\varphi_1$,$\varphi_2$,$\varphi_3$,$\varphi_4$), se figur~\ref{fig:vinklar} som är de servolägen som entydigt bestämmer avståndet mellan fingertopparna. 
 \begin{figure}[H]
 \includegraphics[width=0.8\textwidth]{img/servo/matlab_modell}
-\caption{Matematisk modell över över handen plottad i matlab.}
+\caption{Matematisk modell över handen plottad i matlab.}
 \label{fig:matlabmodell}
 \end{figure}
-En fullständig matematisk modell av finger 1 och tummen tas fram och demonstreras med hjälp av matlab i figur~\ref{fig:matlabmodell} ovan. Modellen implementeras i robothanden mikrokontroller.  För fullständig beräkningsgång från servovinklar till avståndsmätning se Appendix~\ref{servoberakningar}.
+En fullständig matematisk modell av finger 1 och tummen tas fram och demonstreras med hjälp av matlab i figur~\ref{fig:matlabmodell} ovan. Modellen implementeras i robothandens mikrokontroller används för att beräkna avståndet mellan trycksensorerna.  För fullständig beräkningsgång från servovinklar till avståndsmätning se Appendix~\ref{servoberakningar}.
 
 
 
