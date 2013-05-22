@@ -5,9 +5,9 @@
 
 Denna rapport redogör utveckling och konstruktion av en robothand med tre fingrar, vilken styrs trådlöst via en handske som användaren bär. Handsken kalibreras mot olika användares händer och mäter kontinuerligt fingrarnas läge. Robothanden är försedd med trycksensorer som visuellt återkopplar aktuellt tryck till användaren via dioder på handsken. Med matematisk modellering av robothanden tillsammans med styrsignaler till aktuatorerna uppnås en enkel objektidentifiering baserat på objektets storlek.
 Om ett objekt identifierats och användaren överskrider ett fördefinierat tryck begränsas handen från att greppa hårdare, och på så vis skyddas objektet från skada.
-För att inte små mätstörningar ska påverka tryckbegränsningen och för att styrningen inte ska upplevas hackig filtreras signalerna. Robothandens design är framtagen dels för att uppnå intuitiv styrning och även för att vissa typer av grepp ska kunna utföras.
+För att inte små mätstörningar ska påverka tryckbegränsningen och för att styrningen inte ska upplevas hackig filtreras signalerna. Robothandens design är framtagen dels för att uppnå intuitiv styrning, och även för att utvalda grepp ska kunna utföras.
 
-Användartester visar att robothandens styrning och tryckåterkoppling upplevs intuitiv. Robothanden identifierar och begränsar greppkraften korrekt, men skillnader mellan den idealiserade modellen och den verkliga rörelsen begränsar antal och storlek på objekt som kan identifieras. Felkällor finns främst i den mekaniska konstruktionen och uppkommer på grund av höga toleranser och glapp.
+Användartester visar att robothandens styrning och tryckåterkoppling upplevs intuitiv. Robothanden identifierar och begränsar greppkraften korrekt, men skillnader mellan den idealiserade modellen och den verkliga rörelsen begränsar antal och storlek på objekt som kan identifieras. Felkällor finns främst i den mekaniska konstruktionen på grund av höga toleranser och glapp.
 
 % Kommunikationen mellan styrhandsken och robothanden upprättas med hjälp av bluetooth och arduinomikrokontrollers.
 
