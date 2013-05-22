@@ -14,12 +14,12 @@ Nedan visas ett flödesschema för att överskådligt beskriva hur robothanden p
 \begin{enumerate}
 \item Önskat fingerläge ges genom att användaren böjer sitt finger i kontrollhandsken.
 \item Flexresistor på kontrollhandsken ändrar resistans, detta registreras i handskens \emph{Arduino Micro} som sänder detta vidare till robothandens \emph{Arduino Due} via bluetooth.
-\item Signalen omvandlas till styrsignal för servomotorn
+\item Signalen omvandlas till styrsignal för servomotorn.
 \item Servomotorn rör sig till önskat läge för att imitera användarens fingerrörelse.
 \item Trycksensorerna på fingertopparna känner av ifall något objekt greppats. Om inte (Nej), återgår systemet till att följa önskat fingerläge.
-\item Om handen har gripit ett objekt försöker den identifiera det som ett av de fördefinerade, kända objekten, om detta inte lyckats (Nej) följer handen användarens önskade rörelser
+\item Om handen har gripit ett objekt försöker den identifiera det som ett av de fördefinerade, kända objekten, om detta inte lyckats (Nej) följer handen användarens önskade rörelser.
 \item Om objektet identifieras som ett av de kända kommer handen inte tillåta att objektet greppas hårdare än ett fördefinerat maxtryck.
-\item Tryckbegränsningen kvarstår tills användaren visar att den vill släppa objektet genom att öppna sin hand, då återgår robothanden till att följa användarens önskade rörelser igen
+\item Tryckbegränsningen kvarstår tills användaren visar att den vill släppa objektet genom att öppna sin hand, då återgår robothanden till att följa användarens önskade rörelser igen.
 \end{enumerate}
 
 
