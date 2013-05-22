@@ -21,3 +21,6 @@ För att beräkna avståndet mellan fingertopparna har en matematisk modell av h
 En fullständig matematisk modell av finger 1 och tummen tas fram och demonstreras med hjälp av matlab i figur~\ref{fig:objektidentifiering2} ovan. För fullständig beräkningsgång för att Appendix~\ref{servoberakningar}.
 
 
+
+\section{Begränsning av tryckkraft}
+Då robothanden identifierat ett objekt erhålles ett maximalt tillåtet kontakttryck för detta objekt. Om sensorerna registrerar att detta tryck uppnås kommer servomotorerna för det aktuella fingret stoppas, så att högre trycknivå inte uppnås. Så länge användaren håller sin hand sluten kommer robothanden hålla kvar vid dett stoppade läget, för att sedan när användaren öppnar sin hand återgår till att följa användarens rörelser igen.
