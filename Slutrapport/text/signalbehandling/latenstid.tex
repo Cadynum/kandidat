@@ -4,7 +4,7 @@ Flera moment i signalbehandlingen och digitaltekniken introducerar diverse laten
 \begin{description}
     \item[Mikrokontroller] Varje mikrokontroller utför beräkningar och trådlösa överföringar 100 gånger per sekund, dels för att spara ström, men även för att garantera en konstant samplingsfrekvens för filtreringen. Med en periodtid på 10 ms är det i genomsnitt 5 ms från att en signal ändras till den är behandlad och skickad. Standardavvikelsen är 1.4 ms.
 
-    \item[Bluetooth-enhet] Pingtiden \footnote{Tid för en signal att färdas fram och tillbaka} för bluetoothenheten är uppmätt till 31 ms, se figur~\ref{fig:bt_latency}, med en försumbar standardavvikelse så länge ingen paketförlust sker, en risk tester visar kan försummas vid användning inom 15 m oblockerad yta. Tiden för signalen att propagera enkel väg blir såldes 15 ms.
+    \item[Bluetooth-enhet] Pingtiden \footnote{Tid för en signal att färdas fram och tillbaka} för bluetoothenheten är uppmätt till 31 ms, se figur~\ref{fig:bt_latency}, med en försumbar standardavvikelse så länge ingen paketförlust sker, en risk tester visar kan försummas vid användning inom 15 m oblockerad yta. Tiden för signalen att propagera enkel väg blir således 15 ms.
 
     \item[Butterworthfiltrering]{Den förväntade fördröjningen beror på frekvensen. Både flex- och trycksensorerna är dock endast intresserade av fördröjningen frekvensbandet 0--15 Hz. Enligt ekvation~\eqref{eq:butterdelay} resulterar det i 9.71 ms fördröjning med 0.7 ms standardavvikelse.}
 
@@ -24,7 +24,7 @@ För både flexsensor$\to$servovinkel och trycksensor$\to$diodramp görs samma t
     & \textbf{51} & \textbf{2.2}
 \end{tabularx}
 \end{table}
-Den totala fördröjningen från att användaren rör på ett finger tills dess att trycket återkopplas via ledlamporna blir såldes 102 ms med en standardavvikelse på 3.1 ms.
+Den totala fördröjningen från att användaren rör på ett finger tills dess att trycket återkopplas via ledlamporna blir således 102 ms med en standardavvikelse på 3.1 ms.
 
 \begin{figure}[hb]
 \includegraphics{img/bluetooth_latency.pdf}
