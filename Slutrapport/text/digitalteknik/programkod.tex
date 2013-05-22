@@ -1,13 +1,12 @@
 \section{Programkod}
 Programkoden är strukturerad med flera filer som delas mellan robothandens och
 
-
-\begin{description}
-    \item[angletodistance] Omvandlar servomotorernas vinklar till avstånd i mm.
-    \item[butterworth] Butterworthfiltrering av första ordningen effektivt implementerat med heltal.
-    \item[com] Hanterar kommunikation mellan bluetooth-enheter. Implementerad asynkront för att inte blockera resten av programmet när data väntas från bluetooth-enheten.
-    \item[state] Datastrukturer för tillstånd för tryck och flex-sensorer. Optimerar för att kunna serialiseras över bluetooth-enheten.
-\end{description}
+\begin{tabularx}{\textwidth}{l X}
+\textbf{angletodistance }    & Omvandlar servomotorernas vinklar till avstånd i mm. \\
+\textbf{butterworth}         & Butterworthfiltrering av första ordningen effektivt implementerat med heltal. \\
+\textbf{com }                & Hanterar kommunikation mellan bluetooth-enheter. Implementerad asynkront för att inte blockera resten av programmet när data väntas från bluetooth-enheten. \\
+\textbf{state}               & Datastrukturer för tillstånd för tryck och flex-sensorer. Optimerar för att kunna serialiseras över bluetooth-enheten.
+\end{tabularx}
 
 \begin{description}
     \item[robothand] Kombinerar de andra till ett färdigt program för styrning av robothanden. Begränsar programmets frekvens till 100 Hz.
