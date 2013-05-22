@@ -1,7 +1,7 @@
 \section{Rymdekvationer}
 \label{rymdekv}
 
-Som underlag till övriga beräkningar behövs en mattematisk modell över handens möjliga rörelsemönster. Bland annat behövs dessa beräkningar för att koppla önskad handposition till en motsvarande servovinkel.  Fingrets position bestäms av två inmatningsvariabler i form av vinklarna $\alpha$ och $\beta$. $\alpha$ utgår från y-axeln i ett koordinatsystem med origo i punkt P1 (se figur A.4.), medens $\beta$ utgår ifrån y-axeln i ett koordinatsystem med origo i punkt P3. Med andra ord kommer $\beta$ vinken att vara beroende av $\alpha$ då dess koordinat-system är kopplat till denna invariabel. Initialt behövs de vinklar som bestämmer samtliga punkters position beräknas vilket  görs med hjälp av ekvation \eqref{eq:rymdekv1} -- \eqref{eq:rymdekv9}. Ekvation \eqref{eq:rymdekv3} --\eqref{eq:rymdekv6} har tagits fram med hjäp av applicering av sinussattsen, medens \eqref{eq:rymdekv8} baseras på vinkelsummeringsregeln för en triangel. 
+Som underlag till övriga beräkningar behövs en matematisk modell över handens rörelsemönster. Bland annat behövs dessa beräkningar för att koppla önskad handposition till en motsvarande servovinkel.  Fingrets position bestäms av två inmatningsvariabler i form av vinklarna $\alpha$ och $\beta$. $\alpha$ utgår från y-axeln i ett koordinatsystem med origo i punkt P1 (se figur A.4.), medens $\beta$ utgår ifrån y-axeln i ett koordinatsystem med origo i punkt P3. Med andra ord kommer $\beta$ vinkeln att vara beroende av $\alpha$ då dess koordinat-system är kopplat till denna invariabel. Initialt behövs de vinklar som bestämmer samtliga punkters position beräknas vilket  görs med hjälp av ekvation \eqref{eq:rymdekv1} -- \eqref{eq:rymdekv9}. Ekvation \eqref{eq:rymdekv3} --\eqref{eq:rymdekv6} har tagits fram med hjäp av applicering av sinussattsen, medan \eqref{eq:rymdekv8} baseras på vinkelsummeringsregeln för en triangel. 
 
 \begin{minipage}[t]{0.5\textwidth}
 \begin{figure}[H]
@@ -68,8 +68,8 @@ L_{12}=\frac{b\sin(\delta)}{\sin(\theta)}
 \lambda+\delta+\theta=\pi 
 \end{equation} 
 
-Ur den mattematiska modellen erhålls nio okända variabler, fem okända vinklar och 4 okända längder vilka löses med ekvation \eqref{eq:rymdekv1} -- \eqref{eq:rymdekv9}. Sammanställningen av dessa ekvationer resulterar i ekvation \eqref{eq:rymdekv10} -- \eqref{eq:rymdekv11}. Då vinklarna $\theta$ och $\lambda$ är beroende av varandra går dessa inte att lösa analytiskt. För att beräkna $\theta$ och $\lambda$ applicerades en iterativ lösningsmodell i matlab. 
-Genom att initiera med en approximation av $\theta$ kan ett $\lambda$ räknas ut ekvation \eqref{eq:rymdekv11} vilket genererar ett nytt $\theta$ med hjälp av ekvation \eqref{eq:rymdekv10}. Detta ittereras tills en önskad tolerans har uppnåtts mellan det gamla $\theta$-värdet och det nya. Den antagna itterationsmodellen är stabil med snabb konvergens då problemets komplexitet är relativt låg.
+Ur den matematiska modellen erhålls nio okända variabler, fem okända vinklar och 4 okända längder vilka löses med ekvation \eqref{eq:rymdekv1} -- \eqref{eq:rymdekv9}. Sammanställningen av dessa ekvationer resulterar i ekvation \eqref{eq:rymdekv10} -- \eqref{eq:rymdekv11}. Då vinklarna $\theta$ och $\lambda$ är beroende av varandra går dessa inte att lösa analytiskt. För att beräkna $\theta$ och $\lambda$ applicerades en iterativ lösningsmodell i matlab. 
+Genom att initiera med en approximation av $\theta$ kan ett $\lambda$ räknas ut ekvation \eqref{eq:rymdekv11} vilket genererar ett nytt $\theta$ med hjälp av ekvation \eqref{eq:rymdekv10}. Detta itereras tills en önskad tolerans har uppnåtts mellan det gamla $\theta$-värdet och det nya. Den antagna iterationsmodellen är stabil med snabb konvergens då problemets komplexitet är relativt låg.
 
 
 
@@ -93,7 +93,7 @@ b=\unit[12]{mm} \\
 \end{cases}
 \]
 
-När vinkelitterationen genomförts kan koordinaterna för samtliga punkter hittas med hjälp av den beräknade vinkeldatan. 
+När vinkeliterationen genomförts kan koordinaterna för samtliga punkter hittas med hjälp av den beräknade vinkeldatan. 
 
 
 \begin{table}[H]
@@ -138,4 +138,4 @@ För att räkna ut fingerspettsens koordinater behövs ytterliggare en vinkel in
 P6=[P4_{x}+(b+L_{3})\sin(\omega),P4_{y}+(b+L_{3})\cos(\omega)]
 \end{equation}
 
-Slutgiltligen används ekvation \eqref{eq:rymdekv15} för att bestämma koordinaterna för punkt P6. Med hjälp av denna mattematiska modell kan alltså fingrets position bestämmes utifrån två input vinklar $\alpha$ och $\beta$. Den mattimatiska modellen har använts för att i matlab göra simuleringar av fingrets rörelse som funktion av varierande $\alpha$ och $\beta$. 
+Slutgiltligen används ekvation \eqref{eq:rymdekv15} för att bestämma koordinaterna för punkt P6. Med hjälp av denna mattematiska modell kan alltså fingrets position bestämmes utifrån två inputvinklar $\alpha$ och $\beta$. Den matematiska modellen har använts för att i matlab göra simuleringar av fingrets rörelse som funktion av varierande $\alpha$ och $\beta$. 
