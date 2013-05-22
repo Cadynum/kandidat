@@ -2,12 +2,12 @@
 \label{objektidentifiering}
 Vid fjärrarbete kan det vara svårt för användaren att veta med vilka krafter robothanden påverkar objekt. För att underlätta detta implementeras en objektidentifieringsfunktion i robothanden som kan särskilja förinställda objekt. Dessa objekt kan lagras i robothandens dataminne tillsammans med största tillåtna tryck robothanden får lov att applicera på objektet. Denna information används för att begränsa kontakttrycket för respektive objekt och därmed riskerar användaren inte att skada objektet eller arbeta med onödigt höga krafter. 
 \section{Identifieringsprincip}
-Objektidentifieringen bygger på att robothanden beräknar avståndet mellan finger 1 och tummen vid trycksensorerna,se~\ref{fig:objektid} nedan. Varje objekt har ett identifierande mått. Detta betyder att objekt som skall särskiljas inte kan ha detta mått gemensamt.
+Objektidentifieringen bygger på att robothanden beräknar avståndet mellan finger 1 och tummen vid trycksensorerna, se~\ref{fig:objektid} nedan. Varje objekt har ett identifierande mått. Detta betyder att objekt som skall särskiljas inte kan ha detta mått gemensamt.
 
 
 \begin{figure}[H]
 \includegraphics{img/obj_dist}
-\caption{Identifiering av objekt}
+\caption{Identifiering av objekt.}
 \label{fig:objektid}
 \end{figure}
 
@@ -23,7 +23,7 @@ Modellen baseras på vridningsvinklarna ($\varphi_1$,$\varphi_2$,$\varphi_3$,$\v
 \caption{Matematisk modell över handen plottad i matlab.}
 \label{fig:matlabmodell}
 \end{figure}
-En fullständig matematisk modell av finger 1 och tummen tas fram och demonstreras med hjälp av matlab i figur~\ref{fig:matlabmodell} ovan. Modellen implementeras i robothandens mikrokontroller används för att beräkna avståndet mellan trycksensorerna.  För fullständig beräkningsgång från servovinklar till beräknat avstånd, se Appendix~\ref{servoberakningar}.
+En fullständig matematisk modell av finger 1 och tummen tas fram och demonstreras med hjälp av matlab i figur~\ref{fig:matlabmodell} ovan. Modellen implementeras i robothandens mikrokontroller används för att beräkna avståndet mellan trycksensorerna.  För fullständig beräkningsgång från servovinklar till beräknat avstånd, se appendix~\ref{servoberakningar}.
 
 
 
