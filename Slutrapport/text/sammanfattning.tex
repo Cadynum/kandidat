@@ -1,8 +1,6 @@
+\thispagestyle{plain}
+\vspace*{\fill}
 \section*{Sammanfattning}
-%Denna rapport redogör för utvecklingen av en robothand med tre fingrar som styrs trådlöst med en handske. Robothanden är byggd av Meccano och har totalt åtta rörliga leder varav sex är separat styrbara och aktueras av servomotorer. Handen har även trycksensorer på fingertopparna för att ge användaren feedback med diodramper om hur hårt objektet påverkas. Kommunikationen mellan styrhandsken och robothanden upprättas med hjälp av bluetooth och Arduinomikrokontrollers. Signalerna från styrhandsken reglerar robothandens rörelse och fås från flexgivare som sitter på styrhandsken. För att beräkna avståndet mellan fingertopparna och därmed möjliggöra objektidentifiering används en matematisk modell av handen. Genom att beräkna avståndet kan ett antal fördefinerande objekt identifieras. Objektidentifieringen används sedan för att begränsa kontakttrycket som objektet påverkas av.
-
-%Funktionstester där olika objekt greppas demonstreras tillsammans med objektidentifieringen och tryckbegränsning. Resultaten utvärderas och möjliga förbättringar ges i ett avslutande diskussionsavsnitt.
-
 Denna rapport redogör utveckling och konstruktion av en robothand med tre fingrar, vilken styrs trådlöst via en handske som användaren bär. Handsken kalibreras mot olika användares händer och mäter kontinuerligt fingrarnas läge. Robothanden är försedd med trycksensorer som visuellt återkopplar aktuellt tryck till användaren via dioder på handsken. Med matematisk modellering av robothanden tillsammans med styrsignaler till aktuatorerna uppnås en enkel objektidentifiering baserat på objektets storlek.
 Om ett objekt identifierats och användaren överskrider ett fördefinierat tryck begränsas handen från att greppa hårdare, och på så vis skyddas objektet från skada.
 För att inte små mätstörningar ska påverka tryckbegränsningen och för att styrningen inte ska upplevas hackig filtreras signalerna. Robothandens design är framtagen dels för att uppnå intuitiv styrning, och även för att utvalda grepp ska kunna utföras.
@@ -14,17 +12,10 @@ Användartester visar att robothandens styrning och tryckåterkoppling upplevs i
 %Funktionstester där olika objekt greppas demonstreras tillsammans med objektidentifieringen och tryckbegränsning. Resultaten utvärderas och möjliga förbättringar ges i ett avslutande diskussionsavsnitt.
 
 \section*{Abstract}
+
 This report describes the development and construction of a robot hand with three fingers, which is controlled wirelessly with a glove that the user wears. The glove is calibrated for different users hands and the fingers positions are continuously measured. The robot hand is equipped with pressure sensors that give visual feedback of the current pressure to the user via LEDs on the glove. The mathematical modeling of the robot hand together with control signals to actuators achieve a simple object identification based on the object's size.
 If an object is detected and the user exceeds a predefined pressure further actuation is prohibited by the robothand and thus the item is protected from damage.
 In order to prohibit that small measurement disturbances will affect the pressure limit and the users input signals, the signals are filtered. The design of the Robot hand is chosen to achieve intuitive control, and also to enable a wide variety of grips.
 
 User testing shows that the robot hand control and pressure feedback via LEDs is percieved as intuitive. The robot hand identifies and limits the grip force correctly, but the differences between the idealized model and the actual movement limits the number and size of objects that can be identified. Sources of error are mainly in the mechanical construction due to high tolerances.
-
-
-
-
-
-
-
-
-
+\vspace*{\fill}
