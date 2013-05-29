@@ -1,6 +1,11 @@
 \documentclass{scrartcl}
 \usepackage[swedish]{babel}
-\usepackage{fontspec}
+\usepackage{ifluatex}
+\ifluatex
+    \usepackage{fontspec}
+\else
+    \usepackage[utf8]{inputenc}
+
 \usepackage{parskip}
 \addtokomafont{disposition}{\rmfamily}
 
@@ -23,20 +28,28 @@ Figurtexterna är ibland redundanta och för långa. Försök göra texten mer k
 \ex{Figur 4.2, 6.23}
 
 \section*{Sammanfattning}
-En slutsats skulle vara bra eller någon slags sammanfattning av diskussionen.
+En slutsats skulle vara bra eller någon slags sammanfattning av diskussionen så att man redan från början vet hur det gick.
 
 \section*{Inledning}
 
 Övergripande informativ och bra men vissa termer borde förklaras bättre eller eventuellt tas bort.
 \ex{``System Identification Toolbox'' förklaras inte.}
 
-Vissa brister i dagens teknik tas upp. Det hade då varit bra om man kunde återkoppla till detta i tekniskt bidrag. Till exempel nämndes att störningar i kommunikationen var ett problem då alla följefordon får information från ledarfordonet. När styrningen i er lösning går ut på att följa bilen framför med hjälp av sensorer borde detta problem lösas.
+Vissa brister i dagens teknik tas upp. Det hade då varit bra om man kunde återkoppla till detta i tekniskt bidrag. Till exempel nämndes att störningar i kommunikationen var ett problem med SARTRE då alla följefordon får information från ledarfordonet. När styrningen i er lösning går ut på att följa bilen framför med hjälp av sensorer borde detta problem lösas.
 
 Teknisk bidrag är nu utformad väldigt liknande sammanfattningen.
 
+Varför ska modellerna och reglersystemen simuleras i Simulink för att jämföra med det faktiska beteendet?
+
+\section*{Begränsningar}
+
+%tt undersöka motorparametar ligger utanför projektet nämns först i diskussionen.
+
+Att det endast är P- och PI-reglering som undersöks kunde förslagsvis nämnas i avgränsningar eller tidigare.
+
 Ni begränsar er till en separat reglering av longitudinell och lateral styrning. Vad har det för implikationer i prestandan?
 
-Prestandamål, som inte uppnåddes, angående felmarginaler och systemets snabbhet tas med i begränsningar-avsnittet. Det är typiskt material för projektdelen. Man kunde sedan i diskussion istället kommentera felmarginalen och systemets snabbhet alternativt klargöra för vilken prestanda systemet verkligen har under ``Tekniskt Bidrag''.
+Prestandamål, som inte uppnåddes, angående felmarginaler och systemets snabbhet tas med i detta avsnittet. Det är typiskt material för projektdelen. Man kunde sedan i diskussion istället kommentera felmarginalen och systemets snabbhet alternativt klargöra för vilken prestanda systemet verkligen har under ``Tekniskt Bidrag''.
 
 
 \section*{Metod/genomförande}
@@ -58,18 +71,12 @@ Vissa konstanter och ekvationer motiveras genom en referens till en bok på 500 
 Val av filter och filtrets brytfrekvens är inte motiverat. Vilka avvägningar gjordes?
 \ex{Del 4.1.3}
 
-\section*{Avgränsningar}
-
-Vissa förenklingar görs utan diskussion om vad det ger för effekter. T ex antas att momentet som uppstår på grund av friktionen mellan hjul och underlag är samma oavsett hastighet. Detta moment kan väl bortses från vid högre hastigheter?
-
-Att undersöka motorparametar ligger utanför projektet nämns först i diskussionen.
-
-Att det endast är P- och PI-reglering som undersöks kunde förslagsvis nämnas i avgränsningar eller tidigare.
-
 
 \section*{Resultat}
 
-Ett litet stycke i början av resultat-avsnittet där det nämns vad som kommer hade underlättat. I vissa grafer visas märkliga resultat som inte sedan förklaras. \ex{Enligt figur 6.6 ser det ut som att ledarfordonet teleporteras från 10 cm till 25 cm.}
+Ett litet stycke i början av resultat-avsnittet där det nämns vad som kommer hade underlättat. 
+
+I vissa grafer visas märkliga resultat som inte sedan förklaras. \ex{Enligt figur 6.6 ser det ut som att ledarfordonet teleporteras från 10 cm till 25 cm.}
 
 
 \section*{Diskussion och slutsats}
@@ -80,10 +87,16 @@ Under 7.2 skrivs att ultraljudssensorerna antar värdet 255 cm när inget objekt
 
 Ingen förklaring ges och fenomenet borde förklaras närmare. Varför valdes inte ett avstånd mellan 0.1 och 0.01s.
 
+Inleder t.ex. 7.4 med att de longitudinella styrningssystemen kommer jämföras i avsnittet, men någon jämförelse görs inte. Åtminstone inte tydligt. I slutsatsen presenteras val av ``bästa'' regulatorn utifrån hur väl de uppfyller kraven som nämndes i ``Begränsningar'', men de framgår inte hur väl de uppfyller kraven, bara att de är närmast.
+ 
+ Luddig slutsats. \ex{``... styrsystemen ... ska ... uppfylla kraven på insvängningstid och kvarvarande fel.'' Men senare i avsnittet står att kraven inte uppfylls.
+ 
+ ``Regulatorn som uppfattades fungera bäst för det laterala systemet valdes'' men vilken var det?
+ 
 \section*{Rapportens utformning och formalia}
 
 Se över val av rubrikerna.
-\ex{Diskussion kan förslagsvis heta ``Analys och Diskussion''. ``Utveckling av bil följer bil - lateral styrning'' är ingen bra rubrik.}
+\ex{Diskussion kan förslagsvis heta ``Analys och Diskussion'' eller delas upp i två avsnitt. ``Utveckling av bil följer bil - lateral styrning'' är ingen bra rubrik.}
 
 Gör grafer i vektor format, för att få skarpare bilder.
 
@@ -97,13 +110,16 @@ Referenser borde vara i ordning. Rapportens första referens är [8], vilket bli
 
 % Varför skiljer sig överföringsfunktionerna så mycket?
 
-% Stannar motorn då avståndet är kortare än referensavståndet? Enl. 4.2. Vad händer då avståndet är samma som referensen? Är styrsignalen noll då?
+% Stannar motorn då avståndet är kortare än referensavståndet? Enl. 4.2. Vad händer då avståndet är samma som referensen? Är styrsignalen noll då? Diskuterades nån lösning på att få bilen att sakta ner istället för att stanna?
 
-% Hur svårt är det att anpassa till en bättre motor? En motor med helt och hållet kända parametrar.
+% Hur svårt är det att anpassa till en bättre motor? En motor med helt och hållet kända parametrar. 
 
 % Skulle man kunna byta ut styrmotorn till ett styrservo? Och på så sätt hantera nolläges vinkeln.
 
 
-% När genomfördes testet av sensorerna? Det visar sig att de fungerar mycket dåligt. En bättre metod vore att byta ut dessa innan tester genomförs.
 
 % 4.3. Minsta sensorvärdet används alltid för longitudinell reglering med motiveringen att minsta värdet alltid är rätt. Varför är det det?
+
+%Vissa förenklingar görs utan diskussion om vad det ger för effekter. T ex antas att momentet som uppstår på grund av friktionen mellan hjul och underlag är samma oavsett hastighet. Detta moment kan väl bortses från vid högre hastigheter?
+
+%Ingen slutklä, återkoppling till verkligheten eller ens sammanfattande stycke om hur systemet fungerar.
