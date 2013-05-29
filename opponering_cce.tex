@@ -1,0 +1,109 @@
+\documentclass{scrartcl}
+\usepackage[swedish]{babel}
+\usepackage{fontspec}
+\usepackage{parskip}
+\addtokomafont{disposition}{\rmfamily}
+
+\newcommand\ex[1]{\emph{Exempel: #1}}
+
+\title{NXT - Fordonståg}
+\subtitle{Opponering}
+\author{Christopher Håkansson, Emil Kvist, Christoffer Öjeling}
+
+\begin{document}
+\maketitle
+
+\section*{Rapportens upplägg och struktur}
+
+I kapitel 3 och 4 introduceras teori och formler. Flera konstanter löses och fulla ekvationer skrivs ut. Det blir lätt rörigt med alla numeriska värden. Är det relevant? Fokus borde snarare ligga på metod och avvägningar, och numeriska värden skulle kunna läggas i appendix.
+
+Det refereras ofta till text och bilder i kapitel längre fram, detta bör undvikas för att slippa bli avbruten när man läser.
+
+Figurtexterna är ibland redundanta och för långa. Försök göra texten mer koncis.
+\ex{Figur 4.2, 6.23}
+
+\section*{Sammanfattning}
+En slutsats skulle vara bra eller någon slags sammanfattning av diskussionen.
+
+\section*{Inledning}
+
+Övergripande informativ och bra men vissa termer borde förklaras bättre eller eventuellt tas bort.
+\ex{``System Identification Toolbox'' förklaras inte.}
+
+Vissa brister i dagens teknik tas upp. Det hade då varit bra om man kunde återkoppla till detta i tekniskt bidrag. Till exempel nämndes att störningar i kommunikationen var ett problem då alla följefordon får information från ledarfordonet. När styrningen i er lösning går ut på att följa bilen framför med hjälp av sensorer borde detta problem lösas.
+
+Teknisk bidrag är nu utformad väldigt liknande sammanfattningen.
+
+Ni begränsar er till en separat reglering av longitudinell och lateral styrning. Vad har det för implikationer i prestandan?
+
+Prestandamål, som inte uppnåddes, angående felmarginaler och systemets snabbhet tas med i begränsningar-avsnittet. Det är typiskt material för projektdelen. Man kunde sedan i diskussion istället kommentera felmarginalen och systemets snabbhet alternativt klargöra för vilken prestanda systemet verkligen har under ``Tekniskt Bidrag''.
+
+
+\section*{Metod/genomförande}
+
+Väl beskriven process överlag.
+
+Ni nämner i diskussion att det är viktigt att filtrera sensorvärdena, varför gjorde ni inte det?
+
+Hur skulle det fungera på verkliga bilar med plattan som är monterad baktill? Är det realiserbart att använda denna metod med sensorer i verkligheten?
+
+Avståndssensorerna visade sig i er rapport ha en väldigt stor felmarginal. Varför undersöktes inte andra alternativ när det har så stor inverkan på hela projektet?
+
+All reglering är i laplacedomän, vilket indikerar kontinuerlig tid. I början skriver ni att en mikrodator används, vilket betyder att ni i slutändan använder diskret tid. Hur implementeras era modeller?
+
+Vissa konstanter och ekvationer motiveras genom en referens till en bok på 500 sidor.  Eftersom de är oförklarade i texten borde ni referera till specifika sidor så man kan följa resonemanget alternativt förklara dem i en teoridel.  Andra konstanter, som att förstärka överföringsfunktionen med 320, är helt omotiverade.
+
+\ex{Ekvation 10, 11, Figur 5.6}
+
+Val av filter och filtrets brytfrekvens är inte motiverat. Vilka avvägningar gjordes?
+\ex{Del 4.1.3}
+
+\section*{Avgränsningar}
+
+Vissa förenklingar görs utan diskussion om vad det ger för effekter. T ex antas att momentet som uppstår på grund av friktionen mellan hjul och underlag är samma oavsett hastighet. Detta moment kan väl bortses från vid högre hastigheter?
+
+Att undersöka motorparametar ligger utanför projektet nämns först i diskussionen.
+
+Att det endast är P- och PI-reglering som undersöks kunde förslagsvis nämnas i avgränsningar eller tidigare.
+
+
+\section*{Resultat}
+
+Ett litet stycke i början av resultat-avsnittet där det nämns vad som kommer hade underlättat. I vissa grafer visas märkliga resultat som inte sedan förklaras. \ex{Enligt figur 6.6 ser det ut som att ledarfordonet teleporteras från 10 cm till 25 cm.}
+
+
+\section*{Diskussion och slutsats}
+
+I diskussionen analyseras vissa resultat felaktigt eller otydligt. \ex{``Osäkerheten på sensorernas mätvärde är +-3 cm..'' detta påsteende kan ej styrkas av mätvärdena i Resultat-delen då tre av dessa hade större fel än 3 cm.}
+
+Under 7.2 skrivs att ultraljudssensorerna antar värdet 255 cm när inget objekt hittas för samplingstiden 0.1s, och att 25.5 cm antas för 0.01s.
+
+Ingen förklaring ges och fenomenet borde förklaras närmare. Varför valdes inte ett avstånd mellan 0.1 och 0.01s.
+
+\section*{Rapportens utformning och formalia}
+
+Se över val av rubrikerna.
+\ex{Diskussion kan förslagsvis heta ``Analys och Diskussion''. ``Utveckling av bil följer bil - lateral styrning'' är ingen bra rubrik.}
+
+Gör grafer i vektor format, för att få skarpare bilder.
+
+Ibland använder ni meter och ibland centimeter på y-axeln för samma typ av mätdata.
+
+Referenser borde vara i ordning. Rapportens första referens är [8], vilket blir förvirrande.
+
+
+\end{document}
+
+
+% Varför skiljer sig överföringsfunktionerna så mycket?
+
+% Stannar motorn då avståndet är kortare än referensavståndet? Enl. 4.2. Vad händer då avståndet är samma som referensen? Är styrsignalen noll då?
+
+% Hur svårt är det att anpassa till en bättre motor? En motor med helt och hållet kända parametrar.
+
+% Skulle man kunna byta ut styrmotorn till ett styrservo? Och på så sätt hantera nolläges vinkeln.
+
+
+% När genomfördes testet av sensorerna? Det visar sig att de fungerar mycket dåligt. En bättre metod vore att byta ut dessa innan tester genomförs.
+
+% 4.3. Minsta sensorvärdet används alltid för longitudinell reglering med motiveringen att minsta värdet alltid är rätt. Varför är det det?
