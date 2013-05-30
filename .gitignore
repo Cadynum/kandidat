@@ -13,5 +13,6 @@
 *.fdb_latexmk
 main.pdf
 presentation.pdf
+opponering_cce.pdf
 *.DS_Store
 *~
