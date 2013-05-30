@@ -1,36 +1,45 @@
 \documentclass{beamer}
 
 \usepackage[swedish]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+\ifluatex
+    \usepackage{fontspec}
+\else
+    \usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+\fi
 \usepackage{tikz}
 \usepackage[nice]{units}
 
-\graphicspath{../mittrapport/img/}
-\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+\usepackage[iso, swedish]{isodate}
+\definecolor{links}{HTML}{0000FF}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
 
 \usetikzlibrary{calc,shapes.callouts,shapes.arrows}
+
 \usetheme{Warsaw}
+\useoutertheme[subsection=false]{miniframes}
 
 \setbeamercolor{normal text}{fg=black,bg=white}
-%\setbeamercolor{structure}{fg=black}
-%\setbeamercolor{description}{fg=blue}
+\setbeamercolor{structure}{fg=black}
 
 \setbeamercolor{alerted text}{fg=red!85!black}
 
 \setbeamercolor{item projected}{use=item,fg=black,bg=item.fg!35}
 
-\setbeamercolor*{palette primary}{use=structure,bg=black!90, fg=white!90}
-\setbeamercolor*{palette secondary}{use=structure,fg=structure.fg!95!black}
-\setbeamercolor*{palette tertiary}{use=structure,fg=structure.fg!90!black}
-\setbeamercolor*{palette quaternary}{use=structure,fg=white,bg=black!80}
+\setbeamercolor{palette primary}{bg=black!90, fg=white!90}
+\setbeamercolor{palette secondary}{bg=black!80,fg=white}
+\setbeamercolor{palette tertiary}{bg=black!90,fg=white}
+\setbeamercolor{palette quaternary}{fg=red, bg=red}
+% \setbeamercolor{lower separation line head}{bg=black!60}
+% \setbeamerfont{headline}{size=\fontsize{7}{11}}
 
-\setbeamercolor*{framesubtitle}{fg=white}
+\setbeamercolor{framesubtitle}{fg=black}
+\setbeamercolor{frametitle}{fg=white, bg=black!80}
 
-\setbeamercolor*{block title}{parent=structure,bg=black!60, fg=white}
-\setbeamercolor*{block body}{fg=black,bg=black!10}
-\setbeamercolor*{block title alerted}{parent=alerted text,bg=black!15}
-\setbeamercolor*{block title example}{parent=example text,bg=black!15}
+\setbeamercolor{block title}{parent=structure,bg=black!60}
+\setbeamercolor{block body}{fg=black,bg=black!10}
+\setbeamercolor{block title alerted}{parent=alerted text,bg=black!15}
+\setbeamercolor{block title example}{parent=example text,bg=black!15}
 
 
 
@@ -40,6 +49,15 @@
         at ($(#1.north)+(-.5cm,0.8cm)$) {\small #2};}%
     }%
 
+
+\newcommand{\entry}[2][]{%
+\item #2 \ifthenelse{\isempty{#1}}{}{\hfill #1}
+}
+
+\newcommand{\descr}[3][]{%
+\item \textbf{#2} \ifthenelse{\isempty{#1}}{}{\hfill #1}
+\ifthenelse{\isempty{#3}}{}{\par #3}
+}
 
 \defbeamertemplate*{footline}{shadow theme}{%
 \leavevmode%
@@ -69,4 +87,6 @@
 \begin{document}
 
 \include{frontpage}
+\include{slides}
+
 \end{document}
