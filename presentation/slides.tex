@@ -10,8 +10,35 @@
 \begin{frame}
 \end{frame}
 \section{Signalbehandling}
+\subsection{Styrhandsken}
 \begin{frame}
+\frametitle{Signalens väg för styrhandsken}
+\footnotesize
+\begin{tikzpicture}[node distance = 2.8cm, auto]
+    \node [block] (sampling) {flexsensorernas spänning samplas};
+    \node [block, right of=sampling] (filter) {störningar filtreras};
+    \node [block, right of=filter] (norm1) {normalisering mot användarens hand};
+    \node [block, right of=norm1] (norm2) {normalisering mot robothandens vinklar};
+
+    \path [line] (sampling) -- (filter);
+    \path [line] (filter) -- (norm1);
+    \path [line] (norm1) -- (norm2);
+\end{tikzpicture}
 \end{frame}
+\subsection{Robothanden}
+\begin{frame}
+\frametitle{Signalens väg för robothanden}
+\begin{tikzpicture}[node distance = 3.5cm, auto]
+    \node [block] (sampling) {trycksensorernas spänning samplas};
+    \node [block, right of=sampling] (filter) {störningar filtreras};
+    \node [block, right of=filter] (norm1) {spänningen räknas om till tryck i Newton};
+
+    \path [line] (sampling) -- (filter);
+    \path [line] (filter) -- (norm1);
+ \end{tikzpicture}
+\end{frame}
+
+
 \section{Objektidentifiering}
 \begin{frame}
 \end{frame}
