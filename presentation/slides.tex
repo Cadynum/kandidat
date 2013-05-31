@@ -63,7 +63,7 @@
 \begin{tikzpicture}[node distance = 3.5cm, auto]
     \node [block] (sampling) {trycksensorernas spänning samplas};
     \node [block, right of=sampling] (filter) {störningar filtreras};
-    \node [block, right of=filter] (norm1) {spänningen räknas om till tryck i Newton};
+    \node [block, right of=filter] (norm1) {spänningen räknas om till kraft i Newton};
 
     \path [line] (sampling) -- (filter);
     \path [line] (filter) -- (norm1);
@@ -73,26 +73,21 @@
 
 \section{Objektidentifiering}
 \begin{frame}
-\frametitle{Ett1}
+\frametitle{Servovinklar}
 \includegraphics[width=\textwidth]{img/servo_vinklar}
 \end{frame}
 \begin{frame}
-\frametitle{Ett1}
+\frametitle{Modell av handen}
 \includegraphics[width=\textwidth]{img/matlab_modell}
 \end{frame}
 \begin{frame}
-\frametitle{Ett1}
+\frametitle{Jämförelse mot verkliga värden}
 \includegraphics[width=\textwidth]{img/obj_id_matlab2-eps-converted-to}
 \end{frame}
 
-\section{Masterplot}
+\section{Tryckbegränsning}
 \begin{frame}
 \frametitle{Ett1}
 \includegraphics[width=\textwidth]{img/masterplot}
 \end{frame}
 
-\section{Diskussion}
-\begin{frame}
-\frametitle{Ett1}
-\includegraphics[width=\textwidth]{img/flodesschema}
-\end{frame}
