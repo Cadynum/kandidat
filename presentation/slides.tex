@@ -63,7 +63,7 @@
 \begin{tikzpicture}[node distance = 3.5cm, auto]
     \node [block] (sampling) {trycksensorernas spänning samplas};
     \node [block, right of=sampling] (filter) {störningar filtreras};
-    \node [block, right of=filter] (norm1) {spänningen räknas om till kraft i Newton};
+    \node [block, right of=filter] (norm1) {spänningen tolkas som en relativ kraft};
 
     \path [line] (sampling) -- (filter);
     \path [line] (filter) -- (norm1);
@@ -75,6 +75,12 @@
 \begin{frame}
 \frametitle{Servovinklar}
 \includegraphics[width=\textwidth]{img/servo_vinklar}
+\end{frame}
+\begin{frame}
+\frametitle{Identifiering}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{img/obj_dist}
+\end{center}
 \end{frame}
 \begin{frame}
 \frametitle{Modell av handen}
