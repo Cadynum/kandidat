@@ -3,10 +3,12 @@
 
 \usepackage[swedish]{babel}
 \ifluatex
+    \usepackage{euler}
     \usepackage{fontspec}
 \else
     \usepackage[utf8]{inputenc}
 	\usepackage[T1]{fontenc}
+    \usepackage{euler}
 \fi
 \usepackage{tikz}
 \usepackage[nice]{units}
@@ -76,6 +78,8 @@
 
 \usetikzlibrary{shapes,arrows}
 \tikzstyle{block} = [rectangle, draw, fill=red!20,
+    text width=7em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{blockfade} = [rectangle, draw, fill=red!5,
     text width=7em, text centered, rounded corners, minimum height=4em]
 
 \tikzstyle{blockfat} = [rectangle, draw, fill=red!70,

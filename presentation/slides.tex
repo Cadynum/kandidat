@@ -61,20 +61,6 @@
 \end{frame}
 
 \section{Signalbehandling}
-\begin{frame}
-\frametitle{Signalens väg för styrhandsken}
-\footnotesize
-\begin{tikzpicture}[node distance = 2.8cm, auto]
-    \node [block] (sampling) {flexsensorernas spänning samplas};
-    \node [block, right of=sampling] (filter) {störningar filtreras};
-    \node [block, right of=filter] (norm1) {normalisering mot användarens hand};
-    \node [block, right of=norm1] (norm2) {normalisering mot robothandens vinklar};
-
-    \path [line] (sampling) -- (filter);
-    \path [line] (filter) -- (norm1);
-    \path [line] (norm1) -- (norm2);
-\end{tikzpicture}
-\end{frame}
 
 \begin{frame}
 \frametitle{Signalens väg för robothanden}
@@ -88,9 +74,11 @@
  \end{tikzpicture}
 \end{frame}
 
+
 \begin{frame}
 \centering
 \begin{tikzpicture}[node distance = 3.5cm, auto]
+% \vspace*{\fill}
 \scriptsize
     \node [block] (sampling) {trycksensorernas spänning samplas};
     \node [blockfat, right of=sampling] (filter) {störningar filtreras};
@@ -101,7 +89,13 @@
 \end{tikzpicture}
 
 \includegraphics[width=\textwidth]{img/tryck_dubbel.pdf}
+\scriptsize
+\[
+G(s) = \frac{\omega_0}{\omega_0 + s},\omega_0 = 2\pi f_0\;\; \Rightarrow \;\;
+y[n] = \frac{f_0(x[n]+x[n-1]) - y[n-1](f_0 - 2f_s)}{f_0 + 2f_s}
+\]
 \end{frame}
+
 
 
 \begin{frame}
@@ -117,18 +111,41 @@
 \end{tikzpicture}
 \vspace*{\fill}
 \begin{columns}
-\begin{column}{0.5\textwidth}
+\begin{column}[t]{0.5\textwidth}
 \includegraphics[width=\textwidth]{img/before.pdf}
-\end{column}
-\begin{column}{0.5\textwidth}
-\includegraphics[width=\textwidth]{img/after.pdf}
-\end{column}
-\end{columns}
 \[
     f(x) = a\left(1-e^{-x/b}\right) x^d
 \]
+\end{column}
+\begin{column}[t]{0.5\textwidth}
+\includegraphics[width=\textwidth]{img/after.pdf}
+\[ f^{-1}(x) = \text{interpolering}
+\]
+\end{column}
+\end{columns}
 
 \end{frame}
+
+
+
+\begin{frame}
+\frametitle{Signalens väg för styrhandsken}
+\footnotesize
+\begin{tikzpicture}[node distance = 2.8cm, auto]
+    \node [blockfade] (sampling) {flexsensorernas spänning samplas};
+    \node [blockfade, right of=sampling] (filter) {störningar filtreras};
+    \node [block, right of=filter] (norm1) {normalisering mot användarens hand};
+    \node [block, right of=norm1] (norm2) {normalisering mot robothandens vinklar};
+
+    \path [line] (sampling) -- (filter);
+    \path [line] (filter) -- (norm1);
+    \path [line] (norm1) -- (norm2);
+\end{tikzpicture}
+\begin{itemize}
+    \item De två första stegen som för robothanden
+\end{itemize}
+\end{frame}
+
 
 
 \section{Objektidentifiering}
