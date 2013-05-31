@@ -1,18 +1,4 @@
-
-
-\begin{frame}
-\begin{center}
-        
-\includegraphics[height=0.25\textheight]{img/milk}
- 
-\includegraphics[height=0.25\textheight]{img/snusgrepp}
-
-\includegraphics[height=0.2\textheight]{img/mutterlyft}
-
-\includegraphics[height=0.2\textheight]{img/cylinder}
-\end{center}
-\end{frame}
-
+%!TEX root=presentation.tex
 
 \section{Inledning}
 
@@ -25,6 +11,23 @@
 \begin{frame}
 \frametitle{Cutkoskys handmodeller}
 \includegraphics[width=0.85\textwidth]{img/cutkoskyscadgrepp}
+\end{frame}
+
+
+\begin{frame}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\includegraphics[height=0.45\textheight]{img/milk}
+
+\includegraphics[height=0.45\textheight]{img/snusgrepp}
+\end{column}
+
+\begin{column}{0.5\textwidth}
+\includegraphics[height=0.45\textheight]{img/mutterlyft}
+
+\includegraphics[height=0.4\textheight]{img/cylinder}
+\end{column}
+\end{columns}
 \end{frame}
 
 \begin{frame}
@@ -58,7 +61,6 @@
 \end{frame}
 
 \section{Signalbehandling}
-\subsection{Styrhandsken}
 \begin{frame}
 \frametitle{Signalens väg för styrhandsken}
 \footnotesize
@@ -74,7 +76,6 @@
 \end{tikzpicture}
 \end{frame}
 
-\subsection{Robothanden}
 \begin{frame}
 \frametitle{Signalens väg för robothanden}
 \begin{tikzpicture}[node distance = 3.5cm, auto]
@@ -85,8 +86,48 @@
     \path [line] (sampling) -- (filter);
     \path [line] (filter) -- (norm1);
  \end{tikzpicture}
- \hspace*{-0.8cm}\includegraphics[width=0.6\textwidth]{img/tryck_dubbel.pdf}
- \includegraphics[width=0.5\textwidth]{img/before.pdf}
+\end{frame}
+
+\begin{frame}
+\centering
+\begin{tikzpicture}[node distance = 3.5cm, auto]
+\scriptsize
+    \node [block] (sampling) {trycksensorernas spänning samplas};
+    \node [blockfat, right of=sampling] (filter) {störningar filtreras};
+    \node [block, right of=filter] (norm1) {spänningen tolkas som en relativ kraft};
+
+    \path [line] (sampling) -- (filter);
+    \path [line] (filter) -- (norm1);
+\end{tikzpicture}
+
+\includegraphics[width=\textwidth]{img/tryck_dubbel.pdf}
+\end{frame}
+
+
+\begin{frame}
+\centering
+\begin{tikzpicture}[node distance = 3.5cm, auto]
+\scriptsize
+    \node [block] (sampling) {trycksensorernas spänning samplas};
+    \node [block, right of=sampling] (filter) {störningar filtreras};
+    \node [blockfat, right of=filter] (norm1) {spänningen tolkas som en relativ kraft};
+
+    \path [line] (sampling) -- (filter);
+    \path [line] (filter) -- (norm1);
+\end{tikzpicture}
+\vspace*{\fill}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\includegraphics[width=\textwidth]{img/before.pdf}
+\end{column}
+\begin{column}{0.5\textwidth}
+\includegraphics[width=\textwidth]{img/after.pdf}
+\end{column}
+\end{columns}
+\[
+    f(x) = a\left(1-e^{-x/b}\right) x^d
+\]
+
 \end{frame}
 
 
@@ -115,17 +156,31 @@
 
 \section{Tryckbegränsning}
 \begin{frame}
-\frametitle{Ett1}
+\frametitle{Tryckbegränsning}
 \includegraphics[width=\textwidth]{img/masterplot}
 \end{frame}
 
 \section{Reflektioner}
 \begin{frame}
 \frametitle{Reflektioner}
+\begin{columns}
+\begin{column}[t]{0.5\textwidth}
+\textbf{Bra}
 \begin{itemize}
-	\item[Meccano]
-	\item[Återkoppling av vinklar]
-	\item[Vikten av bra sensorer]
-	\item[Latenstider?]
+    \item Intuitiv styrning
+    \item Användarvänlig
+    \item Klarar av flera grepp
+    \item Kraftåterkoppling
 \end{itemize}
+\end{column}
+\begin{column}[t]{0.5\textwidth}
+\textbf{Kan förbättras}
+\begin{itemize}
+	\item Meccano
+	\item Återkoppling av vinklar
+	\item Vikten av bra sensorer
+	\item Latenstider (bluetooth inte optimalt)
+\end{itemize}
+\end{column}
+\end{columns}
 \end{frame}

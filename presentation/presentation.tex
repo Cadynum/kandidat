@@ -12,6 +12,7 @@
 \usepackage[nice]{units}
 
 \usepackage[iso, swedish]{isodate}
+\usepackage{multimedia}
 \definecolor{links}{HTML}{0000FF}
 \hypersetup{colorlinks,linkcolor=,urlcolor=links}
 
@@ -76,6 +77,10 @@
 \usetikzlibrary{shapes,arrows}
 \tikzstyle{block} = [rectangle, draw, fill=red!20,
     text width=7em, text centered, rounded corners, minimum height=4em]
+
+\tikzstyle{blockfat} = [rectangle, draw, fill=red!70,
+    text width=7em, text centered, rounded corners, minimum height=4em]
+
 \tikzstyle{line} = [draw, -latex']
 \tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
     minimum height=2em]
@@ -96,16 +101,16 @@
 
 \include{frontpage}
 
-\begin{frame}
-FILM Mjölpaket
-\end{frame}
+% \begin{frame}
+% \movie{placeholder box}{filmer/Redovisning.m4v}
+% \end{frame}
 
 \begin{frame}
 \tableofcontents %Listan blir ihoptryckt när bilden läggs till...
-\vspace{-5cm}
-\begin{center}
-\hspace*{5cm}\includegraphics[height=0.9\textheight]{img/overgrip} 
-\end{center}
+% \vspace{-5cm}
+% \begin{center}
+% \hspace*{5cm}\includegraphics[height=0.9\textheight]{img/overgrip}
+% \end{center}
 \end{frame}
 
 \include{slides}
