@@ -1,0 +1,36 @@
+Chris:
+
+(Kaffekopp)
+En robothand med objektidentifiering är bra för att efter den identifierat ett objekt så kan den "veta" hur objektet ska hanteras eller var det ska placeras. Identifiering sker ofta med bildbehandling men vi har implementerat en enklare variant. Det grt ut på att beräkna avståndet mellan fingertopparna, där trycksensorerna sitter. (här ser vi principen på en kaffekopp från bulten) När kontakt med ett objekt uppstått ger trycksensorerna utlslag och då beräknas avståndet. Om detta avstånd stämmer överens med något objekt som robothanden har i sitt objektbibliotek så identifieras det och kan då begränsa sig från att trycka för hårt. Objektidentifieringens syfte är alltså att se till att robothanden inte klämmer sönder objekt. 
+(SERVO OCH HAND)
+Beräkningsprogrammet gjordes i MATLAB och använder servovinklarna som input och kopplar dessa till fingrarnas vinklar. (Peka på bild). Beroende på kombinationen av servovinklar fås en mängd olika koordinater för fingertopparna. 
+
+
+BILD PÅ HUNDEN
+
+Här ser vi en bild av det matlab program som tagits fram som då plottar handens position efter servovinklarna. Här har vi handens pekfinger och här är tummen. Matemtiska modellen är i 2D och har inga glapp som den verkliga robothanden. Så hur noggrann blir då objektidentifieringen?
+
+BILD PÅ PLOTTEN (Fråga jocke hur det gick till)
+Här ser vi då en plott som visar skillnaden mellan det faktiska avståndet i den röda kurvan och det beräknade blåa linjen och som ni ser så finns det endel fel i systemet vilket illustreras i arean mellan den blå och den röda kurvan.  Vi hittade dock ett område där identifiering är möjligt med en upplösning på 15 mm. Anledningen till felen är dels att meccanot bidrar till mekaniskt glapp, så ett servoläge kan betyda många olika positioner.
+ Dessutom så mäts inte de faktiska servovinklarna utan de som är önskade av användaren vilket inte alltid stämmer överens med verkligheten. 
+
+Området mellan de gröna strecken anses ändå vara tillräckligt precis för att testa systemet, vilket görs och illustreras i följande plot.
+
+Den visar egentligen hur hela systemet fungerar tillsammans. Mekaniken, trådlösstyrning, identifiering och tryckbegränsning.
+
+Vad som ska illustreras är att robothanden greppar ett objekt på 70 mm som den identifierar och begränsar användaren att trycka hårdare än 2 Newton. Då ska vi se!
+
+Oranga kurvan är avståndet mellan fingetopparna enligt den matematiska modellen. Röda kurvan är avståndet som användarens rörelse skulle ge upphov till, också enligt den matematiska modellen. Alltså det faktiska avståndet är inte med då denna inte mäts.
+
+4s:Kontakt med objekt, identifiering sker.
+
+6s: 2N överstigs. Servovinklarna låser sig.
+
+11.5s: Robothanden tappar greppet, trycket sjunker momentant under 2 Newton, vilket gör att styrningen återgår till användaren.
+
+13.5s: Användaren släpper. Trycket till noll.
+
+
+Tryckbegränsningen: Föklara principen bakom, masterplot
+
+
