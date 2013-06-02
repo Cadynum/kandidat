@@ -16,15 +16,17 @@ Här ser vi då en plott som visar skillnaden mellan det faktiska avståndet i d
 
 Området mellan de gröna strecken anses ändå vara tillräckligt precis för att testa systemet, vilket görs och illustreras i följande plot.
 
-Den visar egentligen hur hela systemet fungerar tillsammans. Mekaniken, trådlösstyrning, identifiering och tryckbegränsning.
+Den visar egentligen hur hela systemet fungerar tillsammans. Mekaniska designen, trådlösstyrning, identifiering och tryckbegränsning.
 
 Vad som ska illustreras är att robothanden greppar ett objekt på 70 mm som den identifierar och begränsar användaren att trycka hårdare än 2 Newton. Då ska vi se!
 
-Oranga kurvan är avståndet mellan fingetopparna enligt den matematiska modellen. Röda kurvan är avståndet som användarens rörelse skulle ge upphov till, också enligt den matematiska modellen. Alltså det faktiska avståndet är inte med då denna inte mäts.
+Oranga kurvan är avståndet mellan fingetopparna enligt den matematiska modellen och är den som styr servomotorerna. Röda kurvan är avståndet som användarens rörelse ger upphov till, också enligt den matematiska modellen. Alltså det faktiska avståndet är inte med då denna inte mäts. 
 
-4s:Kontakt med objekt, identifiering sker.
+Oranga kurvan följer den röda sålänge inte trycket är för högt. Alltså rör sig robothanden här så som användaren styr.
 
-6s: 2N överstigs. Servovinklarna låser sig.
+4s:Kontakt med objekt, beräkning  av avståndet utförs och identifiering sker.
+
+6s: 2N överstigs. Servovinklarna låser sig. Anledningen till att trycket ändå fortsätter stiga innan den stannar av beror på fördröjning i robothandens faktiska rörelser.
 
 11.5s: Robothanden tappar greppet, trycket sjunker momentant under 2 Newton, vilket gör att styrningen återgår till användaren.
 
