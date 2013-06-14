@@ -29,7 +29,7 @@
 \usepackage{pdflscape}
 \usepackage{parskip}
 \usepackage{subcaption}
-\usepackage{natbib}
+\usepackage[natbib=true, style=authoryear, backend=biber]{biblatex}
 \usepackage{tikz}
 \usepackage[section]{placeins}
 \usepackage{epstopdf}
@@ -41,7 +41,11 @@
 \makeatletter
 \g@addto@macro\@floatboxreset{\centering}
 \makeatother
+
 \addtokomafont{disposition}{\rmfamily}
+\addtokomafont{descriptionlabel}{\rmfamily}
+
+
 \hypersetup{
 colorlinks=false
 }
@@ -50,9 +54,9 @@ colorlinks=false
 \pagestyle{fancy}
 %\fancyhf{}
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter.\space#1}{}}
-\lhead{\sffamily Design av Robothand}
+\lhead{Design av Robothand}
 %\rhead{\sffamily Sida \thepage\ av \pageref{LastPage}}
-\rhead{\sffamily \leftmark}
+\rhead{\leftmark}
 
 
 %tabulatorx färger
@@ -72,3 +76,5 @@ colorlinks=false
 \tikzstyle{line} = [draw, -latex']
 \tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
     minimum height=2em]
+
+\addbibresource{referenser.bib}

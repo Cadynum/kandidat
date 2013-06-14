@@ -11,20 +11,21 @@ Flera moment i signalbehandlingen och digitaltekniken introducerar diverse laten
     \item[Servomotorer] Servomotorernas tid från ett ändrat börvärde till önskad position varierar beroende på eventuellt motstånd, tröghet i konstruktionen och nuvarande position. Servomotorn har stor inverkan på systemets totala latenstid, men eftersom det saknas återkoppling av vinklar avgränsas analysen till mätbara värden.
 \end{description}
 
-För både flexsensor$\to$servovinkel och trycksensor$\to$diodramp görs samma typ av beräkningar, med samma brytfrekvens för butterworthfiltret, vilket leder till samma latenstider. Servomotorns rörelse är inte inkluderad, men för trycksensorn analyseras alla latenstider.
+För både flexsensor $\to$ servovinkel och trycksensor $\to$ diodramp görs samma typ av beräkningar, med samma brytfrekvens för butterworthfiltret, vilket leder till samma latenstider. Servomotorns rörelse är inte inkluderad, men för trycksensorn analyseras alla latenstider.
 \begin{table}[H]
 \begin{tabularx}{350pt}{X r r}
     \textbf{Komponent} & \textbf{$\mu$ (ms)} & \textbf{$\sigma$ (ms)}\\
-
-    Sampling av spänning        & 5.0 & 1.4 \\
-    Butterworthfilter          & 9.7 & 0.71 \\
-    Trådlös överföring          & 31 & 0.54 \\
-    Mottagande mikrokontroller  & 5.0 & 1.4 \\
-    \hline
-    & \textbf{51} & \textbf{2.2}
+    ($\alpha$) Mikrokontroller samplings-/ticktid  & 5.0 & 1.4 \\
+    ($\beta$)  Butterworthfilter            & 9.7 & 0.71 \\
+    ($\gamma$) Trådlös överföring pingtid & 31 & 0.54 \\
 \end{tabularx}
 \end{table}
-Den totala fördröjningen från att användaren rör på ett finger tills dess att trycket återkopplas via ledlamporna blir således 102 ms med en standardavvikelse på 3.1 ms.
+Fördröjningen från att användaren rör på ett finger tills styrsignalen sätts för servomotorn blir således 35 ms med en standardavvikelse på 1.6 ms enligt:\\
+sampling($\alpha$) $\to$ filter($\beta$) $\to$ överföring($\gamma/2$) $\to$ mikrokontroller($\alpha$)
+
+Den totala fördröjningen från att användaren rör på ett finger tills dess att trycket återkopplas via ledlamporna blir 65 ms med en standardavvikelse på 2.7 ms enligt:\\
+sampling($\alpha$) $\to$ filter($\beta$) $\to$ överföring($\gamma/2$) $\to$ mikrokontroller($\alpha$) $\to$ filter($\beta$) $\to$ överföring($\gamma/2$) $\to$ mikrokontroller($\alpha$)
+
 
 \begin{figure}[hb]
 \includegraphics{img/bluetooth_latency.pdf}

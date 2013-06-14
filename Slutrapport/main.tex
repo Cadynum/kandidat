@@ -21,9 +21,12 @@
 \include{text/projektdel/projektdel}
 
 
-\bibliographystyle{plainnat}
-\bibliography{referenser}
-\addcontentsline{toc}{chapter}{Litteraturförteckning}
+% \bibliographystyle{plainnat}
+% \bibliography{referenser}
+% \setlength\bibitemsep{3\bibitemsep}
+\renewbibmacro{in:}{}
+\printbibliography
+\addcontentsline{toc}{chapter}{Litteratur}
 
 \appendix
 \include{text/appendix/appendix}
